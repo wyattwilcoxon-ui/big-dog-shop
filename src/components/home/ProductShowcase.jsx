@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useOutletContext } from 'react-router-dom';
-import { Star } from 'lucide-react';
 
 const PRODUCTS = [
   {
@@ -62,9 +60,10 @@ export default function ProductShowcase() {
               key={product.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -6, rotate: i % 2 === 0 ? -1 : 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="group bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden transition-all duration-300 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none flex flex-col"
+              transition={{ delay: i * 0.15, type: 'spring', stiffness: 300 }}
+              className="group bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden flex flex-col"
             >
               {/* Image */}
               <div className="relative bg-cream p-8 flex items-center justify-center min-h-[240px]">

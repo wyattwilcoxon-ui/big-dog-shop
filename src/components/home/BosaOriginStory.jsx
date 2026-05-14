@@ -1,0 +1,165 @@
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
+
+const PANELS = [
+  {
+    emoji: '🐕',
+    bg: 'bg-orange-pale',
+    border: 'border-primary',
+    title: 'MEET BOSA',
+    subtitle: '125 lbs. Zero shame.',
+    body: 'A magnificent German Shepherd who believed that going BIG applied to everything in life — especially his bathroom habits.',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9679_a5725f64.jpg',
+    accent: 'bg-primary',
+    delay: 0,
+  },
+  {
+    emoji: '💩',
+    bg: 'bg-cream',
+    border: 'border-secondary',
+    title: 'THE PROBLEM',
+    subtitle: 'Normal bags: RIP.',
+    body: 'Regular bags didn\'t stand a chance. They split. They leaked. Megan was using 8 bags per walk. EIGHT. This is not a drill.',
+    image: null,
+    cartoon: true,
+    cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/5b14b0aaf_generated_image.png',
+    accent: 'bg-secondary',
+    delay: 0.1,
+  },
+  {
+    emoji: '😤',
+    bg: 'bg-green-dark',
+    border: 'border-primary',
+    title: 'THE BREAKING POINT',
+    subtitle: 'Not today, tiny bag.',
+    body: 'Standing in a park, holding a compromised bag at arm\'s length, Megan looked at Joni and said: "WHY DOESN\'T THIS EXIST?!"',
+    image: null,
+    cartoon: true,
+    cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/54a7680a8_generated_image.png',
+    accent: 'bg-primary',
+    dark: true,
+    delay: 0.2,
+  },
+  {
+    emoji: '👑',
+    bg: 'bg-midnight',
+    border: 'border-sandy',
+    title: 'THE BOSIE BAG™',
+    subtitle: '13"×15". Named after the legend.',
+    body: 'Built for 70+ lb dogs. Leak-proof. Oversized. Named after the big boy himself. Bosa approves. (He\'s not sorry.)',
+    image: null,
+    cartoon: true,
+    cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/483e609ed_generated_image.png',
+    accent: 'bg-sandy',
+    dark: true,
+    delay: 0.3,
+  },
+];
+
+export default function BosaOriginStory() {
+  const containerRef = useRef(null);
+
+  return (
+    <section className="py-16 sm:py-24 bg-cream overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <motion.div
+            animate={{ rotate: [0, -3, 3, -3, 0] }}
+            transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+            className="inline-block text-7xl mb-4"
+          >
+            💩
+          </motion.div>
+          <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl text-midnight">
+            THE LEGEND OF
+            <br />
+            <span className="text-primary">BOSA'S</span> POOPS
+          </h2>
+          <p className="font-brand text-pebble text-lg mt-4 max-w-xl mx-auto">
+            A true story. An origin story. A story about a very large dog and very inadequate bags.
+          </p>
+        </motion.div>
+
+        {/* Comic Strip Panels */}
+        <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {PANELS.map((panel, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 60, rotate: i % 2 === 0 ? -2 : 2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: i % 2 === 0 ? -1 : 1 }}
+              whileHover={{ rotate: 0, scale: 1.02 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ delay: panel.delay, duration: 0.6, type: 'spring', stiffness: 200 }}
+              className={`relative rounded-2xl border-4 ${panel.border} overflow-hidden shadow-cartoon cursor-pointer`}
+            >
+              {/* Panel number */}
+              <div className={`absolute top-3 left-3 z-10 w-9 h-9 ${panel.accent} rounded-lg border-bold flex items-center justify-center`}>
+                <span className="font-display text-white text-lg">{i + 1}</span>
+              </div>
+
+              {/* Emoji stamp top right */}
+              <motion.div
+                className="absolute top-3 right-3 z-10 text-3xl"
+                animate={{ rotate: [0, 15, -15, 0] }}
+                transition={{ repeat: Infinity, duration: 2 + i * 0.5, ease: 'easeInOut' }}
+              >
+                {panel.emoji}
+              </motion.div>
+
+              <div className={`${panel.bg} p-6 sm:p-8`}>
+                {/* Image / Cartoon */}
+                {panel.image && (
+                  <div className="rounded-xl overflow-hidden border-bold mb-5 aspect-[4/3]">
+                    <img src={panel.image} alt={panel.title} className="w-full h-full object-cover" />
+                  </div>
+                )}
+                {panel.cartoonImg && (
+                  <div className="rounded-xl overflow-hidden border-bold mb-5 aspect-[4/3] bg-white flex items-center justify-center">
+                    <img src={panel.cartoonImg} alt={panel.title} className="w-full h-full object-contain p-2" />
+                  </div>
+                )}
+
+                <div className={panel.dark ? 'text-white' : 'text-midnight'}>
+                  <motion.h3
+                    initial={{ x: -20, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: panel.delay + 0.2 }}
+                    className={`font-display text-4xl sm:text-5xl ${panel.dark ? 'text-white' : 'text-midnight'}`}
+                  >
+                    {panel.title}
+                  </motion.h3>
+                  <p className={`font-brand text-sm mt-1 ${panel.dark ? 'text-white/60' : 'text-pebble'}`}>
+                    {panel.subtitle}
+                  </p>
+                  <p className={`font-body text-sm sm:text-base mt-4 leading-relaxed ${panel.dark ? 'text-white/80' : 'text-pebble'}`}>
+                    {panel.body}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Closing punch */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+          className="mt-12 text-center"
+        >
+          <div className="inline-block bg-primary text-white font-display text-3xl sm:text-5xl px-8 py-5 rounded-2xl border-bold shadow-cartoon rotate-1">
+            🐾 AND THAT'S WHY WE GIVE A $H!T 🐾
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
