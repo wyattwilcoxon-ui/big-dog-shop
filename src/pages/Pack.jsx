@@ -1,0 +1,188 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const DOGS = [
+  {
+    name: 'Bosa',
+    breed: 'German Shepherd',
+    title: 'Chief Pooping Officer',
+    description: '125 lbs of pure chaos and love. His poops are legendary (and the reason this company exists). The bags are literally named after him.',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9679_a5725f64.jpg',
+    color: 'border-primary',
+  },
+  {
+    name: 'Carmen',
+    breed: 'German Shepherd',
+    title: 'Senior Quality Inspector',
+    description: 'The wise grandma of the pack. She tested every prototype and gave her seal of approval by not looking disgusted.',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9660_8b3c9563.jpg',
+    color: 'border-secondary',
+  },
+  {
+    name: 'Max',
+    breed: 'Great Dane',
+    title: 'Head of Stress Testing',
+    description: "Joni's gentle giant who proved that most pet products are basically made for hamsters. If a bag can handle Max, it can handle anything.",
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9245_46815bf7.jpg',
+    color: 'border-sky',
+  },
+  {
+    name: 'Jazzy',
+    breed: 'The Little One',
+    title: 'Morale & Chaos Coordinator',
+    description: 'Every big dog crew needs a tiny boss. Jazzy keeps everyone in line and reminds us that attitude has nothing to do with size.',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_8880_fff6a440.jpg',
+    color: 'border-sandy',
+  },
+];
+
+const FOUNDERS = [
+  {
+    name: 'Joni Dailey',
+    role: 'Co-Founder & Brand Director',
+    tagline: 'The one who makes everything look good',
+  },
+  {
+    name: 'Megan Gerlach',
+    role: 'Co-Founder & Financial Director',
+    tagline: 'The one who counts the money (and the poop bags)',
+  },
+  {
+    name: 'Doug Chivington',
+    role: 'Partner & Operations Director',
+    tagline: 'The one who makes sure your order actually shows up',
+  },
+  {
+    name: 'Amber Chivington',
+    role: 'Partner & Marketing Strategist',
+    tagline: 'The one who tells the world about our bags',
+  },
+];
+
+export default function Pack() {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero */}
+      <div className="bg-midnight py-16 sm:py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+            <p className="font-brand text-primary text-lg mb-2">The Real MVPs</p>
+            <h1 className="font-display text-6xl sm:text-8xl text-white">MEET THE PACK</h1>
+            <p className="font-body text-stone text-lg mt-4 max-w-xl">
+              The dogs who started it all. They didn't ask for a company to be built around their bathroom habits, but here we are.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Dogs */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {DOGS.map((dog, i) => (
+            <motion.div
+              key={dog.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={`bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden transition-all duration-300 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none`}
+            >
+              <div className={`aspect-[4/3] overflow-hidden border-b-4 ${dog.color}`}>
+                <img src={dog.image} alt={dog.name} className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-3xl text-midnight">{dog.name}</h3>
+                <p className="font-brand text-primary text-sm">{dog.breed}</p>
+                <p className="font-brand text-stone text-xs mt-1">{dog.title}</p>
+                <p className="font-body text-pebble text-sm mt-3 leading-relaxed">{dog.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Story */}
+      <div className="bg-cream py-16 sm:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <p className="font-brand text-secondary text-lg mb-2">How It Started</p>
+            <h2 className="font-display text-5xl sm:text-7xl text-midnight">A CRAPPY PROBLEM.<br />A BETTER SOLUTION.</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl border-bold shadow-cartoon p-8 sm:p-12"
+          >
+            <div className="flex flex-col sm:flex-row gap-8">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/megan-both-dogs_44a2bc9c.jpg"
+                alt="Megan with her dogs"
+                className="w-full sm:w-64 h-48 sm:h-auto rounded-xl object-cover border-bold flex-shrink-0"
+              />
+              <div>
+                <h3 className="font-brand text-xl text-midnight mb-4">It Started With Too Many Bags</h3>
+                <p className="font-body text-pebble leading-relaxed mb-4">
+                  When Megan adopted Bosa (a 125-lb German Shepherd with zero chill), she quickly learned that normal poop bags were a joke. She was going through 8 bags a day. EIGHT.
+                </p>
+                <p className="font-body text-pebble leading-relaxed mb-4">
+                  Meanwhile, her friend Joni was dealing with TWO Great Danes and the same exact frustrations.
+                </p>
+                <p className="font-body text-pebble leading-relaxed">
+                  They looked at each other and said: "Why doesn't this exist?" So they built it. Big Dog Life was born out of frustration, friendship, and an unreasonable amount of poop.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 p-6 bg-cream rounded-xl border-2 border-fog">
+              <p className="font-body text-midnight italic text-center leading-relaxed">
+                "Make life easier for big-dog owners. Build products that actually work. Don't take ourselves too seriously. And never, ever make a bag that leaks."
+              </p>
+              <p className="font-brand text-stone text-sm text-center mt-2">— The Big Dog Life Team</p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Team */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <p className="font-brand text-primary text-lg mb-2">The Humans</p>
+          <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE POOP SQUAD</h2>
+          <p className="font-body text-pebble mt-4">Bellefontaine, Ohio (yes, it's a real place)</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {FOUNDERS.map((founder, i) => (
+            <motion.div
+              key={founder.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white rounded-2xl border-bold shadow-cartoon-sm p-6 text-center"
+            >
+              <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="font-display text-3xl text-primary">{founder.name.charAt(0)}</span>
+              </div>
+              <h3 className="font-brand text-midnight">{founder.name}</h3>
+              <p className="font-brand text-primary text-xs mt-1">{founder.role}</p>
+              <p className="font-body text-stone text-xs mt-2 italic">{founder.tagline}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
