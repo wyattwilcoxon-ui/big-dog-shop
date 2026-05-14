@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const EMOJIS = ['💩', '🐾', '💩', '🐶', '💩', '🐾'];
 
+// Disabled - cursor trail was too chaotic
 export default function FloatingPoop() {
+  return null;
   const [poops, setPoops] = useState([]);
   const idRef = useRef(0);
   const throttleRef = useRef(false);

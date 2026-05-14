@@ -16,13 +16,13 @@ import FloatingPoop from '../components/ui/FloatingPoop';
 const HERO_IMG = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/3885efb4e_generated_584b68b5.png';
 
 const MARQUEE_ITEMS_1 = [
-  '💩 LEAK-PROOF', '🐾 BIG DOG ENERGY', '💩 13"×15"', '🐕 70+ LBS', '💩 ZERO LEAKS',
-  '🧻 BOSIE BAG™', '💩 NAMED AFTER BOSA', '🐾 BELLEFONTAINE OH', '💩 WE GIVE A $H!T',
+  'LEAK-PROOF', 'BIG DOG ENERGY', '13"×15"', '70+ LBS', 'ZERO LEAKS',
+  'BOSIE BAG™', 'NAMED AFTER BOSA', 'BELLEFONTAINE OH', 'WE GIVE A $H!T',
 ];
 
 const MARQUEE_ITEMS_2 = [
-  '🏆 BEST SELLER', '🐶 BIG DOG LIFE', '💩 OVERSIZED', '✅ LEAK PROOF', '🐾 #BOSIEBLAST',
-  '🎯 44% BIGGER', '🦴 BONE DISPENSER', '💩 SINCE 2024', '🐕 PACK APPROVED',
+  'BEST SELLER', 'BIG DOG LIFE', 'OVERSIZED', 'LEAK PROOF', '#BOSIEBLAST',
+  '44% BIGGER', 'BONE DISPENSER', 'SINCE 2024', 'PACK APPROVED',
 ];
 
 const IMAGES = {

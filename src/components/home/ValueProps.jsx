@@ -1,18 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { PoopIcon, PawIcon, DogFaceIcon, BagIcon } from '../ui/BdlIcons';
 
 const PROPS = [
   {
-    icon: '🛡️',
+    Icon: BagIcon,
     title: 'Zero Leaks. Zero Panic.',
     description: 'Leak-proof bags that actually keep your hands clean. Revolutionary, we know.',
     bg: 'bg-orange-pale',
     border: 'border-primary',
-    rotate: -2,
+    rotate: -1.5,
   },
   {
-    icon: '📏',
+    Icon: PoopIcon,
     title: 'Built for the Big Boys',
     description: '44% bigger than regular bags. Your 90-lb Lab doesn\'t make chihuahua poops.',
     bg: 'bg-green-dark',
@@ -21,7 +21,7 @@ const PROPS = [
     dark: true,
   },
   {
-    icon: '🐾',
+    Icon: DogFaceIcon,
     title: 'Made by Dog People',
     description: 'Real big-dog owners who got tired of the same crappy bags. Pun intended.',
     bg: 'bg-sky/20',
@@ -29,12 +29,13 @@ const PROPS = [
     rotate: -1,
   },
   {
-    icon: '🚚',
+    Icon: PawIcon,
+    iconProps: { color: '#D4924A' },
     title: 'Ships Fast from Ohio',
     description: 'Because running out of poop bags is an emergency nobody talks about.',
     bg: 'bg-sandy/20',
     border: 'border-sandy',
-    rotate: 2,
+    rotate: 1.5,
   },
 ];
 
@@ -46,19 +47,19 @@ export default function ValueProps() {
           {PROPS.map((prop, i) => (
             <motion.div
               key={prop.title}
-              initial={{ opacity: 0, y: 50, rotate: prop.rotate }}
+              initial={{ opacity: 0, y: 40, rotate: prop.rotate }}
               whileInView={{ opacity: 1, y: 0, rotate: prop.rotate }}
-              whileHover={{ rotate: 0, scale: 1.04, y: -4 }}
+              whileHover={{ rotate: 0, y: -4 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, type: 'spring', stiffness: 300 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
               className={`${prop.bg} rounded-2xl border-4 ${prop.border} shadow-cartoon p-6 cursor-default`}
             >
               <motion.div
-                className="text-5xl mb-4"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 3 + i * 0.5, ease: 'easeInOut' }}
+                className="mb-4"
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 4 + i * 0.8, repeat: Infinity, ease: 'easeInOut' }}
               >
-                {prop.icon}
+                <prop.Icon size={48} {...(prop.iconProps || {})} />
               </motion.div>
               <h3 className={`font-brand text-lg mb-2 ${prop.dark ? 'text-white' : 'text-midnight'}`}>
                 {prop.title}

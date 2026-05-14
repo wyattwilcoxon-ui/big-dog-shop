@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { PoopIcon, DogFaceIcon, BagIcon, PawIcon } from '../ui/BdlIcons';
 
 const PANELS = [
   {
-    emoji: '🐕',
+    PanelIcon: DogFaceIcon,
     bg: 'bg-orange-pale',
     border: 'border-primary',
     title: 'MEET BOSA',
@@ -14,71 +15,66 @@ const PANELS = [
     delay: 0,
   },
   {
-    emoji: '💩',
+    PanelIcon: PoopIcon,
     bg: 'bg-cream',
     border: 'border-secondary',
     title: 'THE PROBLEM',
     subtitle: 'Normal bags: RIP.',
     body: 'Regular bags didn\'t stand a chance. They split. They leaked. Megan was using 8 bags per walk. EIGHT. This is not a drill.',
-    image: null,
-    cartoon: true,
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/5b14b0aaf_generated_image.png',
     accent: 'bg-secondary',
     delay: 0.1,
   },
   {
-    emoji: '😤',
+    PanelIcon: PawIcon,
+    panelIconProps: { color: '#F5F0E8' },
     bg: 'bg-green-dark',
     border: 'border-primary',
     title: 'THE BREAKING POINT',
     subtitle: 'Not today, tiny bag.',
     body: 'Standing in a park, holding a compromised bag at arm\'s length, Megan looked at Joni and said: "WHY DOESN\'T THIS EXIST?!"',
-    image: null,
-    cartoon: true,
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/54a7680a8_generated_image.png',
     accent: 'bg-primary',
     dark: true,
-    delay: 0.2,
+    delay: 0.15,
   },
   {
-    emoji: '👑',
+    PanelIcon: BagIcon,
     bg: 'bg-midnight',
     border: 'border-sandy',
     title: 'THE BOSIE BAG™',
     subtitle: '13"×15". Named after the legend.',
     body: 'Built for 70+ lb dogs. Leak-proof. Oversized. Named after the big boy himself. Bosa approves. (He\'s not sorry.)',
-    image: null,
-    cartoon: true,
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/483e609ed_generated_image.png',
     accent: 'bg-sandy',
     dark: true,
-    delay: 0.3,
+    delay: 0.2,
   },
 ];
 
 export default function BosaOriginStory() {
-  const containerRef = useRef(null);
-
   return (
     <section className="py-16 sm:py-24 bg-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.div
-            animate={{ rotate: [0, -3, 3, -3, 0] }}
-            transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-            className="inline-block text-7xl mb-4"
-          >
-            💩
-          </motion.div>
+          <div className="flex justify-center mb-4">
+            <motion.div
+              animate={{ rotate: [0, -8, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
+            >
+              <PoopIcon size={72} />
+            </motion.div>
+          </div>
           <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl text-midnight">
-            THE LEGEND OF
-            <br />
+            THE LEGEND OF<br />
             <span className="text-primary">BOSA'S</span> POOPS
           </h2>
           <p className="font-brand text-pebble text-lg mt-4 max-w-xl mx-auto">
@@ -86,16 +82,16 @@ export default function BosaOriginStory() {
           </p>
         </motion.div>
 
-        {/* Comic Strip Panels */}
-        <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Comic Panels */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {PANELS.map((panel, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 60, rotate: i % 2 === 0 ? -2 : 2 }}
-              whileInView={{ opacity: 1, y: 0, rotate: i % 2 === 0 ? -1 : 1 }}
+              initial={{ opacity: 0, y: 50, rotate: i % 2 === 0 ? -1.5 : 1.5 }}
+              whileInView={{ opacity: 1, y: 0, rotate: i % 2 === 0 ? -1.5 : 1.5 }}
               whileHover={{ rotate: 0, scale: 1.02 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: panel.delay, duration: 0.6, type: 'spring', stiffness: 200 }}
+              transition={{ delay: panel.delay, duration: 0.55 }}
               className={`relative rounded-2xl border-4 ${panel.border} overflow-hidden shadow-cartoon cursor-pointer`}
             >
               {/* Panel number */}
@@ -103,17 +99,12 @@ export default function BosaOriginStory() {
                 <span className="font-display text-white text-lg">{i + 1}</span>
               </div>
 
-              {/* Emoji stamp top right */}
-              <motion.div
-                className="absolute top-3 right-3 z-10 text-3xl"
-                animate={{ rotate: [0, 15, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 2 + i * 0.5, ease: 'easeInOut' }}
-              >
-                {panel.emoji}
-              </motion.div>
+              {/* Icon top-right */}
+              <div className="absolute top-3 right-3 z-10">
+                <panel.PanelIcon size={32} {...(panel.panelIconProps || {})} />
+              </div>
 
               <div className={`${panel.bg} p-6 sm:p-8`}>
-                {/* Image / Cartoon */}
                 {panel.image && (
                   <div className="rounded-xl overflow-hidden border-bold mb-5 aspect-[4/3]">
                     <img src={panel.image} alt={panel.title} className="w-full h-full object-cover" />
@@ -124,39 +115,28 @@ export default function BosaOriginStory() {
                     <img src={panel.cartoonImg} alt={panel.title} className="w-full h-full object-contain p-2" />
                   </div>
                 )}
-
                 <div className={panel.dark ? 'text-white' : 'text-midnight'}>
-                  <motion.h3
-                    initial={{ x: -20, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: panel.delay + 0.2 }}
-                    className={`font-display text-4xl sm:text-5xl ${panel.dark ? 'text-white' : 'text-midnight'}`}
-                  >
-                    {panel.title}
-                  </motion.h3>
-                  <p className={`font-brand text-sm mt-1 ${panel.dark ? 'text-white/60' : 'text-pebble'}`}>
-                    {panel.subtitle}
-                  </p>
-                  <p className={`font-body text-sm sm:text-base mt-4 leading-relaxed ${panel.dark ? 'text-white/80' : 'text-pebble'}`}>
-                    {panel.body}
-                  </p>
+                  <h3 className={`font-display text-4xl sm:text-5xl`}>{panel.title}</h3>
+                  <p className={`font-brand text-sm mt-1 ${panel.dark ? 'text-white/60' : 'text-pebble'}`}>{panel.subtitle}</p>
+                  <p className={`font-body text-sm sm:text-base mt-4 leading-relaxed ${panel.dark ? 'text-white/80' : 'text-pebble'}`}>{panel.body}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Closing punch */}
+        {/* Closing */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+          transition={{ duration: 0.5 }}
           className="mt-12 text-center"
         >
-          <div className="inline-block bg-primary text-white font-display text-3xl sm:text-5xl px-8 py-5 rounded-2xl border-bold shadow-cartoon rotate-1">
-            🐾 AND THAT'S WHY WE GIVE A $H!T 🐾
+          <div className="inline-flex items-center gap-3 bg-primary text-white font-display text-2xl sm:text-4xl px-8 py-5 rounded-2xl border-bold shadow-cartoon rotate-1">
+            <PawIcon size={32} color="white" />
+            AND THAT'S WHY WE GIVE A $H!T
+            <PawIcon size={32} color="white" />
           </div>
         </motion.div>
       </div>

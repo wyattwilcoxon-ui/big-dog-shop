@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CountUp from '../ui/CountUp';
+import { PoopIcon, PawIcon, DogFaceIcon, BagIcon } from '../ui/BdlIcons';
 
 const STATS = [
-  { value: 44, suffix: '%', label: 'Bigger Than Other Bags', emoji: '📏' },
-  { value: 120, suffix: '', prefix: '', label: 'Bags Per 8-Pack', emoji: '🧻' },
-  { value: 70, suffix: '+', prefix: '', label: 'Lbs? No Problem.', emoji: '🐕' },
-  { value: 0, suffix: '', prefix: '', label: 'Leaks. Zero. None.', emoji: '💧' },
+  { Icon: PawIcon, iconProps: { color: '#F4610E' }, value: 44, suffix: '%', label: 'Bigger Than Other Bags' },
+  { Icon: BagIcon, value: 120, suffix: '', label: 'Bags Per 8-Pack' },
+  { Icon: DogFaceIcon, value: 70, suffix: '+', label: 'Lbs? No Problem.' },
+  { Icon: PoopIcon, value: 0, suffix: '', label: 'Leaks. Zero. None.' },
 ];
 
 export default function StatsBar() {
@@ -17,21 +18,17 @@ export default function StatsBar() {
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
               className="text-center"
             >
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ repeat: Infinity, duration: 2 + i * 0.4, ease: 'easeInOut' }}
-                className="text-4xl mb-2"
-              >
-                {stat.emoji}
-              </motion.div>
+              <div className="flex justify-center mb-2">
+                <stat.Icon size={40} {...(stat.iconProps || {})} />
+              </div>
               <div className="font-display text-5xl sm:text-6xl text-primary">
-                <CountUp end={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+                <CountUp end={stat.value} suffix={stat.suffix} />
               </div>
               <p className="font-brand text-stone text-xs sm:text-sm mt-1">{stat.label}</p>
             </motion.div>

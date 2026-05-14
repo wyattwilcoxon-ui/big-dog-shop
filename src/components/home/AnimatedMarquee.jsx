@@ -1,20 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PoopIcon, PawIcon } from '../ui/BdlIcons';
 
-export default function AnimatedMarquee({ items, bg = 'bg-primary', textColor = 'text-white', speed = 25, reverse = false }) {
-  const doubled = [...items, ...items];
-
+// Alternates between a paw and poop icon as separators
+function MarqueeItem({ text, index }) {
+  const Icon = index % 2 === 0 ? PoopIcon : PawIcon;
+  const color = index % 2 === 0 ? '#F5F0E8' : '#F5F0E8';
   return (
-    <div className={`${bg} py-4 border-y-4 border-midnight overflow-hidden`}>
+    <span className="inline-flex items-center gap-3 flex-shrink-0 mx-4">
+      <Icon size={22} color={color} />
+      <span>{text}</span>
+    </span>
+  );
+}
+
+export default function AnimatedMarquee({ items, bg = 'bg-primary', textColor = 'text-white', speed = 30, reverse = false }) {
+  const doubled = [...items, ...items];
+  return (
+    <div className={`${bg} py-3 border-y-4 border-midnight overflow-hidden`}>
       <motion.div
-        className="flex gap-0 whitespace-nowrap"
+        className={`flex whitespace-nowrap ${textColor} font-display text-xl sm:text-2xl`}
         animate={{ x: reverse ? ['0%', '50%'] : ['0%', '-50%'] }}
         transition={{ duration: speed, repeat: Infinity, ease: 'linear' }}
       >
         {doubled.map((item, i) => (
-          <span key={i} className={`${textColor} font-display text-2xl sm:text-3xl mx-6 flex-shrink-0`}>
-            {item}
-          </span>
+          <MarqueeItem key={i} text={item} index={i} />
         ))}
       </motion.div>
     </div>
