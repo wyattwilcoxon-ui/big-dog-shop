@@ -12,6 +12,7 @@ import BosieBlastWall from '../components/home/BosieBlastWall';
 import LifestyleSection from '../components/home/LifestyleSection';
 import BulkCTA from '../components/home/BulkCTA';
 import FloatingPoop from '../components/ui/FloatingPoop';
+import CarnivalBanner from '../components/home/CarnivalBanner';
 
 const HERO_IMG = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/3885efb4e_generated_584b68b5.png';
 
@@ -38,6 +39,7 @@ export default function Home() {
     <div>
       <FloatingPoop />
       <HeroSection heroImage={IMAGES.hero} />
+      <CarnivalBanner />
 
       {/* First marquee — orange */}
       <AnimatedMarquee items={MARQUEE_ITEMS_1} bg="bg-primary" textColor="text-white" speed={22} />
@@ -62,6 +64,7 @@ export default function Home() {
           action: IMAGES.action,
         }}
       />
+      <CarnivalBanner className="rotate-180" />
       <BulkCTA />
     </div>
   );

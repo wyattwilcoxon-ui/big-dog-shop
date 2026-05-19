@@ -16,7 +16,13 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b-4 border-midnight">
+      {/* Carnival top stripe */}
+      <div className="fixed top-0 left-0 right-0 z-50 h-2 flex pointer-events-none">
+        {Array.from({ length: 40 }).map((_, i) => (
+          <div key={i} className={`flex-1 h-full ${i % 2 === 0 ? 'bg-primary' : 'bg-secondary'}`} />
+        ))}
+      </div>
+      <nav className="fixed top-2 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b-4 border-midnight">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}

@@ -47,10 +47,24 @@ export default function ProductShowcase() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-12 text-center"
         >
-          <p className="font-brand text-primary text-lg mb-2">The Good Stuff</p>
-          <h2 className="font-display text-5xl sm:text-7xl text-midnight">SHOP THE BOSIE BAG™</h2>
+          {/* Pennant row */}
+          <div className="flex justify-center gap-0 mb-4">
+            {['bg-primary','bg-secondary','bg-sky','bg-sandy','bg-primary','bg-secondary','bg-sky','bg-sandy'].map((c, i) => (
+              <motion.div
+                key={i}
+                className={`${c} border-2 border-midnight mx-0.5`}
+                style={{ width: 28, height: 38, clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}
+                animate={{ rotate: [i % 2 === 0 ? -5 : 5, i % 2 === 0 ? 5 : -5] }}
+                transition={{ duration: 2 + i * 0.2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+              />
+            ))}
+          </div>
+          <div className="inline-block bg-primary text-white font-display text-5xl sm:text-7xl px-6 py-2 shadow-cartoon border-4 border-midnight rotate-[-1deg]">
+            🎪 SHOP THE BOSIE BAG™ 🎪
+          </div>
+          <p className="font-brand text-pebble text-lg mt-4">Step right up — the bags your big dog deserves</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

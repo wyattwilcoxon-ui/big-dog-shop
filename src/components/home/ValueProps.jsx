@@ -39,8 +39,25 @@ const PROPS = [
 
 export default function ValueProps() {
   return (
-    <section className="py-16 sm:py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-24 bg-background relative overflow-hidden">
+      {/* Carnival top ribbon */}
+      <div className="absolute top-0 left-0 right-0 h-3 flex">
+        {Array.from({ length: 60 }).map((_, i) => (
+          <div key={i} className={`flex-1 h-full ${['bg-primary','bg-secondary','bg-sky','bg-sandy'][i % 4]}`} />
+        ))}
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <div className="inline-block bg-midnight text-white font-display text-3xl sm:text-5xl px-8 py-3 shadow-cartoon border-4 border-primary rotate-[-1deg]">
+            🎠 WHY BIG DOG LIFE? 🎠
+          </div>
+        </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {PROPS.map((prop, i) => (
             <motion.div
