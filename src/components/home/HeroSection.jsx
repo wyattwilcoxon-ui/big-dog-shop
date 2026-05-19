@@ -44,125 +44,105 @@ export default function HeroSection({ heroImage }) {
 
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end min-h-[90vh] sm:min-h-screen pb-16 sm:pb-24">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
-
-          {/* Left — text */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end min-h-[90vh] sm:min-h-screen pb-16 sm:pb-28">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+        >
+          {/* Eyebrow */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            className="inline-flex items-center gap-2 border border-white/30 text-white/80 font-brand text-sm px-5 py-2 rounded-full mb-4"
           >
-            {/* Eyebrow — anchored above headline */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.25 }}
-              className="inline-flex items-center gap-2 border border-white/30 text-white/80 font-brand text-sm px-5 py-2 rounded-full mb-4"
-            >
-              🦴 THE PREMIER POOP BAG 🦴
-            </motion.div>
-
-            {/* Headline */}
-            <div className="h-[7rem] sm:h-[10rem] md:h-[13rem] overflow-hidden mb-3">
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={wordIndex}
-                  className="font-display leading-none text-white"
-                  style={{ fontSize: 'clamp(5rem, 16vw, 14rem)' }}
-                  initial={{ y: '100%' }}
-                  animate={{ y: 0 }}
-                  exit={{ y: '-100%' }}
-                  transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
-                >
-                  {ROTATING_WORDS[wordIndex]}!
-                </motion.h1>
-              </AnimatePresence>
-            </div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="font-body text-lg sm:text-xl text-white/90 max-w-md leading-relaxed"
-            >
-              Finally, poop bags for the <strong>really big jobs.</strong>{' '}
-              Extra-large. Extra-strong. Zero shame.
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="flex flex-wrap gap-4 mt-7"
-            >
-              <Link to="/shop">
-                <motion.div
-                  className="inline-flex items-center gap-3 bg-primary text-white font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  ⚡ GET THE BOSIE BAG
-                </motion.div>
-              </Link>
-              <Link to="/pack">
-                <motion.div
-                  className="inline-flex items-center gap-3 bg-yellow-400 text-midnight font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  SEE WHY IT WORKS
-                </motion.div>
-              </Link>
-            </motion.div>
-
-            {/* Social proof pills */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.0 }}
-              className="mt-5 flex flex-wrap gap-3"
-            >
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-4 py-2 rounded-full">
-                ⭐⭐⭐⭐⭐ <span className="font-bold">4.9</span>
-              </div>
-              <div className="inline-flex items-center gap-2 bg-[#FF69B4] text-white font-brand text-sm px-4 py-2 rounded-full">
-                🐾 2,847+ Happy Dogs
-              </div>
-              <div className="inline-flex items-center gap-2 bg-secondary text-white font-brand text-sm px-4 py-2 rounded-full">
-                🚚 FREE SHIPPING
-              </div>
-            </motion.div>
+            🦴 THE PREMIER POOP BAG 🦴
           </motion.div>
 
-          {/* Right — product shot */}
+          {/* "BIG DOG:" label above rotating word */}
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
-            className="hidden lg:flex items-end justify-center pb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="font-display leading-none text-primary"
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 7rem)' }}
           >
-            <div className="relative">
-              {/* Glow behind product */}
-              <div className="absolute inset-0 bg-primary/30 blur-3xl rounded-full scale-75 translate-y-8" />
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-multi_1698b1d7.png"
-                alt="Bosie Bag product"
-                className="relative z-10 max-h-[420px] object-contain drop-shadow-2xl"
-              />
-              {/* Best seller badge */}
-              <motion.div
-                animate={{ rotate: [0, 3, -3, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                className="absolute top-4 right-0 bg-yellow-400 text-midnight font-display text-lg px-4 py-2 rounded-2xl shadow-cartoon -rotate-3"
+            BIG DOG:
+          </motion.div>
+
+          {/* Rotating headline */}
+          <div className="h-[8rem] sm:h-[12rem] md:h-[15rem] overflow-hidden mb-2">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={wordIndex}
+                className="font-display leading-none text-white"
+                style={{ fontSize: 'clamp(6rem, 20vw, 18rem)' }}
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                exit={{ y: '-100%' }}
+                transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
               >
-                🧻 BEST SELLER
+                {ROTATING_WORDS[wordIndex]}!
+              </motion.h1>
+            </AnimatePresence>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="font-body text-xl sm:text-2xl text-white max-w-xl mt-2 leading-relaxed"
+          >
+            Finally, poop bags for the <strong>really big jobs.</strong><br />
+            Extra-large. Extra-strong. Zero shame.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="flex flex-wrap gap-4 mt-8"
+          >
+            <Link to="/shop">
+              <motion.div
+                className="group inline-flex items-center gap-3 bg-primary text-white font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                ⚡ GET THE BOSIE BAG
               </motion.div>
-            </div>
+            </Link>
+            <Link to="/pack">
+              <motion.div
+                className="inline-flex items-center gap-3 bg-yellow-400 text-midnight font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                SEE WHY IT WORKS
+              </motion.div>
+            </Link>
           </motion.div>
 
-        </div>
+          {/* Social proof pills */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.1 }}
+            className="mt-6 flex flex-wrap gap-3"
+          >
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-4 py-2 rounded-full">
+              ⭐⭐⭐⭐⭐ <span className="font-bold">4.9</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-[#FF69B4] text-white font-brand text-sm px-4 py-2 rounded-full">
+              🐾 2,847+ Happy Dogs
+            </div>
+            <div className="inline-flex items-center gap-2 bg-secondary text-white font-brand text-sm px-4 py-2 rounded-full">
+              🚚 FREE SHIPPING
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
