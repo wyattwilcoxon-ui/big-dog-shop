@@ -41,18 +41,7 @@ export default function HeroSection({ heroImage }) {
         <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/30 to-transparent" />
       </motion.div>
 
-      {/* Floating custom icons — subtle */}
-      {FLOATING.map((item, i) => (
-        <motion.div
-          key={i}
-          className="absolute pointer-events-none opacity-30"
-          style={{ left: item.left, top: item.top, fontSize: item.size }}
-          animate={{ y: [0, -14, 0] }}
-          transition={{ duration: 5 + i, repeat: Infinity, delay: item.delay, ease: 'easeInOut' }}
-        >
-          {item.emoji}
-        </motion.div>
-      ))}
+
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end min-h-[90vh] sm:min-h-screen pb-16 sm:pb-28">
@@ -83,8 +72,7 @@ export default function HeroSection({ heroImage }) {
                 exit={{ y: '-100%' }}
                 transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
               >
-                {ROTATING_WORDS[wordIndex]}
-                <span className="text-primary text-[0.3em]">!</span>
+                {ROTATING_WORDS[wordIndex]}!
               </motion.h1>
             </AnimatePresence>
           </div>
@@ -96,7 +84,7 @@ export default function HeroSection({ heroImage }) {
             className="font-body text-xl sm:text-2xl text-white max-w-xl mt-2 leading-relaxed"
           >
             Finally, poop bags for the <strong>really big jobs.</strong><br />
-            Extra-large. Extra-strong. <span className="text-secondary">Zero shame.</span>
+            Extra-large. Extra-strong. Zero shame.
           </motion.p>
 
           {/* CTAs */}
