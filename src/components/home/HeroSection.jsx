@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+
 const ROTATING_WORDS = ['ENERGY', 'POOPS', 'BAGS', 'DOGS', 'LIFE'];
 
 const FLOATING = [
@@ -66,44 +66,37 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="inline-flex items-center gap-2 bg-primary text-white font-brand text-sm px-5 py-2 rounded-full mb-6"
+            className="inline-flex items-center gap-2 border border-white/30 text-white/80 font-brand text-sm px-5 py-2 rounded-full mb-6"
           >
-            🐾 Big dogs. Big poops. Bigger bags.
+            🦴 THE PREMIER POOP BAG 🦴
           </motion.div>
 
-          {/* Headline */}
-          <h1 className="font-display leading-[0.85] text-white tracking-tight">
-            <motion.span
-              className="block text-[4.5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem]"
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.15 }}
-            >
-              BIG DOG
-            </motion.span>
-            <div className="h-[5rem] sm:h-[8rem] md:h-[10rem] lg:h-[12rem] overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={wordIndex}
-                  className="block text-primary text-[4.5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem]"
-                  initial={{ y: '100%' }}
-                  animate={{ y: 0 }}
-                  exit={{ y: '-100%' }}
-                  transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
-                >
-                  {ROTATING_WORDS[wordIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </div>
-          </h1>
+          {/* Headline — big single word style */}
+          <div className="h-[8rem] sm:h-[12rem] md:h-[15rem] overflow-hidden mb-2">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={wordIndex}
+                className="font-display leading-none text-secondary"
+                style={{ fontSize: 'clamp(6rem, 20vw, 18rem)' }}
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                exit={{ y: '-100%' }}
+                transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
+              >
+                {ROTATING_WORDS[wordIndex]}
+                <span className="text-white text-[0.3em]">!</span>
+              </motion.h1>
+            </AnimatePresence>
+          </div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="font-body text-lg sm:text-xl text-stone max-w-xl mt-4 leading-relaxed"
+            className="font-body text-xl sm:text-2xl text-white max-w-xl mt-2 leading-relaxed"
           >
-            The only poop bags built for dogs over 70 lbs. Leak-proof, oversized, and named after a 125-lb German Shepherd who broke every bag we tried.
+            Finally, poop bags for the <strong>really big jobs.</strong><br />
+            Extra-large. Extra-strong. <span className="text-secondary">Zero shame.</span>
           </motion.p>
 
           {/* CTAs */}
@@ -115,32 +108,40 @@ export default function HeroSection({ heroImage }) {
           >
             <Link to="/shop">
               <motion.div
-                className="group inline-flex items-center gap-3 bg-primary text-white font-brand text-lg px-8 py-4 rounded-xl shadow-cartoon border-2 border-primary cursor-pointer"
-                whileHover={{ scale: 1.04, boxShadow: '6px 6px 0 rgba(255,255,255,0.3)' }}
+                className="group inline-flex items-center gap-3 bg-primary text-white font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
+                whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Shop Now <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                ⚡ GET THE BOSIE BAG
               </motion.div>
             </Link>
             <Link to="/pack">
               <motion.div
-                className="inline-flex items-center gap-3 bg-transparent text-white font-brand text-lg px-8 py-4 rounded-xl border-2 border-white/50 cursor-pointer"
-                whileHover={{ borderColor: 'rgba(255,255,255,1)', backgroundColor: 'rgba(255,255,255,0.08)' }}
+                className="inline-flex items-center gap-3 bg-yellow-400 text-midnight font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
+                whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Meet Bosa 🐕
+                SEE WHY IT WORKS
               </motion.div>
             </Link>
           </motion.div>
 
-          {/* Social proof */}
+          {/* Social proof pills */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1 }}
-            className="mt-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-5 py-2 rounded-full border border-white/20"
+            className="mt-6 flex flex-wrap gap-3"
           >
-            ⭐⭐⭐⭐⭐ <span>Big dog owners are already obsessed</span>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-4 py-2 rounded-full">
+              ⭐⭐⭐⭐⭐ <span className="text-green-bright font-bold">4.9</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-[#FF69B4] text-white font-brand text-sm px-4 py-2 rounded-full">
+              🐾 2,847+ Happy Dogs
+            </div>
+            <div className="inline-flex items-center gap-2 bg-secondary text-white font-brand text-sm px-4 py-2 rounded-full">
+              🚚 FREE SHIPPING
+            </div>
           </motion.div>
         </motion.div>
       </div>

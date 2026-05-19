@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
@@ -12,49 +12,75 @@ const REVIEWS = [
 ];
 
 export default function TestimonialScroll() {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent(i => (i - 1 + REVIEWS.length) % REVIEWS.length);
+  const next = () => setCurrent(i => (i + 1) % REVIEWS.length);
+
+  const review = REVIEWS[current];
+
   return (
-    <section className="py-16 sm:py-20 bg-background overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+    <section className="py-16 sm:py-24 overflow-hidden" style={{ backgroundColor: '#FF69B4' }}>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="font-display text-6xl sm:text-8xl text-center mb-10"
         >
-          <p className="font-brand text-primary text-lg mb-2">Don't Take Our Word For It</p>
-          <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE PACK SPEAKS</h2>
-        </motion.div>
+          <span className="text-white">BIG DOG PARENTS</span>
+          <br />
+          <span className="text-midnight">LOVE US</span>
+        </motion.h2>
 
-        {/* Auto-scroll row */}
+        {/* Card */}
         <div className="relative">
+          {/* Quote badge */}
+          <div className="absolute -top-5 -left-2 z-10 w-12 h-12 bg-secondary rounded-full flex items-center justify-center border-2 border-midnight shadow-cartoon-sm">
+            <span className="text-yellow-400 font-display text-xl">"</span>
+          </div>
+
           <motion.div
-            className="flex gap-5"
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            key={current}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-midnight rounded-3xl p-8 sm:p-12 text-center"
           >
-            {[...REVIEWS, ...REVIEWS].map((review, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl border-bold shadow-cartoon p-6"
-              >
-                <div className="flex gap-1 mb-3">
-                  {Array(review.stars).fill(null).map((_, si) => (
-                    <Star key={si} className="w-4 h-4 text-primary fill-primary" />
-                  ))}
-                </div>
-                <p className="font-body text-pebble text-sm leading-relaxed mb-4">
-                  "{review.text}"
-                </p>
-                <div>
-                  <p className="font-brand text-midnight text-sm">{review.name}</p>
-                  <p className="font-body text-stone text-xs">{review.dog}</p>
-                </div>
+            {/* Stars */}
+            <div className="flex justify-center gap-1.5 mb-6">
+              {Array(review.stars).fill(null).map((_, i) => (
+                <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+              ))}
+            </div>
+
+            <p className="font-body text-white text-xl sm:text-2xl leading-relaxed mb-8 max-w-xl mx-auto">
+              "{review.text}"
+            </p>
+
+            {/* Avatar */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center border-2 border-secondary">
+                <span className="font-display text-white text-2xl">{review.name[0]}</span>
               </div>
-            ))}
+              <p className="font-display text-white text-lg tracking-wide">{review.name.toUpperCase()}</p>
+              <p className="font-body text-stone text-sm">{review.dog}</p>
+            </div>
+
+            {/* Navigation */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <button onClick={prev} className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-midnight hover:bg-yellow-300 transition-colors">
+                ‹
+              </button>
+              <div className="flex gap-2">
+                {REVIEWS.map((_, i) => (
+                  <button key={i} onClick={() => setCurrent(i)} className={`w-3 h-3 rounded-full transition-colors ${i === current ? 'bg-secondary' : 'bg-white/30'}`} />
+                ))}
+              </div>
+              <button onClick={next} className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center font-bold text-white hover:bg-green-bright transition-colors">
+                ›
+              </button>
+            </div>
           </motion.div>
-          {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none" />
         </div>
       </div>
     </section>

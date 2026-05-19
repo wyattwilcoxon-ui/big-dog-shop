@@ -16,25 +16,30 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-md border-b border-fog/60">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-midnight/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-16 sm:h-18 py-3">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group">
-              <span className="font-display text-3xl sm:text-4xl tracking-tight text-midnight group-hover:text-primary transition-colors">
-                BIG DOG LIFE
-              </span>
-              <span className="text-xs font-brand text-stone hidden sm:block">™</span>
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center border-2 border-primary">
+                <span className="font-display text-white text-lg leading-none">B</span>
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className="font-display text-white text-lg tracking-wide">BIG DOG</span>
+                <span className="font-brand text-stone text-xs tracking-widest">LIFE</span>
+              </div>
             </Link>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-8">
+            {/* Desktop Nav — yellow pill buttons */}
+            <div className="hidden md:flex items-center gap-2">
               {NAV_LINKS.map(link => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`font-brand text-lg transition-all duration-200 hover:text-primary ${
-                    location.pathname === link.path ? 'text-primary' : 'text-midnight'
+                  className={`font-brand text-sm px-5 py-2 rounded-full transition-all duration-200 ${
+                    location.pathname === link.path
+                      ? 'bg-yellow-400 text-midnight'
+                      : 'bg-yellow-400 text-midnight hover:bg-yellow-300'
                   }`}
                 >
                   {link.label}
@@ -46,18 +51,19 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             <div className="flex items-center gap-3">
               <button
                 onClick={onCartClick}
-                className="relative p-2 rounded-xl bg-primary text-white hover:bg-orange-hot transition-all shadow-cartoon-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
+                className="relative hidden md:flex items-center gap-2 bg-yellow-400 text-midnight font-brand text-sm px-5 py-2 rounded-full hover:bg-yellow-300 transition-all"
               >
-                <ShoppingBag className="w-5 h-5" />
+                <ShoppingBag className="w-4 h-4" />
+                Get the Bag
                 {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-midnight">
+                  <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-primary text-white text-xs font-bold rounded-full flex items-center justify-center">
                     {cartCount}
                   </span>
                 )}
               </button>
 
               <button
-                className="md:hidden p-2 text-midnight"
+                className="md:hidden p-2 text-white"
                 onClick={() => setMenuOpen(true)}
               >
                 <Menu className="w-7 h-7" strokeWidth={3} />

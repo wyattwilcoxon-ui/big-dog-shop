@@ -56,6 +56,7 @@ module.exports = {
         },
         sky: '#5BB8D4',
         sandy: '#D4924A',
+        hotpink: '#FF69B4',
         midnight: '#151515',
         bark: '#3B2010',
         cream: '#F5F0E8',
