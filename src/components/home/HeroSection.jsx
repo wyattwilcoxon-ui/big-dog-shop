@@ -8,9 +8,9 @@ const FLOATING = [
   { emoji: '💩', left: '8%', top: '20%', size: '2rem', delay: 0 },
   { emoji: '🐾', left: '82%', top: '25%', size: '1.8rem', delay: 0.5 },
   { emoji: '⭐', left: '72%', top: '55%', size: '2rem', delay: 1 },
-  { emoji: '🎪', left: '15%', top: '60%', size: '1.8rem', delay: 0.8 },
+  { emoji: '🦴', left: '15%', top: '60%', size: '1.8rem', delay: 0.8 },
   { emoji: '🦴', left: '90%', top: '70%', size: '1.6rem', delay: 1.3 },
-  { emoji: '🎠', left: '5%', top: '45%', size: '1.7rem', delay: 0.4 },
+  { emoji: '🐕', left: '5%', top: '45%', size: '1.7rem', delay: 0.4 },
 ];
 
 export default function HeroSection({ heroImage }) {
@@ -28,7 +28,7 @@ export default function HeroSection({ heroImage }) {
 
   return (
     <section
-      className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight carnival-stripes"
+      className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight"
       onMouseMove={e => {
         const rect = e.currentTarget.getBoundingClientRect();
         mouseX.set(e.clientX - rect.width / 2);
@@ -61,15 +61,14 @@ export default function HeroSection({ heroImage }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
         >
-          {/* Eyebrow — ticket stub style */}
+          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="inline-flex items-center gap-2 bg-primary border-4 border-midnight text-white font-brand text-sm px-6 py-2 rounded-none shadow-cartoon mb-6 rotate-[-1deg]"
-            style={{ clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)' }}
+            className="inline-flex items-center gap-2 bg-primary text-white font-brand text-sm px-5 py-2 rounded-full mb-6"
           >
-            🎪 STEP RIGHT UP — Big dogs. Big poops. Bigger bags. 🎪
+            🐾 Big dogs. Big poops. Bigger bags.
           </motion.div>
 
           {/* Headline */}
@@ -134,17 +133,14 @@ export default function HeroSection({ heroImage }) {
             </Link>
           </motion.div>
 
-          {/* Social proof — carnival badge */}
+          {/* Social proof */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1 }}
-            className="mt-6 inline-flex items-center gap-3 bg-secondary border-4 border-midnight text-white font-brand text-sm px-5 py-2 shadow-cartoon rotate-[1deg]"
-            style={{ clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)' }}
+            className="mt-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-5 py-2 rounded-full border border-white/20"
           >
-            <motion.span animate={{ rotate: [0, 20, -20, 0] }} transition={{ repeat: Infinity, duration: 2.5 }}>⭐</motion.span>
-            <span>Big dog owners are already obsessed</span>
-            <motion.span animate={{ rotate: [0, -20, 20, 0] }} transition={{ repeat: Infinity, duration: 2.5, delay: 0.5 }}>⭐</motion.span>
+            ⭐⭐⭐⭐⭐ <span>Big dog owners are already obsessed</span>
           </motion.div>
         </motion.div>
       </div>

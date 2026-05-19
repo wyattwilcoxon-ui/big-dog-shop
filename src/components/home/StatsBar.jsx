@@ -11,32 +11,15 @@ const STATS = [
 
 export default function StatsBar() {
   return (
-    <section className="bg-midnight border-y-[5px] border-primary py-12 overflow-hidden relative"
-      style={{
-        backgroundImage: `repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(244,97,14,0.05) 20px, rgba(244,97,14,0.05) 40px)`
-      }}
-    >
-      {/* Carnival top/bottom stripe */}
-      <div className="absolute top-0 left-0 right-0 h-2 flex">
-        {Array.from({ length: 40 }).map((_, i) => (
-          <div key={i} className={`flex-1 h-full ${i % 2 === 0 ? 'bg-primary' : 'bg-secondary'}`} />
-        ))}
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 h-2 flex">
-        {Array.from({ length: 40 }).map((_, i) => (
-          <div key={i} className={`flex-1 h-full ${i % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`} />
-        ))}
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        {/* Carnival header */}
+    <section className="bg-midnight py-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-10"
         >
-          <span className="font-display text-primary text-3xl sm:text-4xl tracking-widest">⭐ THE NUMBERS DON'T LIE ⭐</span>
+          <h2 className="font-display text-4xl sm:text-5xl text-white">THE NUMBERS DON'T LIE</h2>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -48,7 +31,7 @@ export default function StatsBar() {
               whileHover={{ scale: 1.06, rotate: i % 2 === 0 ? -2 : 2 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5, type: 'spring', stiffness: 200 }}
-              className="text-center bg-midnight rounded-2xl border-4 border-primary shadow-[4px_4px_0_#F4610E] p-4 sm:p-6"
+              className="text-center bg-white/5 rounded-2xl border border-white/10 p-4 sm:p-6"
             >
               <motion.div
                 className="flex justify-center mb-2 text-4xl"
@@ -66,5 +49,6 @@ export default function StatsBar() {
         </div>
       </div>
     </section>
+
   );
 }

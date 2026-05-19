@@ -14,10 +14,9 @@ const PROPS = [
     emoji: '💩',
     title: 'Built for the Big Boys',
     description: '44% bigger than regular bags. Your 90-lb Lab doesn\'t make chihuahua poops.',
-    bg: 'bg-green-dark',
+    bg: 'bg-secondary/10',
     border: 'border-secondary',
     rotate: 1,
-    dark: true,
   },
   {
     emoji: '🐕',
@@ -39,14 +38,8 @@ const PROPS = [
 
 export default function ValueProps() {
   return (
-    <section className="py-16 sm:py-24 bg-background relative overflow-hidden">
-      {/* Carnival top ribbon */}
-      <div className="absolute top-0 left-0 right-0 h-3 flex">
-        {Array.from({ length: 60 }).map((_, i) => (
-          <div key={i} className={`flex-1 h-full ${['bg-primary','bg-secondary','bg-sky','bg-sandy'][i % 4]}`} />
-        ))}
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <section className="py-16 sm:py-24 bg-background overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,9 +47,8 @@ export default function ValueProps() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <div className="inline-block bg-midnight text-white font-display text-3xl sm:text-5xl px-8 py-3 shadow-cartoon border-4 border-primary rotate-[-1deg]">
-            🎠 WHY BIG DOG LIFE? 🎠
-          </div>
+          <h2 className="font-display text-4xl sm:text-6xl text-midnight">WHY BIG DOG LIFE?</h2>
+          <p className="font-brand text-pebble mt-2 text-lg">Built by big dog owners, for big dog owners.</p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {PROPS.map((prop, i) => (
@@ -67,7 +59,7 @@ export default function ValueProps() {
               whileHover={{ rotate: 0, y: -4 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className={`${prop.bg} rounded-2xl border-4 ${prop.border} shadow-cartoon p-6 cursor-default`}
+              className={`${prop.bg} rounded-2xl border-2 ${prop.border} shadow-md hover:shadow-lg transition-shadow p-6 cursor-default`}
             >
               <motion.div
                 className="mb-4 text-5xl"
