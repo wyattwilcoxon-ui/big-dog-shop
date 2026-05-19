@@ -6,9 +6,10 @@ export default function LifestyleSection({ images }) {
     <section className="py-16 sm:py-24 bg-midnight overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-12"
         >
           <p className="font-brand text-primary text-lg mb-2">The Lifestyle</p>

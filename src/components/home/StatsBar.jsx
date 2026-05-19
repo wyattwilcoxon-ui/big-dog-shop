@@ -14,9 +14,10 @@ export default function StatsBar() {
     <section className="bg-midnight py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-10"
         >
           <h2 className="font-display text-4xl sm:text-5xl text-white">THE NUMBERS DON'T LIE</h2>

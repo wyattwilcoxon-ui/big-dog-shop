@@ -51,10 +51,10 @@ export default function BosieBlastWall() {
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-10"
         >
           <motion.div

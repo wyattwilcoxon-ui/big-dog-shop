@@ -7,9 +7,10 @@ export default function BulkCTA() {
     <section className="py-16 sm:py-24 bg-primary">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <h2 className="font-display text-5xl sm:text-7xl text-white mb-4">
             GOT A LOT OF SH*T TO HANDLE?

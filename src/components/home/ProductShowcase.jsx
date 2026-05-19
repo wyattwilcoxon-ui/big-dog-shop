@@ -72,9 +72,10 @@ export default function ProductShowcase() {
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-12"
         >
           <p className="font-brand text-primary text-sm uppercase tracking-widest mb-2">The Star of the Show</p>

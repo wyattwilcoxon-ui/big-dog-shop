@@ -42,9 +42,10 @@ export default function ValueProps() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-10"
         >
           <h2 className="font-display text-4xl sm:text-6xl text-midnight">WHY BIG DOG LIFE?</h2>
