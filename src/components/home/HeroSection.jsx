@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { PoopIcon, PawIcon, DogFaceIcon } from '../ui/BdlIcons';
-
 const ROTATING_WORDS = ['ENERGY', 'POOPS', 'BAGS', 'DOGS', 'LIFE'];
 
 const FLOATING = [
-  { Icon: PoopIcon, left: '8%', top: '20%', size: 36, delay: 0 },
-  { Icon: PawIcon, left: '82%', top: '25%', size: 32, delay: 0.5, color: '#2A9134' },
-  { Icon: PoopIcon, left: '72%', top: '55%', size: 28, delay: 1 },
-  { Icon: PawIcon, left: '15%', top: '60%', size: 30, delay: 0.8, color: '#F4610E' },
+  { emoji: '💩', left: '8%', top: '20%', size: '2rem', delay: 0 },
+  { emoji: '🐾', left: '82%', top: '25%', size: '1.8rem', delay: 0.5 },
+  { emoji: '💩', left: '72%', top: '55%', size: '1.6rem', delay: 1 },
+  { emoji: '🐾', left: '15%', top: '60%', size: '1.7rem', delay: 0.8 },
 ];
 
 export default function HeroSection({ heroImage }) {
@@ -46,11 +44,11 @@ export default function HeroSection({ heroImage }) {
         <motion.div
           key={i}
           className="absolute pointer-events-none opacity-30"
-          style={{ left: item.left, top: item.top }}
+          style={{ left: item.left, top: item.top, fontSize: item.size }}
           animate={{ y: [0, -14, 0] }}
           transition={{ duration: 5 + i, repeat: Infinity, delay: item.delay, ease: 'easeInOut' }}
         >
-          <item.Icon size={item.size} color={item.color} />
+          {item.emoji}
         </motion.div>
       ))}
 
@@ -68,8 +66,7 @@ export default function HeroSection({ heroImage }) {
             transition={{ delay: 0.3 }}
             className="inline-flex items-center gap-2 bg-primary/20 border-2 border-primary text-primary font-brand text-sm px-4 py-2 rounded-full mb-6"
           >
-            <PoopIcon size={18} />
-            Big dogs. Big poops. Bigger bags.
+            💩 Big dogs. Big poops. Bigger bags.
           </motion.div>
 
           {/* Headline */}
@@ -129,7 +126,7 @@ export default function HeroSection({ heroImage }) {
                 whileHover={{ borderColor: 'rgba(255,255,255,1)', backgroundColor: 'rgba(255,255,255,0.08)' }}
                 whileTap={{ scale: 0.97 }}
               >
-                Meet Bosa <DogFaceIcon size={22} />
+                Meet Bosa 🐕
               </motion.div>
             </Link>
           </motion.div>
@@ -143,8 +140,8 @@ export default function HeroSection({ heroImage }) {
           >
             <div className="flex -space-x-1">
               {[0,1,2].map(i => (
-                <div key={i} className="w-7 h-7 bg-primary rounded-full flex items-center justify-center border-2 border-midnight">
-                  <PawIcon size={14} color="white" />
+                <div key={i} className="w-7 h-7 bg-primary rounded-full flex items-center justify-center border-2 border-midnight text-xs">
+                  🐾
                 </div>
               ))}
             </div>

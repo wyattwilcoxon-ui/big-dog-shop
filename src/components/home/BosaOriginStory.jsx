@@ -1,10 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PoopIcon, DogFaceIcon, BagIcon, PawIcon } from '../ui/BdlIcons';
 
 const PANELS = [
   {
-    PanelIcon: DogFaceIcon,
+    panelEmoji: '🐕',
     bg: 'bg-orange-pale',
     border: 'border-primary',
     title: 'MEET BOSA',
@@ -15,7 +14,7 @@ const PANELS = [
     delay: 0,
   },
   {
-    PanelIcon: PoopIcon,
+    panelEmoji: '💩',
     bg: 'bg-cream',
     border: 'border-secondary',
     title: 'THE PROBLEM',
@@ -26,8 +25,7 @@ const PANELS = [
     delay: 0.1,
   },
   {
-    PanelIcon: PawIcon,
-    panelIconProps: { color: '#F5F0E8' },
+    panelEmoji: '🐾',
     bg: 'bg-green-dark',
     border: 'border-primary',
     title: 'THE BREAKING POINT',
@@ -39,7 +37,7 @@ const PANELS = [
     delay: 0.15,
   },
   {
-    PanelIcon: BagIcon,
+    panelEmoji: '🧻',
     bg: 'bg-midnight',
     border: 'border-sandy',
     title: 'THE BOSIE BAG™',
@@ -67,10 +65,11 @@ export default function BosaOriginStory() {
         >
           <div className="flex justify-center mb-4">
             <motion.div
+              className="text-7xl"
               animate={{ rotate: [0, -8, 8, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
             >
-              <PoopIcon size={72} />
+              💩
             </motion.div>
           </div>
           <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl text-midnight">
@@ -99,9 +98,9 @@ export default function BosaOriginStory() {
                 <span className="font-display text-white text-lg">{i + 1}</span>
               </div>
 
-              {/* Icon top-right */}
-              <div className="absolute top-3 right-3 z-10">
-                <panel.PanelIcon size={32} {...(panel.panelIconProps || {})} />
+              {/* Emoji top-right */}
+              <div className="absolute top-3 right-3 z-10 text-2xl">
+                {panel.panelEmoji}
               </div>
 
               <div className={`${panel.bg} p-6 sm:p-8`}>
@@ -116,7 +115,7 @@ export default function BosaOriginStory() {
                   </div>
                 )}
                 <div className={panel.dark ? 'text-white' : 'text-midnight'}>
-                  <h3 className={`font-display text-4xl sm:text-5xl`}>{panel.title}</h3>
+                  <h3 className="font-display text-4xl sm:text-5xl">{panel.title}</h3>
                   <p className={`font-brand text-sm mt-1 ${panel.dark ? 'text-white/60' : 'text-pebble'}`}>{panel.subtitle}</p>
                   <p className={`font-body text-sm sm:text-base mt-4 leading-relaxed ${panel.dark ? 'text-white/80' : 'text-pebble'}`}>{panel.body}</p>
                 </div>
@@ -134,9 +133,7 @@ export default function BosaOriginStory() {
           className="mt-12 text-center"
         >
           <div className="inline-flex items-center gap-3 bg-primary text-white font-display text-2xl sm:text-4xl px-8 py-5 rounded-2xl border-bold shadow-cartoon rotate-1">
-            <PawIcon size={32} color="white" />
-            AND THAT'S WHY WE GIVE A $H!T
-            <PawIcon size={32} color="white" />
+            🐾 AND THAT'S WHY WE GIVE A $H!T 🐾
           </div>
         </motion.div>
       </div>

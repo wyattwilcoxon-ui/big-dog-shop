@@ -1,13 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CountUp from '../ui/CountUp';
-import { PoopIcon, PawIcon, DogFaceIcon, BagIcon } from '../ui/BdlIcons';
 
 const STATS = [
-  { Icon: PawIcon, iconProps: { color: '#F4610E' }, value: 44, suffix: '%', label: 'Bigger Than Other Bags' },
-  { Icon: BagIcon, value: 120, suffix: '', label: 'Bags Per 8-Pack' },
-  { Icon: DogFaceIcon, value: 70, suffix: '+', label: 'Lbs? No Problem.' },
-  { Icon: PoopIcon, value: 0, suffix: '', label: 'Leaks. Zero. None.' },
+  { emoji: '🐾', value: 44, suffix: '%', label: 'Bigger Than Other Bags' },
+  { emoji: '🧻', value: 120, suffix: '', label: 'Bags Per 8-Pack' },
+  { emoji: '🐕', value: 70, suffix: '+', label: 'Lbs? No Problem.' },
+  { emoji: '💩', value: 0, suffix: '', label: 'Leaks. Zero. None.' },
 ];
 
 export default function StatsBar() {
@@ -24,8 +23,8 @@ export default function StatsBar() {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="text-center"
             >
-              <div className="flex justify-center mb-2">
-                <stat.Icon size={40} {...(stat.iconProps || {})} />
+              <div className="flex justify-center mb-2 text-4xl">
+                {stat.emoji}
               </div>
               <div className="font-display text-5xl sm:text-6xl text-primary">
                 <CountUp end={stat.value} suffix={stat.suffix} />

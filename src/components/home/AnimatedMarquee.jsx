@@ -1,14 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PoopIcon, PawIcon } from '../ui/BdlIcons';
 
-// Alternates between a paw and poop icon as separators
+const SEPARATORS = ['💩', '🐾', '🐕', '🦴'];
+
 function MarqueeItem({ text, index }) {
-  const Icon = index % 2 === 0 ? PoopIcon : PawIcon;
-  const color = index % 2 === 0 ? '#F5F0E8' : '#F5F0E8';
   return (
     <span className="inline-flex items-center gap-3 flex-shrink-0 mx-4">
-      <Icon size={22} color={color} />
+      <span>{SEPARATORS[index % SEPARATORS.length]}</span>
       <span>{text}</span>
     </span>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, Heart, Share2 } from 'lucide-react';
-import { PoopIcon, PawIcon } from '../ui/BdlIcons';
 
 const COMMUNITY_POSTS = [
   {
@@ -128,9 +127,7 @@ export default function BosieBlastWall() {
                   )}
                 </AnimatePresence>
                 {/* Brand icon badge */}
-                <div className="absolute top-2 right-2">
-                  <PoopIcon size={28} />
-                </div>
+                <div className="absolute top-2 right-2 text-xl">💩</div>
               </div>
 
               {/* Content */}
@@ -165,9 +162,7 @@ export default function BosieBlastWall() {
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-3 bg-primary text-white font-display text-3xl sm:text-4xl px-8 py-4 rounded-2xl border-bold shadow-cartoon cursor-pointer"
           >
-            <PoopIcon size={36} />
-            #BOSIEBLAST
-            <PawIcon size={36} color="white" />
+            💩 #BOSIEBLAST 🐾
           </motion.div>
           <p className="font-body text-stone/60 text-sm mt-4">We'll repost our favorites. Your dog could be famous.</p>
         </motion.div>
