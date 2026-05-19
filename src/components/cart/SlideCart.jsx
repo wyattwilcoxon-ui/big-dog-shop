@@ -1,12 +1,11 @@
 import React from 'react';
-import { X, Plus, Minus, ShoppingBag } from 'lucide-react';
+import { X, Plus, Minus, ShoppingBag, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 
 const FREE_SHIPPING_THRESHOLD = 25;
 
-export default function SlideCart({ open, onClose, items, onUpdateQuantity, total }) {
+export default function SlideCart({ open, onClose, items, onUpdateQuantity, total, checkoutUrl, loading }) {
   const shippingProgress = Math.min((total / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const amountToFreeShipping = Math.max(FREE_SHIPPING_THRESHOLD - total, 0);
 
@@ -14,7 +13,6 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
     <AnimatePresence>
       {open && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -22,8 +20,6 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
             className="fixed inset-0 bg-midnight/50 z-[70]"
             onClick={onClose}
           />
-
-          {/* Cart Panel */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
@@ -39,7 +35,7 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
               </button>
             </div>
 
-            {/* Fill the Bowl progress */}
+            {/* Shipping progress */}
             <div className="px-5 py-4 bg-orange-pale">
               <div className="flex items-center justify-between mb-2">
                 <span className="font-brand text-sm text-midnight">
@@ -63,25 +59,23 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
               ) : (
                 <div className="space-y-4">
                   {items.map(item => (
-                    <div key={item.id} className="flex gap-4 bg-white rounded-xl p-3 border-bold">
+                    <div key={item.lineId} className="flex gap-4 bg-white rounded-xl p-3 border-bold">
                       <div className="w-20 h-20 rounded-lg bg-fog overflow-hidden flex-shrink-0">
-                        {item.image && (
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                        )}
+                        {item.image && <img src={item.image} alt={item.name} className="w-full h-full object-cover" />}
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-brand text-sm text-midnight truncate">{item.name}</h4>
                         <p className="text-primary font-bold font-body">${item.price.toFixed(2)}</p>
                         <div className="flex items-center gap-2 mt-2">
                           <button
-                            onClick={() => onUpdateQuantity(item.id, -1)}
+                            onClick={() => onUpdateQuantity(item.lineId, item.quantity - 1)}
                             className="w-7 h-7 rounded-lg bg-fog flex items-center justify-center hover:bg-stone/30 transition-colors"
                           >
                             <Minus className="w-3 h-3" />
                           </button>
                           <span className="font-brand text-sm w-6 text-center">{item.quantity}</span>
                           <button
-                            onClick={() => onUpdateQuantity(item.id, 1)}
+                            onClick={() => onUpdateQuantity(item.lineId, item.quantity + 1)}
                             className="w-7 h-7 rounded-lg bg-fog flex items-center justify-center hover:bg-stone/30 transition-colors"
                           >
                             <Plus className="w-3 h-3" />
@@ -101,11 +95,14 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
                   <span className="font-brand text-lg text-midnight">Total</span>
                   <span className="font-display text-3xl text-primary">${total.toFixed(2)}</span>
                 </div>
-                <Button
-                  className="w-full h-14 text-lg font-brand bg-primary hover:bg-orange-hot text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                <a
+                  href={checkoutUrl || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 w-full h-14 text-lg font-brand bg-primary hover:bg-orange-hot text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
                 >
-                  Checkout 🐾
-                </Button>
+                  {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Checkout 🐾'}
+                </a>
               </div>
             )}
           </motion.div>
