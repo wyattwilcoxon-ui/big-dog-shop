@@ -12,6 +12,7 @@ import Shop from './pages/Shop';
 import Bundles from './pages/Bundles';
 import Pack from './pages/Pack';
 import FAQ from './pages/FAQ';
+import ShopifyTest from './pages/ShopifyTest';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -44,6 +45,7 @@ const AuthenticatedApp = () => {
         <Route path="/bundles" element={<Bundles />} />
         <Route path="/pack" element={<Pack />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/shopify-test" element={<ShopifyTest />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
