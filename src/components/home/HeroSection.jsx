@@ -76,7 +76,7 @@ export default function HeroSection({ heroImage }) {
             <AnimatePresence mode="wait">
               <motion.h1
                 key={wordIndex}
-                className="font-display leading-none text-secondary"
+                className="font-display leading-none text-white"
                 style={{ fontSize: 'clamp(6rem, 20vw, 18rem)' }}
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
@@ -84,7 +84,7 @@ export default function HeroSection({ heroImage }) {
                 transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
               >
                 {ROTATING_WORDS[wordIndex]}
-                <span className="text-white text-[0.3em]">!</span>
+                <span className="text-primary text-[0.3em]">!</span>
               </motion.h1>
             </AnimatePresence>
           </div>
