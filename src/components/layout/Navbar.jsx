@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -15,17 +15,32 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      setHidden(y > 80 && y > lastScrollY.current);
+      lastScrollY.current = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-midnight shadow-md' : 'bg-midnight/90 backdrop-blur-sm'
-      }`}>
+        hidden ? '-translate-y-full' : 'translate-y-0'
+      }`}
+        style={{
+          background: scrolled
+            ? 'linear-gradient(to bottom, rgba(21,21,21,0.98) 0%, rgba(21,21,21,0.85) 100%)'
+            : 'linear-gradient(to bottom, rgba(21,21,21,0.7) 0%, rgba(21,21,21,0.0) 100%)',
+          backdropFilter: scrolled ? 'blur(12px)' : 'blur(4px)',
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
