@@ -1,66 +1,71 @@
-import React, { createContext, useContext, useState, useRef, useCallback } from 'react';
-import { createCart, addToCart as shopifyAddToCart, updateCartLine, parseCartLines } from './shopify';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 
 const CartContext = createContext(null);
 
+const STORE = 'big-dog-life-2.myshopify.com';
+
+function buildCheckoutUrl(items) {
+  if (!items.length) return null;
+  const parts = items
+    .filter(item => item.variantId)
+    .map(item => {
+      // Extract numeric ID from gid://shopify/ProductVariant/123456
+      const numericId = item.variantId.toString().split('/').pop();
+      return `${numericId}:${item.quantity}`;
+    });
+  if (!parts.length) return null;
+  return `https://${STORE}/cart/${parts.join(',')}`;
+}
+
 export function ShopifyCartProvider({ children }) {
-  const [cart, setCart] = useState(null);
   const [cartItems, setCartItems] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  // Use a ref to avoid stale closure issues with cart state
-  const cartRef = useRef(null);
-  const setCartBoth = (c) => {
-    cartRef.current = c;
-    setCart(c);
-  };
-
-  const getOrCreateCart = async () => {
-    if (cartRef.current) return cartRef.current;
-    const newCart = await createCart();
-    setCartBoth(newCart);
-    return newCart;
-  };
-
-  const addItem = useCallback(async (variantId) => {
-    setLoading(true);
-    try {
-      const activeCart = await getOrCreateCart();
-      const updatedCart = await shopifyAddToCart(activeCart.id, variantId);
-      setCartBoth(updatedCart);
-      setCartItems(parseCartLines(updatedCart));
-      setCartOpen(true);
-    } catch (err) {
-      console.error('Shopify addItem error:', err);
-    } finally {
-      setLoading(false);
-    }
+  const addItem = useCallback((variantId, product) => {
+    setCartItems(prev => {
+      const existing = prev.find(i => i.variantId === variantId);
+      if (existing) {
+        return prev.map(i =>
+          i.variantId === variantId ? { ...i, quantity: i.quantity + 1 } : i
+        );
+      }
+      return [...prev, {
+        variantId,
+        id: variantId,
+        lineId: variantId,
+        name: product?.name || product?.title || 'Product',
+        price: parseFloat(product?.price) || 0,
+        image: product?.image || null,
+        quantity: 1,
+      }];
+    });
+    setCartOpen(true);
   }, []);
 
-  const updateQuantity = useCallback(async (lineId, quantity) => {
-    if (!cartRef.current) return;
-    setLoading(true);
-    try {
-      const updatedCart = await updateCartLine(cartRef.current.id, lineId, quantity);
-      setCartBoth(updatedCart);
-      setCartItems(parseCartLines(updatedCart));
-    } catch (err) {
-      console.error('Shopify updateQuantity error:', err);
-    } finally {
-      setLoading(false);
+  const updateQuantity = useCallback((variantId, quantity) => {
+    if (quantity <= 0) {
+      setCartItems(prev => prev.filter(i => i.variantId !== variantId && i.lineId !== variantId));
+    } else {
+      setCartItems(prev =>
+        prev.map(i =>
+          (i.variantId === variantId || i.lineId === variantId)
+            ? { ...i, quantity }
+            : i
+        )
+      );
     }
   }, []);
 
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   const cartTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const checkoutUrl = cart?.checkoutUrl || null;
+  const checkoutUrl = buildCheckoutUrl(cartItems);
 
   return (
     <CartContext.Provider value={{
       cartItems, cartOpen, setCartOpen,
       addItem, updateQuantity,
-      cartCount, cartTotal, checkoutUrl, loading,
+      cartCount, cartTotal, checkoutUrl,
+      loading: false,
     }}>
       {children}
     </CartContext.Provider>

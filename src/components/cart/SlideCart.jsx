@@ -1,11 +1,11 @@
 import React from 'react';
-import { X, Plus, Minus, ShoppingBag, Loader2 } from 'lucide-react';
+import { X, Plus, Minus, ShoppingBag, Trash2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Progress } from '@/components/ui/progress';
 
 const FREE_SHIPPING_THRESHOLD = 25;
 
-export default function SlideCart({ open, onClose, items, onUpdateQuantity, total, checkoutUrl, loading }) {
+export default function SlideCart({ open, onClose, items, onUpdateQuantity, total, checkoutUrl }) {
   const shippingProgress = Math.min((total / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const amountToFreeShipping = Math.max(FREE_SHIPPING_THRESHOLD - total, 0);
 
@@ -37,15 +37,12 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
 
             {/* Shipping progress */}
             <div className="px-5 py-4 bg-orange-pale">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-brand text-sm text-midnight">
-                  {amountToFreeShipping > 0
-                    ? `🦴 $${amountToFreeShipping.toFixed(2)} away from free shipping!`
-                    : '🎉 Free shipping unlocked!'}
-                </span>
-              </div>
+              <p className="font-brand text-sm text-midnight mb-2">
+                {amountToFreeShipping > 0
+                  ? `🦴 $${amountToFreeShipping.toFixed(2)} away from free shipping!`
+                  : '🎉 Free shipping unlocked!'}
+              </p>
               <Progress value={shippingProgress} className="h-3 bg-fog" />
-              <p className="text-xs text-pebble font-body mt-1">Fill the Bowl for free shipping!</p>
             </div>
 
             {/* Items */}
@@ -59,27 +56,40 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
               ) : (
                 <div className="space-y-4">
                   {items.map(item => (
-                    <div key={item.lineId} className="flex gap-4 bg-white rounded-xl p-3 border-bold">
+                    <div key={item.variantId} className="flex gap-4 bg-white rounded-xl p-3 border-bold">
                       <div className="w-20 h-20 rounded-lg bg-fog overflow-hidden flex-shrink-0">
                         {item.image && <img src={item.image} alt={item.name} className="w-full h-full object-cover" />}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="font-brand text-sm text-midnight truncate">{item.name}</h4>
-                        <p className="text-primary font-bold font-body">${item.price.toFixed(2)}</p>
-                        <div className="flex items-center gap-2 mt-2">
+                        <div className="flex items-start justify-between gap-2">
+                          <h4 className="font-brand text-sm text-midnight leading-tight">{item.name}</h4>
                           <button
-                            onClick={() => onUpdateQuantity(item.lineId, item.quantity - 1)}
-                            className="w-7 h-7 rounded-lg bg-fog flex items-center justify-center hover:bg-stone/30 transition-colors"
+                            onClick={() => onUpdateQuantity(item.variantId, 0)}
+                            className="text-stone hover:text-destructive transition-colors flex-shrink-0"
                           >
-                            <Minus className="w-3 h-3" />
+                            <Trash2 className="w-4 h-4" />
                           </button>
-                          <span className="font-brand text-sm w-6 text-center">{item.quantity}</span>
-                          <button
-                            onClick={() => onUpdateQuantity(item.lineId, item.quantity + 1)}
-                            className="w-7 h-7 rounded-lg bg-fog flex items-center justify-center hover:bg-stone/30 transition-colors"
-                          >
-                            <Plus className="w-3 h-3" />
-                          </button>
+                        </div>
+                        <p className="text-primary font-bold font-body text-sm mt-0.5">${item.price.toFixed(2)} each</p>
+                        <div className="flex items-center justify-between mt-2">
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => onUpdateQuantity(item.variantId, item.quantity - 1)}
+                              className="w-7 h-7 rounded-lg bg-fog flex items-center justify-center hover:bg-stone/30 transition-colors"
+                            >
+                              <Minus className="w-3 h-3" />
+                            </button>
+                            <span className="font-brand text-sm w-6 text-center">{item.quantity}</span>
+                            <button
+                              onClick={() => onUpdateQuantity(item.variantId, item.quantity + 1)}
+                              className="w-7 h-7 rounded-lg bg-fog flex items-center justify-center hover:bg-stone/30 transition-colors"
+                            >
+                              <Plus className="w-3 h-3" />
+                            </button>
+                          </div>
+                          <span className="font-brand text-sm text-midnight">
+                            ${(item.price * item.quantity).toFixed(2)}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -92,7 +102,7 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
             {items.length > 0 && (
               <div className="p-5 border-t-4 border-midnight bg-white">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="font-brand text-lg text-midnight">Total</span>
+                  <span className="font-brand text-lg text-midnight">Subtotal</span>
                   <span className="font-display text-3xl text-primary">${total.toFixed(2)}</span>
                 </div>
                 <a
@@ -101,7 +111,7 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 w-full h-14 text-lg font-brand bg-primary hover:bg-orange-hot text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
                 >
-                  {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Checkout 🐾'}
+                  Checkout 🐾
                 </a>
               </div>
             )}

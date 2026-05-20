@@ -56,11 +56,9 @@ export default function ProductShowcase() {
       .catch(() => {});
   }, []);
 
-  const handleAdd = async (product) => {
+  const handleAdd = (product) => {
     if (!product.variantId || !product.available) return;
-    setAddingId(product.id);
-    await addItem(product.variantId, product);
-    setAddingId(null);
+    addItem(product.variantId, product);
   };
 
   const featured = products.find(p => p.available) || products[0];

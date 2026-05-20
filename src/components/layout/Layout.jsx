@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import SlideCart from '../cart/SlideCart';
+import SlideCart from '../cart/SlideCart.jsx';
 import { ShopifyCartProvider, useShopifyCart } from '@/lib/ShopifyCartContext';
 
 function LayoutInner() {
