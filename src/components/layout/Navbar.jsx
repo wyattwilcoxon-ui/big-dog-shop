@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: 'Bundles', path: '/bundles' },
   { label: 'The Pack', path: '/pack' },
   { label: 'FAQ', path: '/faq' },
+  { label: 'About', path: '/about' },
 ];
 
 export default function Navbar({ cartCount = 0, onCartClick }) {

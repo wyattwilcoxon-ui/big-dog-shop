@@ -42,9 +42,11 @@ export default function Footer() {
           <div>
             <h4 className="font-brand text-lg text-white mb-4">Company</h4>
             <div className="flex flex-col gap-2">
+              <Link to="/about" className="text-stone hover:text-primary transition-colors font-body text-sm">About Us</Link>
               <Link to="/pack" className="text-stone hover:text-primary transition-colors font-body text-sm">The Pack</Link>
               <Link to="/faq" className="text-stone hover:text-primary transition-colors font-body text-sm">FAQ</Link>
-              <a href="mailto:info@bigdoglife.com" className="text-stone hover:text-primary transition-colors font-body text-sm">Contact</a>
+              <Link to="/contact" className="text-stone hover:text-primary transition-colors font-body text-sm">Contact</Link>
+              <Link to="/why-big-dogs-need-bigger-poop-bags" className="text-stone hover:text-primary transition-colors font-body text-sm">Why Big Dogs Need Better Bags</Link>
             </div>
           </div>
 
