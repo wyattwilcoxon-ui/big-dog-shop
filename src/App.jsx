@@ -31,6 +31,7 @@ function App() {
             
             {/* All other routes */}
             <Route path="/*" element={<ProtectedRoutes />}>
+              <Route path="/home" element={<Home />} />
             </Route>
           </Routes>
           <Toaster />
