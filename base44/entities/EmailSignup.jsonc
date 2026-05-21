@@ -6,6 +6,10 @@
       "type": "string",
       "description": "Customer email for pre-launch notifications"
     },
+    "phone": {
+      "type": "string",
+      "description": "Customer phone number (optional)"
+    },
     "dog_breed": {
       "type": "string",
       "description": "Customer's large breed dog type (optional)"

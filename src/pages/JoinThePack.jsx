@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function JoinThePack() {
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [dogBreed, setDogBreed] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -17,10 +18,11 @@ export default function JoinThePack() {
 
     setSubmitting(true);
     try {
-      await base44.functions.invoke('saveEmailSignup', { email, dog_breed: dogBreed || null });
+      await base44.functions.invoke('saveEmailSignup', { email, phone: phone || null, dog_breed: dogBreed || null });
       setSubmitted(true);
       toast.success('Welcome to the Pack!');
       setEmail('');
+      setPhone('');
       setDogBreed('');
     } catch (error) {
       toast.error('Something went wrong. Try again!');
@@ -130,6 +132,15 @@ export default function JoinThePack() {
                     placeholder="Your email address *"
                     className="w-full px-5 py-4 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary text-lg"
                     required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="Phone number (optional)"
+                    className="w-full px-5 py-4 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary text-lg"
                   />
                 </div>
                 <div>
