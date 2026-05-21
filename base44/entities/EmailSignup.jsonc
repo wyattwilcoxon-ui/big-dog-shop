@@ -1,0 +1,22 @@
+{
+  "name": "EmailSignup",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "Customer email for pre-launch notifications"
+    },
+    "dog_breed": {
+      "type": "string",
+      "description": "Customer's large breed dog type (optional)"
+    },
+    "source": {
+      "type": "string",
+      "default": "website",
+      "description": "Where the signup came from"
+    }
+  },
+  "required": [
+    "email"
+  ]
+}

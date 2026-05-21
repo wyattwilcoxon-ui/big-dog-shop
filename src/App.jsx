@@ -17,6 +17,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import WhyBigDogs from './pages/WhyBigDogs';
 import ProductDetail from './pages/ProductDetail';
+import JoinThePack from './pages/JoinThePack';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -46,6 +47,7 @@ const AuthenticatedApp = () => {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/join-the-pack" element={<JoinThePack />} />
 
         <Route path="/pack" element={<Pack />} />
         <Route path="/faq" element={<FAQ />} />
