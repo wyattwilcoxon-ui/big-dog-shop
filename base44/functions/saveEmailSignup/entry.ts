@@ -30,9 +30,22 @@ Deno.serve(async (req) => {
     const shopifyDomain = Deno.env.get('VITE_SHOPIFY_STORE_DOMAIN');
     const adminToken = Deno.env.get('SHOPIFY_ADMIN_API_TOKEN');
 
+    console.log('Shopify sync check:', { shopifyDomain: !!shopifyDomain, adminToken: !!adminToken });
+
     if (shopifyDomain && adminToken) {
       const tags = ['Joined the Pack', 'Pre-launch'];
       if (dog_breed) tags.push(`Breed: ${dog_breed}`);
+
+      const customerData = {
+        customer: {
+          email,
+          phone: phone || null,
+          tags: tags.join(', '),
+          note: dog_breed ? `Big dog breed: ${dog_breed}` : 'Pre-launch signup',
+        },
+      };
+
+      console.log('Attempting Shopify customer creation:', customerData);
 
       // Fire-and-forget - don't await to avoid blocking the response
       fetch(`https://${shopifyDomain}/admin/api/2024-01/customers.json`, {
@@ -41,17 +54,21 @@ Deno.serve(async (req) => {
           'Content-Type': 'application/json',
           'X-Shopify-Access-Token': adminToken,
         },
-        body: JSON.stringify({
-          customer: {
-            email,
-            phone: phone || null,
-            tags: tags.join(', '),
-            note: dog_breed ? `Big dog breed: ${dog_breed}` : 'Pre-launch signup',
-          },
-        }),
-      }).catch((err) => {
-        console.error('Shopify sync failed:', err.message);
-      });
+        body: JSON.stringify(customerData),
+      })
+        .then(async (res) => {
+          console.log('Shopify response status:', res.status);
+          if (!res.ok) {
+            const errorText = await res.text();
+            console.error('Shopify sync failed:', errorText);
+          } else {
+            const data = await res.json();
+            console.log('Shopify customer created:', data.customer?.id);
+          }
+        })
+        .catch((err) => {
+          console.error('Shopify sync error:', err.message);
+        });
     } else {
       console.log('Shopify credentials not configured, skipping sync');
     }
