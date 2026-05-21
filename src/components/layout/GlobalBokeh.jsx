@@ -2,21 +2,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ORBS = [
-  { emoji: '🦴', left: '5%',  top: '10%', size: '8rem',  delay: 0,   dur: 18, driftX: 120,  driftY: 180,  opacity: 0.18 },
-  { emoji: '💩', left: '70%', top: '5%',  size: '7rem',  delay: 2,   dur: 22, driftX: -100, driftY: 200,  opacity: 0.15 },
-  { emoji: '🐾', left: '85%', top: '30%', size: '9rem',  delay: 1,   dur: 26, driftX: -140, driftY: 150,  opacity: 0.20 },
-  { emoji: '🦴', left: '10%', top: '45%', size: '6rem',  delay: 3,   dur: 20, driftX: 160,  driftY: -120, opacity: 0.15 },
-  { emoji: '💩', left: '55%', top: '60%', size: '10rem', delay: 0.5, dur: 30, driftX: -80,  driftY: -160, opacity: 0.12 },
-  { emoji: '🐾', left: '20%', top: '75%', size: '7rem',  delay: 4,   dur: 24, driftX: 200,  driftY: -100, opacity: 0.18 },
-  { emoji: '🦴', left: '80%', top: '70%', size: '8rem',  delay: 1.5, dur: 28, driftX: -120, driftY: -180, opacity: 0.16 },
-  { emoji: '💩', left: '40%', top: '20%', size: '6rem',  delay: 2.5, dur: 22, driftX: 100,  driftY: 140,  opacity: 0.13 },
-  { emoji: '🐾', left: '3%',  top: '85%', size: '9rem',  delay: 3.5, dur: 32, driftX: 180,  driftY: -80,  opacity: 0.15 },
-  { emoji: '🦴', left: '90%', top: '55%', size: '7rem',  delay: 0.8, dur: 25, driftX: -160, driftY: 120,  opacity: 0.17 },
+  { emoji: '🦴', left: '5%',  top: '10%', size: '8rem',  delay: 0,   dur: 45, driftX: 80,  driftY: 120, opacity: 0.18 },
+  { emoji: '💩', left: '70%', top: '5%',  size: '7rem',  delay: 5,   dur: 55, driftX: -70, driftY: 130, opacity: 0.15 },
+  { emoji: '🐾', left: '85%', top: '30%', size: '9rem',  delay: 2,   dur: 60, driftX: -90, driftY: 100, opacity: 0.18 },
+  { emoji: '🦴', left: '10%', top: '45%', size: '6rem',  delay: 8,   dur: 50, driftX: 100, driftY: -80, opacity: 0.15 },
+  { emoji: '💩', left: '55%', top: '60%', size: '10rem', delay: 3,   dur: 65, driftX: -60, driftY: -100,opacity: 0.12 },
+  { emoji: '🐾', left: '20%', top: '75%', size: '7rem',  delay: 10,  dur: 52, driftX: 110, driftY: -70, opacity: 0.16 },
+  { emoji: '🦴', left: '80%', top: '70%', size: '8rem',  delay: 4,   dur: 58, driftX: -80, driftY: -110,opacity: 0.14 },
+  { emoji: '💩', left: '40%', top: '20%', size: '6rem',  delay: 7,   dur: 48, driftX: 70,  driftY: 90,  opacity: 0.13 },
+  { emoji: '🐾', left: '3%',  top: '85%', size: '9rem',  delay: 12,  dur: 62, driftX: 120, driftY: -60, opacity: 0.15 },
+  { emoji: '🦴', left: '90%', top: '55%', size: '7rem',  delay: 6,   dur: 55, driftX: -100,driftY: 80,  opacity: 0.16 },
 ];
 
 export default function GlobalBokeh() {
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 10 }}>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
       {ORBS.map((b, i) => (
         <motion.div
           key={i}
