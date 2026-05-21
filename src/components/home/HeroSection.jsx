@@ -4,6 +4,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const ROTATING_WORDS = ['ENERGY', 'POOPS', 'BAGS', 'DOGS', 'LIFE'];
 
+const BOKEH = [
+  { left: '8%',  top: '15%', size: 180, color: 'rgba(244,97,14,0.18)',  delay: 0,   dur: 7  },
+  { left: '75%', top: '8%',  size: 120, color: 'rgba(245,166,35,0.14)', delay: 1,   dur: 9  },
+  { left: '88%', top: '38%', size: 200, color: 'rgba(244,97,14,0.10)',  delay: 0.5, dur: 11 },
+  { left: '3%',  top: '50%', size: 140, color: 'rgba(245,166,35,0.12)', delay: 1.5, dur: 8  },
+  { left: '55%', top: '5%',  size: 100, color: 'rgba(255,255,255,0.08)',delay: 0.8, dur: 10 },
+  { left: '40%', top: '70%', size: 160, color: 'rgba(244,97,14,0.08)',  delay: 2,   dur: 12 },
+  { left: '85%', top: '65%', size: 90,  color: 'rgba(245,166,35,0.10)', delay: 0.3, dur: 6  },
+];
+
 const FLOATING = [
 { emoji: '💩', left: '5%',  top: '12%', size: '2.5rem', delay: 0,   rot: -15 },
 { emoji: '🐾', left: '82%', top: '10%', size: '2.2rem', delay: 0.4, rot: 10  },
@@ -31,18 +41,23 @@ export default function HeroSection({ heroImage }) {
         <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-midnight/20" />
       </div>
 
-      {/* Floating emojis */}
-      {FLOATING.map((f, i) =>
-      <motion.div
-        key={i}
-        className="absolute select-none pointer-events-none"
-        style={{ left: f.left, top: f.top, fontSize: f.size, rotate: f.rot }}
-        animate={{ y: [0, -14, 0], rotate: [f.rot, f.rot + 8, f.rot] }}
-        transition={{ delay: f.delay, duration: 3 + i * 0.4, repeat: Infinity, ease: 'easeInOut' }}>
-        
-          {f.emoji}
-        </motion.div>
-      )}
+      {/* Bokeh orbs */}
+      {BOKEH.map((b, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            left: b.left,
+            top: b.top,
+            width: b.size,
+            height: b.size,
+            background: b.color,
+            filter: 'blur(40px)',
+          }}
+          animate={{ y: [0, -20, 0], scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
+          transition={{ delay: b.delay, duration: b.dur, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      ))}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end min-h-[90vh] sm:min-h-screen pb-16 sm:pb-28">
