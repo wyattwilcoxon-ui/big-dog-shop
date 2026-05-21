@@ -26,8 +26,8 @@ function App() {
       <AuthProvider>
         <QueryClientProvider client={queryClientInstance}>
           <Routes>
-            {/* Public route - no auth required but has app context */}
-            <Route path="/join-the-pack" element={<JoinThePack />} />
+            {/* Temporary home page - Join The Pack landing */}
+            <Route path="/" element={<JoinThePack />} />
             
             {/* All other routes */}
             <Route path="/*" element={<ProtectedRoutes />}>
