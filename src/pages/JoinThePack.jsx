@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
-import { toast } from 'sonner';
 
 export default function JoinThePack() {
   const [email, setEmail] = useState('');
@@ -10,21 +8,35 @@ export default function JoinThePack() {
   const [dogBreed, setDogBreed] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email) return;
 
     setSubmitting(true);
+    setError('');
+    
     try {
-      await base44.functions.invoke('saveEmailSignup', { email, phone: phone || null, dog_breed: dogBreed || null, timestamp: Date.now() });
+      const response = await fetch('/api/functions/invoke/saveEmailSignup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          email, 
+          phone: phone || null, 
+          dog_breed: dogBreed || null, 
+          timestamp: Date.now() 
+        }),
+      });
+      
+      if (!response.ok) throw new Error('Failed to submit');
+      
       setSubmitted(true);
-      toast.success('Welcome to the Pack!');
       setEmail('');
       setPhone('');
       setDogBreed('');
-    } catch (error) {
-      toast.error('Something went wrong. Try again!');
+    } catch (err) {
+      setError('Something went wrong. Try again!');
     } finally {
       setSubmitting(false);
     }
@@ -39,8 +51,6 @@ export default function JoinThePack() {
         <div className="absolute bottom-40 left-1/4 text-7xl">🦴</div>
         <div className="absolute bottom-20 right-1/3 text-9xl">🐕</div>
       </div>
-
-
 
       {/* Hero Section */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
@@ -138,6 +148,11 @@ export default function JoinThePack() {
                     className="w-full px-5 py-4 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary text-lg"
                   />
                 </div>
+                {error && (
+                  <div className="bg-destructive/10 text-destructive px-4 py-3 rounded-xl text-sm font-body">
+                    {error}
+                  </div>
+                )}
                 <button
                   type="submit"
                   disabled={submitting || !email}
