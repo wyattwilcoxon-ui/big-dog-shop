@@ -7,7 +7,7 @@ import ProductShowcase from '../components/home/ProductShowcase';
 import BosaOriginStory from '../components/home/BosaOriginStory';
 import SizeComparison from '../components/home/SizeComparison';
 import BundleSection from '../components/home/BundleSection';
-import TestimonialScroll from '../components/home/TestimonialScroll';
+
 import BosieBlastWall from '../components/home/BosieBlastWall';
 import LifestyleSection from '../components/home/LifestyleSection';
 import BulkCTA from '../components/home/BulkCTA';
@@ -52,7 +52,6 @@ export default function Home() {
       <BosaOriginStory />
       <SizeComparison />
       <BundleSection />
-      <TestimonialScroll />
       <BosieBlastWall />
       <LifestyleSection
         images={{

@@ -141,14 +141,11 @@ export default function HeroSection({ heroImage }) {
             transition={{ delay: 1.1 }}
             className="mt-6 flex flex-wrap gap-3">
             
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-4 py-2 rounded-full">
-              ⭐⭐⭐⭐⭐ <span className="font-bold">4.9</span>
-            </div>
-            <div className="inline-flex items-center gap-2 bg-[#FF69B4] text-white font-brand text-sm px-4 py-2 rounded-full">
-              🐾 2,847+ Happy Dogs
-            </div>
             <div className="inline-flex items-center gap-2 bg-secondary text-white font-brand text-sm px-4 py-2 rounded-full">
               🚚 FREE SHIPPING
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-4 py-2 rounded-full">
+              🦴 44% Bigger Than Standard Bags
             </div>
           </motion.div>
         </motion.div>
