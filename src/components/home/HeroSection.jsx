@@ -62,22 +62,21 @@ export default function HeroSection({ heroImage }) {
           
 
           {/* Combined headline */}
-          <div className="font-display leading-none text-primary" style={{ fontSize: 'clamp(2.5rem, 8vw, 7rem)' }}>
+          <div className="font-display leading-none text-primary" style={{ fontSize: 'clamp(1.5rem, 4vw, 4rem)' }}>
             BIG DOG:
           </div>
 
           {/* Rotating headline */}
-          <div className="h-[8rem] sm:h-[12rem] md:h-[15rem] overflow-hidden mb-2">
+          <div className="h-[4rem] sm:h-[7rem] md:h-[9rem] overflow-hidden mb-2">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={wordIndex}
                 className="font-display leading-none text-white"
-                style={{ fontSize: 'clamp(6rem, 20vw, 18rem)' }}
+                style={{ fontSize: 'clamp(3.5rem, 12vw, 9rem)' }}
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
                 exit={{ y: '-100%' }}
                 transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}>
-                
                 {ROTATING_WORDS[wordIndex]}!
               </motion.h1>
             </AnimatePresence>
