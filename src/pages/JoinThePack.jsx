@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Mail, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import { toast } from 'sonner';
-import { Link } from 'react-router-dom';
 
 export default function JoinThePack() {
   const [email, setEmail] = useState('');
@@ -41,20 +40,7 @@ export default function JoinThePack() {
         <div className="absolute bottom-20 right-1/3 text-9xl">🐕</div>
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="font-display text-3xl text-primary">
-            BIG DOG <span className="text-midnight">LIFE</span>
-          </Link>
-          <Link
-            to="/shop"
-            className="font-brand text-sm bg-primary text-white px-5 py-2 rounded-full hover:bg-orange-hot transition-all"
-          >
-            Shop Now
-          </Link>
-        </div>
-      </nav>
+
 
       {/* Hero Section */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
