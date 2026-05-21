@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+import ProtectedRoute from './components/ProtectedRoute';
 
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
@@ -44,18 +45,22 @@ const AuthenticatedApp = () => {
 
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/join-the-pack" element={<JoinThePack />} />
+      {/* Public route - no auth required */}
+      <Route path="/join-the-pack" element={<JoinThePack />} />
 
-        <Route path="/pack" element={<Pack />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/shopify-test" element={<ShopifyTest />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
-        <Route path="/product/:handle" element={<ProductDetail />} />
+      {/* Protected routes - auth required */}
+      <Route element={<ProtectedRoute />}>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/pack" element={<Pack />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/shopify-test" element={<ShopifyTest />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
+          <Route path="/product/:handle" element={<ProductDetail />} />
+        </Route>
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
