@@ -17,7 +17,7 @@ export default function JoinThePack() {
 
     setSubmitting(true);
     try {
-      await base44.functions.invoke('saveEmailSignup', { email, phone: phone || null, dog_breed: dogBreed || null });
+      await base44.functions.invoke('saveEmailSignup', { email, phone: phone || null, dog_breed: dogBreed || null, timestamp: Date.now() });
       setSubmitted(true);
       toast.success('Welcome to the Pack!');
       setEmail('');

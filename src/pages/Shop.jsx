@@ -73,6 +73,7 @@ export default function Shop() {
         phone: notifyPhone || null,
         product_id: notifyProduct.id,
         product_name: notifyProduct.name,
+        timestamp: Date.now(),
       });
       toast.success('We\'ll notify you when it\'s back! 🐾');
       setNotifyProduct(null);

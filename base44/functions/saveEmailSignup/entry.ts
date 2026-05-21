@@ -3,7 +3,17 @@ import { createClientFromRequest } from 'npm:@base44/sdk@0.8.25';
 Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
-    const { email, phone, dog_breed } = await req.json();
+    const body = await req.json();
+    const { email, phone, dog_breed, timestamp } = body;
+
+    // Basic spam protection - reject if timestamp is too old or missing
+    if (timestamp) {
+      const now = Date.now();
+      const submitted = parseInt(timestamp);
+      if (isNaN(submitted) || (now - submitted) > 300000) { // 5 minutes
+        return Response.json({ error: 'Invalid request' }, { status: 400 });
+      }
+    }
 
     if (!email || !email.includes('@')) {
       return Response.json({ error: 'Valid email required' }, { status: 400 });
