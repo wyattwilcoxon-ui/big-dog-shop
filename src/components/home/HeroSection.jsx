@@ -111,7 +111,7 @@ export default function HeroSection({ heroImage }) {
             </Link>
             <Link to="/pack">
               <motion.div
-                className="inline-flex items-center gap-3 bg-yellow-400 text-midnight font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
+                className="inline-flex items-center gap-3 bg-marigold text-midnight font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}>
                 

@@ -101,7 +101,7 @@ export default function BosieBlastWall() {
               whileHover={{ rotate: 0, scale: 1.02 }}
               viewport={{ once: true, margin: '-20px' }}
               transition={{ delay: i * 0.07, duration: 0.5 }}
-              className={`relative rounded-2xl border-4 ${post.border} overflow-hidden shadow-cartoon ${post.color} cursor-pointer`}
+              className="relative rounded-2xl border-bold overflow-hidden shadow-cartoon bg-white cursor-pointer"
               onMouseEnter={() => setHoveredId(post.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
@@ -134,15 +134,15 @@ export default function BosieBlastWall() {
               <div className="p-4">
                 <div className="flex items-center justify-between mb-2">
                   <div>
-                    <p className={`font-brand text-sm ${post.dark ? 'text-white' : 'text-midnight'}`}>{post.username}</p>
-                    <p className={`font-body text-xs ${post.dark ? 'text-white/60' : 'text-stone'}`}>{post.dog}</p>
+                    <p className="font-brand text-sm text-midnight">{post.username}</p>
+                    <p className="font-body text-xs text-stone">{post.dog}</p>
                   </div>
                   <button onClick={() => setLiked(p => ({ ...p, [post.id]: !p[post.id] }))} className="flex items-center gap-1">
-                    <Heart className={`w-4 h-4 transition-all ${liked[post.id] ? 'text-primary fill-primary scale-110' : post.dark ? 'text-white/60' : 'text-stone'}`} />
+                    <Heart className={`w-4 h-4 transition-all ${liked[post.id] ? 'text-primary fill-primary scale-110' : 'text-stone'}`} />
                     <span className={`font-brand text-xs ${post.dark ? 'text-white/60' : 'text-stone'}`}>{liked[post.id] ? post.likes + 1 : post.likes}</span>
                   </button>
                 </div>
-                <p className={`font-body text-sm leading-relaxed ${post.dark ? 'text-white/80' : 'text-pebble'}`}>"{post.caption}"</p>
+                <p className="font-body text-sm leading-relaxed text-pebble">"{post.caption}"</p>
                 <p className="font-brand text-primary text-xs mt-2">#BosieBlast</p>
               </div>
             </motion.div>

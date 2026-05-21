@@ -60,7 +60,7 @@ export default function ValueProps() {
               whileHover={{ rotate: 0, y: -4 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className={`${prop.bg} rounded-2xl border-2 ${prop.border} shadow-md hover:shadow-lg transition-shadow p-6 cursor-default`}
+              className="bg-white rounded-2xl border-bold shadow-cartoon-sm hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all p-6 cursor-default"
             >
               <motion.div
                 className="mb-4 text-5xl"

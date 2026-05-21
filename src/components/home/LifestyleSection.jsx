@@ -23,7 +23,7 @@ export default function LifestyleSection({ images }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0 }}
-            className="col-span-2 row-span-2 rounded-2xl overflow-hidden border-4 border-primary"
+            className="col-span-2 row-span-2 rounded-2xl overflow-hidden border-4 border-white/20"
           >
             <img
               src={images.hero}
@@ -36,7 +36,7 @@ export default function LifestyleSection({ images }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="rounded-2xl overflow-hidden border-4 border-secondary"
+            className="rounded-2xl overflow-hidden border-4 border-white/20"
           >
             <img
               src={images.paw}
@@ -49,7 +49,7 @@ export default function LifestyleSection({ images }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="rounded-2xl overflow-hidden border-4 border-sandy"
+            className="rounded-2xl overflow-hidden border-4 border-white/20"
           >
             <img
               src={images.portrait}
@@ -62,7 +62,7 @@ export default function LifestyleSection({ images }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="col-span-2 rounded-2xl overflow-hidden border-4 border-sky"
+            className="col-span-2 rounded-2xl overflow-hidden border-4 border-white/20"
           >
             <img
               src={images.action}

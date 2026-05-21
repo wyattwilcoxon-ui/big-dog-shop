@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const PANELS = [
   {
     panelEmoji: '🐕',
-    bg: 'bg-orange-pale',
+    bg: 'bg-cream',
     border: 'border-primary',
     title: 'MEET BOSA',
     subtitle: '125 lbs. Zero shame.',
@@ -26,7 +26,7 @@ const PANELS = [
   },
   {
     panelEmoji: '🐾',
-    bg: 'bg-green-dark',
+    bg: 'bg-midnight',
     border: 'border-primary',
     title: 'THE BREAKING POINT',
     subtitle: 'Not today, tiny bag.',
