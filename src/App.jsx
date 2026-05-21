@@ -23,20 +23,19 @@ import JoinThePack from './pages/JoinThePack';
 function App() {
   return (
     <Router>
-      <Routes>
-        {/* Public route - completely standalone, no auth wrapper */}
-        <Route path="/join-the-pack" element={<JoinThePack />} />
-        
-        {/* All other routes - wrapped with AuthProvider */}
-        <Route path="/*" element={
-          <AuthProvider>
-            <QueryClientProvider client={queryClientInstance}>
-              <ProtectedRoutes />
-              <Toaster />
-            </QueryClientProvider>
-          </AuthProvider>
-        } />
-      </Routes>
+      <AuthProvider>
+        <QueryClientProvider client={queryClientInstance}>
+          <Routes>
+            {/* Public route - no auth required but has app context */}
+            <Route path="/join-the-pack" element={<JoinThePack />} />
+            
+            {/* All other routes */}
+            <Route path="/*" element={<ProtectedRoutes />}>
+            </Route>
+          </Routes>
+          <Toaster />
+        </QueryClientProvider>
+      </AuthProvider>
     </Router>
   )
 }
