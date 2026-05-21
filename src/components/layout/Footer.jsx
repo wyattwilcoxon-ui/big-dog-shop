@@ -52,14 +52,12 @@ export default function Footer() {
 
           <div>
             <h4 className="font-brand text-base sm:text-lg text-white mb-3 sm:mb-4">Join the Pack</h4>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.05, rotate: -1 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-1 sm:gap-2 bg-primary text-white font-brand text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-3 rounded-xl border-bold shadow-cartoon-sm mb-3 sm:mb-4"
+            <Link
+              to="/join-the-pack"
+              className="inline-flex items-center gap-1 sm:gap-2 bg-primary text-white font-brand text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-3 rounded-xl border-bold shadow-cartoon-sm mb-3 sm:mb-4 hover:bg-orange-hot transition-colors"
             >
-              #BosieBlast 💩
-            </motion.a>
+              Get Early Access 🎉
+            </Link>
             <div className="flex flex-col gap-1.5 sm:gap-2">
               <a href="mailto:info@thebigdoglife.com" className="flex items-center gap-2 text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4" />info@thebigdoglife.com
