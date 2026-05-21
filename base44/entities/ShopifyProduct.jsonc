@@ -1,0 +1,62 @@
+{
+  "name": "ShopifyProduct",
+  "type": "object",
+  "properties": {
+    "shopify_id": {
+      "type": "string",
+      "description": "Shopify product GID"
+    },
+    "variant_id": {
+      "type": "string",
+      "description": "Shopify variant ID (numeric)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Product title"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in USD"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Featured image URL"
+    },
+    "inventory": {
+      "type": "number",
+      "description": "Available inventory"
+    },
+    "handle": {
+      "type": "string",
+      "description": "Shopify product handle"
+    }
+  },
+  "required": [
+    "shopify_id",
+    "variant_id",
+    "title",
+    "price"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
