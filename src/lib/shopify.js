@@ -1,4 +1,4 @@
-const DOMAIN = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN;
+const DOMAIN = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN || 'big-dog-life-2.myshopify.com';
 const TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN;
 const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
 
