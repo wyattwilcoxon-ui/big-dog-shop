@@ -43,9 +43,9 @@ export default function JoinThePack() {
   };
 
   return (
-    <div className="min-h-screen bg-cream relative overflow-auto">
+    <div className="min-h-screen bg-[#F5F0E8] relative overflow-auto font-sans">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-20 left-10 text-8xl">🐾</div>
         <div className="absolute top-40 right-20 text-6xl">💩</div>
         <div className="absolute bottom-40 left-1/4 text-7xl">🦴</div>
@@ -61,18 +61,18 @@ export default function JoinThePack() {
           className="text-center"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-midnight font-brand text-sm px-5 py-2 rounded-full mb-8 shadow-lg">
-            <span className="text-primary">🎉</span> COMING Q2 2026
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-[#0F1D3C] text-sm px-5 py-2 rounded-full mb-8 shadow-lg" style={{ fontFamily: 'Fredoka, sans-serif' }}>
+            <span className="text-[#F4610E]">🎉</span> COMING Q2 2026
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl text-midnight leading-none mb-6">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl text-[#0F1D3C] leading-none mb-6" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
             BIG DOGS HAVE
             <br />
-            <span className="text-primary">BIG NEEDS</span>
+            <span className="text-[#F4610E]">BIG NEEDS</span>
           </h1>
 
-          <p className="font-body text-xl sm:text-2xl text-pebble mt-6 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-[#5E574F] mt-6 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Nunito, sans-serif' }}>
             Finally, products built for your big dog — not just sized up.
             <br />
             <strong>Extra-large. Extra-strong. Totally leak-proof.</strong>
@@ -80,13 +80,13 @@ export default function JoinThePack() {
 
           {/* Value Props */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
-            <div className="inline-flex items-center gap-2 bg-white text-midnight font-brand text-sm px-5 py-3 rounded-full shadow-lg">
+            <div className="inline-flex items-center gap-2 bg-white text-[#0F1D3C] text-sm px-5 py-3 rounded-full shadow-lg" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               Plant-Based {'&'} Biodegradable
             </div>
-            <div className="inline-flex items-center gap-2 bg-white text-midnight font-brand text-sm px-5 py-3 rounded-full shadow-lg">
+            <div className="inline-flex items-center gap-2 bg-white text-[#0F1D3C] text-sm px-5 py-3 rounded-full shadow-lg" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               44% Larger Than Standard Bags
             </div>
-            <div className="inline-flex items-center gap-2 bg-white text-midnight font-brand text-sm px-5 py-3 rounded-full shadow-lg">
+            <div className="inline-flex items-center gap-2 bg-white text-[#0F1D3C] text-sm px-5 py-3 rounded-full shadow-lg" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               Free Shipping on All Orders
             </div>
           </div>
@@ -100,21 +100,21 @@ export default function JoinThePack() {
           className="mt-16 max-w-xl mx-auto"
         >
           {submitted ? (
-            <div className="bg-white rounded-3xl border-4 border-midnight shadow-[6px_6px_0_#0F1D3C] p-8 text-center">
-              <CheckCircle2 className="w-16 h-16 text-secondary mx-auto mb-4" />
-              <h3 className="font-display text-3xl text-midnight mb-2">YOU'RE IN THE PACK!</h3>
-              <p className="font-body text-pebble">
+            <div className="bg-white rounded-3xl border-4 border-[#0F1D3C] shadow-[6px_6px_0_#0F1D3C] p-8 text-center">
+              <CheckCircle2 className="w-16 h-16 text-[#2A9134] mx-auto mb-4" />
+              <h3 className="text-3xl text-[#0F1D3C] mb-2" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>YOU'RE IN THE PACK!</h3>
+              <p className="text-[#5E574F]" style={{ fontFamily: 'Nunito, sans-serif' }}>
                 We'll notify you when we launch with exclusive early-bird discounts.
               </p>
             </div>
           ) : (
-            <div className="bg-white rounded-3xl border-4 border-midnight shadow-[6px_6px_0_#0F1D3C] p-8">
+            <div className="bg-white rounded-3xl border-4 border-[#0F1D3C] shadow-[6px_6px_0_#0F1D3C] p-8">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-[#F5F0E8] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-[#F4610E]" />
                 </div>
-                <h3 className="font-display text-3xl text-midnight mb-2">JOIN THE BIG DOG LIFE</h3>
-                <p className="font-body text-pebble text-sm">
+                <h3 className="text-3xl text-[#0F1D3C] mb-2" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>JOIN THE BIG DOG LIFE</h3>
+                <p className="text-[#5E574F] text-sm" style={{ fontFamily: 'Nunito, sans-serif' }}>
                   Get early access + <strong>15% off</strong> your first order when we launch!
                 </p>
               </div>
@@ -126,7 +126,8 @@ export default function JoinThePack() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Your email address *"
-                    className="w-full px-5 py-4 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary text-lg"
+                    className="w-full px-5 py-4 rounded-xl border-2 border-[#0F1D3C] text-[#0F1D3C] placeholder:text-[#9C9489] focus:outline-none focus:border-[#F4610E] text-lg"
+                    style={{ fontFamily: 'Nunito, sans-serif' }}
                     required
                   />
                 </div>
@@ -136,7 +137,8 @@ export default function JoinThePack() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="Phone number (optional)"
-                    className="w-full px-5 py-4 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary text-lg"
+                    className="w-full px-5 py-4 rounded-xl border-2 border-[#0F1D3C] text-[#0F1D3C] placeholder:text-[#9C9489] focus:outline-none focus:border-[#F4610E] text-lg"
+                    style={{ fontFamily: 'Nunito, sans-serif' }}
                   />
                 </div>
                 <div>
@@ -145,18 +147,20 @@ export default function JoinThePack() {
                     value={dogBreed}
                     onChange={(e) => setDogBreed(e.target.value)}
                     placeholder="Your big dog's breed (optional)"
-                    className="w-full px-5 py-4 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary text-lg"
+                    className="w-full px-5 py-4 rounded-xl border-2 border-[#0F1D3C] text-[#0F1D3C] placeholder:text-[#9C9489] focus:outline-none focus:border-[#F4610E] text-lg"
+                    style={{ fontFamily: 'Nunito, sans-serif' }}
                   />
                 </div>
                 {error && (
-                  <div className="bg-destructive/10 text-destructive px-4 py-3 rounded-xl text-sm font-body">
+                  <div className="bg-red-500/10 text-red-600 px-4 py-3 rounded-xl text-sm" style={{ fontFamily: 'Nunito, sans-serif' }}>
                     {error}
                   </div>
                 )}
                 <button
                   type="submit"
                   disabled={submitting || !email}
-                  className="w-full h-16 text-lg font-brand bg-primary hover:bg-orange-hot disabled:bg-fog disabled:text-pebble disabled:cursor-not-allowed text-white rounded-xl shadow-[4px_4px_0_#0F1D3C] border-4 border-midnight transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none disabled:shadow-none disabled:translate-x-0 disabled:translate-y-0 flex items-center justify-center gap-2"
+                  className="w-full h-16 text-lg text-white rounded-xl shadow-[4px_4px_0_#0F1D3C] border-4 border-[#0F1D3C] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none disabled:shadow-none disabled:translate-x-0 disabled:translate-y-0 flex items-center justify-center gap-2 disabled:bg-[#E2DDD6] disabled:text-[#5E574F] disabled:cursor-not-allowed"
+                  style={{ fontFamily: 'Fredoka, sans-serif', backgroundColor: submitting || !email ? undefined : '#F4610E' }}
                 >
                   {submitting ? (
                     <><Loader2 className="w-5 h-5 animate-spin" /> Joining...</>
@@ -166,7 +170,7 @@ export default function JoinThePack() {
                 </button>
               </form>
 
-              <p className="text-center text-stone text-xs font-body mt-4">
+              <p className="text-center text-[#9C9489] text-xs mt-4" style={{ fontFamily: 'Nunito, sans-serif' }}>
                 No spam, just good news. Unsubscribe anytime.
               </p>
             </div>
@@ -180,12 +184,12 @@ export default function JoinThePack() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <p className="font-brand text-sm text-stone mb-4">
+          <p className="text-sm text-[#9C9489] mb-4" style={{ fontFamily: 'Fredoka, sans-serif' }}>
             JOIN 100+ BIG DOG OWNERS ALREADY ON THE LIST
           </p>
           <div className="flex justify-center gap-2">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xs shadow-lg">
+              <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F4610E] to-[#2A9134] flex items-center justify-center text-white font-bold text-xs shadow-lg" style={{ fontFamily: 'Fredoka, sans-serif' }}>
                 {['B', 'M', 'L', 'G', 'R'][i]}
               </div>
             ))}
@@ -194,13 +198,13 @@ export default function JoinThePack() {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 bg-midnight text-cream mt-24 py-12">
+      <footer className="relative z-10 bg-[#0F1D3C] text-[#F5F0E8] mt-24 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-stone text-sm font-body">
+            <p className="text-[#9C9489] text-sm" style={{ fontFamily: 'Nunito, sans-serif' }}>
               © {new Date().getFullYear()} Big Dog Life L.L.C. • Bellefontaine, Ohio
             </p>
-            <p className="font-brand text-primary text-sm">
+            <p className="text-[#F4610E] text-sm" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               Because Big Dogs Have Big Needs.
             </p>
           </div>
