@@ -37,9 +37,9 @@
     --font-display: 'Bebas Neue', sans-serif;
     --font-brand: 'Fredoka', sans-serif;
     --font-body: 'Nunito', sans-serif;
-    --shadow-cartoon: 4px 4px 0 #151515;
-    --shadow-cartoon-sm: 3px 3px 0 #151515;
-    --outline-bold: 3px solid #151515;
+    --shadow-cartoon: 4px 4px 0 #0F1D3C;
+    --shadow-cartoon-sm: 3px 3px 0 #0F1D3C;
+    --outline-bold: 3px solid #0F1D3C;
     --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
 
     --sidebar-background: 45 33% 96%;
@@ -113,11 +113,11 @@
   outline: var(--outline-bold);
 }
 .border-bold {
-  border: 3px solid #151515;
+  border: 3px solid #0F1D3C;
 }
 .border-impact {
   border-width: 4px;
-  border-color: #151515;
+  border-color: #0F1D3C;
 }
 
 /* Marquee animation */
