@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ROTATING_WORDS = ['ENERGY', 'POOPS', 'BAGS', 'DOGS', 'LIFE'];
 
@@ -21,25 +21,15 @@ export default function HeroSection({ heroImage }) {
     return () => clearInterval(t);
   }, []);
 
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const imgX = useTransform(mouseX, [-500, 500], [-10, 10]);
-  const imgY = useTransform(mouseY, [-400, 400], [-7, 7]);
+
 
   return (
-    <section
-      className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight"
-      onMouseMove={e => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        mouseX.set(e.clientX - rect.width / 2);
-        mouseY.set(e.clientY - rect.height / 2);
-      }}
-    >
-      {/* Parallax Background */}
-      <motion.div className="absolute inset-0" style={{ x: imgX, y: imgY }}>
+    <section className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight">
+      {/* Background */}
+      <div className="absolute inset-0">
         <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-60 scale-110" />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/30 to-transparent" />
-      </motion.div>
+      </div>
 
 
 
