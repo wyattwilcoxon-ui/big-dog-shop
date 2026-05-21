@@ -89,19 +89,19 @@ export default function Shop() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <div className="bg-midnight pt-24 pb-16 sm:pt-32 sm:pb-24 px-4">
+      <div className="bg-midnight pt-20 pb-12 sm:pt-32 sm:pb-24 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="font-brand text-primary text-lg mb-2">All Products</p>
-            <h1 className="font-display text-6xl sm:text-8xl text-white">THE GOOD STUFF</h1>
-            <p className="font-body text-stone text-lg mt-4 max-w-xl">
+            <p className="font-brand text-primary text-sm sm:text-lg mb-2">All Products</p>
+            <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white leading-tight">THE GOOD STUFF</h1>
+            <p className="font-body text-stone text-base sm:text-lg mt-4 max-w-xl">
               Extra large, leak-proof bags for dogs who don't believe in moderation.
             </p>
           </motion.div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
         {fetching ? (
           <div className="flex items-center justify-center py-24">
             <Loader2 className="w-10 h-10 text-primary animate-spin" />
@@ -120,7 +120,7 @@ export default function Shop() {
                 }`}
               >
                 <div className={`grid ${i === 0 ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
-                  <div className="bg-cream p-8 sm:p-12 flex items-center justify-center min-h-[280px] relative">
+                  <div className="bg-cream p-6 sm:p-10 lg:p-12 flex items-center justify-center min-h-[200px] sm:min-h-[280px] relative">
                     {product.badge && (
                       <span className={`absolute top-4 left-4 px-4 py-1.5 rounded-full font-brand text-sm text-white shadow-cartoon-sm ${
                         product.badge === 'Best Seller' ? 'bg-primary' : 'bg-secondary'
@@ -136,21 +136,21 @@ export default function Shop() {
                       <img src={product.image} alt={product.name} className="max-h-60 object-contain group-hover:scale-105 transition-transform duration-500" />
                     )}
                   </div>
-                  <div className="p-8 sm:p-10 flex flex-col justify-center">
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
                     {product.handle ? (
                       <Link to={`/product/${product.handle}`} className="hover:text-primary transition-colors">
-                        <h2 className="font-display text-3xl sm:text-4xl text-midnight">{product.name}</h2>
+                        <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-midnight">{product.name}</h2>
                       </Link>
                     ) : (
-                      <h2 className="font-display text-3xl sm:text-4xl text-midnight">{product.name}</h2>
+                      <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-midnight">{product.name}</h2>
                     )}
-                    <p className="font-brand text-stone mt-1">{product.description}</p>
-                    <p className="font-body text-pebble mt-4 leading-relaxed">{product.detail || product.description}</p>
+                    <p className="font-brand text-stone text-sm sm:text-base mt-1">{product.description}</p>
+                    <p className="font-body text-pebble text-sm mt-3 leading-relaxed">{product.detail || product.description}</p>
 
-                    <div className="mt-6 flex items-center gap-4">
+                    <div className="mt-4 sm:mt-6 flex items-center gap-3 sm:gap-4">
                       {product.price ? (
                         <div className="flex items-baseline gap-2">
-                          <span className="font-display text-4xl text-primary">${Number(product.price).toFixed(2)}</span>
+                          <span className="font-display text-3xl sm:text-4xl text-primary">${Number(product.price).toFixed(2)}</span>
                           {product.compareAtPrice && product.compareAtPrice > product.price && (
                             <span className="font-body text-stone line-through">${Number(product.compareAtPrice).toFixed(2)}</span>
                           )}

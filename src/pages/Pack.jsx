@@ -63,12 +63,12 @@ export default function Pack() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <div className="bg-midnight pt-24 pb-16 sm:pt-32 sm:pb-24 px-4">
+      <div className="bg-midnight pt-20 pb-12 sm:pt-32 sm:pb-24 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="font-brand text-primary text-lg mb-2">The Real MVPs</p>
-            <h1 className="font-display text-6xl sm:text-8xl text-white">MEET THE PACK</h1>
-            <p className="font-body text-stone text-lg mt-4 max-w-xl">
+            <p className="font-brand text-primary text-sm sm:text-lg mb-2">The Real MVPs</p>
+            <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white leading-tight">MEET THE PACK</h1>
+            <p className="font-body text-stone text-base sm:text-lg mt-4 max-w-xl">
               The dogs who started it all. They didn't ask for a company to be built around their bathroom habits, but here we are.
             </p>
           </motion.div>
@@ -76,8 +76,8 @@ export default function Pack() {
       </div>
 
       {/* Dogs */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {DOGS.map((dog, i) => (
             <motion.div
               key={dog.name}
@@ -90,11 +90,11 @@ export default function Pack() {
               <div className={`aspect-[4/3] overflow-hidden border-b-4 ${dog.color}`}>
                 <img src={dog.image} alt={dog.name} className="w-full h-full object-cover" />
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-3xl text-midnight">{dog.name}</h3>
-                <p className="font-brand text-primary text-sm">{dog.breed}</p>
+              <div className="p-4 sm:p-6">
+                <h3 className="font-display text-2xl sm:text-3xl text-midnight">{dog.name}</h3>
+                <p className="font-brand text-primary text-xs sm:text-sm">{dog.breed}</p>
                 <p className="font-brand text-stone text-xs mt-1">{dog.title}</p>
-                <p className="font-body text-pebble text-sm mt-3 leading-relaxed">{dog.description}</p>
+                <p className="font-body text-pebble text-sm mt-2 sm:mt-3 leading-relaxed">{dog.description}</p>
               </div>
             </motion.div>
           ))}

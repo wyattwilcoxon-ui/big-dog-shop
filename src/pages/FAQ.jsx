@@ -46,12 +46,12 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <div className="bg-primary pt-24 pb-16 sm:pt-32 sm:pb-24 px-4">
+      <div className="bg-primary pt-20 pb-12 sm:pt-32 sm:pb-24 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="font-brand text-white/80 text-lg mb-2">Got Questions?</p>
-            <h1 className="font-display text-6xl sm:text-8xl text-white">WE'VE GOT ANSWERS</h1>
-            <p className="font-body text-white/70 text-lg mt-4 max-w-xl">
+            <p className="font-brand text-white/80 text-sm sm:text-lg mb-2">Got Questions?</p>
+            <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white leading-tight">WE'VE GOT ANSWERS</h1>
+            <p className="font-body text-white/70 text-base sm:text-lg mt-4 max-w-xl">
               (And probably a poop joke to go with each one.)
             </p>
           </motion.div>
@@ -59,8 +59,8 @@ export default function FAQ() {
       </div>
 
       {/* FAQ Accordion */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <Accordion type="single" collapsible className="space-y-4">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
           {FAQS.map((faq, i) => (
             <motion.div
               key={i}
@@ -71,12 +71,12 @@ export default function FAQ() {
             >
               <AccordionItem
                 value={`faq-${i}`}
-                className="bg-white rounded-2xl border-bold shadow-cartoon-sm px-6 overflow-hidden data-[state=open]:shadow-cartoon"
+                className="bg-white rounded-2xl border-bold shadow-cartoon-sm px-4 sm:px-6 overflow-hidden data-[state=open]:shadow-cartoon"
               >
-                <AccordionTrigger className="font-brand text-lg text-midnight py-5 hover:text-primary hover:no-underline">
+                <AccordionTrigger className="font-brand text-base sm:text-lg text-midnight py-4 sm:py-5 hover:text-primary hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="font-body text-pebble leading-relaxed pb-5">
+                <AccordionContent className="font-body text-pebble leading-relaxed pb-4 sm:pb-5 text-sm sm:text-base">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

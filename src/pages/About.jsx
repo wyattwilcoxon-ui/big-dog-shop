@@ -76,20 +76,20 @@ export default function About() {
     <main className="bg-background min-h-screen">
 
       {/* Hero */}
-      <section className="bg-midnight pt-32 pb-20 px-4 relative overflow-hidden">
+      <section className="bg-midnight pt-24 pb-16 sm:pt-32 sm:pb-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: 'radial-gradient(circle at 20% 80%, #F4610E 0%, transparent 50%), radial-gradient(circle at 80% 20%, #2A9134 0%, transparent 50%)'
         }} />
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-4">Our Story</p>
-            <h1 className="font-display text-7xl sm:text-9xl text-white leading-none mb-6">
+            <p className="font-brand text-primary text-xs sm:text-sm uppercase tracking-widest mb-4">Our Story</p>
+            <h1 className="font-display text-5xl sm:text-7xl lg:text-9xl text-white leading-tight mb-4 sm:mb-6">
               BUILT FOR<br /><span className="text-primary">BIG DOGS.</span><br />BY BIG DOG<br />PEOPLE.
             </h1>
-            <p className="font-body text-stone text-lg sm:text-xl max-w-2xl leading-relaxed">
+            <p className="font-body text-stone text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed">
               Big Dog Life is an Ohio-based lifestyle brand dedicated to improving life for large-breed dogs and the people who love them. We design, source, and curate high-quality products tailored to the real-world needs of dogs 70 pounds and above.
             </p>
-            <p className="font-display text-primary text-2xl sm:text-3xl mt-6">
+            <p className="font-display text-primary text-xl sm:text-2xl lg:text-3xl mt-4 sm:mt-6">
               "Because Big Dogs Have Big Needs."
             </p>
           </motion.div>
@@ -97,8 +97,8 @@ export default function About() {
       </section>
 
       {/* Stats */}
-      <section className="bg-primary py-12 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="bg-primary py-8 sm:py-12 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {STATS.map((s, i) => (
             <motion.div
               key={i}
@@ -108,8 +108,8 @@ export default function About() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="font-display text-4xl sm:text-5xl text-white">{s.value}</div>
-              <div className="font-brand text-white/90 text-sm mt-1">{s.label}</div>
+              <div className="font-display text-3xl sm:text-4xl lg:text-5xl text-white">{s.value}</div>
+              <div className="font-brand text-white/90 text-xs sm:text-sm mt-1">{s.label}</div>
               <div className="font-body text-white/60 text-xs mt-0.5">{s.sub}</div>
             </motion.div>
           ))}
@@ -117,16 +117,16 @@ export default function About() {
       </section>
 
       {/* Mission */}
-      <section className="py-20 px-4 bg-cream">
+      <section className="py-12 sm:py-20 px-4 bg-cream">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">Mission</p>
-            <h2 className="font-display text-5xl sm:text-7xl text-midnight leading-tight">
+            <p className="font-brand text-primary text-xs sm:text-sm uppercase tracking-widest mb-3">Mission</p>
+            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-midnight leading-tight">
               OUR MISSION
             </h2>
           </motion.div>
@@ -134,9 +134,9 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-midnight rounded-3xl p-10 sm:p-16 text-center border-4 border-midnight shadow-cartoon"
+            className="bg-midnight rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center border-4 border-midnight shadow-cartoon"
           >
-            <p className="font-body text-white text-xl sm:text-2xl leading-relaxed max-w-3xl mx-auto">
+            <p className="font-body text-white text-base sm:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto">
               To make life easier, healthier, and more fulfilling for large-breed dogs and the people who love them — through durable, high-quality essentials that fit the unique needs of big dogs, built on honest education, responsible sourcing, and genuine community.
             </p>
           </motion.div>
@@ -144,18 +144,18 @@ export default function About() {
       </section>
 
       {/* 3 Brand Promises */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-12 sm:py-20 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
-            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">What We Stand For</p>
-            <h2 className="font-display text-5xl sm:text-7xl text-midnight">THREE PROMISES</h2>
+            <p className="font-brand text-primary text-xs sm:text-sm uppercase tracking-widest mb-3">What We Stand For</p>
+            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-midnight">THREE PROMISES</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {PROMISES.map((p, i) => (
               <motion.div
                 key={p.label}
@@ -163,12 +163,12 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12 }}
-                className="bg-white rounded-2xl p-8 border-bold shadow-cartoon-sm"
+                className="bg-white rounded-2xl p-6 sm:p-8 border-bold shadow-cartoon-sm"
               >
-                <div className={`w-12 h-12 ${p.color} rounded-xl flex items-center justify-center mb-5 border-2 border-midnight`}>
-                  <p.icon className="w-6 h-6 text-white" />
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 ${p.color} rounded-xl flex items-center justify-center mb-4 sm:mb-5 border-2 border-midnight`}>
+                  <p.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <h3 className="font-display text-3xl text-midnight mb-3">{p.label}</h3>
+                <h3 className="font-display text-2xl sm:text-3xl text-midnight mb-3">{p.label}</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">{p.description}</p>
               </motion.div>
             ))}

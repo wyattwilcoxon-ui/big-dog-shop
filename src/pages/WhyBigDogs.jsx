@@ -31,14 +31,14 @@ export default function WhyBigDogs() {
     <main className="bg-background min-h-screen">
 
       {/* Hero */}
-      <section className="bg-midnight pt-32 pb-20 px-4">
+      <section className="bg-midnight pt-24 pb-16 sm:pt-32 sm:pb-20 px-4">
         <div className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-4">The Real Talk</p>
-            <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl text-white leading-none mb-6">
+            <p className="font-brand text-primary text-xs sm:text-sm uppercase tracking-widest mb-4">The Real Talk</p>
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-8xl text-white leading-tight mb-4 sm:mb-6">
               WHY BIG DOGS NEED BIGGER<br /><span className="text-primary">POOP BAGS</span>
             </h1>
-            <p className="font-body text-stone text-lg sm:text-xl max-w-2xl leading-relaxed">
+            <p className="font-body text-stone text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed">
               If you own a large-breed dog, you already know the truth that small-dog owners will never understand: standard poop bags are completely inadequate.
             </p>
           </motion.div>
