@@ -17,6 +17,7 @@ export default function JoinThePack() {
     setSubmitting(true);
     setError('');
     
+    // Try backend first, fallback to mailto
     try {
       const response = await fetch('/api/functions/invoke/saveEmailSignup', {
         method: 'POST',
@@ -29,17 +30,33 @@ export default function JoinThePack() {
         }),
       });
       
-      if (!response.ok) throw new Error('Failed to submit');
-      
-      setSubmitted(true);
-      setEmail('');
-      setPhone('');
-      setDogBreed('');
+      if (response.ok) {
+        setSubmitted(true);
+        setEmail('');
+        setPhone('');
+        setDogBreed('');
+        setSubmitting(false);
+        return;
+      }
     } catch (err) {
-      setError('Something went wrong. Try again!');
-    } finally {
-      setSubmitting(false);
+      // Backend failed, use mailto fallback
     }
+    
+    // Fallback: open email client
+    const subject = encodeURIComponent('Join The Pack - Early Access');
+    const body = encodeURIComponent(`Hi Big Dog Life!
+
+I want to join the pack!
+
+Email: ${email}
+Phone: ${phone || 'N/A'}
+Dog's Breed: ${dogBreed || 'N/A'}
+
+Please add me to your launch list!`);
+    
+    window.location.href = `mailto:hello@bigdoglife.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+    setSubmitting(false);
   };
 
   return (
