@@ -3,6 +3,12 @@ import { createClientFromRequest } from 'npm:@base44/sdk@0.8.25';
 Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
+    
+    // INTENTIONALLY PUBLIC ENDPOINT - No auth check required
+    // This is a public email signup form for pre-launch notifications
+    // RLS protects data: create={}, read/update/delete=admin only
+    // Authentication would block legitimate public signups
+    
     const body = await req.json();
     const { email, phone, dog_breed, timestamp } = body;
 
