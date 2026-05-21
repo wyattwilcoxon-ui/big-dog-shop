@@ -31,7 +31,7 @@ export default function JoinThePack() {
   };
 
   return (
-    <div className="min-h-screen bg-cream relative overflow-hidden">
+    <div className="min-h-screen bg-cream relative overflow-auto">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 text-8xl">🐾</div>
