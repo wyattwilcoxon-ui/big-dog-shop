@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Loader2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Loader2, X, Mail } from 'lucide-react';
 import { getProducts } from '@/lib/shopify';
 import { useShopifyCart } from '@/lib/ShopifyCartContext';
+import { base44 } from '@/api/base44Client';
+import { toast } from 'sonner';
 
 // Fallback static products if Shopify returns nothing
 const FALLBACK_PRODUCTS = [
@@ -38,6 +40,9 @@ export default function Shop() {
   const [products, setProducts] = useState([]);
   const [fetching, setFetching] = useState(true);
   const [addingId, setAddingId] = useState(null);
+  const [notifyProduct, setNotifyProduct] = useState(null);
+  const [notifyEmail, setNotifyEmail] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     getProducts()
@@ -51,6 +56,29 @@ export default function Shop() {
     setAddingId(product.id);
     await addItem(product.variantId, product);
     setAddingId(null);
+  };
+
+  const handleNotifyMe = async (product) => {
+    setNotifyProduct(product);
+    setNotifyEmail('');
+  };
+
+  const submitNotifyMe = async () => {
+    if (!notifyEmail || !notifyProduct) return;
+    setSubmitting(true);
+    try {
+      await base44.functions.invoke('saveNotifyMeRequest', {
+        email: notifyEmail,
+        product_id: notifyProduct.id,
+        product_name: notifyProduct.name,
+      });
+      toast.success('We\'ll notify you when it\'s back! 🐾');
+      setNotifyProduct(null);
+    } catch (error) {
+      toast.error('Something went wrong. Try again!');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const displayProducts = fetching ? [] : products;
@@ -130,12 +158,12 @@ export default function Shop() {
                     </div>
 
                     <button
-                      onClick={() => handleAddToCart(product)}
-                      disabled={!product.available || addingId === product.id}
+                      onClick={() => product.available ? handleAddToCart(product) : handleNotifyMe(product)}
+                      disabled={addingId === product.id}
                       className={`mt-6 w-full sm:w-auto px-8 py-4 rounded-xl font-brand transition-all duration-300 border-bold flex items-center justify-center gap-2 ${
                         product.available
                           ? 'bg-primary text-white hover:bg-orange-hot shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
-                          : 'bg-fog text-pebble cursor-not-allowed'
+                          : 'bg-secondary text-white hover:bg-green-bright shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
                       }`}
                     >
                       {addingId === product.id
@@ -150,6 +178,65 @@ export default function Shop() {
           </div>
         )}
       </div>
+
+      {/* Notify Me Modal */}
+      <AnimatePresence>
+        {notifyProduct && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-midnight/60 z-[90]"
+              onClick={() => setNotifyProduct(null)}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            >
+              <div className="bg-white rounded-2xl border-bold shadow-cartoon max-w-md w-full p-6 relative">
+                <button
+                  onClick={() => setNotifyProduct(null)}
+                  className="absolute top-4 right-4 text-stone hover:text-midnight"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-display text-3xl text-midnight mb-2">NOTIFY ME</h3>
+                  <p className="font-body text-pebble mb-1">
+                    We'll email you when <strong>{notifyProduct.name}</strong> is back in stock!
+                  </p>
+                  <p className="font-brand text-sm text-stone mb-4">No spam, just good news 🐾</p>
+                  <div className="space-y-3">
+                    <div>
+                      <input
+                        type="email"
+                        value={notifyEmail}
+                        onChange={(e) => setNotifyEmail(e.target.value)}
+                        placeholder="your@email.com"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary"
+                        autoFocus
+                      />
+                    </div>
+                    <button
+                      onClick={submitNotifyMe}
+                      disabled={submitting || !notifyEmail}
+                      className="w-full h-14 text-lg font-brand bg-primary hover:bg-orange-hot disabled:bg-fog disabled:text-pebble disabled:cursor-not-allowed text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none disabled:shadow-none disabled:translate-x-0 disabled:translate-y-0"
+                    >
+                      {submitting ? <><Loader2 className="w-5 h-5 animate-spin inline mr-2" />Sending...</> : 'Notify Me 🔔'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

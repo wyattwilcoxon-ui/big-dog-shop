@@ -1,0 +1,28 @@
+{
+  "name": "NotifyMeRequest",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "Customer email for notification"
+    },
+    "product_id": {
+      "type": "string",
+      "description": "Shopify product ID or handle"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "notified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether customer was notified"
+    }
+  },
+  "required": [
+    "email",
+    "product_id",
+    "product_name"
+  ]
+}
