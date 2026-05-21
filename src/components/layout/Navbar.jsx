@@ -44,16 +44,9 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
-              <img 
-                src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/d990ddd54_generated_image.png" 
-                alt="Big Dog Life" 
-                className="w-10 h-10 object-contain"
-              />
-              <div className="flex flex-col leading-none">
-                <span className="font-display text-white text-xl tracking-wide">BIG DOG</span>
-                <span className="font-display text-hotpink text-xl tracking-wide">LIFE</span>
-              </div>
+            <Link to="/" className="flex items-center gap-2 group">
+              <span className="font-display text-white text-2xl tracking-wide leading-none">BIG DOG</span>
+              <span className="font-display text-primary text-2xl tracking-wide leading-none">LIFE</span>
               <span className="font-brand text-stone text-xs">™</span>
             </Link>
 
@@ -78,7 +71,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             <div className="flex items-center gap-3">
               <button
                 onClick={onCartClick}
-                className="relative flex items-center gap-2 bg-hotpink text-white font-brand text-sm px-5 py-2 rounded-full hover:bg-pink-600 transition-all shadow-cartoon-sm"
+                className="relative flex items-center gap-2 bg-primary text-white font-brand text-sm px-5 py-2 rounded-full hover:bg-orange-hot transition-all"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span className="hidden sm:inline">Shop Now</span>
@@ -111,14 +104,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             className="fixed inset-0 z-[60] bg-midnight flex flex-col"
           >
             <div className="flex items-center justify-between px-5 h-16 border-b border-white/10">
-              <div className="flex items-center gap-2">
-                <img 
-                  src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/d990ddd54_generated_image.png" 
-                  alt="Big Dog Life" 
-                  className="w-8 h-8 object-contain"
-                />
-                <span className="font-display text-white text-xl">BIG DOG <span className="text-hotpink">LIFE</span></span>
-              </div>
+              <span className="font-display text-white text-2xl">BIG DOG <span className="text-primary">LIFE</span></span>
               <button className="text-white p-2" onClick={() => setMenuOpen(false)}>
                 <X className="w-7 h-7" strokeWidth={2.5} />
               </button>
