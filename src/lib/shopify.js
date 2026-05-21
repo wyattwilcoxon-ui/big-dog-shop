@@ -1,5 +1,5 @@
 const DOMAIN = 'big-dog-life-2.myshopify.com';
-const TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN || 'a76b255f896639bf0dc6a3d9e15b9e9b';
+const TOKEN = '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';
 const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
 
 async function shopifyFetch(query, variables = {}) {
