@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
+import { base44 } from '@/api/base44Client';
 
 export default function JoinThePack() {
   const [email, setEmail] = useState('');
@@ -17,34 +18,24 @@ export default function JoinThePack() {
     setSubmitting(true);
     setError('');
     
-    // Try backend first, fallback to mailto
     try {
-      const response = await fetch('/api/functions/invoke/saveEmailSignup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          email, 
-          phone: phone || null, 
-          dog_breed: dogBreed || null, 
-          timestamp: Date.now() 
-        }),
+      // Use Base44 SDK to call backend function
+      await base44.functions.invoke('saveEmailSignup', { 
+        email, 
+        phone: phone || null, 
+        dog_breed: dogBreed || null, 
+        timestamp: Date.now() 
       });
       
-      if (response.ok) {
-        setSubmitted(true);
-        setEmail('');
-        setPhone('');
-        setDogBreed('');
-        setSubmitting(false);
-        return;
-      }
+      setSubmitted(true);
+      setEmail('');
+      setPhone('');
+      setDogBreed('');
+      setSubmitting(false);
     } catch (err) {
       // Backend failed, use mailto fallback
-    }
-    
-    // Fallback: open email client
-    const subject = encodeURIComponent('Join The Pack - Early Access');
-    const body = encodeURIComponent(`Hi Big Dog Life!
+      const subject = encodeURIComponent('Join The Pack - Early Access');
+      const body = encodeURIComponent(`Hi Big Dog Life!
 
 I want to join the pack!
 
@@ -53,10 +44,11 @@ Phone: ${phone || 'N/A'}
 Dog's Breed: ${dogBreed || 'N/A'}
 
 Please add me to your launch list!`);
-    
-    window.location.href = `mailto:hello@bigdoglife.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-    setSubmitting(false);
+      
+      window.location.href = `mailto:hello@bigdoglife.com?subject=${subject}&body=${body}`;
+      setSubmitted(true);
+      setSubmitting(false);
+    }
   };
 
   return (
