@@ -23,33 +23,25 @@ import JoinThePack from './pages/JoinThePack';
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
 
-  if (isLoadingPublicSettings || isLoadingAuth) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-cream">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-4 border-fog border-t-primary rounded-full animate-spin"></div>
-          <span className="font-brand text-pebble text-sm">Loading Big Dog Energy...</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (authError) {
-    if (authError.type === 'user_not_registered') {
-      return <UserNotRegisteredError />;
-    } else if (authError.type === 'auth_required') {
-      navigateToLogin();
-      return null;
-    }
-  }
+  // Show loading only for protected routes
+  const showLoading = isLoadingPublicSettings || isLoadingAuth;
 
   return (
     <Routes>
-      {/* Public route - no auth required */}
+      {/* Public route - no auth required, render immediately */}
       <Route path="/join-the-pack" element={<JoinThePack />} />
 
       {/* Protected routes - auth required */}
-      <Route element={<ProtectedRoute />}>
+      <Route element={<ProtectedRoute fallback={
+        showLoading ? (
+          <div className="fixed inset-0 flex items-center justify-center bg-cream">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-10 h-10 border-4 border-fog border-t-primary rounded-full animate-spin"></div>
+              <span className="font-brand text-pebble text-sm">Loading Big Dog Energy...</span>
+            </div>
+          </div>
+        ) : null
+      } />}>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
