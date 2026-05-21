@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ROTATING_WORDS = ['ENERGY', 'POOPS', 'BAGS', 'DOGS', 'LIFE'];
 
 const FLOATING = [
-  { emoji: '💩', left: '8%', top: '20%', size: '2rem', delay: 0 },
-  { emoji: '🐾', left: '82%', top: '25%', size: '1.8rem', delay: 0.5 },
-  { emoji: '⭐', left: '72%', top: '55%', size: '2rem', delay: 1 },
-  { emoji: '🦴', left: '15%', top: '60%', size: '1.8rem', delay: 0.8 },
-  { emoji: '🦴', left: '90%', top: '70%', size: '1.6rem', delay: 1.3 },
-  { emoji: '🐕', left: '5%', top: '45%', size: '1.7rem', delay: 0.4 },
+  { emoji: '💩', left: '8%', top: '22%', size: '3rem', delay: 0, rot: -15 },
+  { emoji: '🐾', left: '80%', top: '18%', size: '2.5rem', delay: 0.4, rot: 10 },
+  { emoji: '⭐', left: '74%', top: '58%', size: '2.8rem', delay: 0.9, rot: 20 },
+  { emoji: '🦴', left: '12%', top: '62%', size: '2.4rem', delay: 0.7, rot: -20 },
+  { emoji: '🐕', left: '88%', top: '72%', size: '3rem', delay: 1.1, rot: 5 },
+  { emoji: '💩', left: '55%', top: '12%', size: '2.2rem', delay: 0.5, rot: 8 },
 ];
 
 export default function HeroSection({ heroImage }) {
@@ -27,11 +27,22 @@ export default function HeroSection({ heroImage }) {
     <section className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-60 scale-110" />
-        <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/30 to-transparent" />
+        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-50 scale-110" />
+        <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-midnight/20" />
       </div>
 
-
+      {/* Floating emojis */}
+      {FLOATING.map((f, i) => (
+        <motion.div
+          key={i}
+          className="absolute select-none pointer-events-none"
+          style={{ left: f.left, top: f.top, fontSize: f.size, rotate: f.rot }}
+          animate={{ y: [0, -14, 0], rotate: [f.rot, f.rot + 8, f.rot] }}
+          transition={{ delay: f.delay, duration: 3 + i * 0.4, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          {f.emoji}
+        </motion.div>
+      ))}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end min-h-[90vh] sm:min-h-screen pb-16 sm:pb-28">
@@ -40,26 +51,20 @@ export default function HeroSection({ heroImage }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
         >
-          {/* Eyebrow */}
+          {/* Tag line */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="inline-flex items-center gap-2 border border-white/30 text-white/80 font-brand text-sm px-5 py-2 rounded-full mb-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="font-brand text-primary text-lg sm:text-2xl mb-2 tracking-wide"
           >
-            🦴 THE PREMIER POOP BAG 🦴
+            🐶 For Big Dogs Only
           </motion.div>
 
-          {/* "BIG DOG:" label above rotating word */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="font-display leading-none text-primary"
-            style={{ fontSize: 'clamp(2.5rem, 8vw, 7rem)' }}
-          >
+          {/* Combined headline */}
+          <div className="font-display leading-none text-primary" style={{ fontSize: 'clamp(2.5rem, 8vw, 7rem)' }}>
             BIG DOG:
-          </motion.div>
+          </div>
 
           {/* Rotating headline */}
           <div className="h-[8rem] sm:h-[12rem] md:h-[15rem] overflow-hidden mb-2">
@@ -84,8 +89,8 @@ export default function HeroSection({ heroImage }) {
             transition={{ delay: 0.6 }}
             className="font-body text-xl sm:text-2xl text-white max-w-xl mt-2 leading-relaxed"
           >
-            Finally, poop bags for the <strong>really big jobs.</strong><br />
-            Extra-large. Extra-strong. Zero shame.
+            The <strong>BIGGEST</strong> poop bags for the biggest dogs! 💪<br />
+            Extra-large. Extra-strong. Totally leak-proof.
           </motion.p>
 
           {/* CTAs */}
@@ -101,7 +106,7 @@ export default function HeroSection({ heroImage }) {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                ⚡ GET THE BOSIE BAG
+                🛒 SHOP NOW — IT'S TIME
               </motion.div>
             </Link>
             <Link to="/pack">
@@ -110,7 +115,7 @@ export default function HeroSection({ heroImage }) {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                SEE WHY IT WORKS
+                🐾 WHY BIG DOGS NEED THIS
               </motion.div>
             </Link>
           </motion.div>

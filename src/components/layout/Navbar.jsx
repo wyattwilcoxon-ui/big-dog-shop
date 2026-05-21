@@ -32,15 +32,9 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-midnight ${
         hidden ? '-translate-y-full' : 'translate-y-0'
       }`}
-        style={{
-          background: scrolled
-            ? 'linear-gradient(to bottom, rgba(21,21,21,0.98) 0%, rgba(21,21,21,0.85) 100%)'
-            : 'linear-gradient(to bottom, rgba(21,21,21,0.7) 0%, rgba(21,21,21,0.0) 100%)',
-          backdropFilter: scrolled ? 'blur(12px)' : 'blur(4px)',
-        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
