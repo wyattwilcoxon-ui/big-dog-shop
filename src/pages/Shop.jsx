@@ -42,6 +42,7 @@ export default function Shop() {
   const [addingId, setAddingId] = useState(null);
   const [notifyProduct, setNotifyProduct] = useState(null);
   const [notifyEmail, setNotifyEmail] = useState('');
+  const [notifyPhone, setNotifyPhone] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -69,6 +70,7 @@ export default function Shop() {
     try {
       await base44.functions.invoke('saveNotifyMeRequest', {
         email: notifyEmail,
+        phone: notifyPhone || null,
         product_id: notifyProduct.id,
         product_name: notifyProduct.name,
       });
@@ -218,9 +220,18 @@ export default function Shop() {
                         type="email"
                         value={notifyEmail}
                         onChange={(e) => setNotifyEmail(e.target.value)}
-                        placeholder="your@email.com"
+                        placeholder="your@email.com *"
                         className="w-full px-4 py-3 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary"
-                        autoFocus
+                        required
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="tel"
+                        value={notifyPhone}
+                        onChange={(e) => setNotifyPhone(e.target.value)}
+                        placeholder="Phone (optional)"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-midnight font-body text-midnight placeholder:text-stone focus:outline-none focus:border-primary"
                       />
                     </div>
                     <button

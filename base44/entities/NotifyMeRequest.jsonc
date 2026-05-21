@@ -6,6 +6,10 @@
       "type": "string",
       "description": "Customer email for notification"
     },
+    "phone": {
+      "type": "string",
+      "description": "Customer phone number (optional)"
+    },
     "product_id": {
       "type": "string",
       "description": "Shopify product ID or handle"
