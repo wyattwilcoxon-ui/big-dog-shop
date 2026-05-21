@@ -27,7 +27,8 @@ export default function Footer() {
             <p className="font-body text-stone text-sm leading-relaxed">
               Big dogs. Bigger energy. Zero apologies.
             </p>
-            <p className="font-brand text-primary text-sm mt-2">We give a $h!t. 💩</p>
+            <p className="font-brand text-primary text-xs mt-3 leading-relaxed">"Because Big Dogs Have Big Needs."</p>
+            <p className="font-brand text-stone text-xs mt-1">We give a $h!t. 💩</p>
           </div>
 
           <div>
@@ -61,8 +62,8 @@ export default function Footer() {
               #BosieBlast 💩
             </motion.a>
             <div className="flex flex-col gap-2">
-              <a href="mailto:info@bigdoglife.com" className="flex items-center gap-2 text-stone hover:text-primary transition-colors font-body text-sm">
-                <Mail className="w-4 h-4" />info@bigdoglife.com
+              <a href="mailto:info@thebigdoglife.com" className="flex items-center gap-2 text-stone hover:text-primary transition-colors font-body text-sm">
+                <Mail className="w-4 h-4" />info@thebigdoglife.com
               </a>
               <div className="flex items-center gap-2 text-stone font-body text-sm">
                 <MapPin className="w-4 h-4" />Bellefontaine, Ohio
