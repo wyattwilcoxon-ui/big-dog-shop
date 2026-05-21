@@ -1,5 +1,6 @@
 const DOMAIN = 'big-dog-life-2.myshopify.com';
-const TOKEN = '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';
+// Public Storefront Access Token (from Shopify Admin > Settings > Apps > Develop apps > Storefront API integration)
+const TOKEN = 'dfe64f47f36d168a62d9be77dd5124e0';
 const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
 
 async function shopifyFetch(query, variables = {}) {
