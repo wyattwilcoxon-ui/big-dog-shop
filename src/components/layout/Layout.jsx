@@ -11,7 +11,7 @@ function LayoutInner() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
-      <main className="pt-18 sm:pt-22">
+      <main>
         <Outlet />
       </main>
       <Footer />
