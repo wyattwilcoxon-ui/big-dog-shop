@@ -30,8 +30,11 @@ function App() {
             <Route path="/" element={<JoinThePack />} />
             
             {/* All other routes */}
-            <Route path="/*" element={<ProtectedRoutes />}>
-              <Route path="/home" element={<Home />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route element={<Layout />}>
+                <Route path="/home" element={<Home />} />
+              </Route>
+              <Route path="*" element={<PageNotFound />} />
             </Route>
           </Routes>
           <Toaster />
