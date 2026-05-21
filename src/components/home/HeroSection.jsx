@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ROTATING_WORDS = ['ENERGY', 'POOPS', 'BAGS', 'DOGS', 'LIFE'];
 
 const FLOATING = [
-{ emoji: '💩', left: '8%', top: '22%', size: '3rem', delay: 0, rot: -15 },
-{ emoji: '🐾', left: '80%', top: '18%', size: '2.5rem', delay: 0.4, rot: 10 },
-{ emoji: '⭐', left: '74%', top: '58%', size: '2.8rem', delay: 0.9, rot: 20 },
-{ emoji: '🦴', left: '12%', top: '62%', size: '2.4rem', delay: 0.7, rot: -20 },
-{ emoji: '🐕', left: '88%', top: '72%', size: '3rem', delay: 1.1, rot: 5 },
-{ emoji: '💩', left: '55%', top: '12%', size: '2.2rem', delay: 0.5, rot: 8 }];
+{ emoji: '💩', left: '5%',  top: '12%', size: '2.5rem', delay: 0,   rot: -15 },
+{ emoji: '🐾', left: '82%', top: '10%', size: '2.2rem', delay: 0.4, rot: 10  },
+{ emoji: '⭐', left: '91%', top: '28%', size: '2.4rem', delay: 0.9, rot: 20  },
+{ emoji: '🦴', left: '3%',  top: '32%', size: '2rem',   delay: 0.7, rot: -20 },
+{ emoji: '🐕', left: '87%', top: '52%', size: '2.5rem', delay: 1.1, rot: 5   },
+{ emoji: '💩', left: '62%', top: '8%',  size: '2rem',   delay: 0.5, rot: 8   }];
 
 
 export default function HeroSection({ heroImage }) {
