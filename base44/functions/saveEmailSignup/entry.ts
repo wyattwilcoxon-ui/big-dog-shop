@@ -12,14 +12,7 @@ Deno.serve(async (req) => {
     const body = await req.json();
     const { email, phone, dog_breed, timestamp } = body;
 
-    // Basic spam protection - reject if timestamp is too old
-    if (timestamp) {
-      const now = Date.now();
-      const submitted = parseInt(timestamp);
-      if (isNaN(submitted) || (now - submitted) > 604800000) { // 7 days
-        return Response.json({ error: 'Invalid request' }, { status: 400 });
-      }
-    }
+    // Skip timestamp validation for now - not needed for public signup
 
     if (!email || !email.includes('@')) {
       return Response.json({ error: 'Valid email required' }, { status: 400 });
