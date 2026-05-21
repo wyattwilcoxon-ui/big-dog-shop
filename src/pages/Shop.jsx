@@ -20,7 +20,7 @@ const FALLBACK_PRODUCTS = [
     name: 'The Bosie Bag™ 8-Pack',
     description: '8 Rolls • 120 Bags Total',
     detail: 'Our best seller. 120 bags of leak-proof, oversized glory. Weeks of worry-free walks.',
-    price: 11.99, compareAtPrice: 15.99, badge: 'Best Seller', available: true,
+    price: 11.99, compareAtPrice: 15.99, badge: 'Best Seller', available: false,
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-multi_1698b1d7.png',
   },
   {
@@ -42,7 +42,7 @@ export default function Shop() {
   useEffect(() => {
     getProducts()
       .then(data => setProducts(data.length > 0 ? data : FALLBACK_PRODUCTS))
-      .catch(() => setProducts(FALLBACK_PRODUCTS))
+      .catch(err => { console.error('Shopify fetch failed:', err); setProducts(FALLBACK_PRODUCTS); })
       .finally(() => setFetching(false));
   }, []);
 

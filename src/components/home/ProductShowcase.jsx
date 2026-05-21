@@ -23,7 +23,7 @@ const FALLBACK = [
     price: 11.99,
     compareAtPrice: 15.99,
     badge: 'Best Seller',
-    available: true,
+    available: false,
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-multi_1698b1d7.png',
   },
   {
@@ -53,7 +53,7 @@ export default function ProductShowcase() {
   useEffect(() => {
     getProducts()
       .then(data => { if (data.length > 0) setProducts(data); })
-      .catch(() => {});
+      .catch(err => console.error('Shopify fetch failed:', err));
   }, []);
 
   const handleAdd = (product) => {
