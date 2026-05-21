@@ -123,6 +123,45 @@ export async function updateCartLine(cartId, lineId, quantity) {
   return data.cartLinesUpdate.cart;
 }
 
+// --- Single Product ---
+export async function getProductByHandle(handle) {
+  const data = await shopifyFetch(`
+    query getProduct($handle: String!) {
+      product(handle: $handle) {
+        id title description handle
+        images(first: 10) { edges { node { url altText } } }
+        variants(first: 30) {
+          edges {
+            node {
+              id title availableForSale
+              priceV2 { amount currencyCode }
+              compareAtPriceV2 { amount currencyCode }
+              selectedOptions { name value }
+            }
+          }
+        }
+      }
+    }
+  `, { handle });
+  const p = data.product;
+  if (!p) return null;
+  return {
+    id: p.id,
+    handle: p.handle,
+    name: p.title,
+    description: p.description,
+    images: p.images.edges.map(e => e.node.url),
+    variants: p.variants.edges.map(({ node }) => ({
+      id: node.id,
+      title: node.title,
+      price: parseFloat(node.priceV2.amount),
+      compareAtPrice: node.compareAtPriceV2 ? parseFloat(node.compareAtPriceV2.amount) : null,
+      available: node.availableForSale,
+      options: node.selectedOptions,
+    })),
+  };
+}
+
 export function parseCartLines(cart) {
   if (!cart?.lines?.edges) return [];
   return cart.lines.edges.map(({ node }) => ({

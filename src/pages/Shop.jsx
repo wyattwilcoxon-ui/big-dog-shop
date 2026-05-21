@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
 import { getProducts } from '@/lib/shopify';
@@ -96,14 +97,22 @@ export default function Shop() {
                         {product.badge === 'Best Seller' ? '🧻 ' : '⚡ '}{product.badge}
                       </span>
                     )}
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="max-h-60 object-contain group-hover:scale-105 transition-transform duration-500"
-                    />
+                    {product.handle ? (
+                      <Link to={`/product/${product.handle}`}>
+                        <img src={product.image} alt={product.name} className="max-h-60 object-contain group-hover:scale-105 transition-transform duration-500" />
+                      </Link>
+                    ) : (
+                      <img src={product.image} alt={product.name} className="max-h-60 object-contain group-hover:scale-105 transition-transform duration-500" />
+                    )}
                   </div>
                   <div className="p-8 sm:p-10 flex flex-col justify-center">
-                    <h2 className="font-display text-3xl sm:text-4xl text-midnight">{product.name}</h2>
+                    {product.handle ? (
+                      <Link to={`/product/${product.handle}`} className="hover:text-primary transition-colors">
+                        <h2 className="font-display text-3xl sm:text-4xl text-midnight">{product.name}</h2>
+                      </Link>
+                    ) : (
+                      <h2 className="font-display text-3xl sm:text-4xl text-midnight">{product.name}</h2>
+                    )}
                     <p className="font-brand text-stone mt-1">{product.description}</p>
                     <p className="font-body text-pebble mt-4 leading-relaxed">{product.detail || product.description}</p>
 

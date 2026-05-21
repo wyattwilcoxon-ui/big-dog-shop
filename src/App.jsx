@@ -16,6 +16,7 @@ import ShopifyTest from './pages/ShopifyTest';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import WhyBigDogs from './pages/WhyBigDogs';
+import ProductDetail from './pages/ProductDetail';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -52,6 +53,7 @@ const AuthenticatedApp = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
+        <Route path="/product/:handle" element={<ProductDetail />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
