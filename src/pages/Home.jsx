@@ -6,7 +6,7 @@ import StatsBar from '../components/home/StatsBar';
 import ProductShowcase from '../components/home/ProductShowcase';
 import BosaOriginStory from '../components/home/BosaOriginStory';
 import SizeComparison from '../components/home/SizeComparison';
-import BundleSection from '../components/home/BundleSection';
+
 
 import BosieBlastWall from '../components/home/BosieBlastWall';
 import LifestyleSection from '../components/home/LifestyleSection';
@@ -51,7 +51,7 @@ export default function Home() {
       <ProductShowcase />
       <BosaOriginStory />
       <SizeComparison />
-      <BundleSection />
+
       <BosieBlastWall />
       <LifestyleSection
         images={{

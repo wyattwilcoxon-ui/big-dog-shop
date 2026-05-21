@@ -35,7 +35,7 @@ export default function Footer() {
             <h4 className="font-brand text-lg text-white mb-4">Shop</h4>
             <div className="flex flex-col gap-2">
               <Link to="/shop" className="text-stone hover:text-primary transition-colors font-body text-sm">All Products</Link>
-              <Link to="/bundles" className="text-stone hover:text-primary transition-colors font-body text-sm">Bundles</Link>
+
               <Link to="/shop" className="text-stone hover:text-primary transition-colors font-body text-sm">Best Sellers</Link>
             </div>
           </div>
