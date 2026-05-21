@@ -52,14 +52,14 @@ export default function HeroSection({ heroImage }) {
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
           
           {/* Tag line */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="font-brand text-primary text-lg sm:text-2xl mb-2 tracking-wide hidden">
-            
-            🐶 For Big Dogs Only
-          </motion.div>
+          
+
+
+
+
+
+
+          
 
           {/* Combined headline */}
           <div className="font-display leading-none text-primary" style={{ fontSize: 'clamp(2.5rem, 8vw, 7rem)' }}>
