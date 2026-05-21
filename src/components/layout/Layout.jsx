@@ -1,4 +1,5 @@
 import React from 'react';
+import GlobalBokeh from './GlobalBokeh';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -9,7 +10,8 @@ function LayoutInner() {
   const { cartCount, cartOpen, setCartOpen, cartItems, updateQuantity, cartTotal, checkoutUrl, loading } = useShopifyCart();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background">
+      <GlobalBokeh />
       <Navbar cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
       <main>
         <Outlet />
