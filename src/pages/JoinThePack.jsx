@@ -14,7 +14,12 @@ export default function JoinThePack() {
   // Debug: Log component mount
   useEffect(() => {
     console.log('[JoinThePack] Component mounted');
+    console.log('[JoinThePack] base44 available:', typeof base44);
+    console.log('[JoinThePack] base44.functions available:', base44?.functions);
   }, []);
+
+  // Debug: Log render
+  console.log('[JoinThePack] Rendering, submitted state:', submitted);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
