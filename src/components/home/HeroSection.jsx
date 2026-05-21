@@ -34,11 +34,11 @@ export default function HeroSection({ heroImage }) {
 
 
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight">
+    <section className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-cream">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-50 scale-110" />
-        <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-midnight/20" />
+        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-40 scale-110" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/60 to-cream/30" />
       </div>
 
       {/* Bokeh orbs */}
@@ -77,7 +77,7 @@ export default function HeroSection({ heroImage }) {
           
 
           {/* Combined headline */}
-          <div className="font-display leading-none text-primary" style={{ fontSize: 'clamp(1.5rem, 4vw, 4rem)' }}>
+          <div className="font-display leading-none text-midnight" style={{ fontSize: 'clamp(1.5rem, 4vw, 4rem)' }}>
             BIG DOG:
           </div>
 
@@ -86,7 +86,7 @@ export default function HeroSection({ heroImage }) {
             <AnimatePresence mode="wait">
               <motion.h1
                 key={wordIndex}
-                className="font-display leading-none text-white"
+                className="font-display leading-none text-hotpink"
                 style={{ fontSize: 'clamp(3.5rem, 12vw, 9rem)' }}
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
@@ -101,7 +101,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="font-body text-xl sm:text-2xl text-white max-w-xl mt-2 leading-relaxed">
+            className="font-body text-xl sm:text-2xl text-midnight max-w-xl mt-2 leading-relaxed">
             
             The <strong>BIGGEST</strong> poop bags for the biggest dogs! 💪<br />
             Extra-large. Extra-strong. Totally leak-proof.
@@ -116,7 +116,7 @@ export default function HeroSection({ heroImage }) {
             
             <Link to="/shop">
               <motion.div
-                className="group inline-flex items-center gap-3 bg-primary text-white font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
+                className="group inline-flex items-center gap-3 bg-hotpink text-white font-brand text-lg px-8 py-4 rounded-full cursor-pointer shadow-cartoon-sm"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}>
                 
@@ -125,7 +125,7 @@ export default function HeroSection({ heroImage }) {
             </Link>
             <Link to="/pack">
               <motion.div
-                className="inline-flex items-center gap-3 bg-marigold text-midnight font-brand text-lg px-8 py-4 rounded-full cursor-pointer"
+                className="inline-flex items-center gap-3 bg-primary text-white font-brand text-lg px-8 py-4 rounded-full cursor-pointer shadow-cartoon-sm"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}>
                 
@@ -141,10 +141,10 @@ export default function HeroSection({ heroImage }) {
             transition={{ delay: 1.1 }}
             className="mt-6 flex flex-wrap gap-3">
             
-            <div className="inline-flex items-center gap-2 bg-secondary text-white font-brand text-sm px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-hotpink text-white font-brand text-sm px-4 py-2 rounded-full shadow-cartoon-sm">
               🚚 FREE SHIPPING
             </div>
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-primary text-white font-brand text-sm px-4 py-2 rounded-full shadow-cartoon-sm">
               🦴 44% Bigger Than Standard Bags
             </div>
           </motion.div>

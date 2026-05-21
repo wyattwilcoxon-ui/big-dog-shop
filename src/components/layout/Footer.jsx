@@ -17,17 +17,24 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <motion.h3
-              animate={{ color: ['#F4610E', '#FF7A28', '#F4610E'] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="font-display text-5xl mb-4"
-            >
-              BIG DOG LIFE
-            </motion.h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/d990ddd54_generated_image.png" 
+                alt="Big Dog Life" 
+                className="w-16 h-16 object-contain"
+              />
+              <motion.h3
+                animate={{ color: ['#FF69B4', '#FF7A28', '#FF69B4'] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="font-display text-4xl"
+              >
+                BIG DOG LIFE
+              </motion.h3>
+            </div>
             <p className="font-body text-stone text-sm leading-relaxed">
               Big dogs. Bigger energy. Zero apologies.
             </p>
-            <p className="font-brand text-primary text-xs mt-3 leading-relaxed">"Because Big Dogs Have Big Needs."</p>
+            <p className="font-brand text-hotpink text-xs mt-3 leading-relaxed">"Because Big Dogs Have Big Needs."</p>
             <p className="font-brand text-stone text-xs mt-1">We give a $h!t. 💩</p>
           </div>
 
@@ -57,7 +64,7 @@ export default function Footer() {
               href="#"
               whileHover={{ scale: 1.05, rotate: -1 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 bg-primary text-white font-brand text-sm px-5 py-3 rounded-xl border-bold shadow-cartoon-sm mb-4"
+              className="inline-flex items-center gap-2 bg-hotpink text-white font-brand text-sm px-5 py-3 rounded-xl border-bold shadow-cartoon-sm mb-4"
             >
               #BosieBlast 💩
             </motion.a>
@@ -74,7 +81,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-pebble/30 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-stone text-sm font-body">© {new Date().getFullYear()} Big Dog Life™. All rights reserved.</p>
-          <p className="font-brand text-primary text-sm">Live Bold. Love Dogs. Give a $h!t. 🐾</p>
+          <p className="font-brand text-hotpink text-sm">Live Bold. Love Dogs. Give a $h!t. 🐾</p>
         </div>
       </div>
     </footer>
