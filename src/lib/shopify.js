@@ -12,7 +12,10 @@ async function shopifyFetch(query, variables = {}) {
     body: JSON.stringify({ query, variables }),
   });
   const json = await res.json();
-  if (json.errors) throw new Error(json.errors[0].message);
+  if (json.errors) {
+    console.error('Shopify GraphQL error:', JSON.stringify(json.errors));
+    throw new Error(json.errors[0].message);
+  }
   return json.data;
 }
 
