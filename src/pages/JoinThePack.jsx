@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
@@ -10,6 +10,11 @@ export default function JoinThePack() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+
+  // Debug: Log component mount
+  useEffect(() => {
+    console.log('[JoinThePack] Component mounted');
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
