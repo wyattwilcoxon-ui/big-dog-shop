@@ -27,7 +27,7 @@ Deno.serve(async (req) => {
       source: 'website',
     });
 
-    // Sync to Shopify Customers
+    // Async Shopify sync (non-blocking, fire-and-forget)
     const shopifyDomain = Deno.env.get('VITE_SHOPIFY_STORE_DOMAIN');
     const adminToken = Deno.env.get('SHOPIFY_ADMIN_API_TOKEN');
 
@@ -35,7 +35,8 @@ Deno.serve(async (req) => {
       const tags = ['Joined the Pack', 'Pre-launch'];
       if (dog_breed) tags.push(`Breed: ${dog_breed}`);
 
-      await fetch(`https://${shopifyDomain}/admin/api/2024-01/customers.json`, {
+      // Fire-and-forget - don't await to avoid blocking the response
+      fetch(`https://${shopifyDomain}/admin/api/2024-01/customers.json`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +50,7 @@ Deno.serve(async (req) => {
             note: dog_breed ? `Big dog breed: ${dog_breed}` : 'Pre-launch signup',
           },
         }),
-      });
+      }).catch(() => {}); // Silently ignore errors
     }
 
     return Response.json({ success: true });
