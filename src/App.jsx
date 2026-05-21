@@ -20,18 +20,33 @@ import WhyBigDogs from './pages/WhyBigDogs';
 import ProductDetail from './pages/ProductDetail';
 import JoinThePack from './pages/JoinThePack';
 
-const AuthenticatedApp = () => {
-  const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Public route - completely standalone, no auth wrapper */}
+        <Route path="/join-the-pack" element={<JoinThePack />} />
+        
+        {/* All other routes - wrapped with AuthProvider */}
+        <Route path="/*" element={
+          <AuthProvider>
+            <QueryClientProvider client={queryClientInstance}>
+              <ProtectedRoutes />
+              <Toaster />
+            </QueryClientProvider>
+          </AuthProvider>
+        } />
+      </Routes>
+    </Router>
+  )
+}
 
-  // Show loading only for protected routes
+const ProtectedRoutes = () => {
+  const { isLoadingAuth, isLoadingPublicSettings } = useAuth();
   const showLoading = isLoadingPublicSettings || isLoadingAuth;
 
   return (
     <Routes>
-      {/* Public route - no auth required, render immediately */}
-      <Route path="/join-the-pack" element={<JoinThePack />} />
-
-      {/* Protected routes - auth required */}
       <Route element={<ProtectedRoute fallback={
         showLoading ? (
           <div className="fixed inset-0 flex items-center justify-center bg-cream">
@@ -58,18 +73,5 @@ const AuthenticatedApp = () => {
     </Routes>
   );
 };
-
-function App() {
-  return (
-    <AuthProvider>
-      <QueryClientProvider client={queryClientInstance}>
-        <Router>
-          <AuthenticatedApp />
-        </Router>
-        <Toaster />
-      </QueryClientProvider>
-    </AuthProvider>
-  )
-}
 
 export default App
