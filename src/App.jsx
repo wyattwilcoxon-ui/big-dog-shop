@@ -30,12 +30,7 @@ function App() {
             <Route path="/" element={<JoinThePack />} />
             
             {/* All other routes */}
-            <Route element={<ProtectedRoutes />}>
-              <Route element={<Layout />}>
-                <Route path="/home" element={<Home />} />
-              </Route>
-              <Route path="*" element={<PageNotFound />} />
-            </Route>
+            <Route path="/*" element={<ProtectedRoutes />} />
           </Routes>
           <Toaster />
         </QueryClientProvider>
@@ -70,6 +65,7 @@ const ProtectedRoutes = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
           <Route path="/product/:handle" element={<ProductDetail />} />
+          <Route path="/home-original" element={<Home />} />
         </Route>
       </Route>
       <Route path="*" element={<PageNotFound />} />
