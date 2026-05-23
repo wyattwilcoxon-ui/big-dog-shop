@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
-import ProtectedRoute from './components/ProtectedRoute';
+
 
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
@@ -30,9 +30,18 @@ function App() {
             <Route path="/join" element={<JoinThePack />} />
             
             {/* All other routes */}
-            <Route element={<ProtectedRoutes />}>
-              <Route path="*" element={<PageNotFound />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/pack" element={<Pack />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/shopify-test" element={<ShopifyTest />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
+              <Route path="/product/:handle" element={<ProductDetail />} />
             </Route>
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
           <Toaster />
         </QueryClientProvider>
@@ -40,38 +49,5 @@ function App() {
     </Router>
   )
 }
-
-const ProtectedRoutes = () => {
-  const { isLoadingAuth, isLoadingPublicSettings } = useAuth();
-  const showLoading = isLoadingPublicSettings || isLoadingAuth;
-
-  return (
-    <Routes>
-      <Route element={<ProtectedRoute fallback={
-        showLoading ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-cream">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-10 h-10 border-4 border-fog border-t-primary rounded-full animate-spin"></div>
-              <span className="font-brand text-pebble text-sm">Loading Big Dog Energy...</span>
-            </div>
-          </div>
-        ) : null
-      } />}>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/pack" element={<Pack />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/shopify-test" element={<ShopifyTest />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
-          <Route path="/product/:handle" element={<ProductDetail />} />
-        </Route>
-      </Route>
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
-  );
-};
 
 export default App
