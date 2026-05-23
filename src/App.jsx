@@ -26,11 +26,13 @@ function App() {
       <AuthProvider>
         <QueryClientProvider client={queryClientInstance}>
           <Routes>
-            {/* Temporary home page - Join The Pack landing */}
-            <Route path="/" element={<JoinThePack />} />
+            {/* Standalone email signup landing page */}
+            <Route path="/join" element={<JoinThePack />} />
             
             {/* All other routes */}
-            <Route path="/*" element={<ProtectedRoutes />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path="*" element={<PageNotFound />} />
+            </Route>
           </Routes>
           <Toaster />
         </QueryClientProvider>
@@ -65,7 +67,6 @@ const ProtectedRoutes = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
           <Route path="/product/:handle" element={<ProductDetail />} />
-          <Route path="/home-original" element={<Home />} />
         </Route>
       </Route>
       <Route path="*" element={<PageNotFound />} />
