@@ -5,7 +5,7 @@ import { ArrowRight, Leaf, Target, Users } from 'lucide-react';
 
 const STATS = [
   { value: '$150B', label: 'U.S. pet care market', sub: 'and growing every year' },
-  { value: '40%', label: 'of dog owners have large breeds', sub: '70 lbs and above' },
+  { value: '40%', label: 'of dog owners have large or giant breeds', sub: 'An underserved majority' },
   { value: '2024', label: 'Founded in Ohio', sub: 'Bellefontaine, OH' },
   { value: '4', label: 'Founders. All big-dog owners.', sub: 'Built from lived experience' },
 ];
@@ -15,7 +15,7 @@ const PROMISES = [
     icon: Target,
     label: 'Right Size',
     color: 'bg-primary',
-    description: 'Products designed specifically for dogs 70 lbs and above — not just "XL" relabeled smalls.',
+    description: 'Products designed specifically for large and giant breed dogs — not just "XL" relabeled smalls.',
   },
   {
     icon: Leaf,
@@ -87,7 +87,7 @@ export default function About() {
               BUILT FOR<br /><span className="text-primary">BIG DOGS.</span><br />BY BIG DOG<br />PEOPLE.
             </h1>
             <p className="font-body text-stone text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed">
-              Big Dog Life is an Ohio-based lifestyle brand dedicated to improving life for large-breed dogs and the people who love them. We design, source, and curate high-quality products tailored to the real-world needs of dogs 70 pounds and above.
+              Big Dog Life is an Ohio-based lifestyle brand dedicated to improving life for large and giant breed dogs and the people who love them. We design, source, and curate high-quality products tailored to the real-world needs of the big ones.
             </p>
             <p className="font-display text-primary text-xl sm:text-2xl lg:text-3xl mt-4 sm:mt-6">
               "Because Big Dogs Have Big Needs."

@@ -10,7 +10,7 @@ import {
 const FAQS = [
   {
     q: 'How big are the Bosie Bags?',
-    a: '13" × 15" — that\'s 44% bigger than standard 9" × 12" bags. Designed for dogs over 70 lbs who believe in going big or going home.',
+    a: '13" × 13" — built for big poops and big hands. Designed for large and giant breed dogs who believe in going big or going home.',
   },
   {
     q: 'Are they actually leak-proof? Is anything?!',

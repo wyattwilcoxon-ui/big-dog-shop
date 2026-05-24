@@ -10,7 +10,7 @@ const BREEDS = [
 ];
 
 const COMPARISON = [
-  { feature: 'Size', standard: '9" × 12"', bosie: '13" × 15"' },
+  { feature: 'Size', standard: '9" × 12"', bosie: '13" × 13"' },
   { feature: 'Thickness', standard: 'Single-ply', bosie: 'Triple-thick' },
   { feature: 'Built for 70+ lb dogs', standard: false, bosie: true },
   { feature: 'Leak-proof', standard: false, bosie: true },
@@ -23,7 +23,7 @@ const STATS = [
   { value: '45%', label: 'of U.S. households own a dog' },
   { value: '40%', label: 'of those are large-breed (70+ lbs)' },
   { value: '44%', label: 'bigger than standard bags' },
-  { value: '13"×15"', label: 'The Bosie Bag™ dimensions' },
+  { value: '13"×13"', label: 'The Bosie Bag™ dimensions' },
 ];
 
 export default function WhyBigDogs() {
@@ -173,7 +173,7 @@ export default function WhyBigDogs() {
             className="mb-12"
           >
             <h2 className="font-display text-5xl sm:text-7xl text-white mb-4">BUILT FOR YOUR BREED</h2>
-            <p className="font-body text-stone text-lg">The Bosie Bag™ was designed with these dogs in mind:</p>
+            <p className="font-body text-stone text-lg">The Bosie Bag™ was designed for large and giant breed dogs like these:</p>
           </motion.div>
           <div className="flex flex-wrap justify-center gap-3">
             {BREEDS.map((breed, i) => (
@@ -195,7 +195,7 @@ export default function WhyBigDogs() {
             viewport={{ once: true }}
             className="font-body text-stone text-sm mt-8"
           >
-            …and honestly, any dog 50 lbs and above. If you've ever been let down by a flimsy bag, the Bosie Bag™ is for you.
+            …and honestly, any large or giant breed dog. If you've ever been let down by a flimsy bag, the Bosie Bag™ is for you.
           </motion.p>
         </div>
       </section>
