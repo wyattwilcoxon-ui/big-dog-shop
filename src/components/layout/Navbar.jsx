@@ -42,13 +42,13 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-40 pt-8">
             {/* Logo */}
             <Link to="/" className="flex items-center group">
               <img
                 src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/167160ccb_BDLHorizontal.png"
                 alt="Big Dog Life"
-                className="h-20 w-auto object-contain"
+                className="h-40 w-auto object-contain"
               />
             </Link>
 
@@ -105,7 +105,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-[60] bg-midnight flex flex-col"
           >
-            <div className="flex items-center justify-between px-5 h-16 border-b border-white/10">
+            <div className="flex items-center justify-between px-5 h-28 border-b border-white/10">
               <img
                 src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/167160ccb_BDLHorizontal.png"
                 alt="Big Dog Life"
