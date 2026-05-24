@@ -6,7 +6,7 @@ import AnimatedMarquee from '../home/AnimatedMarquee';
 
 const TICKER = [
   'BIG DOG LIFE', 'GIVE A $H!T', 'BELLEFONTAINE OH', 'BOSA APPROVED',
-  'BOSIE BAG™', 'LEAK PROOF', '#BOSIEBLAST', 'SINCE 2024',
+  'BOSIE BAG™', 'LEAK PROOF', '#BOSIEBLAST', '#SUPER$H!TTER', 'SINCE 2024',
 ];
 
 export default function Footer() {
