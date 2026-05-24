@@ -9,7 +9,7 @@ import VariantSelector from '@/components/shop/VariantSelector';
 const BADGES = [
   { icon: ShieldCheck, label: '100% Leak-Proof' },
   { icon: Truck, label: 'Free Shipping $25+' },
-  { icon: Leaf, label: 'Eco-Friendly Film' },
+  { icon: Leaf, label: 'USDA Certified Biobased' },
 ];
 
 export default function ProductDetail() {

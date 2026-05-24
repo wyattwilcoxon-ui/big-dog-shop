@@ -11,7 +11,7 @@ import {
 const FAQS = [
   {
     q: 'How big are the Bosie Bags?',
-    a: '13" × 13" — built for big poops and big hands. Designed for large and giant breed dogs who believe in going big or going home.',
+    a: '13.5" × 12" — perfect for big poops and big hands. Designed for large and giant breed dogs who believe in going big or going home.',
   },
   {
     q: 'Are they actually leak-proof? Is anything?!',

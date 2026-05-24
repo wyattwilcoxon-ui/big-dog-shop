@@ -39,10 +39,10 @@ const FALLBACK = [
 ];
 
 const FEATURES = [
-  'Extra-large 13" × 15" bags',
+  '13.5" × 12" — perfect for big poops and big hands',
   'Triple-thick leak-proof material',
-  'Easy-tear perforations',
-  'Built for 70+ lb dogs',
+  'Built for Large and Giant Breed Dogs',
+  'USDA Certified Biobased Product',
 ];
 
 export default function ProductShowcase() {

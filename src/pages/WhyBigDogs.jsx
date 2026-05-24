@@ -10,11 +10,11 @@ const BREEDS = [
 ];
 
 const COMPARISON = [
-  { feature: 'Size', standard: '9" × 12"', bosie: '13" × 13"' },
+  { feature: 'Size', standard: '9" × 12"', bosie: '13.5" × 12"' },
   { feature: 'Thickness', standard: 'Single-ply', bosie: 'Triple-thick' },
   { feature: 'Built for 70+ lb dogs', standard: false, bosie: true },
   { feature: 'Leak-proof', standard: false, bosie: true },
-  { feature: 'Easy-tear perforations', standard: false, bosie: true },
+  { feature: 'USDA Certified Biobased Product', standard: false, bosie: true },
   { feature: 'Plant-based material', standard: false, bosie: true },
   { feature: 'Blowout risk', standard: true, bosie: false },
 ];
@@ -23,7 +23,7 @@ const STATS = [
   { value: '45%', label: 'of U.S. households own a dog' },
   { value: '40%', label: 'of those are large-breed (70+ lbs)' },
   { value: '44%', label: 'bigger than standard bags' },
-  { value: '13"×13"', label: 'The Bosie Bag™ dimensions' },
+  { value: '13.5"×12"', label: 'The Bosie Bag™ dimensions' },
 ];
 
 export default function WhyBigDogs() {
