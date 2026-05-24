@@ -48,7 +48,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
               <img
                 src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/167160ccb_BDLHorizontal.png"
                 alt="Big Dog Life"
-                className="h-10 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
             </Link>
 
@@ -109,7 +109,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
               <img
                 src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/167160ccb_BDLHorizontal.png"
                 alt="Big Dog Life"
-                className="h-9 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
               <button className="text-white p-2" onClick={() => setMenuOpen(false)}>
                 <X className="w-7 h-7" strokeWidth={2.5} />
