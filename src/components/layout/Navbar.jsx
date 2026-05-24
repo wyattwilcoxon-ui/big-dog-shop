@@ -44,10 +44,12 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group">
-              <span className="font-display text-white text-2xl tracking-wide leading-none">BIG DOG</span>
-              <span className="font-display text-primary text-2xl tracking-wide leading-none">LIFE</span>
-              <span className="font-brand text-stone text-xs">™</span>
+            <Link to="/" className="flex items-center group">
+              <img
+                src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/167160ccb_BDLHorizontal.png"
+                alt="Big Dog Life"
+                className="h-10 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -104,7 +106,11 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             className="fixed inset-0 z-[60] bg-midnight flex flex-col"
           >
             <div className="flex items-center justify-between px-5 h-16 border-b border-white/10">
-              <span className="font-display text-white text-2xl">BIG DOG <span className="text-primary">LIFE</span></span>
+              <img
+                src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/167160ccb_BDLHorizontal.png"
+                alt="Big Dog Life"
+                className="h-9 w-auto object-contain"
+              />
               <button className="text-white p-2" onClick={() => setMenuOpen(false)}>
                 <X className="w-7 h-7" strokeWidth={2.5} />
               </button>
