@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Accordion,
@@ -100,12 +101,12 @@ export default function FAQ() {
           <p className="font-body text-pebble mt-3 mb-6">
             We don't bite (but our dogs might lick you).
           </p>
-          <a
-            href="mailto:info@bigdoglife.com"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 bg-primary text-white font-brand px-8 py-4 rounded-xl shadow-cartoon-sm border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none hover:bg-orange-hot"
           >
-            Email Us 📧
-          </a>
+            Contact Us 📧
+          </Link>
         </motion.div>
       </div>
     </div>

@@ -59,9 +59,9 @@ export default function Footer() {
               Get Early Access 🎉
             </Link>
             <div className="flex flex-col gap-1.5 sm:gap-2">
-              <a href="mailto:info@thebigdoglife.com" className="flex items-center gap-2 text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">
-                <Mail className="w-3 h-3 sm:w-4 sm:h-4" />info@thebigdoglife.com
-              </a>
+              <Link to="/contact" className="flex items-center gap-2 text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">
+                <Mail className="w-3 h-3 sm:w-4 sm:h-4" />Contact Us
+              </Link>
               <div className="flex items-center gap-2 text-stone font-body text-xs sm:text-sm">
                 <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />Bellefontaine, Ohio
               </div>

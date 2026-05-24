@@ -39,20 +39,7 @@ export default function JoinThePack() {
       setDogBreed('');
       setSubmitting(false);
     } catch (err) {
-      // Backend failed, use mailto fallback
-      const subject = encodeURIComponent('Join The Pack - Early Access');
-      const body = encodeURIComponent(`Hi Big Dog Life!
-
-I want to join the pack!
-
-Email: ${email}
-Phone: ${phone || 'N/A'}
-Dog's Breed: ${dogBreed || 'N/A'}
-
-Please add me to your launch list!`);
-      
-      window.location.href = `mailto:hello@bigdoglife.com?subject=${subject}&body=${body}`;
-      setSubmitted(true);
+      setError('Something went wrong. Please try again or visit our Contact page.');
       setSubmitting(false);
     }
   };
