@@ -11,11 +11,12 @@ const NAV_LINKS = [
   { label: 'About', path: '/about' },
 ];
 
+const LOGO_URL = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/7cd0d1928_BDLHorz.png';
+
 export default function Navbar({ cartCount = 0, onCartClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
 
@@ -33,9 +34,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          hidden ? '-translate-y-full' : 'translate-y-0'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}
         style={{
           background: scrolled ? 'rgba(21,21,21,0.95)' : 'transparent',
           backdropFilter: scrolled ? 'blur(14px)' : 'none',
@@ -43,16 +42,11 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-40 pt-8">
-            {/* Logo */}
+
             <Link to="/" className="flex items-center group">
-              <img
-                src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/167160ccb_BDLHorizontal.png"
-                alt="Big Dog Life"
-                className="h-40 w-auto object-contain"
-              />
+              <img src={LOGO_URL} alt="Big Dog Life" className="h-40 w-auto object-contain" />
             </Link>
 
-            {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-1">
               {NAV_LINKS.map(link => (
                 <Link
@@ -69,7 +63,6 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
               ))}
             </div>
 
-            {/* Right side */}
             <div className="flex items-center gap-3">
               <button
                 onClick={onCartClick}
@@ -84,18 +77,15 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
                 )}
               </button>
 
-              <button
-                className="md:hidden p-2 text-white"
-                onClick={() => setMenuOpen(true)}
-              >
+              <button className="md:hidden p-2 text-white" onClick={() => setMenuOpen(true)}>
                 <Menu className="w-6 h-6" strokeWidth={2.5} />
               </button>
             </div>
+
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -106,11 +96,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             className="fixed inset-0 z-[60] bg-midnight flex flex-col"
           >
             <div className="flex items-center justify-between px-5 h-28 border-b border-white/10">
-              <img
-                src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/167160ccb_BDLHorizontal.png"
-                alt="Big Dog Life"
-                className="h-20 w-auto object-contain"
-              />
+              <img src={LOGO_URL} alt="Big Dog Life" className="h-20 w-auto object-contain" />
               <button className="text-white p-2" onClick={() => setMenuOpen(false)}>
                 <X className="w-7 h-7" strokeWidth={2.5} />
               </button>
