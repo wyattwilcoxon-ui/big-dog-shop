@@ -103,7 +103,7 @@ export default function HeroSection({ heroImage }) {
             transition={{ delay: 0.6 }}
             className="font-body text-xl sm:text-2xl text-white max-w-xl mt-2 leading-relaxed">
             
-            The <strong>BIGGEST</strong> poop bags for the biggest dogs! 💪<br />
+            The <strong>BIGGEST</strong> products for the biggest dogs! 💪<br />
             Extra-large. Extra-strong. Totally leak-proof.
           </motion.p>
 
