@@ -332,14 +332,7 @@ export default function About() {
             ))}
           </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="font-body text-stone text-sm text-center mt-8"
-          >
-            Leashes & Collars in development with Ohio partner River City Leather (Gallipolis, OH) — handcrafted, local, built to last.
-          </motion.p>
+
         </div>
       </section>
 
