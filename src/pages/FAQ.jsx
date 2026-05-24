@@ -13,8 +13,8 @@ const FAQS = [
     a: '13" × 15" — that\'s 44% bigger than standard 9" × 12" bags. Designed for dogs over 70 lbs who believe in going big or going home.',
   },
   {
-    q: 'Are they actually leak-proof?',
-    a: 'Yes. Tested by a 125-lb German Shepherd and two Great Danes. If they can handle these dogs, they can handle anything. Your hands are safe.',
+    q: 'Are they actually leak-proof? Is anything?!',
+    a: 'Look, we\'re going to be real with you — nothing is 100% leak-proof in this world. But the Bosie Bag™ is triple-thick, extra-wide, and built specifically for big dogs. We\'ve done everything humanly possible to keep your hands clean. The rest is between you and the universe.',
   },
   {
     q: 'How many bags come in a roll?',
@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: 'Do you ship outside of the US?',
-    a: 'We\'re currently shipping within the United States only. International shipping is coming soon — big dog energy knows no borders.',
+    a: 'Not yet — we currently ship within the United States only. Big dogs exist everywhere and we know it. For now, US only. Stay tuned.',
   },
   {
     q: 'What if I don\'t like them?',
@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: 'Can I use these for small dogs too?',
-    a: 'Absolutely! Oversized bags work for any dog. But let\'s be honest — if your Yorkie needs a 13"×15" bag, we have questions.',
+    a: 'Absolutely — as long as you don\'t put the dog in the bag. Oversized bags work great for any size dog. Honestly, more room = more peace of mind. Your tiny pup deserves the upgrade too.',
   },
   {
     q: 'Do you offer bulk pricing?',
