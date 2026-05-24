@@ -37,6 +37,10 @@ const FAQS = [
     a: 'Yes! Dog walkers, groomers, kennels, and shelters can email us at info@bigdoglife.com for bulk orders. We don\'t judge the quantity.',
   },
   {
+    q: 'Is your dog\'s poop bigger than their personality?',
+    a: 'Impossible. But it\'s probably close. That\'s exactly why we built the Bosie Bag™ — because big personalities come with big responsibilities. And big messes.',
+  },
+  {
     q: 'When are new products launching?',
     a: 'We\'ve got big plans (get it?). Sign up for notifications on our product pages and be the first to know when new items drop.',
   },
