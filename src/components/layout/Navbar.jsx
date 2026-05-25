@@ -41,10 +41,10 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-40 pt-8">
+          <div className="flex items-center justify-between h-16">
 
             <Link to="/" className="flex items-center group">
-              <img src={LOGO_URL} alt="Big Dog Life" className="h-40 w-auto object-contain" />
+              <img src={LOGO_URL} alt="Big Dog Life" className="h-10 w-auto object-contain" />
             </Link>
 
             <div className="hidden lg:flex items-center gap-1">
@@ -96,7 +96,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             className="fixed inset-0 z-[60] bg-midnight flex flex-col"
           >
             <div className="flex items-center justify-between px-5 h-28 border-b border-white/10">
-              <img src={LOGO_URL} alt="Big Dog Life" className="h-20 w-auto object-contain" />
+              <img src={LOGO_URL} alt="Big Dog Life" className="h-8 w-auto object-contain" />
               <button className="text-white p-2" onClick={() => setMenuOpen(false)}>
                 <X className="w-7 h-7" strokeWidth={2.5} />
               </button>
