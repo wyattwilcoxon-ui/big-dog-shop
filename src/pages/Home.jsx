@@ -13,7 +13,7 @@ import LifestyleSection from '../components/home/LifestyleSection';
 import BulkCTA from '../components/home/BulkCTA';
 import FloatingPoop from '../components/ui/FloatingPoop';
 
-const HERO_IMG = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/238e90930_DSC_9960.jpg';
+const HERO_IMG = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/c70f9fd22_DSC_0141.jpg';
 
 const MARQUEE_ITEMS_1 = [
   'LEAK-PROOF', 'BIG DOG ENERGY', '13"×15"', '70+ LBS', 'ZERO LEAKS',
