@@ -77,17 +77,17 @@ export default function HeroSection({ heroImage }) {
           
 
           {/* Combined headline */}
-          <div className="font-display leading-none text-white" style={{ fontSize: 'clamp(1.5rem, 4vw, 4rem)' }}>
+          <div className="font-display leading-none text-white" style={{ fontSize: 'clamp(1.2rem, 3.5vw, 4rem)' }}>
             BIG DOG:
           </div>
 
           {/* Rotating headline */}
-          <div className="h-[4rem] sm:h-[7rem] md:h-[9rem] overflow-hidden mb-2">
+          <div className="h-[3rem] sm:h-[7rem] md:h-[9rem] overflow-hidden mb-2">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={wordIndex}
                 className="font-display leading-none text-primary"
-                style={{ fontSize: 'clamp(3.5rem, 12vw, 9rem)' }}
+                style={{ fontSize: 'clamp(2.8rem, 12vw, 9rem)' }}
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
                 exit={{ y: '-100%' }}
@@ -101,7 +101,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="font-body text-xl sm:text-2xl text-white max-w-xl mt-2 leading-relaxed">
+            className="font-body text-base sm:text-2xl text-white max-w-xl mt-1 sm:mt-2 leading-relaxed">
             
             The <strong>BIGGEST</strong> products for the biggest dogs! 💪<br />
             Extra-large. Extra-strong. Totally leak-proof.
@@ -112,7 +112,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-4 mt-8">
+            className="flex flex-wrap gap-3 mt-4 sm:mt-8">
             
             <Link to="/shop">
               <motion.div

@@ -52,7 +52,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`font-brand text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full transition-all duration-200 ${
+                  className={`font-display text-sm sm:text-base px-3 sm:px-4 py-2 rounded-full transition-all duration-200 ${
                     location.pathname === link.path
                       ? 'bg-white/15 text-white'
                       : 'text-stone hover:text-white hover:bg-white/10'
