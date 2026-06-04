@@ -58,7 +58,7 @@ const TEAM = [
   },
   {
     name: 'Doug & Amber Chivington',
-    role: 'Operations',
+    role: 'Partners & Strategy Directors',
     photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/ba5e6ee58_DougAmber.png',
     bio: 'Doug and Amber handle sourcing, inventory logistics, fulfillment, content creation, and digital strategy. Together they manage supplier relationships and quality control while driving the brand story forward.',
   },
