@@ -121,11 +121,9 @@ export default function Shop() {
               >
                 <div className={`grid ${i === 0 ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
                   <div className="bg-cream relative overflow-hidden" style={{minHeight: '320px'}}>
-                    {product.badge && (
-                      <span className={`absolute top-4 left-4 z-10 px-4 py-1.5 rounded-full font-brand text-sm text-white shadow-cartoon-sm ${
-                        product.badge === 'Best Seller' ? 'bg-primary' : 'bg-secondary'
-                      }`}>
-                        {product.badge === 'Best Seller' ? '🧻 ' : '⚡ '}{product.badge}
+                    {product.badge && product.badge !== 'Best Seller' && (
+                      <span className="absolute top-4 left-4 z-10 px-4 py-1.5 rounded-full font-brand text-sm text-white shadow-cartoon-sm bg-secondary">
+                        ⚡ {product.badge}
                       </span>
                     )}
                     {product.handle ? (

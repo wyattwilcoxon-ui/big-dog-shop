@@ -31,7 +31,7 @@ const FALLBACK = [
     id: 'clip-and-go',
     handle: 'clip-and-go',
     name: 'The Clip & Go',
-    description: 'Bone Dispenser + 1 Roll',
+    description: 'Clip & Go Pouch + 1 Roll of Bags',
     price: null,
     badge: 'Coming Soon',
     available: false,
@@ -109,10 +109,8 @@ export default function ProductShowcase() {
             >
               {/* Square image */}
               <Link to={`/product/${product.handle}`} className="block relative aspect-square bg-white overflow-hidden">
-                {product.badge && (
-                  <span className={`absolute top-3 left-3 z-10 font-brand text-xs px-3 py-1 rounded-full ${
-                    product.badge === 'Best Seller' ? 'bg-primary text-white' : 'bg-midnight text-white'
-                  }`}>
+                {product.badge && product.badge !== 'Best Seller' && (
+                  <span className="absolute top-3 left-3 z-10 font-brand text-xs px-3 py-1 rounded-full bg-midnight text-white">
                     {product.badge}
                   </span>
                 )}
@@ -131,9 +129,9 @@ export default function ProductShowcase() {
               <div className="p-5 flex flex-col flex-1">
                 <h3 className="font-brand text-white text-base leading-tight mb-1">{product.name}</h3>
                 {/* Short subtitle only */}
-                <p className="font-body text-stone text-xs mb-3">
-                  {product.description?.split('.')[0] || product.description}
-                </p>
+                {product.badge === 'Best Seller' ? null : product.badge && (
+                  <span className="font-brand text-xs text-stone mb-3 block">{product.badge}</span>
+                )}
 
                 {/* Price */}
                 <div className="mb-4">

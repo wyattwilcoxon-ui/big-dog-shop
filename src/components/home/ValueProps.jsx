@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const PROPS = [
   {
     emoji: '🛡️',
-    title: 'Zero Leaks. Zero Panic.',
-    description: 'Triple-thick, leak-proof bags that actually keep your hands clean. Revolutionary, we know.',
+    title: 'Built for Big Breeds',
+    description: 'Triple-thick bags engineered for large and giant breed dogs. Strong enough for the biggest output.',
     bg: 'bg-orange-pale',
     border: 'border-primary',
     rotate: -1.5,
@@ -13,7 +13,7 @@ const PROPS = [
   {
     emoji: '📏',
     title: 'Size Matters',
-    description: '13" × 13" — built for big poops and big hands. Because your large or giant breed doesn\'t make chihuahua poops.',
+    description: '12" × 13.5" — built for large and giant breed dogs. Because your big dog doesn\'t make chihuahua poops.',
     bg: 'bg-secondary/10',
     border: 'border-secondary',
     rotate: 1,

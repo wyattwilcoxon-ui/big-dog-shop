@@ -41,8 +41,8 @@ const PANELS = [
     bg: 'bg-midnight',
     border: 'border-sandy',
     title: 'THE BOSIE BAG™',
-    subtitle: '13"×15". Named after the legend.',
-    body: 'Built for 70+ lb dogs. Leak-proof. Oversized. Named after the big boy himself. Bosa approves. (He\'s not sorry.)',
+    subtitle: '12"×13.5". Named after the legend.',
+    body: 'Built for large and giant breed dogs. Oversized. Named after the big boy himself. Bosa approves. (He\'s not sorry.)',
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/483e609ed_generated_image.png',
     accent: 'bg-sandy',
     dark: true,
@@ -64,13 +64,13 @@ export default function BosaOriginStory() {
           className="text-center mb-16"
         >
           <div className="flex justify-center mb-4">
-            <motion.div
-              className="text-7xl"
-              animate={{ rotate: [0, -8, 8, 0] }}
+            <motion.img
+              src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/45673ba63_BDLHead2.png"
+              alt="Bosa"
+              className="w-28 h-28 object-contain"
+              animate={{ rotate: [0, -5, 5, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-            >
-              💩
-            </motion.div>
+            />
           </div>
           <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl text-midnight">
             THE LEGEND OF<br />
@@ -135,6 +135,7 @@ export default function BosaOriginStory() {
           <div className="inline-flex items-center gap-3 bg-primary text-white font-display text-2xl sm:text-4xl px-8 py-5 rounded-2xl border-bold shadow-cartoon rotate-1">
             🐾 AND THAT'S WHY WE GIVE A $H!T 🐾
           </div>
+
         </motion.div>
       </div>
     </section>

@@ -43,8 +43,8 @@ export default function SizeComparison() {
             className="text-center"
           >
             <div className="w-52 h-60 bg-primary/20 rounded-xl border-4 border-primary flex flex-col items-center justify-center shadow-cartoon">
-              <span className="font-display text-3xl text-primary">13"×15"</span>
-              <span className="font-brand text-white text-sm mt-2 bg-primary px-3 py-1 rounded-full">44% BIGGER</span>
+              <span className="font-display text-3xl text-primary">12"×13.5"</span>
+              <span className="font-brand text-white text-sm mt-2 bg-primary px-3 py-1 rounded-full">28% BIGGER</span>
             </div>
             <p className="font-brand text-white mt-3">The Bosie Bag™</p>
             <p className="font-body text-stone text-sm">(room to spare)</p>
@@ -64,9 +64,8 @@ export default function SizeComparison() {
             <span className="font-brand text-sm text-center text-primary">Bosie Bag™</span>
           </div>
           {[
-            ['Bag Size', '9" × 12"', '13" × 15"'],
-            ['Leak-Proof', false, true],
-            ['Built for 70+ lb Dogs', false, true],
+            ['Bag Size', '9" × 12"', '12" × 13.5"'],
+            ['Built for Large & Giant Breeds', false, true],
             ['Easy-Tie Handles', false, true],
             ['Capacity', 'Chihuahua', 'Great Dane'],
           ].map(([feature, other, bosie], i) => (

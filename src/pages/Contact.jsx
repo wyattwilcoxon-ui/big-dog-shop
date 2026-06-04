@@ -8,7 +8,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href = `mailto:info@thebigdoglife.com?subject=Message from ${form.name}&body=${encodeURIComponent(form.message)}%0A%0AFrom: ${form.email}`;
+    window.location.href = `mailto:bark@thebigdoglife.com?subject=Message from ${form.name}&body=${encodeURIComponent(form.message)}%0A%0AFrom: ${form.email}`;
     setSubmitted(true);
   };
 
@@ -88,11 +88,11 @@ export default function Contact() {
                 <h3 className="font-brand text-white text-lg mb-4">Get in Touch</h3>
                 <div className="space-y-4">
                   <a
-                    href="mailto:info@thebigdoglife.com"
+                    href="mailto:bark@thebigdoglife.com"
                     className="flex items-center gap-3 text-stone hover:text-primary transition-colors font-body text-sm"
                   >
                     <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                    info@thebigdoglife.com
+                    bark@thebigdoglife.com
                   </a>
                   <div className="flex items-center gap-3 text-stone font-body text-sm">
                     <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
@@ -116,7 +116,7 @@ export default function Contact() {
                   Dog shelters, groomers, dog parks, and pet stores — we offer bulk pricing. Email us with your volume needs.
                 </p>
                 <a
-                  href="mailto:info@thebigdoglife.com?subject=Bulk Order Inquiry"
+                  href="mailto:bark@thebigdoglife.com?subject=Bulk Order Inquiry"
                   className="inline-flex items-center gap-2 bg-primary text-white font-brand text-sm px-5 py-2.5 rounded-full hover:bg-orange-hot transition-colors"
                 >
                   <Mail className="w-4 h-4" /> Email for Bulk Pricing

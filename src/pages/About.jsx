@@ -5,7 +5,7 @@ import { ArrowRight, Leaf, Target, Users } from 'lucide-react';
 
 const STATS = [
   { value: '$150B', label: 'U.S. pet care market', sub: 'and growing every year' },
-  { value: '40%', label: 'of dog owners have large or giant breeds', sub: 'An underserved majority' },
+  { value: '40%', label: 'own large or giant breed dogs', sub: 'An underserved majority' },
   { value: '2024', label: 'Founded in Ohio', sub: 'Bellefontaine, OH' },
   { value: '4', label: 'Founders. All big-dog owners.', sub: 'Built from lived experience' },
 ];
@@ -208,9 +208,12 @@ export default function About() {
                   <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center border-2 border-midnight mb-4">
                     <span className="font-display text-white text-lg">1</span>
                   </div>
-                  <h3 className="font-display text-4xl text-midnight mb-3">MEET BOSA</h3>
+                  <div className="flex items-center gap-4 mb-3">
+                    <img src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/45673ba63_BDLHead2.png" alt="Bosa" className="w-16 h-16 object-contain" />
+                    <h3 className="font-display text-4xl text-midnight">MEET BOSA</h3>
+                  </div>
                   <p className="font-body text-pebble leading-relaxed">
-                    Megan adopted Bosa — a 125-pound German Shepherd with absolutely zero chill. Combined with her other German Shepherd Carmen, she was going through up to <strong>8 poop bags per walk</strong>. Standard bags split, leaked, and failed every single time.
+                    Megan adopted Bosa — a 125-pound German Shepherd with absolutely zero chill. Combined with her other German Shepherd Carmen, she was going through up to <strong>8 bags per walk</strong>. Standard bags split and failed every single time.
                   </p>
                 </div>
               </div>

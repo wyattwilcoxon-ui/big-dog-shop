@@ -10,20 +10,19 @@ const BREEDS = [
 ];
 
 const COMPARISON = [
-  { feature: 'Size', standard: '9" × 12"', bosie: '13.5" × 12"' },
+  { feature: 'Size', standard: '9" × 12"', bosie: '12" × 13.5"' },
   { feature: 'Thickness', standard: 'Single-ply', bosie: 'Triple-thick' },
-  { feature: 'Built for 70+ lb dogs', standard: false, bosie: true },
-  { feature: 'Leak-proof', standard: false, bosie: true },
+  { feature: 'Built for Large & Giant Breeds', standard: false, bosie: true },
   { feature: 'USDA Certified Biobased Product', standard: false, bosie: true },
   { feature: 'Plant-based material', standard: false, bosie: true },
-  { feature: 'Blowout risk', standard: true, bosie: false },
+  { feature: 'Blowout Risk', standard: true, bosie: false },
 ];
 
 const STATS = [
   { value: '45%', label: 'of U.S. households own a dog' },
-  { value: '40%', label: 'of those are large-breed (70+ lbs)' },
-  { value: '44%', label: 'bigger than standard bags' },
-  { value: '13.5"×12"', label: 'The Bosie Bag™ dimensions' },
+  { value: '40%', label: 'of dog owners have large or giant breeds' },
+  { value: '28%', label: 'bigger than standard bags' },
+  { value: '12"×13.5"', label: 'The Bosie Bag™ dimensions' },
 ];
 
 export default function WhyBigDogs() {
@@ -173,7 +172,7 @@ export default function WhyBigDogs() {
             className="mb-12"
           >
             <h2 className="font-display text-5xl sm:text-7xl text-white mb-4">BUILT FOR YOUR BREED</h2>
-            <p className="font-body text-stone text-lg">The Bosie Bag™ was designed for large and giant breed dogs like these:</p>
+            <p className="font-body text-stone text-lg">The Bosie Bag™ was designed for large and giant breed dogs, including:</p>
           </motion.div>
           <div className="flex flex-wrap justify-center gap-3">
             {BREEDS.map((breed, i) => (

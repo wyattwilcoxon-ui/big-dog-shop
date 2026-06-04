@@ -19,11 +19,11 @@ export default function BulkCTA() {
             Dog walkers, groomers, kennels, shelters, or just a household that goes through bags like it's a competitive sport? Hit us up for bulk pricing. We don't judge.
           </p>
           <a
-            href="mailto:info@bigdoglife.com?subject=Large%20Order%20Inquiry"
+            href="/contact"
             className="inline-flex items-center gap-3 bg-midnight text-white font-brand text-lg px-8 py-4 rounded-xl shadow-cartoon border-2 border-white transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
           >
             <Mail className="w-5 h-5" />
-            Email Us for Bulk Orders
+            Contact Us for Bulk Orders
           </a>
         </motion.div>
       </div>
