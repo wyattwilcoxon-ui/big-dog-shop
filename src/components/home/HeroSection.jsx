@@ -37,8 +37,8 @@ export default function HeroSection({ heroImage }) {
     <section className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-85 scale-110" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(15,29,60,0.6) 70%, #0F1D3C 100%)' }} />
+        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-90 scale-110" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(15,29,60,0.4) 75%, #0F1D3C 100%)' }} />
       </div>
 
       {/* Bokeh orbs */}
