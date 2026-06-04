@@ -90,8 +90,8 @@ export default function About() {
       {/* Hero — photo on top, text below */}
       <section className="bg-midnight overflow-hidden">
         {/* Photo — full width, fades into dark at bottom */}
-        <div className="relative w-full" style={{ height: 'clamp(320px, 60vh, 700px)' }}>
-          <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-85" style={{ objectPosition: '50% 25%' }} />
+        <div className="relative w-full" style={{ height: 'clamp(400px, 70vh, 800px)' }}>
+          <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-85" style={{ objectPosition: '50% 35%' }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 60%, #0F1D3C 95%)' }} />
           {BOKEH.map((b, i) => (
             <motion.div
