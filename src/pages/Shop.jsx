@@ -144,23 +144,7 @@ export default function Shop() {
                     ) : (
                       <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-midnight">{product.name}</h2>
                     )}
-                    <div className="font-body text-pebble text-sm mt-3 leading-relaxed space-y-2">
-                      {(product.detail || product.description)?.split('\n').filter(l => l.trim()).map((line, i) => {
-                        const trimmed = line.trim();
-                        if (trimmed.startsWith('-') || trimmed.startsWith('•')) {
-                          return (
-                            <div key={i} className="flex items-start gap-2">
-                              <span className="text-primary mt-0.5 flex-shrink-0">▸</span>
-                              <span>{trimmed.replace(/^[-•]\s*/, '')}</span>
-                            </div>
-                          );
-                        }
-                        if (trimmed === trimmed.toUpperCase() && trimmed.length > 3) {
-                          return <p key={i} className="font-brand text-midnight text-xs uppercase tracking-wider mt-3 mb-1">{trimmed}</p>;
-                        }
-                        return <p key={i}>{trimmed}</p>;
-                      })}
-                    </div>
+
 
                     <div className="mt-4 sm:mt-6 flex items-center gap-3 sm:gap-4">
                       {product.price ? (
