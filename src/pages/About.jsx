@@ -308,12 +308,14 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default flex items-center gap-4 p-4"
+              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default grid grid-cols-1 sm:grid-cols-2"
             >
-              <img src={member.photo} alt={member.name} className="w-24 h-24 object-cover object-top rounded-xl flex-shrink-0" />
-              <div>
-                <h3 className="font-brand text-midnight text-base leading-tight">{member.name}</h3>
-                <p className="font-brand text-primary text-xs mb-1">{member.role}</p>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="p-6 flex flex-col justify-center">
+                <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
+                <p className="font-brand text-primary text-xs mb-2">{member.role}</p>
                 <p className="font-body text-pebble text-sm leading-relaxed">{member.bio}</p>
               </div>
             </motion.div>
