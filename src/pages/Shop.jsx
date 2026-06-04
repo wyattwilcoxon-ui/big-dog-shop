@@ -120,20 +120,20 @@ export default function Shop() {
                 }`}
               >
                 <div className={`grid ${i === 0 ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
-                  <div className="bg-cream p-6 sm:p-10 lg:p-12 flex items-center justify-center min-h-[200px] sm:min-h-[280px] relative">
+                  <div className="bg-cream relative overflow-hidden" style={{minHeight: '320px'}}>
                     {product.badge && (
-                      <span className={`absolute top-4 left-4 px-4 py-1.5 rounded-full font-brand text-sm text-white shadow-cartoon-sm ${
+                      <span className={`absolute top-4 left-4 z-10 px-4 py-1.5 rounded-full font-brand text-sm text-white shadow-cartoon-sm ${
                         product.badge === 'Best Seller' ? 'bg-primary' : 'bg-secondary'
                       }`}>
                         {product.badge === 'Best Seller' ? '🧻 ' : '⚡ '}{product.badge}
                       </span>
                     )}
                     {product.handle ? (
-                      <Link to={`/product/${product.handle}`}>
-                        <img src={product.image} alt={product.name} className="max-h-60 object-contain group-hover:scale-105 transition-transform duration-500" />
+                      <Link to={`/product/${product.handle}`} className="block w-full h-full">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{minHeight: '320px'}} />
                       </Link>
                     ) : (
-                      <img src={product.image} alt={product.name} className="max-h-60 object-contain group-hover:scale-105 transition-transform duration-500" />
+                      <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{minHeight: '320px'}} />
                     )}
                   </div>
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
@@ -144,8 +144,23 @@ export default function Shop() {
                     ) : (
                       <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-midnight">{product.name}</h2>
                     )}
-                    <p className="font-brand text-stone text-sm sm:text-base mt-1">{product.description}</p>
-                    <p className="font-body text-pebble text-sm mt-3 leading-relaxed">{product.detail || product.description}</p>
+                    <div className="font-body text-pebble text-sm mt-3 leading-relaxed space-y-2">
+                      {(product.detail || product.description)?.split('\n').filter(l => l.trim()).map((line, i) => {
+                        const trimmed = line.trim();
+                        if (trimmed.startsWith('-') || trimmed.startsWith('•')) {
+                          return (
+                            <div key={i} className="flex items-start gap-2">
+                              <span className="text-primary mt-0.5 flex-shrink-0">▸</span>
+                              <span>{trimmed.replace(/^[-•]\s*/, '')}</span>
+                            </div>
+                          );
+                        }
+                        if (trimmed === trimmed.toUpperCase() && trimmed.length > 3) {
+                          return <p key={i} className="font-brand text-midnight text-xs uppercase tracking-wider mt-3 mb-1">{trimmed}</p>;
+                        }
+                        return <p key={i}>{trimmed}</p>;
+                      })}
+                    </div>
 
                     <div className="mt-4 sm:mt-6 flex items-center gap-3 sm:gap-4">
                       {product.price ? (
