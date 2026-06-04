@@ -194,79 +194,72 @@ export default function About() {
             <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE REAL STORY</h2>
           </motion.div>
 
-          <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="aspect-[4/3] lg:aspect-auto">
-                  <img
-                    src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/b8996936f_IMG_9079.jpg"
-                    alt="Bosa (left) and Carmen (right)"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-8 sm:p-10 flex flex-col justify-center">
-                  <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center border-2 border-midnight mb-4">
-                    <span className="font-display text-white text-lg">1</span>
-                  </div>
-                  <div className="flex items-center gap-4 mb-3">
-                    <img src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/45673ba63_BDLHead2.png" alt="Bosa" className="w-14 h-14 object-contain" />
-                    <h3 className="font-display text-4xl text-midnight">MEET BOSA</h3>
-                  </div>
-                  <p className="font-body text-pebble leading-relaxed">
-                    Megan adopted Bosa, a 125-pound German Shepherd with absolutely zero chill. Bosa is on the left, Carmen (who passed in April 2026 and is deeply missed) is on the right. Together they were going through up to <strong>8 bags per walk</strong>. Standard bags split and failed every single time.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+          {/* Offset stagger grid */}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
 
+            {/* Card 1 — left, sits higher */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              className="bg-midnight rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="p-8 sm:p-10 flex flex-col justify-center order-2 lg:order-1">
-                  <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center border-2 border-white/30 mb-4">
-                    <span className="font-display text-white text-lg">2</span>
-                  </div>
-                  <h3 className="font-display text-4xl text-white mb-3">JONI HAD THE SAME PROBLEM</h3>
-                  <p className="font-body text-stone leading-relaxed">
-                    Her friend Joni owned two Great Danes, Max and Caesar, and was dealing with the same frustrations. Bags that didn't fit, harnesses that were too small, and accessories built for dogs a third the size. Two big-dog owners. One shared rage.
-                  </p>
-                </div>
-                <div className="aspect-[4/3] lg:aspect-auto order-1 lg:order-2">
-                  <img
-                    src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/244a631d7_IMG_4554.jpg"
-                    alt="Joni with her Great Danes Max and Caesar"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              className="bg-primary rounded-2xl border-bold shadow-cartoon p-10 text-center cursor-default"
+              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default sm:mt-0"
             >
-              <p className="font-display text-3xl sm:text-5xl text-white leading-tight">
-                "WHY DOESN'T THIS EXIST?"
-              </p>
-              <p className="font-body text-white/80 text-lg mt-4 max-w-xl mx-auto">
-                Standing in a park, holding a compromised bag at arm's length, they looked at each other and Big Dog Life was born. Founded in Bellefontaine, Ohio in 2024.
-              </p>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/b8996936f_IMG_9079.jpg"
+                  alt="Bosa (left) and Carmen (right)"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-3xl text-midnight mb-2">MEET BOSA</h3>
+                <p className="font-body text-pebble text-sm leading-relaxed">
+                  125-pound German Shepherd. Bosa left, Carmen (passed April 2026, deeply missed) right. Going through up to <strong>8 bags per walk</strong> — standard bags split and failed every time.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 2 — right, sits lower */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default sm:mt-16"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/244a631d7_IMG_4554.jpg"
+                  alt="Joni with her Great Danes Max and Caesar"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-3xl text-midnight mb-2">JONI HAD THE SAME PROBLEM</h3>
+                <p className="font-body text-pebble text-sm leading-relaxed">
+                  Joni owned two Great Danes, Max and Caesar, and was dealing with the same frustrations. Bags that didn't fit, accessories built for dogs a third the size.
+                </p>
+              </div>
             </motion.div>
           </div>
+
+          {/* Quote block — full width below */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-primary rounded-2xl border-bold shadow-cartoon p-10 text-center cursor-default mt-6"
+          >
+            <p className="font-display text-3xl sm:text-5xl text-white leading-tight">
+              "WHY DOESN'T THIS EXIST?"
+            </p>
+            <p className="font-body text-white/80 text-lg mt-4 max-w-xl mx-auto">
+              Standing in a park, holding a compromised bag at arm's length, they looked at each other and Big Dog Life was born. Founded in Bellefontaine, Ohio in 2024.
+            </p>
+          </motion.div>
         </div>
       </section>
 
