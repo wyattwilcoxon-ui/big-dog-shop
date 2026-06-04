@@ -108,7 +108,11 @@ export default function About() {
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">Our Story</p>
             <h1 className="font-display leading-none text-white" style={{ fontSize: 'clamp(2.5rem, 10vw, 8rem)' }}>
-              BUILT FOR<br /><span className="text-primary">BIG DOGS.</span><br />BY BIG DOG<br />PEOPLE.
+              BUILT FOR<br />
+              <span className="flex items-baseline gap-4 flex-wrap">
+                <span className="text-primary">BIG DOGS.</span>
+                <span className="text-white" style={{ fontSize: 'clamp(1.2rem, 4vw, 3.5rem)' }}>BY BIG DOG PEOPLE.</span>
+              </span>
             </h1>
             <p className="font-body text-white/80 text-base sm:text-lg max-w-xl mt-4 leading-relaxed">
               Big Dog Life is an Ohio-based lifestyle brand dedicated to improving life for large and giant breed dogs and the people who love them.
