@@ -311,7 +311,7 @@ export default function About() {
               className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default flex flex-col sm:flex-row items-stretch"
             >
               <div className="sm:w-1/2 overflow-hidden flex-shrink-0 max-h-56 sm:max-h-none">
-                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-center" style={{display:'block'}} />
+                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-center scale-110" style={{display:'block'}} />
               </div>
               <div className="px-5 py-0 flex flex-col justify-center sm:w-1/2">
                 <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
