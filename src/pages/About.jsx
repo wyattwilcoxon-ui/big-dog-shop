@@ -49,18 +49,21 @@ const TEAM = [
     role: 'Co-Founder & Financial Director',
     photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/748b242b3_Megan.png',
     bio: 'After adopting Bosa, a 125-pound German Shepherd with absolutely zero shame, Megan realized she was going through 8 poop bags a day. Her finance background and frustration with the market turned a personal problem into a company.',
+    wide: false,
   },
   {
     name: 'Joni Dailey',
     role: 'Co-Founder & Brand Director',
     photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/0ef71dcef_Joni.png',
     bio: 'Owner of two Great Danes, Max and Caesar. Joni brings creative direction, marketing, and retail partnership strategy, ensuring every product and message reflects the brand\'s personality and values.',
+    wide: false,
   },
   {
     name: 'Doug & Amber Chivington',
     role: 'Partners & Strategy Directors',
     photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/ba5e6ee58_DougAmber.png',
     bio: 'Doug and Amber handle sourcing, inventory logistics, fulfillment, content creation, and digital strategy. Together they manage supplier relationships and quality control while driving the brand story forward.',
+    wide: true,
   },
 ];
 
@@ -273,8 +276,9 @@ export default function About() {
             <p className="font-body text-pebble mt-3 text-lg">Bellefontaine, Ohio, where big dogs run the show.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {TEAM.map((member, i) => (
+          {/* Row 1: Megan & Joni */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            {TEAM.filter(m => !m.wide).map((member, i) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -295,6 +299,27 @@ export default function About() {
               </motion.div>
             ))}
           </div>
+          {/* Row 2: Doug & Amber — full width */}
+          {TEAM.filter(m => m.wide).map((member, i) => (
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default grid grid-cols-1 sm:grid-cols-2"
+            >
+              <div className="aspect-[4/3] sm:aspect-auto overflow-hidden">
+                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="p-6 flex flex-col justify-center">
+                <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
+                <p className="font-brand text-primary text-xs mb-2">{member.role}</p>
+                <p className="font-body text-pebble text-sm leading-relaxed">{member.bio}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
