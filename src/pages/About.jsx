@@ -310,10 +310,10 @@ export default function About() {
               whileHover={{ scale: 1.02 }}
               className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default flex flex-col sm:flex-row items-stretch"
             >
-              <div className="sm:w-1/2 overflow-hidden flex-shrink-0">
+              <div className="sm:w-1/2 overflow-hidden flex-shrink-0 max-h-56 sm:max-h-none">
                 <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-center" style={{display:'block'}} />
               </div>
-              <div className="p-6 flex flex-col justify-center sm:w-1/2">
+              <div className="p-5 flex flex-col justify-center sm:w-1/2">
                 <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
                 <p className="font-brand text-primary text-xs mb-2">{member.role}</p>
                 <p className="font-body text-pebble text-sm leading-relaxed">{member.bio}</p>
