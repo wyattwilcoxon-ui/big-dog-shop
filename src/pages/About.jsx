@@ -313,7 +313,7 @@ export default function About() {
             >
               <div className="flex flex-col sm:flex-row">
                 <div className="sm:w-1/2 aspect-[4/3] sm:aspect-auto overflow-hidden flex-shrink-0">
-                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-center" style={{display:'block'}} />
+                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" style={{display:'block', objectPosition: '50% 15%'}} />
                 </div>
                 <div className="p-6 flex flex-col justify-center">
                   <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
