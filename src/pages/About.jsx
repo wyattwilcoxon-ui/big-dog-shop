@@ -76,12 +76,6 @@ const ROADMAP = [
   { emoji: '🔜', label: 'Single-Ingredient Treats', status: 'Coming Soon', color: 'bg-primary', blur: true },
 ];
 
-const BOKEH = [
-  { left: '8%',  top: '15%', size: 180, color: 'rgba(244,97,14,0.18)',  delay: 0,   dur: 7 },
-  { left: '75%', top: '8%',  size: 120, color: 'rgba(245,166,35,0.14)', delay: 1,   dur: 9 },
-  { left: '88%', top: '38%', size: 200, color: 'rgba(244,97,14,0.10)',  delay: 0.5, dur: 11 },
-  { left: '3%',  top: '50%', size: 140, color: 'rgba(245,166,35,0.12)', delay: 1.5, dur: 8 },
-];
 
 export default function About() {
   return (
