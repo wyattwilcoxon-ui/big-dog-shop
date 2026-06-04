@@ -6,9 +6,9 @@ const PANELS = [
     panelEmoji: '🐕',
     bg: 'bg-cream',
     border: 'border-primary',
-    title: 'MEET BOSA',
-    subtitle: '125 lbs. Zero shame.',
-    body: 'A magnificent German Shepherd who believed that going BIG applied to everything in life — especially his bathroom habits.',
+    title: 'HI. I\'M BOSA.',
+    subtitle: '125 lbs. of chaos. Zero regrets.',
+    body: 'I\'m a German Shepherd. I go BIG or I go home. This applies to my naps, my zoomies, my bark, and yes — my poops. Like, a LOT of poop.',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9679_a5725f64.jpg',
     accent: 'bg-primary',
     delay: 0,
@@ -17,9 +17,9 @@ const PANELS = [
     panelEmoji: '💩',
     bg: 'bg-cream',
     border: 'border-secondary',
-    title: 'THE PROBLEM',
-    subtitle: 'Normal bags: RIP.',
-    body: 'Regular bags didn\'t stand a chance. They split. They leaked. Megan was using 8 bags per walk. EIGHT. This is not a drill.',
+    title: 'THE TINY BAG TRAGEDY',
+    subtitle: 'They did NOT survive.',
+    body: 'Mom (Megan) tried regular bags. Cute. They exploded immediately. She went through 8 bags per walk. EIGHT. I watched her cry. It was hilarious.',
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/5b14b0aaf_generated_image.png',
     accent: 'bg-secondary',
     delay: 0.1,
@@ -28,9 +28,9 @@ const PANELS = [
     panelEmoji: '🐾',
     bg: 'bg-midnight',
     border: 'border-primary',
-    title: 'THE BREAKING POINT',
-    subtitle: 'Not today, tiny bag.',
-    body: 'Standing in a park, holding a compromised bag at arm\'s length, Megan looked at Joni and said: "WHY DOESN\'T THIS EXIST?!"',
+    title: 'THE PARK INCIDENT',
+    subtitle: 'A moment of silence for the fallen bags.',
+    body: 'One fateful day at the park, Mom held a leaked bag at arm\'s length and screamed at Joni: "WHY DOESN\'T THIS EXIST?!" I barked. I knew this was destiny.',
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/54a7680a8_generated_image.png',
     accent: 'bg-primary',
     dark: true,
@@ -40,9 +40,9 @@ const PANELS = [
     panelEmoji: '🧻',
     bg: 'bg-midnight',
     border: 'border-sandy',
-    title: 'THE BOSIE BAG™',
-    subtitle: '12"×13.5". Named after the legend.',
-    body: 'Built for large and giant breed dogs. Oversized. Named after the big boy himself. Bosa approves. (He\'s not sorry.)',
+    title: 'THE BOSIE BAG™ IS BORN',
+    subtitle: 'Finally. A bag worthy of my greatness.',
+    body: 'They made bags BIG. Like me. Named them after me (The Bosie Bag™, obviously). 12"×13.5" of pure leak-proof glory. I approve this message. And the bags.',
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/483e609ed_generated_image.png',
     accent: 'bg-sandy',
     dark: true,
@@ -73,11 +73,11 @@ export default function BosaOriginStory() {
             />
           </div>
           <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl text-midnight">
-            THE LEGEND OF<br />
-            <span className="text-primary">BOSA'S</span> POOPS
+            HOW I STARTED<br />
+            <span className="text-primary">THIS WHOLE THING</span>
           </h2>
           <p className="font-brand text-pebble text-lg mt-4 max-w-xl mx-auto">
-            A true story. An origin story. A story about a very large dog and very inadequate bags.
+            By Bosa. Chief Pooping Officer. 125 lbs. Zero shame. All opinions are my own (and I stand by them).
           </p>
         </motion.div>
 
