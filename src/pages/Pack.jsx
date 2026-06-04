@@ -105,15 +105,15 @@ export default function Pack() {
                 className="w-full sm:w-64 h-48 sm:h-auto rounded-xl object-cover border-bold flex-shrink-0"
               />
               <div>
-                <h3 className="font-brand text-xl text-midnight mb-4">It Started With Too Many Bags</h3>
+                <h3 className="font-brand text-xl text-midnight mb-4">Here's What Happened (By Bosa)</h3>
                 <p className="font-body text-pebble leading-relaxed mb-4">
-                  When Megan adopted Bosa (a 125-lb German Shepherd with zero chill), she quickly learned that normal poop bags were a joke. She was going through 8 bags a day. EIGHT.
+                  So Megan adopted me — 125 lbs of German Shepherd greatness. She thought regular bags would work. Cute. They exploded. Like, immediately. She went through EIGHT bags per walk. EIGHT. I watched her cry. Honestly? Kinda funny.
                 </p>
                 <p className="font-body text-pebble leading-relaxed mb-4">
-                  Meanwhile, her friend Joni was dealing with TWO Great Danes and the same exact frustrations.
+                  Then she met Joni. Joni had TWO Great Danes. Same problem. Tiny bags. Big dogs. Do the math.
                 </p>
                 <p className="font-body text-pebble leading-relaxed">
-                  They looked at each other and said: "Why doesn't this exist?" So they built it. Big Dog Life was born out of frustration, friendship, and an unreasonable amount of poop.
+                  One day at the park, Megan held a leaked bag at arm's length and screamed: "WHY DOESN'T THIS EXIST?!" I barked. She looked at me. I knew this was destiny. They built Big Dog Life. Named the bags after me (The Bosie Bag™, obviously). I give my seal of approval. Which is to say, I poop on them. You're welcome.
                 </p>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function Pack() {
               <p className="font-body text-midnight italic text-center leading-relaxed">
                 "Make life easier for big-dog owners. Build products that actually work. Don't take ourselves too seriously. And never, ever make a bag that leaks."
               </p>
-              <p className="font-brand text-stone text-sm text-center mt-2">— The Big Dog Life Team</p>
+              <p className="font-brand text-stone text-sm text-center mt-2">— Bosa, Chief Pooping Officer (and the real boss)</p>
             </div>
           </motion.div>
         </div>
