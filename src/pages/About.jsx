@@ -89,9 +89,10 @@ export default function About() {
 
       {/* Hero — photo on top, text below */}
       <section className="bg-midnight overflow-hidden">
-        {/* Photo — full width, no text overlay */}
+        {/* Photo — full width, fades into dark at bottom */}
         <div className="relative w-full" style={{ height: 'clamp(320px, 60vh, 700px)' }}>
           <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-85" style={{ objectPosition: '50% 25%' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 50%, #0F1D3C 100%)' }} />
           {BOKEH.map((b, i) => (
             <motion.div
               key={i}
@@ -102,8 +103,8 @@ export default function About() {
             />
           ))}
         </div>
-        {/* Text — clean dark band below */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        {/* Text — overlaps up into the faded photo */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 -mt-24 relative z-10">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">Our Story</p>
             <h1 className="font-display leading-none text-white" style={{ fontSize: 'clamp(2.5rem, 10vw, 8rem)' }}>
