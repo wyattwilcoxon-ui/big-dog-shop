@@ -66,6 +66,7 @@ export default function SizeComparison() {
           {[
             ['Bag Size', '9" × 12"', '12" × 13.5"'],
             ['Built for Large & Giant Breeds', false, true],
+            ['Thickness', 'Thin & flimsy', 'Extra-thick & leak-proof'],
             ['USDA Certified Biobased', false, true],
             ['Materials', 'Unknown plastics', 'Plant-based film'],
             ['Capacity', 'Chihuahua', 'Great Dane'],
