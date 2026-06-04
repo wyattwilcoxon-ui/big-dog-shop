@@ -108,11 +108,7 @@ export default function About() {
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">Our Story</p>
             <h1 className="font-display leading-none text-white" style={{ fontSize: 'clamp(2.5rem, 10vw, 8rem)' }}>
-              BUILT FOR<br />
-              <span className="flex items-baseline gap-4 flex-wrap">
-                <span className="text-primary">BIG DOGS.</span>
-                <span className="text-white">BY BIG DOG PEOPLE.</span>
-              </span>
+              BUILT BY<br /><span className="text-primary">BIG DOG PEOPLE.</span>
             </h1>
             <p className="font-body text-white/80 text-base sm:text-lg max-w-xl mt-4 leading-relaxed">
               Big Dog Life is an Ohio-based lifestyle brand dedicated to improving life for large and giant breed dogs and the people who love them.
@@ -154,7 +150,7 @@ export default function About() {
       <section className="py-12 sm:py-20 px-4 bg-cream">
         <div className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-16">
-            <p className="font-brand text-primary text-xs sm:text-sm uppercase tracking-widest mb-3">Mission</p>
+            <p className="font-brand text-primary text-xs sm:text-sm uppercase tracking-widest mb-3">Built For Big Dogs</p>
             <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-midnight leading-tight">OUR MISSION</h2>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
