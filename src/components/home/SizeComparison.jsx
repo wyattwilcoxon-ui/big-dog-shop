@@ -66,7 +66,8 @@ export default function SizeComparison() {
           {[
             ['Bag Size', '9" × 12"', '12" × 13.5"'],
             ['Built for Large & Giant Breeds', false, true],
-            ['Easy-Tie Handles', false, true],
+            ['USDA Certified Biobased', false, true],
+            ['Materials', 'Unknown plastics', 'Plant-based film'],
             ['Capacity', 'Chihuahua', 'Great Dane'],
           ].map(([feature, other, bosie], i) => (
             <div key={i} className={`grid grid-cols-3 p-4 ${i % 2 === 0 ? 'bg-cream' : 'bg-white'} border-t-2 border-fog`}>
