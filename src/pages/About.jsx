@@ -111,7 +111,7 @@ export default function About() {
               BUILT FOR<br />
               <span className="flex items-baseline gap-4 flex-wrap">
                 <span className="text-primary">BIG DOGS.</span>
-                <span className="text-white" style={{ fontSize: 'clamp(1.2rem, 4vw, 3.5rem)' }}>BY BIG DOG PEOPLE.</span>
+                <span className="text-white">BY BIG DOG PEOPLE.</span>
               </span>
             </h1>
             <p className="font-body text-white/80 text-base sm:text-lg max-w-xl mt-4 leading-relaxed">
