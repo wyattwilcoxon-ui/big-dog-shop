@@ -117,7 +117,7 @@ export default function About() {
             <p className="font-body text-white/80 text-base sm:text-lg max-w-xl mt-4 leading-relaxed">
               Big Dog Life is an Ohio-based lifestyle brand dedicated to improving life for large and giant breed dogs and the people who love them.
             </p>
-            <p className="font-display text-primary mt-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.75rem)' }}>
+            <p className="font-display text-primary mt-4" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
               "Because Big Dogs Have Big Needs."
             </p>
           </motion.div>
