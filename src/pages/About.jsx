@@ -268,9 +268,9 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-8 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-6">
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">The Humans</p>
             <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE PACK</h2>
             <p className="font-body text-pebble mt-3 text-lg">Bellefontaine, Ohio, where big dogs run the show.</p>
