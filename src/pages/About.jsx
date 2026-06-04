@@ -234,7 +234,7 @@ export default function About() {
                   src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/244a631d7_IMG_4554.jpg"
                   alt="Joni with her Great Danes Max and Caesar"
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: '50% -20%' }}
+                  style={{ objectPosition: '50% 30%' }}
                 />
               </div>
               <div className="p-6">
