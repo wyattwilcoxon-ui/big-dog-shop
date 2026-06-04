@@ -61,7 +61,7 @@ const TEAM = [
   {
     name: 'Doug & Amber Chivington',
     role: 'Partners & Strategy Directors',
-    photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/ba5e6ee58_DougAmber.png',
+    photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/6767a2db6_DougAmber.png',
     bio: 'Doug and Amber handle sourcing, inventory logistics, fulfillment, content creation, and digital strategy. Together they manage supplier relationships and quality control while driving the brand story forward.',
     wide: true,
   },
@@ -308,12 +308,12 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default flex flex-col sm:flex-row items-stretch"
+              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default"
             >
-              <div className="sm:w-1/2 overflow-hidden flex-shrink-0 max-h-56 sm:max-h-none">
-                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-center scale-110" style={{display:'block'}} />
+              <div className="aspect-[16/9] overflow-hidden">
+                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-center" style={{display:'block'}} />
               </div>
-              <div className="px-5 py-0 flex flex-col justify-center sm:w-1/2">
+              <div className="p-6 flex flex-col">
                 <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
                 <p className="font-brand text-primary text-xs mb-2">{member.role}</p>
                 <p className="font-body text-pebble text-sm leading-relaxed">{member.bio}</p>
