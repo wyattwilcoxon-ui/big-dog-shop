@@ -90,7 +90,7 @@ export default function About() {
       {/* Hero — same style as HeroSection */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] overflow-hidden bg-midnight">
         <div className="absolute inset-0">
-          <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-75 scale-105" />
+          <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-75 scale-105" style={{ objectPosition: '50% 30%' }} />
           <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-midnight/20" />
         </div>
         {BOKEH.map((b, i) => (
@@ -102,7 +102,7 @@ export default function About() {
             transition={{ delay: b.delay, duration: b.dur, repeat: Infinity, ease: 'easeInOut' }}
           />
         ))}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end min-h-[70vh] sm:min-h-[80vh] pb-16 sm:pb-24">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end min-h-[70vh] sm:min-h-[80vh] pb-4 sm:pb-8">
           <motion.div initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">Our Story</p>
             <h1 className="font-display leading-none text-white" style={{ fontSize: 'clamp(2.5rem, 10vw, 8rem)' }}>
