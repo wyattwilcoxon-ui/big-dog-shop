@@ -92,17 +92,8 @@ export default function About() {
         {/* Photo — full width, fades into dark at bottom */}
         <div className="relative w-full" style={{ height: 'clamp(400px, 70vh, 800px)' }}>
           <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-85" style={{ objectPosition: '50% 35%' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #0F1D3C 0%, transparent 20%, transparent 55%, #0F1D3C 100%)' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, #0F1D3C 0%, transparent 15%, transparent 85%, #0F1D3C 100%)' }} />
-          {BOKEH.map((b, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full pointer-events-none"
-              style={{ left: b.left, top: b.top, width: b.size, height: b.size, background: b.color, filter: 'blur(40px)' }}
-              animate={{ y: [0, -20, 0], scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
-              transition={{ delay: b.delay, duration: b.dur, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          ))}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #0F1D3C 0%, transparent 20%, transparent 50%, #0F1D3C 90%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, #0F1D3C 0%, transparent 12%, transparent 88%, #0F1D3C 100%)' }} />
         </div>
         {/* Text — overlaps up into the faded photo */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-2 -mt-24 relative z-10">
