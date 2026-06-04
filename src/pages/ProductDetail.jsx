@@ -80,7 +80,7 @@ export default function ProductDetail() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden aspect-square"
+              className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden aspect-square max-w-md mx-auto"
             >
               {product.images[activeImage] ? (
                 <img
