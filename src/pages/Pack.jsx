@@ -36,28 +36,6 @@ const DOGS = [
   },
 ];
 
-const FOUNDERS = [
-  {
-    name: 'Joni Dailey',
-    role: 'Co-Founder & Brand Director',
-    tagline: 'The one who makes everything look good',
-  },
-  {
-    name: 'Megan Gerlach',
-    role: 'Co-Founder & Financial Director',
-    tagline: 'The one who counts the money (and the poop bags)',
-  },
-  {
-    name: 'Doug Chivington',
-    role: 'Partner & Operations Director',
-    tagline: 'The one who makes sure your order actually shows up',
-  },
-  {
-    name: 'Amber Chivington',
-    role: 'Partner & Marketing Strategist',
-    tagline: 'The one who tells the world about our bags',
-  },
-];
 
 export default function Pack() {
   return (
@@ -150,39 +128,6 @@ export default function Pack() {
         </div>
       </div>
 
-      {/* Team */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <p className="font-brand text-primary text-lg mb-2">The Humans</p>
-          <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE POOP SQUAD</h2>
-          <p className="font-body text-pebble mt-4">Bellefontaine, Ohio (yes, it's a real place)</p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {FOUNDERS.map((founder, i) => (
-            <motion.div
-              key={founder.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-2xl border-bold shadow-cartoon-sm p-6 text-center"
-            >
-              <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="font-display text-3xl text-primary">{founder.name.charAt(0)}</span>
-              </div>
-              <h3 className="font-brand text-midnight">{founder.name}</h3>
-              <p className="font-brand text-primary text-xs mt-1">{founder.role}</p>
-              <p className="font-body text-stone text-xs mt-2 italic">{founder.tagline}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

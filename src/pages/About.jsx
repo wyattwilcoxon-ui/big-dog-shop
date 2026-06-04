@@ -280,61 +280,71 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Meet the Pack - Dogs */}
       <section className="py-12 sm:py-20 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-6">
-            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">The Humans</p>
-            <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE PACK</h2>
-            <p className="font-body text-pebble mt-3 text-lg">Bellefontaine, Ohio, where big dogs run the show.</p>
+            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">The Real MVPs</p>
+            <h2 className="font-display text-5xl sm:text-7xl text-midnight">MEET THE PACK</h2>
+            <p className="font-body text-pebble mt-3 text-lg">Our dogs who inspire us every day.</p>
           </motion.div>
 
-          {/* Row 1: Megan & Joni */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
-            {TEAM.filter(m => !m.wide).map((member, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              {
+                name: 'Bosa',
+                breed: 'German Shepherd',
+                title: 'Chief Pooping Officer',
+                description: '125 lbs of pure chaos and love. His poops are legendary (and the reason this company exists). The bags are literally named after him.',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9679_a5725f64.jpg',
+                color: 'border-primary',
+              },
+              {
+                name: 'Carmen',
+                breed: 'German Shepherd',
+                title: 'Senior Quality Inspector',
+                description: 'The wise grandma of the pack. She tested every prototype and gave her seal of approval by not looking disgusted.',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9660_8b3c9563.jpg',
+                color: 'border-secondary',
+              },
+              {
+                name: 'Max',
+                breed: 'Great Dane',
+                title: 'Head of Stress Testing',
+                description: "Joni's gentle giant who proved that most pet products are basically made for hamsters. If a bag can handle Max, it can handle anything.",
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9245_46815bf7.jpg',
+                color: 'border-sky',
+              },
+              {
+                name: 'Jazzy',
+                breed: 'The Little One',
+                title: 'Morale & Chaos Coordinator',
+                description: 'Every big dog crew needs a tiny boss. Jazzy keeps everyone in line and reminds us that attitude has nothing to do with size.',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_8880_fff6a440.jpg',
+                color: 'border-sandy',
+              },
+            ].map((dog, i) => (
               <motion.div
-                key={member.name}
+                key={dog.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 1.03 }}
-                className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default"
+                className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default"
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
+                <div className={`aspect-[4/3] overflow-hidden border-b-4 ${dog.color}`}>
+                  <img src={dog.image} alt={dog.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
-                  <p className="font-brand text-primary text-xs mb-2">{member.role}</p>
-                  <p className="font-body text-pebble text-sm leading-relaxed">{member.bio}</p>
+                  <h3 className="font-display text-2xl sm:text-3xl text-midnight">{dog.name}</h3>
+                  <p className="font-brand text-primary text-xs sm:text-sm">{dog.breed}</p>
+                  <p className="font-brand text-stone text-xs mt-1">{dog.title}</p>
+                  <p className="font-body text-pebble text-sm mt-2 sm:mt-3 leading-relaxed">{dog.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
-          {/* Row 2: Doug & Amber — full width */}
-          {TEAM.filter(m => m.wide).map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default"
-            >
-              <div className="flex flex-col sm:flex-row">
-                <div className="sm:w-1/2 aspect-[4/3] sm:aspect-auto overflow-hidden flex-shrink-0">
-                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" style={{display:'block', objectPosition: '50% 25%'}} />
-                </div>
-                <div className="p-6 flex flex-col justify-center">
-                  <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
-                  <p className="font-brand text-primary text-xs mb-2">{member.role}</p>
-                  <p className="font-body text-pebble text-sm leading-relaxed">{member.bio}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
         </div>
       </section>
 
