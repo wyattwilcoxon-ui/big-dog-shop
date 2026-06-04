@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 
 
 import Layout from './components/layout/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 
@@ -25,6 +26,7 @@ function App() {
     <Router>
       <AuthProvider>
         <QueryClientProvider client={queryClientInstance}>
+          <ScrollToTop />
           <Routes>
             {/* Standalone email signup landing page */}
             <Route path="/join" element={<JoinThePack />} />
