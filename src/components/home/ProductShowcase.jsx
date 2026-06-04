@@ -130,38 +130,47 @@ export default function ProductShowcase() {
               {/* Info */}
               <div className="p-5 flex flex-col flex-1">
                 <h3 className="font-brand text-white text-base leading-tight mb-1">{product.name}</h3>
-                <p className="font-body text-stone text-xs mb-4 flex-1">{product.description}</p>
+                {/* Short subtitle only */}
+                <p className="font-body text-stone text-xs mb-3">
+                  {product.description?.split('.')[0] || product.description}
+                </p>
 
-                <div className="flex items-center justify-between gap-2 mt-auto">
-                  {/* Price */}
-                  <div>
-                    {product.price ? (
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="font-display text-2xl text-white">${Number(product.price).toFixed(2)}</span>
-                        {product.compareAtPrice && product.compareAtPrice > product.price && (
-                          <span className="font-body text-stone line-through text-xs">${Number(product.compareAtPrice).toFixed(2)}</span>
-                        )}
-                      </div>
-                    ) : (
-                      <span className="font-brand text-stone text-xs">TBA</span>
-                    )}
-                  </div>
+                {/* Price */}
+                <div className="mb-4">
+                  {product.price ? (
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="font-display text-2xl text-white">${Number(product.price).toFixed(2)}</span>
+                      {product.compareAtPrice && product.compareAtPrice > product.price && (
+                        <span className="font-body text-stone line-through text-xs">${Number(product.compareAtPrice).toFixed(2)}</span>
+                      )}
+                    </div>
+                  ) : (
+                    <span className="font-brand text-stone text-xs">TBA</span>
+                  )}
+                </div>
 
-                  {/* CTA */}
+                {/* Two buttons */}
+                <div className="flex gap-2 mt-auto">
+                  <Link
+                    to={`/product/${product.handle}`}
+                    className="flex-1 text-center font-brand text-xs px-3 py-2 rounded-full border border-white/20 text-white/70 hover:bg-white/10 transition-colors"
+                  >
+                    More Info
+                  </Link>
                   {product.available ? (
                     <button
                       onClick={() => handleAdd(product)}
                       disabled={addingId === product.id}
-                      className="flex items-center gap-1 bg-primary text-white font-brand text-xs px-3 py-2 rounded-full hover:bg-orange-hot transition-colors"
+                      className="flex-1 flex items-center justify-center gap-1 bg-primary text-white font-brand text-xs px-3 py-2 rounded-full hover:bg-orange-hot transition-colors"
                     >
                       {addingId === product.id ? <Loader2 className="w-3 h-3 animate-spin" /> : 'Add to Cart'}
                     </button>
                   ) : (
                     <Link
                       to={`/product/${product.handle}`}
-                      className="flex items-center gap-1 bg-white/10 text-white font-brand text-xs px-3 py-2 rounded-full hover:bg-white/20 transition-colors"
+                      className="flex-1 text-center font-brand text-xs px-3 py-2 rounded-full bg-white/10 text-stone hover:bg-white/20 transition-colors"
                     >
-                      View <ArrowRight className="w-3 h-3" />
+                      Notify Me
                     </Link>
                   )}
                 </div>
