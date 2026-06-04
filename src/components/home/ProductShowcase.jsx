@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Loader2, CheckCircle } from 'lucide-react';
+import { Loader2, CheckCircle, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { getProducts } from '@/lib/shopify';
 import { useShopifyCart } from '@/lib/ShopifyCartContext';
 
 const FALLBACK = [
   {
     id: 'starter-scoop',
+    handle: 'starter-scoop',
     name: 'The Starter Scoop',
     description: '1 Roll · 15 Bags',
-    detail: 'Dip your toes in (not literally).',
     price: null,
     badge: null,
     available: false,
@@ -17,9 +18,9 @@ const FALLBACK = [
   },
   {
     id: 'bosie-8pack',
+    handle: 'bosie-8pack',
     name: 'The Bosie Bag™ 8-Pack',
     description: '8 Rolls · 120 Bags',
-    detail: 'Our best seller. Weeks of worry-free walks.',
     price: 11.99,
     compareAtPrice: 15.99,
     badge: 'Best Seller',
@@ -28,9 +29,9 @@ const FALLBACK = [
   },
   {
     id: 'clip-and-go',
+    handle: 'clip-and-go',
     name: 'The Clip & Go',
     description: 'Bone Dispenser + 1 Roll',
-    detail: 'Clips to your leash. Never fumble again.',
     price: null,
     badge: 'Coming Soon',
     available: false,
@@ -56,13 +57,12 @@ export default function ProductShowcase() {
       .catch(err => console.error('Shopify fetch failed:', err));
   }, []);
 
-  const handleAdd = (product) => {
+  const handleAdd = async (product) => {
     if (!product.variantId || !product.available) return;
-    addItem(product.variantId, product);
+    setAddingId(product.id);
+    await addItem(product.variantId, product);
+    setAddingId(null);
   };
-
-  const featured = products.find(p => p.available) || products[0];
-  const rest = products.filter(p => p.id !== featured?.id);
 
   return (
     <section className="py-16 sm:py-24 bg-midnight" id="shop">
@@ -74,139 +74,101 @@ export default function ProductShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center mb-12"
+          className="text-center mb-4"
         >
           <p className="font-brand text-primary text-sm uppercase tracking-widest mb-2">The Star of the Show</p>
           <h2 className="font-display text-6xl sm:text-8xl text-white">THE BOSIE BAG<span className="text-primary">™</span></h2>
           <p className="font-body text-stone text-lg mt-2">Engineered for the 100lb+ club. Big bags for big jobs.</p>
         </motion.div>
 
-        {/* Featured product */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-10">
-          {/* Image card */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-primary rounded-3xl p-10 flex items-center justify-center relative min-h-[320px]"
-          >
-            {featured?.badge && (
-              <span className="absolute top-5 left-5 bg-midnight text-white font-brand text-xs px-3 py-1.5 rounded-full">
-                {featured.badge === 'Best Seller' ? '🧻 Best Seller' : featured.badge}
-              </span>
-            )}
-            {featured?.price && (
-              <div className="absolute top-5 right-5 bg-yellow-400 text-midnight rounded-2xl px-4 py-2 text-center">
-                <div className="font-brand text-xs">FROM</div>
-                <div className="font-display text-3xl leading-none">${Number(featured.price).toFixed(0)}</div>
-              </div>
-            )}
-            <img
-              src={featured?.image}
-              alt={featured?.name}
-              className="max-h-64 object-contain"
-            />
-          </motion.div>
-
-          {/* Info card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col justify-between"
-          >
-            <div>
-              <h3 className="font-display text-3xl text-white mb-1">{featured?.name}</h3>
-              <p className="font-brand text-stone text-sm mb-6">{featured?.description}</p>
-
-              <div className="space-y-3 mb-8">
-                {FEATURES.map((f, i) => (
-                  <motion.div
-                    key={f}
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.07 }}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="font-body text-white/80 text-sm">{f}</span>
-                  </motion.div>
-                ))}
-              </div>
+        {/* Features strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-12"
+        >
+          {FEATURES.map((f) => (
+            <div key={f} className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+              <span className="font-body text-white/70 text-sm">{f}</span>
             </div>
+          ))}
+        </motion.div>
 
-            <div>
-              {featured?.compareAtPrice && featured?.price && (
-                <div className="flex items-baseline gap-3 mb-4">
-                  <span className="font-display text-4xl text-white">${Number(featured.price).toFixed(2)}</span>
-                  <span className="font-body text-stone line-through text-lg">${Number(featured.compareAtPrice).toFixed(2)}</span>
-                  <span className="bg-primary/20 text-primary font-brand text-xs px-2 py-1 rounded-full">SAVE ${(Number(featured.compareAtPrice) - Number(featured.price)).toFixed(2)}</span>
-                </div>
-              )}
-              <button
-                onClick={() => handleAdd(featured)}
-                disabled={!featured?.available || addingId === featured?.id}
-                className={`w-full py-4 rounded-2xl font-brand text-lg flex items-center justify-center gap-2 transition-all ${
-                  featured?.available
-                    ? 'bg-primary text-white hover:bg-orange-hot'
-                    : 'bg-white/10 text-stone cursor-not-allowed'
-                }`}
-              >
-                {addingId === featured?.id
-                  ? <><Loader2 className="w-5 h-5 animate-spin" /> Adding...</>
-                  : featured?.available ? '🐾 Add to Cart' : '🔔 Notify Me'
-                }
-              </button>
-            </div>
-          </motion.div>
-        </div>
+        {/* Product grid — all 4 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {products.map((product, i) => (
+            <motion.div
+              key={product.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex flex-col group"
+            >
+              {/* Square image */}
+              <Link to={`/product/${product.handle}`} className="block relative aspect-square bg-white overflow-hidden">
+                {product.badge && (
+                  <span className={`absolute top-3 left-3 z-10 font-brand text-xs px-3 py-1 rounded-full ${
+                    product.badge === 'Best Seller' ? 'bg-primary text-white' : 'bg-midnight text-white'
+                  }`}>
+                    {product.badge}
+                  </span>
+                )}
+                {product.image ? (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-6xl">🧻</div>
+                )}
+              </Link>
 
-        {/* Rest of products */}
-        {rest.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {rest.map((product, i) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-5"
-              >
-                <div className="w-20 h-20 flex-shrink-0 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <img src={product.image} alt={product.name} className="w-16 h-16 object-contain" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <h4 className="font-brand text-white text-sm">{product.name}</h4>
-                    {product.badge && (
-                      <span className="bg-primary/20 text-primary font-brand text-xs px-2 py-0.5 rounded-full">{product.badge}</span>
+              {/* Info */}
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="font-brand text-white text-base leading-tight mb-1">{product.name}</h3>
+                <p className="font-body text-stone text-xs mb-4 flex-1">{product.description}</p>
+
+                <div className="flex items-center justify-between gap-2 mt-auto">
+                  {/* Price */}
+                  <div>
+                    {product.price ? (
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="font-display text-2xl text-white">${Number(product.price).toFixed(2)}</span>
+                        {product.compareAtPrice && product.compareAtPrice > product.price && (
+                          <span className="font-body text-stone line-through text-xs">${Number(product.compareAtPrice).toFixed(2)}</span>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="font-brand text-stone text-xs">TBA</span>
                     )}
                   </div>
-                  <p className="font-body text-stone text-xs mb-3">{product.description}</p>
-                  <button
-                    onClick={() => handleAdd(product)}
-                    disabled={!product.available || addingId === product.id}
-                    className={`font-brand text-xs px-4 py-2 rounded-full transition-colors ${
-                      product.available
-                        ? 'bg-primary text-white hover:bg-orange-hot'
-                        : 'bg-white/10 text-stone'
-                    }`}
-                  >
-                    {addingId === product.id ? '...' : product.available ? 'Add to Cart →' : 'Notify Me'}
-                  </button>
+
+                  {/* CTA */}
+                  {product.available ? (
+                    <button
+                      onClick={() => handleAdd(product)}
+                      disabled={addingId === product.id}
+                      className="flex items-center gap-1 bg-primary text-white font-brand text-xs px-3 py-2 rounded-full hover:bg-orange-hot transition-colors"
+                    >
+                      {addingId === product.id ? <Loader2 className="w-3 h-3 animate-spin" /> : 'Add to Cart'}
+                    </button>
+                  ) : (
+                    <Link
+                      to={`/product/${product.handle}`}
+                      className="flex items-center gap-1 bg-white/10 text-white font-brand text-xs px-3 py-2 rounded-full hover:bg-white/20 transition-colors"
+                    >
+                      View <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  )}
                 </div>
-                <div className="text-right flex-shrink-0">
-                  {product.price
-                    ? <span className="font-display text-3xl text-white">${Number(product.price).toFixed(0)}</span>
-                    : <span className="font-brand text-stone text-xs">TBA</span>
-                  }
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

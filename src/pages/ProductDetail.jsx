@@ -80,16 +80,16 @@ export default function ProductDetail() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-cream rounded-2xl border-bold shadow-cartoon overflow-hidden aspect-square flex items-center justify-center p-8"
+              className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden aspect-square"
             >
               {product.images[activeImage] ? (
                 <img
                   src={product.images[activeImage]}
                   alt={product.name}
-                  className="max-h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="text-8xl">🧻</div>
+                <div className="w-full h-full flex items-center justify-center text-8xl">🧻</div>
               )}
             </motion.div>
 
@@ -103,7 +103,7 @@ export default function ProductDetail() {
                       i === activeImage ? 'border-primary' : 'border-fog hover:border-stone'
                     }`}
                   >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
+                    <img src={img} alt="" className="w-full h-full object-cover object-center" />
                   </button>
                 ))}
               </div>
