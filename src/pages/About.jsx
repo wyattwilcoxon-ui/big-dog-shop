@@ -268,7 +268,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-8 px-4 bg-background">
+      <section className="py-4 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-6">
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">The Humans</p>
@@ -277,7 +277,7 @@ export default function About() {
           </motion.div>
 
           {/* Row 1: Megan & Joni */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
             {TEAM.filter(m => !m.wide).map((member, i) => (
               <motion.div
                 key={member.name}
