@@ -87,23 +87,24 @@ export default function About() {
   return (
     <main className="bg-background min-h-screen">
 
-      {/* Hero — same style as HeroSection */}
-      <section className="relative min-h-[90vh] sm:min-h-[100vh] overflow-hidden bg-midnight">
-        <div className="absolute inset-0">
-          <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-75" style={{ objectPosition: '50% 20%' }} />
-          <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/40 to-transparent" />
+      {/* Hero — photo on top, text below */}
+      <section className="bg-midnight overflow-hidden">
+        {/* Photo — full width, no text overlay */}
+        <div className="relative w-full" style={{ height: 'clamp(320px, 60vh, 700px)' }}>
+          <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-85" style={{ objectPosition: '50% 25%' }} />
+          {BOKEH.map((b, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full pointer-events-none"
+              style={{ left: b.left, top: b.top, width: b.size, height: b.size, background: b.color, filter: 'blur(40px)' }}
+              animate={{ y: [0, -20, 0], scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
+              transition={{ delay: b.delay, duration: b.dur, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          ))}
         </div>
-        {BOKEH.map((b, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full pointer-events-none"
-            style={{ left: b.left, top: b.top, width: b.size, height: b.size, background: b.color, filter: 'blur(40px)' }}
-            animate={{ y: [0, -20, 0], scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
-            transition={{ delay: b.delay, duration: b.dur, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        ))}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end min-h-[90vh] sm:min-h-[100vh] pb-12 sm:pb-16">
-          <motion.div initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
+        {/* Text — clean dark band below */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">Our Story</p>
             <h1 className="font-display leading-none text-white" style={{ fontSize: 'clamp(2.5rem, 10vw, 8rem)' }}>
               BUILT FOR<br /><span className="text-primary">BIG DOGS.</span><br />BY BIG DOG<br />PEOPLE.
