@@ -308,10 +308,10 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default flex flex-col sm:flex-row"
+              className="bg-white rounded-2xl border-bold shadow-cartoon-sm overflow-hidden cursor-default flex flex-col sm:flex-row items-stretch"
             >
-              <div className="sm:w-1/2 aspect-[4/3] sm:aspect-auto overflow-hidden flex-shrink-0">
-                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
+              <div className="sm:w-1/2 overflow-hidden flex-shrink-0">
+                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-center" style={{display:'block'}} />
               </div>
               <div className="p-6 flex flex-col justify-center sm:w-1/2">
                 <h3 className="font-brand text-midnight text-lg leading-tight">{member.name}</h3>
