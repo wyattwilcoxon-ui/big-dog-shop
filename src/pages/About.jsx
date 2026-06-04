@@ -14,7 +14,7 @@ const STATS = [
   },
   {
     value: '40%',
-    label: 'own large or giant breed dogs',
+    label: 'of U.S. dog owners have large or giant breeds',
     sub: 'An underserved majority',
     cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics',
   },
