@@ -129,7 +129,25 @@ export default function ProductDetail() {
               </div>
             )}
 
-            <p className="font-body text-pebble mt-4 leading-relaxed text-lg">{product.description}</p>
+            <div className="font-body text-pebble mt-4 leading-relaxed text-base space-y-3">
+              {product.description?.split('\n').filter(line => line.trim()).map((line, i) => {
+                const trimmed = line.trim();
+                // Bullet-style lines starting with - or •
+                if (trimmed.startsWith('-') || trimmed.startsWith('•')) {
+                  return (
+                    <div key={i} className="flex items-start gap-2">
+                      <span className="text-primary mt-1 flex-shrink-0">▸</span>
+                      <span>{trimmed.replace(/^[-•]\s*/, '')}</span>
+                    </div>
+                  );
+                }
+                // All-caps lines = section headers
+                if (trimmed === trimmed.toUpperCase() && trimmed.length > 3) {
+                  return <p key={i} className="font-brand text-midnight text-sm uppercase tracking-wider mt-4 mb-1">{trimmed}</p>;
+                }
+                return <p key={i}>{trimmed}</p>;
+              })}
+            </div>
 
             {/* Variant picker */}
             <div className="mt-6">
