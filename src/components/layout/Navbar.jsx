@@ -75,7 +75,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
                 to="/shop"
                 className="hidden sm:inline-flex items-center gap-1 bg-primary text-white font-brand text-sm px-4 py-2 rounded-full hover:bg-orange-hot transition-all"
               >
-                Products
+                Shop
               </Link>
               <button
                 onClick={onCartClick}
@@ -139,7 +139,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
                 onClick={() => setMenuOpen(false)}
                 className="block w-full text-center font-brand text-lg bg-primary text-white py-4 rounded-2xl"
               >
-                Products 🐾
+                Shop 🐾
               </Link>
               <button
                 onClick={() => {
