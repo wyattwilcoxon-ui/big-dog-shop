@@ -34,11 +34,11 @@ Stop settling for undersized dog waste bags that weren't made for your dog. Bosi
   },
   
   // 2. Big Dog Life® Bag Dispenser - Clip & Go Pouch
-   'clip-and-go': {
-     seoTitle: 'Big Dog Life® Dog Poop Bag Dispenser - Leash Clip Holder for Large and Giant Breed Dog Waste Bags | Zippered Fabric Pouch | Includes 1 Starter Roll of Bosie Bag™',
-     metaDescription: 'Big Dog Life® leash clip dog poop bag dispenser - includes 1 starter roll of Bosie Bag™. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
-     shortDescription: 'No more digging through your pockets at the worst possible moment. The Big Dog Life® Clip & Go Pouch clips to your leash, comes loaded with a starter roll of Bosie Bag™, and keeps you ready before your dog even squats.',
-     longDescription: `The best dog poop bag dispenser is the one you don't have to think about. The Big Dog Life® Clip & Go Pouch stays clipped to your leash, your belt loop, or your park bag - so when your large or giant breed dog does what they do, you're already ready.
+  'clip-and-go': {
+    seoTitle: 'Big Dog Life® Dog Poop Bag Dispenser - Leash Clip Holder for Large and Giant Breed Dog Waste Bags | Zippered Fabric Pouch | Includes 1 Starter Roll of Bosie Bag™',
+    metaDescription: 'Big Dog Life® leash clip dog poop bag dispenser - includes 1 starter roll of Bosie Bag™. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
+    shortDescription: 'No more digging through your pockets at the worst possible moment. The Big Dog Life® Clip & Go Pouch clips to your leash, comes loaded with a starter roll of Bosie Bag™, and keeps you ready before your dog even squats.',
+    longDescription: `The best dog poop bag dispenser is the one you don't have to think about. The Big Dog Life® Clip & Go Pouch stays clipped to your leash, your belt loop, or your park bag - so when your large or giant breed dog does what they do, you're already ready.
 
   Comes with one starter roll of Bosie Bag™ oversized waste bags already inside. Clip it on, pull a bag, and go. No setup required.
 
@@ -57,8 +57,8 @@ Stop settling for undersized dog waste bags that weren't made for your dog. Bosi
   ▸ Anyone tired of digging through pockets mid-walk
 
   The dog poop bag holder that stays out of the way until you need it - then delivers every time.`,
-     backendKeywords: 'dog poop bag holder leash, dog waste bag dispenser clip, fabric dog bag holder, poop bag pouch carabiner, dog walking accessories large breed, leash attachment poop bag, zippered poop bag holder, dog bag dispenser pouch, large breed dog bag dispenser',
-   },
+    backendKeywords: 'dog poop bag holder leash, dog waste bag dispenser clip, fabric dog bag holder, poop bag pouch carabiner, dog walking accessories large breed, leash attachment poop bag, zippered poop bag holder, dog bag dispenser pouch, large breed dog bag dispenser',
+  },
   
   // 3. Bosie Bag™ Rolls - 8-Roll Refill Pack (960 Bags)
   'bosie-bag-8pack': {
