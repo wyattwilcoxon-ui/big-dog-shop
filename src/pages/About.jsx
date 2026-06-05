@@ -232,23 +232,67 @@ export default function About() {
             <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE REAL STORY</h2>
           </motion.div>
 
+          {/* Offset stagger grid with photos */}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-6 items-start mb-8">
+
+            {/* Card 1 — left, sits higher */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default sm:mt-0"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/b8996936f_IMG_9079.jpg"
+                  alt="Bosa (left) and Carmen (right)"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-3xl text-midnight mb-2">MEGAN'S INSPIRATION</h3>
+                <p className="font-body text-pebble text-sm leading-relaxed">
+                  After adopting Bosa, a 125-pound German Shepherd, Megan realized standard bags didn't cut it. Going through up to <strong>8 bags per day</strong>, she knew there had to be a better way.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 2 — right, sits lower */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default sm:mt-16"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/244a631d7_IMG_4554.jpg"
+                  alt="Joni with her Great Dane Max"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: '50% 30%' }}
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-3xl text-midnight mb-2">JONI'S CHALLENGE</h3>
+                <p className="font-body text-pebble text-sm leading-relaxed">
+                  Owner of Great Danes Max and Ellie, Joni faced the same frustration — harnesses, collars, and accessories that didn't fit, with expensive special orders as the only option.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Quote block — full width below */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl border-bold shadow-cartoon p-8 sm:p-12"
+            className="bg-primary rounded-2xl border-bold shadow-cartoon p-8 sm:p-10 text-center"
           >
-            <p className="font-body text-pebble text-base sm:text-lg leading-relaxed space-y-4">
-              The idea for Big Dog Life was born from everyday frustration and a lot of love for big dogs.
-            </p>
-            <p className="font-body text-pebble text-base sm:text-lg leading-relaxed mt-4">
-              Megan's inspiration came after adopting Bosa, a 125-pound German Shepherd with equally "large-scale" needs. For years, Megan had used two standard pet waste bags for her other German Shepherd, Carmen, but Bosa's size quickly made that routine unworkable. Even the largest commercial bags couldn't keep up — resulting in waste, inefficiency, and frequent messes. After realizing she was going through up to eight small bags a day, she thought, there has to be a better way.
-            </p>
-            <p className="font-body text-pebble text-base sm:text-lg leading-relaxed mt-4">
-              Around the same time, Joni, who owns two Great Danes, Max and Ellie, was facing her own large-breed challenges — finding harnesses, collars, and accessories that actually fit. Most options required expensive special orders, leaving large-breed owners with limited, inconsistent, and costly choices.
-            </p>
-            <p className="font-body text-pebble text-base sm:text-lg leading-relaxed mt-4">
-              The two friends started comparing notes and quickly realized they weren't alone. There was an entire community of large-breed owners struggling with undersized products, wasted money, and limited options. Out of those shared experiences, Big Dog Life was born — a company built for big dogs, by big-dog owners.
+            <p className="font-body text-white text-base sm:text-lg leading-relaxed">
+              The two friends started comparing notes and quickly realized they weren't alone. There was an entire community of large-breed owners struggling with undersized products, wasted money, and limited options. Out of those shared experiences, <strong className="text-white">Big Dog Life was born</strong> — a company built for big dogs, by big-dog owners.
             </p>
           </motion.div>
         </div>
