@@ -1,41 +1,71 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Loader2, CheckCircle, ArrowRight } from 'lucide-react';
+import { Loader2, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getProducts } from '@/lib/shopify';
 import { useShopifyCart } from '@/lib/ShopifyCartContext';
+import { PRODUCT_COPY } from '@/lib/productCopy';
 
-const FALLBACK = [
+// Static product data from master copy - only images/checkout from Shopify
+const PRODUCTS = [
   {
-    id: 'starter-scoop',
-    handle: 'starter-scoop',
-    name: 'The Starter Scoop',
-    description: '1 Roll · 15 Bags',
-    price: null,
-    badge: null,
-    available: false,
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-hero_4baf8cfb.png',
-  },
-  {
-    id: 'bosie-8pack',
-    handle: 'bosie-8pack',
-    name: 'The Bosie Bag™ 8-Pack',
-    description: '8 Rolls · 120 Bags',
-    price: 11.99,
-    compareAtPrice: 15.99,
+    id: 'bosie-bag',
+    handle: 'bosie-bag',
+    name: 'The Bosie Bag™',
+    subtitle: '12" x 13.5" Extra Large Waste Bags',
+    price: 14.99,
+    compareAtPrice: null,
     badge: 'Best Seller',
-    available: false,
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-multi_1698b1d7.png',
+    available: true,
+    variantId: 'placeholder',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-hero_4baf8cfb.png',
   },
   {
     id: 'clip-and-go',
     handle: 'clip-and-go',
-    name: 'The Clip & Go',
-    description: 'Clip & Go Pouch + 1 Roll of Bags',
-    price: null,
-    badge: 'Coming Soon',
-    available: false,
+    name: 'The Clip & Go™',
+    subtitle: 'Leash Clip Dispenser + Starter Roll',
+    price: 12.99,
+    compareAtPrice: null,
+    badge: null,
+    available: true,
+    variantId: 'placeholder',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-dispenser_fae228f9.png',
+  },
+  {
+    id: 'bosie-bag-8pack',
+    handle: 'bosie-bag-8pack',
+    name: 'Bosie Bag™ 8-Pack',
+    subtitle: '960 Bags Total (8 Rolls x 120)',
+    price: 39.99,
+    compareAtPrice: 47.92,
+    badge: 'Bulk Value',
+    available: true,
+    variantId: 'placeholder',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-multi_1698b1d7.png',
+  },
+  {
+    id: 'starter-bundle',
+    handle: 'starter-bundle',
+    name: 'Big Dog Life® Starter Bundle',
+    subtitle: '1,080 Bags + Dispenser + Tennis Balls',
+    price: 54.99,
+    compareAtPrice: 67.96,
+    badge: 'Best Value',
+    available: true,
+    variantId: 'placeholder',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-bundle_2890c1e5.png',
+  },
+  {
+    id: 'tennis-balls',
+    handle: 'tennis-balls',
+    name: 'The Big Ones™',
+    subtitle: 'Standard Tennis Balls - 3-Pack',
+    price: 9.99,
+    compareAtPrice: null,
+    badge: null,
+    available: true,
+    variantId: 'placeholder',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/tennis-balls_3pack_a1b2c3d4.png',
   },
 ];
 
@@ -48,14 +78,8 @@ const FEATURES = [
 
 export default function ProductShowcase() {
   const { addItem } = useShopifyCart();
-  const [products, setProducts] = useState(FALLBACK);
+  const [products] = useState(PRODUCTS);
   const [addingId, setAddingId] = useState(null);
-
-  useEffect(() => {
-    getProducts()
-      .then(data => { if (data.length > 0) setProducts(data); })
-      .catch(err => console.error('Shopify fetch failed:', err));
-  }, []);
 
   const handleAdd = async (product) => {
     if (!product.variantId || !product.available) return;
@@ -105,7 +129,7 @@ export default function ProductShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex flex-col group"
+              className="bg-white border-4 border-midnight rounded-2xl overflow-hidden flex flex-col group shadow-cartoon-sm"
             >
               {/* Square image */}
               <Link to={`/product/${product.handle}`} className="block relative aspect-square bg-white overflow-hidden">
@@ -127,17 +151,17 @@ export default function ProductShowcase() {
 
               {/* Info */}
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-brand text-white text-base leading-tight mb-1">{product.name}</h3>
-                {/* Short subtitle only */}
-                {product.badge === 'Best Seller' ? null : product.badge && (
-                  <span className="font-brand text-xs text-stone mb-3 block">{product.badge}</span>
+                <h3 className="font-brand text-midnight text-base leading-tight mb-1">{product.name}</h3>
+                <p className="font-body text-pebble text-xs mb-2">{product.subtitle}</p>
+                {product.badge && (
+                  <span className="font-brand text-xs text-primary mb-2 block">{product.badge}</span>
                 )}
 
                 {/* Price */}
                 <div className="mb-4">
                   {product.price ? (
                     <div className="flex items-baseline gap-1.5">
-                      <span className="font-display text-2xl text-white">${Number(product.price).toFixed(2)}</span>
+                      <span className="font-display text-2xl text-primary">${Number(product.price).toFixed(2)}</span>
                       {product.compareAtPrice && product.compareAtPrice > product.price && (
                         <span className="font-body text-stone line-through text-xs">${Number(product.compareAtPrice).toFixed(2)}</span>
                       )}
@@ -151,7 +175,7 @@ export default function ProductShowcase() {
                 <div className="flex gap-2 mt-auto">
                   <Link
                     to={`/product/${product.handle}`}
-                    className="flex-1 text-center font-brand text-xs px-3 py-2 rounded-full border border-white/20 text-white/70 hover:bg-white/10 transition-colors"
+                    className="flex-1 text-center font-brand text-xs px-3 py-2 rounded-full border-2 border-midnight text-midnight hover:bg-midnight hover:text-white transition-colors"
                   >
                     More Info
                   </Link>
@@ -159,14 +183,14 @@ export default function ProductShowcase() {
                     <button
                       onClick={() => handleAdd(product)}
                       disabled={addingId === product.id}
-                      className="flex-1 flex items-center justify-center gap-1 bg-primary text-white font-brand text-xs px-3 py-2 rounded-full hover:bg-orange-hot transition-colors"
+                      className="flex-1 flex items-center justify-center gap-1 bg-primary text-white font-brand text-xs px-3 py-2 rounded-full hover:bg-orange-hot transition-colors border-2 border-primary"
                     >
                       {addingId === product.id ? <Loader2 className="w-3 h-3 animate-spin" /> : 'Add to Cart'}
                     </button>
                   ) : (
                     <Link
                       to={`/product/${product.handle}`}
-                      className="flex-1 text-center font-brand text-xs px-3 py-2 rounded-full bg-white/10 text-stone hover:bg-white/20 transition-colors"
+                      className="flex-1 text-center font-brand text-xs px-3 py-2 rounded-full bg-midnight text-white hover:bg-bark transition-colors border-2 border-midnight"
                     >
                       Notify Me
                     </Link>

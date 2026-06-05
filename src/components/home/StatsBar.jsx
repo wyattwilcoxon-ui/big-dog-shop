@@ -32,7 +32,7 @@ export default function StatsBar() {
               whileHover={{ scale: 1.06, rotate: i % 2 === 0 ? -2 : 2 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5, type: 'spring', stiffness: 200 }}
-              className="text-center bg-white/5 rounded-2xl border border-white/10 p-4 sm:p-6"
+              className="text-center bg-white rounded-2xl border-4 border-midnight p-4 sm:p-6 shadow-cartoon-sm"
             >
               <motion.div
                 className="flex justify-center mb-2 text-4xl"
@@ -44,7 +44,7 @@ export default function StatsBar() {
               <div className="font-display text-5xl sm:text-6xl text-primary">
                 <CountUp end={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="font-brand text-stone text-xs sm:text-sm mt-1">{stat.label}</p>
+              <p className="font-brand text-pebble text-xs sm:text-sm mt-1">{stat.label}</p>
             </motion.div>
           ))}
         </div>
