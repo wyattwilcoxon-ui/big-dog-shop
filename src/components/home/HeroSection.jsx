@@ -124,7 +124,7 @@ export default function HeroSection({ heroImage }) {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}>
                 
-                🛒 SHOP NOW — IT'S TIME
+                🛒 SHOP NOW. IT'S TIME
               </motion.div>
             </Link>
             <Link to="/pack">
