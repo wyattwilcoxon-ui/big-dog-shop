@@ -14,7 +14,7 @@ const FAQS = [
     a: '13.5" × 12" — perfect for big poops and big hands. Designed for large and giant breed dogs who believe in going big or going home.',
   },
   {
-    q: 'Are they actually leak-proof? Is anything?!',
+    q: 'Are they actually leak-proof?* Is anything?!',
     a: 'Look, we\'re going to be real with you — nothing is 100% leak-proof in this world. But the Bosie Bag™ is triple-thick, extra-wide, and built specifically for big dogs. We\'ve done everything humanly possible to keep your hands clean. The rest is between you and the universe.',
   },
   {

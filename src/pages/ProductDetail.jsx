@@ -8,7 +8,7 @@ import VariantSelector from '@/components/shop/VariantSelector';
 import { getSeoTitle, getMetaDescription, getProductCopy } from '@/lib/productCopy.js';
 
 const BADGES = [
-  { icon: ShieldCheck, label: '100% Leak-Proof' },
+  { icon: ShieldCheck, label: '100% Leak-Proof*' },
   { icon: Truck, label: 'Free Shipping $25+' },
   { icon: Leaf, label: 'USDA Certified Biobased' },
 ];

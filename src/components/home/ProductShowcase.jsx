@@ -37,7 +37,7 @@ const PRODUCT_DEFINITIONS = {
 
 const FEATURES = [
   '13.5" × 12" — perfect for big poops and big hands',
-  'Triple-thick leak-proof material',
+  'Triple-thick leak-proof* material',
   'Built for Large and Giant Breed Dogs',
   'USDA Certified Biobased Product',
 ];
@@ -104,7 +104,7 @@ export default function ProductShowcase() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-12"
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4"
         >
           {FEATURES.map((f) => (
             <div key={f} className="flex items-center gap-2">
@@ -113,6 +113,16 @@ export default function ProductShowcase() {
             </div>
           ))}
         </motion.div>
+
+        {/* Asterisk disclaimer */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center font-body text-stone/60 text-xs mb-12"
+        >
+          *Leak-proof designed to hold poop and hold up — not waterproof.
+        </motion.p>
 
         {/* Starter Bundle - Full Width Hero */}
         {products.filter(p => p.handle === 'starter-bundle').map((product) => (

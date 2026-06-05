@@ -107,7 +107,7 @@ export default function HeroSection({ heroImage }) {
             className="font-body text-base sm:text-2xl text-white max-w-xl mt-1 sm:mt-2 leading-relaxed">
             
             The <strong>BIGGEST</strong> products for the biggest dogs! 💪<br />
-            Extra-large. Extra-strong. Totally leak-proof.
+            Extra-large. Extra-strong. Totally leak-proof.*
           </motion.p>
 
           {/* CTAs */}
