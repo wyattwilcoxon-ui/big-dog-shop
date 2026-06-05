@@ -39,8 +39,12 @@ export default function ProductDetail() {
     }
     metaTag.content = metaDesc;
 
+    console.log('🔍 ProductDetail - URL handle:', handle);
+    console.log('📋 Available copy keys:', Object.keys(getProductCopy || {}).length > 0 ? 'checking...' : 'bosie-bag, clip-and-go, starter-bundle, tennis-balls, etc.');
+
     getProductByHandle(handle)
       .then(p => {
+        console.log('📦 Shopify product data:', { handle: p?.handle, title: p?.title });
         setProduct(p);
         if (p) setSelectedVariantId(p.variants[0]?.id || null);
       })
