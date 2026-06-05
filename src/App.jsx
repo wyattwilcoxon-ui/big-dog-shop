@@ -20,6 +20,7 @@ import Contact from './pages/Contact';
 import WhyBigDogs from './pages/WhyBigDogs';
 import ProductDetail from './pages/ProductDetail';
 import JoinThePack from './pages/JoinThePack';
+import AdminProducts from './pages/admin/AdminProducts';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
               <Route path="/product/:handle" element={<ProductDetail />} />
+              <Route path="/admin/products" element={<AdminProducts />} />
             </Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>

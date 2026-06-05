@@ -1,5 +1,17 @@
 // Big Dog Life Master Product Copy - SEO Optimized
 // Source: BigDogLife_MasterProductCopy_v2.docx
+//
+// ⚠️ IMPORTANT: When adding new products to Shopify, add the handle here FIRST.
+// Format: use lowercase with hyphens. Add aliases in ALIAS_MAP for any variations.
+//
+// HOW TO ADD A NEW PRODUCT:
+// 1. Get the Shopify handle from the product URL (e.g., "my-product" from /product/my-product)
+// 2. Add it to BASE_PRODUCT_COPY with seoTitle, metaDescription, and longDescription
+// 3. Add any handle variations to ALIAS_MAP (e.g., 'the-my-product': 'my-product')
+// 4. Add the alias to PRODUCT_COPY at the bottom
+//
+// CHECK FOR MISMATCHES:
+// Visit /admin/products to see all Shopify products and which ones are missing copy.
 
 // Base product copy data
 const BASE_PRODUCT_COPY = {
