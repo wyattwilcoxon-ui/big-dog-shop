@@ -225,7 +225,7 @@ export default function About() {
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/244a631d7_IMG_4554.jpg"
-                  alt="Joni with her Great Danes Max and Caesar"
+                  alt="Joni with her Great Dane Max"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: '50% 30%' }}
                 />
@@ -233,7 +233,7 @@ export default function About() {
               <div className="p-6">
                 <h3 className="font-display text-3xl text-midnight mb-2">JONI HAD THE SAME PROBLEM</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">
-                  Joni owned two Great Danes, Max and Caesar, and was dealing with the same frustrations. Bags that didn't fit, accessories built for dogs a third the size.
+                  Joni owned two Great Danes, Max and Caesar, and was dealing with the same frustrations. That's Max in the photo. Bags that didn't fit, accessories built for dogs a third the size.
                 </p>
               </div>
             </motion.div>
