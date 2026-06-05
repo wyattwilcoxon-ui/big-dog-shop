@@ -82,19 +82,19 @@ export default function HeroSection({ heroImage }) {
           </div>
 
           {/* Rotating headline */}
-          <div className="h-[3rem] sm:h-[7rem] md:h-[9rem] overflow-hidden mb-2">
-            <AnimatePresence mode="popLayout">
+          <div className="h-[3rem] sm:h-[7rem] md:h-[9rem] overflow-hidden mb-2 relative">
+            <AnimatePresence mode="wait">
               <motion.h1
                 key={wordIndex}
-                className="font-display leading-none text-primary"
+                className="font-display leading-none text-primary absolute inset-0"
                 style={{ 
                   fontSize: 'clamp(2.8rem, 12vw, 9rem)',
                   textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff'
                 }}
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                exit={{ y: '-100%', transition: { duration: 0.3 } }}
-                transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}>
+                initial={{ y: '100%', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: '-100%', opacity: 0 }}
+                transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}>
                 {ROTATING_WORDS[wordIndex]}!
               </motion.h1>
             </AnimatePresence>
