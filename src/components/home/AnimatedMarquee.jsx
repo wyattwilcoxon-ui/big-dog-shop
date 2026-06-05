@@ -13,15 +13,15 @@ function MarqueeItem({ text, index }) {
 }
 
 export default function AnimatedMarquee({ items, bg = 'bg-primary', textColor = 'text-white', speed = 30, reverse = false }) {
-  const doubled = [...items, ...items];
+  const tripled = [...items, ...items, ...items];
   return (
     <div className={`${bg} py-3 overflow-hidden relative`}>
       <motion.div
         className={`flex whitespace-nowrap ${textColor} font-display text-2xl sm:text-3xl`}
-        animate={{ x: reverse ? ['0%', '50%'] : ['0%', '-50%'] }}
-        transition={{ duration: speed, repeat: Infinity, ease: 'linear' }}
+        animate={{ x: reverse ? ['-33.33%', '0%'] : ['0%', '-33.33%'] }}
+        transition={{ duration: speed, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
       >
-        {doubled.map((item, i) => (
+        {tripled.map((item, i) => (
           <MarqueeItem key={i} text={item} index={i} />
         ))}
       </motion.div>
