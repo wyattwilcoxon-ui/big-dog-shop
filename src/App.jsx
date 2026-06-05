@@ -21,12 +21,12 @@ import WhyBigDogs from './pages/WhyBigDogs';
 import ProductDetail from './pages/ProductDetail';
 import JoinThePack from './pages/JoinThePack';
 import AdminProducts from './pages/admin/AdminProducts';
-import Terms from './pages/Terms';
-import RefundPolicy from './pages/RefundPolicy';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import ShippingPolicy from './pages/ShippingPolicy';
-import Accessibility from './pages/Accessibility';
-import ContactLegal from './pages/ContactLegal';
+import Terms from './pages/legal/Terms';
+import RefundPolicy from './pages/legal/RefundPolicy';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+import ShippingPolicy from './pages/legal/ShippingPolicy';
+import Accessibility from './pages/legal/Accessibility';
+import ContactLegal from './pages/legal/ContactLegal';
 
 function App() {
   return (

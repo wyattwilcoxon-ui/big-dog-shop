@@ -31,9 +31,9 @@ export default function ContactLegal() {
             <Section title="6.2 Contact Information">
               Have a question, concern, or issue? We handle everything in-house and we want to hear from you. Reach out and a member of our team will get back to you promptly.
               <br /><br />
-              <strong>Email:</strong> [INSERT CONTACT EMAIL]
+              <strong>Email:</strong> bark@thebigdoglife.com
               <br />
-              <strong>Mailing Address:</strong> [INSERT MAILING ADDRESS], Bellefontaine, OH [ZIP]
+              <strong>Mailing Address:</strong> 139 W Columbus Ave, Bellefontaine, OH 43311
               <br /><br />
               Whether it's a return, an accessibility request, a legal notice, or just a question about your order — one email gets it to the right person.
             </Section>
@@ -43,7 +43,7 @@ export default function ContactLegal() {
             </Section>
 
             <Section title="6.4 Copyright Notice">
-              © 2024–2025 Big Dog Life LLC. All content on this website, including but not limited to text, graphics, logos, images, audio clips, and software, is the property of Big Dog Life LLC or its content suppliers and is protected by applicable copyright laws. Any reproduction, distribution, or use without written permission is prohibited.
+              © 2024–2026 Big Dog Life LLC. All content on this website, including but not limited to text, graphics, logos, images, audio clips, and software, is the property of Big Dog Life LLC or its content suppliers and is protected by applicable copyright laws. Any reproduction, distribution, or use without written permission is prohibited.
             </Section>
 
             <Section title="6.5 DMCA Notice">
