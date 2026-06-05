@@ -1,73 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useShopifyCart } from '@/lib/ShopifyCartContext';
+import { getProducts } from '@/lib/shopify';
 import { PRODUCT_COPY } from '@/lib/productCopy';
 
-// Static product data from master copy - only images/checkout from Shopify
-const PRODUCTS = [
-  {
-    id: 'starter-bundle',
-    handle: 'starter-bundle',
-    name: 'Big Dog Life® Starter Bundle',
-    subtitle: '1,080 Bags + Dispenser + Tennis Balls',
-    price: 54.99,
-    compareAtPrice: 67.96,
-    badge: 'Best Value',
-    available: true,
-    variantId: 'placeholder',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-bundle_2890c1e5.png',
-  },
-  {
-    id: 'bosie-bag',
-    handle: 'bosie-bag',
+// Static product definitions - names, subtitles, badges from master copy
+const PRODUCT_DEFINITIONS = {
+  'bosie-bag': {
     name: 'The Bosie Bag™',
     subtitle: '12" x 13.5" Extra Large Waste Bags',
-    price: 14.99,
-    compareAtPrice: null,
     badge: 'Best Seller',
-    available: true,
-    variantId: 'placeholder',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-hero_4baf8cfb.png',
   },
-  {
-    id: 'clip-and-go',
-    handle: 'clip-and-go',
+  'clip-and-go': {
     name: 'The Clip & Go™',
     subtitle: 'Leash Clip Dispenser + Starter Roll',
-    price: 12.99,
-    compareAtPrice: null,
     badge: null,
-    available: true,
-    variantId: 'placeholder',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-dispenser_fae228f9.png',
   },
-  {
-    id: 'bosie-bag-8pack',
-    handle: 'bosie-bag-8pack',
+  'bosie-bag-8pack': {
     name: 'Bosie Bag™ 8-Pack',
     subtitle: '960 Bags Total (8 Rolls x 120)',
-    price: 39.99,
-    compareAtPrice: 47.92,
     badge: 'Bulk Value',
-    available: true,
-    variantId: 'placeholder',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-multi_1698b1d7.png',
   },
-  {
-    id: 'tennis-balls',
-    handle: 'tennis-balls',
+  'starter-bundle': {
+    name: 'Big Dog Life® Starter Bundle',
+    subtitle: '1,080 Bags + Dispenser + Tennis Balls',
+    badge: 'Best Value',
+  },
+  'tennis-balls': {
     name: 'The Big Ones™',
     subtitle: 'Standard Tennis Balls - 3-Pack',
-    price: 9.99,
-    compareAtPrice: null,
     badge: null,
-    available: true,
-    variantId: 'placeholder',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/tennis-balls_3pack_a1b2c3d4.png',
   },
-];
+};
 
 const FEATURES = [
   '13.5" × 12" — perfect for big poops and big hands',
@@ -78,8 +44,30 @@ const FEATURES = [
 
 export default function ProductShowcase() {
   const { addItem } = useShopifyCart();
-  const [products] = useState(PRODUCTS);
+  const [products, setProducts] = useState([]);
   const [addingId, setAddingId] = useState(null);
+
+  useEffect(() => {
+    getProducts().then(shopifyProducts => {
+      // Merge Shopify data (images, prices, variants) with static copy (names, subtitles, badges)
+      const merged = shopifyProducts.map(p => {
+        const def = PRODUCT_DEFINITIONS[p.handle] || {};
+        return {
+          id: p.handle,
+          handle: p.handle,
+          name: def.name || p.name,
+          subtitle: def.subtitle || '',
+          badge: def.badge,
+          price: p.price,
+          compareAtPrice: p.compareAtPrice,
+          available: p.available,
+          variantId: p.variantId,
+          image: p.image,
+        };
+      });
+      setProducts(merged);
+    }).catch(err => console.error('Shopify fetch failed:', err));
+  }, []);
 
   const handleAdd = async (product) => {
     if (!product.variantId || !product.available) return;
