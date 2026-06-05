@@ -5,6 +5,7 @@ import { Loader2, ArrowLeft, ShieldCheck, Truck, Leaf } from 'lucide-react';
 import { getProductByHandle } from '@/lib/shopify';
 import { useShopifyCart } from '@/lib/ShopifyCartContext';
 import VariantSelector from '@/components/shop/VariantSelector';
+import { getSeoTitle, getMetaDescription, getProductCopy } from '@/lib/productCopy.js';
 
 const BADGES = [
   { icon: ShieldCheck, label: '100% Leak-Proof' },
@@ -24,6 +25,20 @@ export default function ProductDetail() {
   const [added, setAdded] = useState(false);
 
   useEffect(() => {
+    // Update SEO meta tags
+    const seoTitle = getSeoTitle(handle);
+    const metaDesc = getMetaDescription(handle);
+    document.title = seoTitle;
+    
+    // Update/set meta description
+    let metaTag = document.querySelector('meta[name="description"]');
+    if (!metaTag) {
+      metaTag = document.createElement('meta');
+      metaTag.name = 'description';
+      document.head.appendChild(metaTag);
+    }
+    metaTag.content = metaDesc;
+
     getProductByHandle(handle)
       .then(p => {
         setProduct(p);
@@ -129,25 +144,72 @@ export default function ProductDetail() {
               </div>
             )}
 
-            <div className="font-body text-pebble mt-4 leading-relaxed text-base space-y-3">
-              {product.description?.split('\n').filter(line => line.trim()).map((line, i) => {
-                const trimmed = line.trim();
-                // Bullet-style lines starting with - or •
-                if (trimmed.startsWith('-') || trimmed.startsWith('•')) {
-                  return (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="text-primary mt-1 flex-shrink-0">▸</span>
-                      <span>{trimmed.replace(/^[-•]\s*/, '')}</span>
-                    </div>
-                  );
-                }
-                // All-caps lines = section headers
-                if (trimmed === trimmed.toUpperCase() && trimmed.length > 3) {
-                  return <p key={i} className="font-brand text-midnight text-sm uppercase tracking-wider mt-4 mb-1">{trimmed}</p>;
-                }
-                return <p key={i}>{trimmed}</p>;
-              })}
-            </div>
+            {/* Use enhanced product copy from master copy document */}
+            {(() => {
+              const copy = getProductCopy(handle);
+              if (copy?.longDescription) {
+                return (
+                  <div className="font-body text-pebble mt-4 leading-relaxed text-base space-y-4">
+                    {copy.longDescription.split('\n\n').map((paragraph, i) => {
+                      const trimmed = paragraph.trim();
+                      if (!trimmed) return null;
+                      
+                      // Check if it's a list section
+                      if (trimmed.includes('\n') && trimmed.split('\n').some(line => line.trim().startsWith('-') || line.trim().startsWith('•'))) {
+                        return (
+                          <div key={i} className="space-y-2">
+                            {trimmed.split('\n').map((line, j) => {
+                              const lineTrimmed = line.trim();
+                              if (lineTrimmed.startsWith('-') || lineTrimmed.startsWith('•')) {
+                                return (
+                                  <div key={j} className="flex items-start gap-2">
+                                    <span className="text-primary mt-1 flex-shrink-0">▸</span>
+                                    <span>{lineTrimmed.replace(/^[-•]\s*/, '')}</span>
+                                  </div>
+                                );
+                              }
+                              // Section header (all caps, short)
+                              if (lineTrimmed === lineTrimmed.toUpperCase() && lineTrimmed.length > 3 && lineTrimmed.length < 60) {
+                                return <p key={j} className="font-brand text-midnight text-sm uppercase tracking-wider mt-4 mb-1">{lineTrimmed}</p>;
+                              }
+                              return <p key={j}>{lineTrimmed}</p>;
+                            })}
+                          </div>
+                        );
+                      }
+                      
+                      // Section header (all caps, short)
+                      if (trimmed === trimmed.toUpperCase() && trimmed.length > 3 && trimmed.length < 60) {
+                        return <p key={i} className="font-brand text-midnight text-sm uppercase tracking-wider mt-4 mb-1">{trimmed}</p>;
+                      }
+                      
+                      return <p key={i}>{trimmed}</p>;
+                    })}
+                  </div>
+                );
+              }
+              
+              // Fallback to Shopify description
+              return (
+                <div className="font-body text-pebble mt-4 leading-relaxed text-base space-y-3">
+                  {product.description?.split('\n').filter(line => line.trim()).map((line, i) => {
+                    const trimmed = line.trim();
+                    if (trimmed.startsWith('-') || trimmed.startsWith('•')) {
+                      return (
+                        <div key={i} className="flex items-start gap-2">
+                          <span className="text-primary mt-1 flex-shrink-0">▸</span>
+                          <span>{trimmed.replace(/^[-•]\s*/, '')}</span>
+                        </div>
+                      );
+                    }
+                    if (trimmed === trimmed.toUpperCase() && trimmed.length > 3) {
+                      return <p key={i} className="font-brand text-midnight text-sm uppercase tracking-wider mt-4 mb-1">{trimmed}</p>;
+                    }
+                    return <p key={i}>{trimmed}</p>;
+                  })}
+                </div>
+              );
+            })()}
 
             {/* Variant picker */}
             <div className="mt-6">
