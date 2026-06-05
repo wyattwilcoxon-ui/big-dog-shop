@@ -25,7 +25,7 @@ const PRODUCT_DEFINITIONS = {
   },
   'starter-bundle': {
     name: 'Big Dog Life™ Starter Bundle',
-    subtitle: '138 Bags + Dispenser + Tennis Balls',
+    subtitle: '135 Bags + Dispenser + Tennis Balls',
     badge: null,
   },
   'tennis-balls': {
