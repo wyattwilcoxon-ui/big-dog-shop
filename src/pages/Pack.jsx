@@ -7,7 +7,7 @@ const DOGS = [
     breed: 'German Shepherd',
     title: 'Chief Pooping Officer',
     description: '125 lbs of pure chaos and love. His poops are legendary (and the reason this company exists). The bags are literally named after him.',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9679_a5725f64.jpg',
+    image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/5252c3924_Bosa.png',
     color: 'border-primary',
   },
   {
@@ -15,15 +15,15 @@ const DOGS = [
     breed: 'German Shepherd',
     title: 'Senior Quality Inspector',
     description: 'The wise grandma of the pack. She tested every prototype and gave her seal of approval by not looking disgusted.',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9660_8b3c9563.jpg',
+    image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/4c1877673_Carmen.png',
     color: 'border-secondary',
   },
   {
-    name: 'Max',
+    name: 'Caesar',
     breed: 'Great Dane',
     title: 'Head of Stress Testing',
-    description: "Joni's gentle giant who proved that most pet products are basically made for hamsters. If a bag can handle Max, it can handle anything.",
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_9245_46815bf7.jpg',
+    description: "Joni's gentle giant who proved that most pet products are basically made for hamsters. If a bag can handle Caesar, it can handle anything.",
+    image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/0827fc0ee_Caesar.png',
     color: 'border-sky',
   },
   {
@@ -31,7 +31,7 @@ const DOGS = [
     breed: 'The Little One',
     title: 'Morale & Chaos Coordinator',
     description: 'Every big dog crew needs a tiny boss. Jazzy keeps everyone in line and reminds us that attitude has nothing to do with size.',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/img_8880_fff6a440.jpg',
+    image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/397e17f3c_Jazzy.png',
     color: 'border-sandy',
   },
 ];
