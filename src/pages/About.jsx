@@ -346,14 +346,29 @@ export default function About() {
                 whileHover={{ scale: 1.03 }}
                 className={`bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default ${member.wide ? 'md:col-span-2' : ''}`}
               >
-                <div className="aspect-[4/3] overflow-hidden border-b-4 border-primary">
-                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-2xl sm:text-3xl text-midnight">{member.name}</h3>
-                  <p className="font-brand text-primary text-xs sm:text-sm">{member.role}</p>
-                  <p className="font-body text-pebble text-sm mt-3 leading-relaxed">{member.bio}</p>
-                </div>
+                {member.wide ? (
+                  <div className="flex flex-col md:flex-row">
+                    <div className="md:w-1/2 aspect-[4/3] md:aspect-auto overflow-hidden border-r-4 border-primary">
+                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="p-6 md:w-1/2 flex flex-col justify-center">
+                      <h3 className="font-display text-2xl sm:text-3xl text-midnight">{member.name}</h3>
+                      <p className="font-brand text-primary text-xs sm:text-sm">{member.role}</p>
+                      <p className="font-body text-pebble text-sm mt-3 leading-relaxed">{member.bio}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="aspect-[4/3] overflow-hidden border-b-4 border-primary">
+                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-display text-2xl sm:text-3xl text-midnight">{member.name}</h3>
+                      <p className="font-brand text-primary text-xs sm:text-sm">{member.role}</p>
+                      <p className="font-body text-pebble text-sm mt-3 leading-relaxed">{member.bio}</p>
+                    </div>
+                  </>
+                )}
               </motion.div>
             ))}
           </div>
