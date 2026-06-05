@@ -111,24 +111,22 @@ export default function Shop() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-        {fetching ? (
-          <div className="flex items-center justify-center py-24">
-            <Loader2 className="w-10 h-10 text-primary animate-spin" />
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {displayProducts.map((product, i) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`group bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden transition-all duration-300 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none ${
-                  i === 0 ? 'md:col-span-2' : ''
-                }`}
-              >
-                <div className={`grid ${i === 0 ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
+      {fetching ? (
+        <div className="flex items-center justify-center py-24">
+          <Loader2 className="w-10 h-10 text-primary animate-spin" />
+        </div>
+      ) : (
+        <>
+          {/* Bundle - Full Width */}
+          {displayProducts.filter(p => p.handle === 'starter-bundle' || p.id === 'starter-bundle').map((product) => (
+            <motion.div
+              key={product.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden transition-all duration-300 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none mb-8"
+            >
+              <div className="grid md:grid-cols-2">
                   <div className="bg-cream relative overflow-hidden" style={{minHeight: '320px'}}>
                     {product.badge && (
                       <span className="absolute top-4 left-4 z-10 px-4 py-1.5 rounded-full font-brand text-sm text-white shadow-cartoon-sm bg-secondary">
@@ -182,7 +180,74 @@ export default function Shop() {
                 </div>
               </motion.div>
             ))}
-          </div>
+
+            {/* Other Products - 3 in a row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {displayProducts.filter(p => p.handle !== 'starter-bundle' && p.id !== 'starter-bundle').map((product, i) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden transition-all duration-300 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+                >
+                  <div className="grid grid-cols-1">
+                    <div className="bg-cream relative overflow-hidden" style={{minHeight: '320px'}}>
+                      {product.badge && (
+                        <span className="absolute top-4 left-4 z-10 px-4 py-1.5 rounded-full font-brand text-sm text-white shadow-cartoon-sm bg-secondary">
+                          ⚡ {product.badge}
+                        </span>
+                      )}
+                      {product.handle ? (
+                        <Link to={`/product/${product.handle}`} className="block w-full h-full">
+                          <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{minHeight: '320px'}} />
+                        </Link>
+                      ) : (
+                        <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{minHeight: '320px'}} />
+                      )}
+                    </div>
+                    <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                      {product.handle ? (
+                        <Link to={`/product/${product.handle}`} className="hover:text-primary transition-colors">
+                          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-midnight">{product.name}</h2>
+                        </Link>
+                      ) : (
+                        <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-midnight">{product.name}</h2>
+                      )}
+
+                      {/* Pricing */}
+                      {product.price ? (
+                        <div className="flex items-baseline gap-2 mt-3">
+                          <span className="font-display text-3xl text-primary">${Number(product.price).toFixed(2)}</span>
+                          {product.compareAtPrice && product.compareAtPrice > product.price && (
+                            <span className="font-body text-stone text-lg line-through">${Number(product.compareAtPrice).toFixed(2)}</span>
+                          )}
+                        </div>
+                      ) : (
+                        <span className="font-brand text-stone text-sm mt-3 block">TBA</span>
+                      )}
+
+                      <button
+                        onClick={() => product.available ? handleAddToCart(product) : handleNotifyMe(product)}
+                        disabled={addingId === product.id}
+                        className={`mt-6 w-full sm:w-auto px-8 py-4 rounded-xl font-brand transition-all duration-300 border-bold flex items-center justify-center gap-2 ${
+                          product.available
+                            ? 'bg-primary text-white hover:bg-orange-hot shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
+                            : 'bg-secondary text-white hover:bg-green-bright shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
+                        }`}
+                      >
+                        {addingId === product.id
+                          ? <><Loader2 className="w-4 h-4 animate-spin" /> Adding...</>
+                          : product.available ? 'Add to Cart 🐾' : 'Notify Me 🔔'
+                        }
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </>
         )}
       </div>
 
