@@ -83,7 +83,7 @@ export default function HeroSection({ heroImage }) {
 
           {/* Rotating headline */}
           <div className="h-[3rem] sm:h-[7rem] md:h-[9rem] overflow-hidden mb-2">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="popLayout">
               <motion.h1
                 key={wordIndex}
                 className="font-display leading-none text-primary"
@@ -93,8 +93,8 @@ export default function HeroSection({ heroImage }) {
                 }}
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
-                exit={{ y: '-100%' }}
-                transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}>
+                exit={{ y: '-100%', transition: { duration: 0.3 } }}
+                transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}>
                 {ROTATING_WORDS[wordIndex]}!
               </motion.h1>
             </AnimatePresence>
