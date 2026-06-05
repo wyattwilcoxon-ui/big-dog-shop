@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Leaf, Target, Users } from 'lucide-react';
 import GlobalBokeh from '../components/layout/GlobalBokeh';
 import HowItStarted from '../components/about/HowItStarted';
-import BosaOriginStory from '../components/home/BosaOriginStory';
 
 
 
@@ -179,9 +178,6 @@ export default function About() {
 
       {/* How It Started - New Design */}
       <HowItStarted />
-
-      {/* The Real Story - Comic Panels */}
-      <BosaOriginStory />
 
       {/* Founders & Partners */}
       <section className="py-12 sm:py-20 px-4 bg-cream">
