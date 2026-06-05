@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import BosaOriginStory from '../components/home/BosaOriginStory';
 
 const DOGS = [
   {
@@ -164,6 +165,9 @@ export default function Pack() {
           </motion.div>
         </div>
       </div>
+
+      {/* The Real Story - Comic Panels */}
+      <BosaOriginStory />
 
     </div>
   );
