@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Leaf, Target, Users } from 'lucide-react';
 import GlobalBokeh from '../components/layout/GlobalBokeh';
-import HowItStarted from '../components/about/HowItStarted';
 
 
 
@@ -176,9 +175,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* How It Started - New Design */}
-      <HowItStarted />
-
       {/* Founders & Partners */}
       <section className="py-12 sm:py-20 px-4 bg-cream">
         <div className="max-w-6xl mx-auto">
@@ -225,6 +221,36 @@ export default function About() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* How It Started - The Real Story */}
+      <section className="py-20 px-4 bg-cream">
+        <div className="max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">How It Started</p>
+            <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE REAL STORY</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl border-bold shadow-cartoon p-8 sm:p-12"
+          >
+            <p className="font-body text-pebble text-base sm:text-lg leading-relaxed space-y-4">
+              The idea for Big Dog Life was born from everyday frustration and a lot of love for big dogs.
+            </p>
+            <p className="font-body text-pebble text-base sm:text-lg leading-relaxed mt-4">
+              Megan's inspiration came after adopting Bosa, a 125-pound German Shepherd with equally "large-scale" needs. For years, Megan had used two standard pet waste bags for her other German Shepherd, Carmen, but Bosa's size quickly made that routine unworkable. Even the largest commercial bags couldn't keep up — resulting in waste, inefficiency, and frequent messes. After realizing she was going through up to eight small bags a day, she thought, there has to be a better way.
+            </p>
+            <p className="font-body text-pebble text-base sm:text-lg leading-relaxed mt-4">
+              Around the same time, Joni, who owns two Great Danes, Max and Ellie, was facing her own large-breed challenges — finding harnesses, collars, and accessories that actually fit. Most options required expensive special orders, leaving large-breed owners with limited, inconsistent, and costly choices.
+            </p>
+            <p className="font-body text-pebble text-base sm:text-lg leading-relaxed mt-4">
+              The two friends started comparing notes and quickly realized they weren't alone. There was an entire community of large-breed owners struggling with undersized products, wasted money, and limited options. Out of those shared experiences, Big Dog Life was born — a company built for big dogs, by big-dog owners.
+            </p>
+          </motion.div>
         </div>
       </section>
 
