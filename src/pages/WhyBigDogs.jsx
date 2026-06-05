@@ -10,10 +10,10 @@ const BREEDS = [
 ];
 
 const COMPARISON = [
-  { feature: 'Size', standard: '9" × 12"', bosie: '12" × 13.5"' },
-  { feature: 'Thickness', standard: 'Single-ply', bosie: 'Triple-thick' },
+  { feature: 'Size', standard: '9" × 12"', bosie: '12" × 14"' },
+  { feature: 'Thickness', standard: 'Single-ply', bosie: 'Extra-thick' },
   { feature: 'Built for Large & Giant Breeds', standard: false, bosie: true },
-  { feature: 'USDA Certified Biobased Product', standard: false, bosie: true },
+  { feature: '38% Plant-Based Material', standard: false, bosie: true },
   { feature: 'Plant-based material', standard: false, bosie: true },
   { feature: 'Blowout Risk', standard: true, bosie: false },
 ];
@@ -22,7 +22,7 @@ const STATS = [
   { value: '45%', label: 'of U.S. households own a dog', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
   { value: '40%', label: 'of dog owners have large or giant breeds', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
   { value: '28%', label: 'bigger than standard bags' },
-  { value: '12"×13.5"', label: 'The Bosie Bag™ dimensions' },
+  { value: '12"×14"', label: 'The Bosie Bag™ dimensions' },
 ];
 
 const MARKET_STATS = [

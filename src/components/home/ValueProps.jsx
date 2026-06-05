@@ -5,7 +5,7 @@ const PROPS = [
   {
     emoji: '🛡️',
     title: 'Built for Big Breeds',
-    description: 'Triple-thick bags engineered for large and giant breed dogs. Strong enough for the biggest output.',
+    description: 'Extra-thick bags engineered for large and giant breed dogs. Strong enough for the biggest output.',
     bg: 'bg-orange-pale',
     border: 'border-primary',
     rotate: -1.5,
@@ -13,7 +13,7 @@ const PROPS = [
   {
     emoji: '📏',
     title: 'Size Matters',
-    description: '12" × 13.5" — built for large and giant breed dogs. Because your big dog doesn\'t make chihuahua poops.',
+    description: '12" × 14" — built for large and giant breed dogs. Because your big dog doesn\'t make chihuahua poops.',
     bg: 'bg-secondary/10',
     border: 'border-secondary',
     rotate: 1,
@@ -21,7 +21,7 @@ const PROPS = [
   {
     emoji: '🌱',
     title: 'USDA Certified Biobased',
-    description: 'USDA Certified Biobased Product. Plant-based, biodegradable film. Good for your dog. Good for the planet.',
+    description: 'Made from 38% plant-based materials. Biodegradable film. Good for your dog. Good for the planet.',
     bg: 'bg-sky/20',
     border: 'border-sky',
     rotate: -1,
