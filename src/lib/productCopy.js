@@ -193,5 +193,30 @@ export function getMetaDescription(handle) {
 
 // Helper function to get full product copy
 export function getProductCopy(handle) {
-  return PRODUCT_COPY[handle] || null;
+  if (!handle) return null;
+  
+  // Normalize handle: lowercase, replace underscores with hyphens
+  const normalized = handle.toLowerCase().replace(/_/g, '-');
+  
+  // Direct match
+  if (PRODUCT_COPY[normalized]) {
+    return PRODUCT_COPY[normalized];
+  }
+  
+  // Try common variations
+  const variations = [
+    normalized,
+    normalized.replace(/-the$/, ''), // "clip-and-go-the" -> "clip-and-go"
+    normalized.replace(/^the-/, ''), // "the-clip-and-go" -> "clip-and-go"
+  ];
+  
+  for (const variant of variations) {
+    if (PRODUCT_COPY[variant]) {
+      console.log('✓ Found copy for handle:', handle, '->', variant);
+      return PRODUCT_COPY[variant];
+    }
+  }
+  
+  console.log('✗ No copy found for handle:', handle, '| Available:', Object.keys(PRODUCT_COPY).join(', '));
+  return null;
 }
