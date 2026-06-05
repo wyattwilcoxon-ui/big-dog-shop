@@ -36,7 +36,7 @@ const PRODUCT_DEFINITIONS = {
 };
 
 const FEATURES = [
-  '14" × 12" — perfect for big poops and big hands',
+  '12" × 14" — perfect for big poops and big hands',
   'Extra-thick leak-proof* material',
   'Built for Large and Giant Breed Dogs',
   '38% plant based',
