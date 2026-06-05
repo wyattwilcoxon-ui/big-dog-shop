@@ -25,9 +25,8 @@ export default function Footer() {
               BIG DOG LIFE
             </motion.h3>
             <p className="font-body text-stone text-xs sm:text-sm leading-relaxed">
-              Live Bold. Love Dogs. Give a $h!t.
+              Big dogs. Bigger energy. Zero apologies.
             </p>
-            <p className="font-brand text-primary text-[10px] sm:text-xs mt-2 sm:mt-3 leading-relaxed">"Because Big Dogs Have Big Needs."</p>
           </div>
 
           <div>
@@ -78,7 +77,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-pebble/30 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-stone text-sm font-body">© {new Date().getFullYear()} Big Dog Life™. All rights reserved.</p>
-          <p className="font-brand text-primary text-sm">Big Dogs. Bigger Energy. Zero Apologies. 🐾</p>
+          <p className="font-brand text-primary text-sm">Live Bold. Love Dogs. Give a $h!t. 🐾</p>
         </div>
       </div>
     </footer>
