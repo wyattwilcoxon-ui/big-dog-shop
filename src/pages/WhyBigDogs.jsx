@@ -19,8 +19,8 @@ const COMPARISON = [
 ];
 
 const STATS = [
-  { value: '45%', label: 'of U.S. households own a dog' },
-  { value: '40%', label: 'of dog owners have large or giant breeds' },
+  { value: '45%', label: 'of U.S. households own a dog', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
+  { value: '40%', label: 'of dog owners have large or giant breeds', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
   { value: '28%', label: 'bigger than standard bags' },
   { value: '12"×13.5"', label: 'The Bosie Bag™ dimensions' },
 ];
@@ -58,6 +58,11 @@ export default function WhyBigDogs() {
             >
               <div className="font-display text-4xl sm:text-5xl text-white">{s.value}</div>
               <div className="font-brand text-white/80 text-xs sm:text-sm mt-1">{s.label}</div>
+              {s.cite && (
+                <a href={s.cite} target="_blank" rel="noopener noreferrer" className="font-body text-white/40 text-[10px] mt-0.5 underline hover:text-white/70 transition-colors block">
+                  Source ↗
+                </a>
+              )}
             </motion.div>
           ))}
         </div>
@@ -86,6 +91,9 @@ export default function WhyBigDogs() {
               <h3 className="font-display text-3xl text-midnight mb-3">TOO SMALL</h3>
               <p className="font-body text-pebble leading-relaxed">
                 The average standard dog poop bag measures <strong>9" × 13"</strong> and is made from single-ply film. That's fine for a 12-pound Shih Tzu. For a 100-pound Mastiff? You're basically bagging it barehanded.
+              </p>
+              <p className="font-body text-pebble leading-relaxed mt-3">
+                <strong>The result?</strong> Regular bags tear, split, and leak — leading to the most unpleasant walk experience imaginable. No one wants to feel waste seeping through their hand, or worse, watching a bag burst mid-walk.
               </p>
             </motion.div>
             <motion.div
@@ -221,6 +229,9 @@ export default function WhyBigDogs() {
               <p className="font-body text-stone leading-relaxed">
                 Americans spend over $150 billion on pets annually — yet the majority of pet supply brands continue designing products for medium-sized dogs, leaving large-breed owners with limited, ill-fitting, or costly options.
               </p>
+              <a href="https://www.americanpetproducts.org/press_industrytrends.asp" target="_blank" rel="noopener noreferrer" className="font-body text-white/40 text-xs mt-2 inline-block underline hover:text-white/70 transition-colors">
+                Source: APPA ↗
+              </a>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -232,6 +243,9 @@ export default function WhyBigDogs() {
               <p className="font-body text-pebble leading-relaxed">
                 An estimated 40% of dog-owning households have large-breed dogs. That's tens of millions of owners who are systematically underserved by an industry that treats them as an afterthought.
               </p>
+              <a href="https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics" target="_blank" rel="noopener noreferrer" className="font-body text-primary/60 text-xs mt-2 inline-block underline hover:text-primary transition-colors">
+                Source: AVMA ↗
+              </a>
             </motion.div>
           </div>
           <motion.div
