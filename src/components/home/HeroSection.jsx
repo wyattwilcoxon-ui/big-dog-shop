@@ -89,7 +89,7 @@ export default function HeroSection({ heroImage }) {
                 className="font-display leading-none text-primary"
                 style={{ 
                   fontSize: 'clamp(2.8rem, 12vw, 9rem)',
-                  textShadow: '-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff, -3px 0 0 #fff, 3px 0 0 #fff'
+                  textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff'
                 }}
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
