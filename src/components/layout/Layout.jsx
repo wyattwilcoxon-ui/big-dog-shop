@@ -15,12 +15,14 @@ function LayoutInner() {
 
   return (
     <div className="relative min-h-screen bg-background">
-      {!hideBokeh && <GlobalBokeh />}
-      <Navbar cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
+      <GlobalBokeh hideHero={hideBokeh} />
+      <div className="relative z-10">
+        <Navbar cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
         <main>
           <Outlet />
         </main>
         <Footer />
+      </div>
       <SlideCart
         open={cartOpen}
         onClose={() => setCartOpen(false)}
