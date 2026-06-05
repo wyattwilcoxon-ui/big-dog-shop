@@ -42,8 +42,8 @@ const SECTIONS = [
     )
   },
   {
-    title: '5.5 Formal Complaints',
-    content: 'If you are not satisfied with our response, you may contact the U.S. Department of Justice's ADA information line or file a complaint with the relevant federal or state agency.'
+    title: "5.5 Formal Complaints",
+    content: "If you are not satisfied with our response, you may contact the U.S. Department of Justice's ADA information line or file a complaint with the relevant federal or state agency."
   },
   {
     title: '5.6 Ongoing Improvement',

@@ -49,18 +49,6 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-brand text-base sm:text-lg text-white mb-3 sm:mb-4">Legal</h4>
-            <div className="flex flex-col gap-1.5 sm:gap-2">
-              <Link to="/terms" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Terms & Conditions</Link>
-              <Link to="/refund-policy" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Return & Refund Policy</Link>
-              <Link to="/privacy-policy" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Privacy Policy</Link>
-              <Link to="/shipping-policy" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Shipping Policy</Link>
-              <Link to="/accessibility" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Accessibility Statement</Link>
-              <Link to="/contact-legal" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Contact & Legal Notice</Link>
-            </div>
-          </div>
-
-          <div>
             <h4 className="font-brand text-base sm:text-lg text-white mb-3 sm:mb-4">Join the Pack</h4>
             <Link
               to="/join"
@@ -88,8 +76,16 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-pebble/30 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-stone text-sm font-body">© {new Date().getFullYear()} Big Dog Life™. All rights reserved.</p>
-          <p className="font-brand text-primary text-sm">Live Bold. Love Dogs. Give a $h!t. 🐾</p>
+          <div className="flex flex-wrap gap-4 text-xs font-body text-stone">
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy</Link>
+            <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping</Link>
+            <Link to="/accessibility" className="hover:text-primary transition-colors">Accessibility</Link>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-2">
+            <p className="text-stone text-sm font-body">© {new Date().getFullYear()} Big Dog Life™. All rights reserved.</p>
+            <p className="font-brand text-primary text-sm">Live Bold. Love Dogs. Give a $h!t. 🐾</p>
+          </div>
         </div>
       </div>
     </footer>
