@@ -10,7 +10,7 @@ const BREEDS = [
 ];
 
 const COMPARISON = [
-  { feature: 'Size', standard: '9" × 12"', bosie: '12" × 14"' },
+  { feature: 'Size', standard: '9" × 13"', bosie: '12" × 14"' },
   { feature: 'Thickness', standard: 'Single-ply', bosie: 'Extra-thick' },
   { feature: 'Built for Large & Giant Breeds', standard: false, bosie: true },
   { feature: '38% Plant-Based Material', standard: false, bosie: true },
