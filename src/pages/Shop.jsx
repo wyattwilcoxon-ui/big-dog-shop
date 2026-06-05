@@ -143,6 +143,17 @@ export default function Shop() {
                       <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-midnight">{product.name}</h2>
                     )}
 
+                    {/* Pricing */}
+                    {product.price ? (
+                      <div className="flex items-baseline gap-2 mt-3">
+                        <span className="font-display text-3xl text-primary">${Number(product.price).toFixed(2)}</span>
+                        {product.compareAtPrice && product.compareAtPrice > product.price && (
+                          <span className="font-body text-stone text-lg line-through">${Number(product.compareAtPrice).toFixed(2)}</span>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="font-brand text-stone text-sm mt-3 block">TBA</span>
+                    )}
 
                     <button
                       onClick={() => product.available ? handleAddToCart(product) : handleNotifyMe(product)}
