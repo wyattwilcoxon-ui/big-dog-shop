@@ -37,7 +37,7 @@ export default function HeroSection({ heroImage }) {
     <section className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-80 scale-110" />
+        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-70 scale-110" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(15,29,60,0.5) 68%, #0F1D3C 92%)' }} />
       </div>
 
