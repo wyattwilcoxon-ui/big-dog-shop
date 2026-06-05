@@ -49,6 +49,18 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 className="font-brand text-base sm:text-lg text-white mb-3 sm:mb-4">Legal</h4>
+            <div className="flex flex-col gap-1.5 sm:gap-2">
+              <Link to="/terms" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Terms & Conditions</Link>
+              <Link to="/refund-policy" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Return & Refund Policy</Link>
+              <Link to="/privacy-policy" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Privacy Policy</Link>
+              <Link to="/shipping-policy" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Shipping Policy</Link>
+              <Link to="/accessibility" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Accessibility Statement</Link>
+              <Link to="/contact-legal" className="text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">Contact & Legal Notice</Link>
+            </div>
+          </div>
+
+          <div>
             <h4 className="font-brand text-base sm:text-lg text-white mb-3 sm:mb-4">Join the Pack</h4>
             <Link
               to="/join"

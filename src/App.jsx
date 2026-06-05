@@ -21,6 +21,12 @@ import WhyBigDogs from './pages/WhyBigDogs';
 import ProductDetail from './pages/ProductDetail';
 import JoinThePack from './pages/JoinThePack';
 import AdminProducts from './pages/admin/AdminProducts';
+import Terms from './pages/Terms';
+import RefundPolicy from './pages/RefundPolicy';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import ShippingPolicy from './pages/ShippingPolicy';
+import Accessibility from './pages/Accessibility';
+import ContactLegal from './pages/ContactLegal';
 
 function App() {
   return (
@@ -44,6 +50,12 @@ function App() {
               <Route path="/why-big-dogs-need-bigger-poop-bags" element={<WhyBigDogs />} />
               <Route path="/product/:handle" element={<ProductDetail />} />
               <Route path="/admin/products" element={<AdminProducts />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/refund-policy" element={<RefundPolicy />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/shipping-policy" element={<ShippingPolicy />} />
+              <Route path="/accessibility" element={<Accessibility />} />
+              <Route path="/contact-legal" element={<ContactLegal />} />
             </Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
