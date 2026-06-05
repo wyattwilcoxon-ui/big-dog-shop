@@ -24,7 +24,7 @@ export default function ContactLegal() {
                 <li><strong>Legal Name:</strong> Big Dog Life LLC</li>
                 <li><strong>State of Formation:</strong> Ohio</li>
                 <li><strong>Principal Office:</strong> Bellefontaine, Ohio</li>
-                <li><strong>Website:</strong> bigdoglife.com</li>
+                <li><strong>Website:</strong> thebigdoglife.com</li>
               </ul>
             </Section>
 
@@ -52,7 +52,7 @@ export default function ContactLegal() {
 
             <div className="mt-8 pt-6 border-t-2 border-fog">
               <p className="font-brand text-midnight text-center">
-                Big Dog Life LLC • We Give a $h!t • bigdoglife.com
+                Big Dog Life LLC • We Give a $h!t • thebigdoglife.com
               </p>
             </div>
           </div>
