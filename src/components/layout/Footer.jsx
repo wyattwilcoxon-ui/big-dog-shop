@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Instagram, Facebook } from 'lucide-react';
 import { motion } from 'framer-motion';
 import AnimatedMarquee from '../home/AnimatedMarquee';
 
@@ -64,6 +64,14 @@ export default function Footer() {
               </Link>
               <div className="flex items-center gap-2 text-stone font-body text-xs sm:text-sm">
                 <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />Bellefontaine, Ohio
+              </div>
+              <div className="flex items-center gap-3 mt-2">
+                <a href="https://instagram.com/bigdoglife.og" target="_blank" rel="noopener noreferrer" className="text-stone hover:text-primary transition-colors">
+                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
+                </a>
+                <a href="https://facebook.com/bigdoglife.og" target="_blank" rel="noopener noreferrer" className="text-stone hover:text-primary transition-colors">
+                  <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
+                </a>
               </div>
             </div>
           </div>
