@@ -106,8 +106,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Bokeh overlay — dog-themed floating emojis */}
-      <GlobalBokeh />
+      {/* Bokeh overlay — dog-themed floating emojis (hidden in hero, visible below) */}
+      <GlobalBokeh hideHero={true} />
 
       {/* Stats */}
       <section className="bg-primary py-8 sm:py-12 px-4">

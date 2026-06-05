@@ -14,7 +14,46 @@ const ORBS = [
   { emoji: '🦴', left: '90%', top: '55%', size: '7rem',  delay: 6,   dur: 55, driftX: -100,driftY: 80,  opacity: 0.16 },
 ];
 
-export default function GlobalBokeh() {
+export default function GlobalBokeh({ hideHero = false }) {
+  if (hideHero) {
+    return (
+      <>
+        {/* Hidden bokeh above 60vh (hero area), visible below */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0, clipPath: 'inset(0 0 40% 0)' }}>
+          {ORBS.map((b, i) => (
+            <motion.div
+              key={i}
+              className="absolute select-none"
+              style={{
+                left: b.left,
+                top: b.top,
+                fontSize: b.size,
+                lineHeight: 1,
+                filter: 'blur(6px)',
+                opacity: b.opacity,
+                userSelect: 'none',
+              }}
+              animate={{
+                x: [0, b.driftX, b.driftX * 0.4, -b.driftX * 0.6, 0],
+                y: [0, b.driftY * 0.5, b.driftY, b.driftY * 0.3, 0],
+                rotate: [0, 15, -10, 8, 0],
+                opacity: [b.opacity, b.opacity * 1.6, b.opacity * 1.2, b.opacity * 1.8, b.opacity],
+              }}
+              transition={{
+                delay: b.delay,
+                duration: b.dur,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            >
+              {b.emoji}
+            </motion.div>
+          ))}
+        </div>
+      </>
+    );
+  }
+
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
       {ORBS.map((b, i) => (
