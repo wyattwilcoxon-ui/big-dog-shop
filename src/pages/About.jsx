@@ -69,12 +69,12 @@ const TEAM = [
 ];
 
 const ROADMAP = [
-  { emoji: '✅', label: 'XL Plant-Based Waste Bags', status: 'Available Now', color: 'bg-secondary', blur: false },
-  { emoji: '✅', label: 'Leash Pouches (fit XL rolls)', status: 'Available Now', color: 'bg-secondary', blur: false },
-  { emoji: '🔨', label: 'Handcrafted Leashes & Collars', status: 'In Development', color: 'bg-sandy', blur: true },
+  { emoji: '✅', label: 'Bosie Bag™ XL Waste Bags', status: 'Available Now', color: 'bg-secondary', blur: false },
+  { emoji: '✅', label: 'Clip & Go™ Dispenser Pouch', status: 'Available Now', color: 'bg-secondary', blur: false },
+  { emoji: '✅', label: 'Big Dog Life® Starter Bundle', status: 'Available Now', color: 'bg-secondary', blur: false },
+  { emoji: '✅', label: 'The Big Ones™ Tennis Balls', status: 'Available Now', color: 'bg-secondary', blur: false },
+  { emoji: '🔜', label: 'Handcrafted Leashes & Collars', status: 'Coming Soon', color: 'bg-primary', blur: true },
   { emoji: '🔜', label: 'Orthopedic Large-Breed Beds', status: 'Coming Soon', color: 'bg-primary', blur: true },
-  { emoji: '🔜', label: 'Weather-Resistant Apparel', status: 'Coming Soon', color: 'bg-primary', blur: true },
-  { emoji: '🔜', label: 'Single-Ingredient Treats', status: 'Coming Soon', color: 'bg-primary', blur: true },
 ];
 
 

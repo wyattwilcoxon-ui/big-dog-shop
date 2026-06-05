@@ -63,33 +63,7 @@ export default function Pack() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                name: 'Bosa',
-                breed: 'German Shepherd',
-                title: 'Chief Pooping Officer',
-                description: '125 lbs of pure chaos and love. His poops are legendary (and the reason this company exists). The bags are literally named after him.',
-                image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/5252c3924_Bosa.png',
-                color: 'border-primary',
-              },
-
-              {
-                name: 'Caesar',
-                breed: 'Great Dane',
-                title: 'Head of Stress Testing',
-                description: "Joni's gentle giant who proved that most pet products are basically made for hamsters. If a bag can handle Caesar, it can handle anything.",
-                image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/0827fc0ee_Caesar.png',
-                color: 'border-sky',
-              },
-              {
-                name: 'Jazzy',
-                breed: 'The Little One',
-                title: 'Morale & Chaos Coordinator',
-                description: 'Every big dog crew needs a tiny boss. Jazzy keeps everyone in line and reminds us that attitude has nothing to do with size.',
-                image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/397e17f3c_Jazzy.png',
-                color: 'border-sandy',
-              },
-            ].map((dog, i) => (
+            {DOGS.map((dog, i) => (
               <motion.div
                 key={dog.name}
                 initial={{ opacity: 0, y: 30 }}

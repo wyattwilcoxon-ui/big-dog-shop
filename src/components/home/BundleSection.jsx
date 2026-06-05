@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function BundleSection() {
   return (
@@ -36,20 +37,20 @@ export default function BundleSection() {
             {/* Info */}
             <div className="p-8 sm:p-12 flex flex-col justify-center">
               <span className="inline-block bg-secondary text-white font-brand text-xs px-3 py-1 rounded-full w-fit shadow-cartoon-sm mb-4">
-                🎁 3-Pack Bundle
+                🎁 Best Value
               </span>
-              <h3 className="font-display text-4xl sm:text-5xl text-midnight mb-2">THE BIG DOG BUNDLE</h3>
-              <p className="font-brand text-pebble text-lg mb-6">Walk Day Essentials</p>
+              <h3 className="font-display text-4xl sm:text-5xl text-midnight mb-2">BIG DOG LIFE® STARTER BUNDLE</h3>
+              <p className="font-brand text-pebble text-lg mb-6">The Complete Walk Kit</p>
               <p className="font-body text-pebble leading-relaxed mb-6">
-                Everything you need for the perfect walk: bags for the business, a dispenser so you're not digging through pockets, and tennis balls for the celebration lap.
+                Everything you need for the big dog life - in one pack. 1,080 Bosie Bag™ 12" x 13.5" oversized waste bags, a Clip & Go Dispenser Pouch with one starter roll already inside, and three Big Dog Life® The Big Ones tennis balls.
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
-                  'The Bosie Bag™ 8-Pack (120 bags)',
-                  'Bone-shaped bag dispenser with carabiner clip',
-                  '3 Big Dog Life branded tennis balls',
-                  'Free US shipping',
+                  '1,080 Bosie Bag™ waste bags (9 rolls x 120 bags)',
+                  'Clip & Go Dispenser with starter roll included',
+                  '3 Big Ones™ Tennis Balls - standard 2.5" size',
+                  'Retail-ready packaging',
                 ].map(item => (
                   <li key={item} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
@@ -59,10 +60,9 @@ export default function BundleSection() {
               </ul>
 
               <div className="flex items-center gap-4">
-                <span className="font-brand text-stone text-sm">Price TBA</span>
-                <button className="bg-secondary text-white font-brand px-6 py-3 rounded-xl shadow-cartoon-sm border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none hover:bg-green-bright">
-                  Get Notified 🔔
-                </button>
+                <Link to="/shop" className="bg-secondary text-white font-brand px-6 py-3 rounded-xl shadow-cartoon-sm border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none hover:bg-green-bright">
+                  Shop Now 🐾
+                </Link>
               </div>
             </div>
           </div>

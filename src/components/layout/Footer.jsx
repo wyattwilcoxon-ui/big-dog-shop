@@ -53,7 +53,7 @@ export default function Footer() {
           <div>
             <h4 className="font-brand text-base sm:text-lg text-white mb-3 sm:mb-4">Join the Pack</h4>
             <Link
-              to="/join-the-pack"
+              to="/join"
               className="inline-flex items-center gap-1 sm:gap-2 bg-primary text-white font-brand text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-3 rounded-xl border-bold shadow-cartoon-sm mb-3 sm:mb-4 hover:bg-orange-hot transition-colors"
             >
               Get Early Access 🎉

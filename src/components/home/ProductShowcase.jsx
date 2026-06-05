@@ -49,7 +49,7 @@ export default function ProductShowcase() {
 
   useEffect(() => {
     getProducts().then(shopifyProducts => {
-      // Merge Shopify data (images, prices, variants) with static copy (names, subtitles, badges)
+      // Merge Shopify data with static copy, put starter-bundle FIRST
       const merged = shopifyProducts.map(p => {
         const def = PRODUCT_DEFINITIONS[p.handle] || {};
         return {
@@ -65,7 +65,13 @@ export default function ProductShowcase() {
           image: p.image,
         };
       });
-      setProducts(merged);
+      // Sort: starter-bundle first, then others
+      const sorted = merged.sort((a, b) => {
+        if (a.handle === 'starter-bundle') return -1;
+        if (b.handle === 'starter-bundle') return 1;
+        return 0;
+      });
+      setProducts(sorted);
     }).catch(err => console.error('Shopify fetch failed:', err));
   }, []);
 
@@ -88,9 +94,9 @@ export default function ProductShowcase() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-4"
         >
-          <p className="font-brand text-primary text-sm uppercase tracking-widest mb-2">The Star of the Show</p>
-          <h2 className="font-display text-6xl sm:text-8xl text-white">THE BOSIE BAG<span className="text-primary">™</span></h2>
-          <p className="font-body text-stone text-lg mt-2">Engineered for the 100lb+ club. Big bags for big jobs.</p>
+          <p className="font-brand text-primary text-sm uppercase tracking-widest mb-2">Best Value</p>
+          <h2 className="font-display text-6xl sm:text-8xl text-white">STARTER BUNDLE<span className="text-primary">™</span></h2>
+          <p className="font-body text-stone text-lg mt-2">Everything you need for the big dog life — in one pack.</p>
         </motion.div>
 
         {/* Features strip */}
@@ -108,85 +114,100 @@ export default function ProductShowcase() {
           ))}
         </motion.div>
 
-        {/* Product grid — all 4 */}
+        {/* Product grid — Starter Bundle featured prominently */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {products.map((product, i) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="bg-white border-4 border-midnight rounded-2xl overflow-hidden flex flex-col group shadow-cartoon-sm"
-            >
-              {/* Square image */}
-              <Link to={`/product/${product.handle}`} className="block relative aspect-square bg-white overflow-hidden">
-                {product.badge && product.badge !== 'Best Seller' && (
-                  <span className="absolute top-3 left-3 z-10 font-brand text-xs px-3 py-1 rounded-full bg-midnight text-white">
-                    {product.badge}
-                  </span>
-                )}
-                {product.image ? (
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-6xl">🧻</div>
-                )}
-              </Link>
+          {products.map((product, i) => {
+            const isFeatured = product.handle === 'starter-bundle';
+            return (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className={`bg-white border-4 border-midnight rounded-2xl overflow-hidden flex flex-col group shadow-cartoon-sm ${
+                  isFeatured ? 'sm:col-span-2 lg:col-span-4' : ''
+                }`}
+              >
+                <div className={isFeatured ? 'grid grid-cols-1 md:grid-cols-2' : ''}>
+                  {/* Square image */}
+                  <Link to={`/product/${product.handle}`} className="block relative aspect-square bg-white overflow-hidden">
+                    {product.badge && (
+                      <span className={`absolute top-3 left-3 z-10 font-brand text-xs px-3 py-1 rounded-full shadow-cartoon-sm ${
+                        product.badge === 'Best Value' ? 'bg-secondary text-white' : 'bg-midnight text-white'
+                      }`}>
+                        {product.badge}
+                      </span>
+                    )}
+                    {product.image ? (
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-6xl">🧻</div>
+                    )}
+                  </Link>
 
-              {/* Info */}
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-brand text-midnight text-base leading-tight mb-1">{product.name}</h3>
-                <p className="font-body text-pebble text-xs mb-2">{product.subtitle}</p>
-                {product.badge && (
-                  <span className="font-brand text-xs text-primary mb-2 block">{product.badge}</span>
-                )}
+                  {/* Info - expanded for featured product */}
+                  <div className={`p-5 flex flex-col flex-1 ${isFeatured ? 'md:p-8 justify-center' : ''}`}>
+                    <h3 className={`font-brand text-midnight leading-tight mb-1 ${isFeatured ? 'text-2xl sm:text-3xl' : 'text-base'}`}>{product.name}</h3>
+                    <p className={`font-body text-pebble mb-2 ${isFeatured ? 'text-base sm:text-lg' : 'text-xs'}`}>{product.subtitle}</p>
+                    {product.badge && (
+                      <span className={`font-brand mb-2 block ${isFeatured ? 'text-primary text-lg' : 'text-xs text-primary'}`}>{product.badge}</span>
+                    )}
 
-                {/* Price */}
-                <div className="mb-4">
-                  {product.price ? (
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="font-display text-2xl text-primary">${Number(product.price).toFixed(2)}</span>
-                      {product.compareAtPrice && product.compareAtPrice > product.price && (
-                        <span className="font-body text-stone line-through text-xs">${Number(product.compareAtPrice).toFixed(2)}</span>
+                    {/* Price */}
+                    <div className="mb-4">
+                      {product.price ? (
+                        <div className="flex items-baseline gap-1.5">
+                          <span className={`font-display text-primary ${isFeatured ? 'text-4xl sm:text-5xl' : 'text-2xl'}`}>${Number(product.price).toFixed(2)}</span>
+                          {product.compareAtPrice && product.compareAtPrice > product.price && (
+                            <span className={`font-body text-stone line-through ${isFeatured ? 'text-xl' : 'text-xs'}`}>${Number(product.compareAtPrice).toFixed(2)}</span>
+                          )}
+                        </div>
+                      ) : (
+                        <span className="font-brand text-stone text-xs">TBA</span>
                       )}
                     </div>
-                  ) : (
-                    <span className="font-brand text-stone text-xs">TBA</span>
-                  )}
-                </div>
 
-                {/* Two buttons */}
-                <div className="flex gap-2 mt-auto">
-                  <Link
-                    to={`/product/${product.handle}`}
-                    className="flex-1 text-center font-brand text-xs px-3 py-2 rounded-full border-2 border-midnight text-midnight hover:bg-midnight hover:text-white transition-colors"
-                  >
-                    More Info
-                  </Link>
-                  {product.available ? (
-                    <button
-                      onClick={() => handleAdd(product)}
-                      disabled={addingId === product.id}
-                      className="flex-1 flex items-center justify-center gap-1 bg-primary text-white font-brand text-xs px-3 py-2 rounded-full hover:bg-orange-hot transition-colors border-2 border-primary"
-                    >
-                      {addingId === product.id ? <Loader2 className="w-3 h-3 animate-spin" /> : 'Add to Cart'}
-                    </button>
-                  ) : (
-                    <Link
-                      to={`/product/${product.handle}`}
-                      className="flex-1 text-center font-brand text-xs px-3 py-2 rounded-full bg-midnight text-white hover:bg-bark transition-colors border-2 border-midnight"
-                    >
-                      Notify Me
-                    </Link>
-                  )}
+                    {/* Two buttons - larger for featured */}
+                    <div className={`flex gap-2 mt-auto ${isFeatured ? 'flex-wrap sm:flex-nowrap gap-3' : ''}`}>
+                      <Link
+                        to={`/product/${product.handle}`}
+                        className={`text-center font-brand rounded-full border-2 border-midnight text-midnight hover:bg-midnight hover:text-white transition-colors ${
+                          isFeatured ? 'flex-1 px-6 py-4 text-lg' : 'flex-1 px-3 py-2 text-xs'
+                        }`}
+                      >
+                        More Info
+                      </Link>
+                      {product.available ? (
+                        <button
+                          onClick={() => handleAdd(product)}
+                          disabled={addingId === product.id}
+                          className={`flex items-center justify-center gap-1 bg-primary text-white font-brand rounded-full hover:bg-orange-hot transition-colors border-2 border-primary ${
+                            isFeatured ? 'flex-1 px-6 py-4 text-lg' : 'flex-1 px-3 py-2 text-xs'
+                          }`}
+                        >
+                          {addingId === product.id ? <Loader2 className={`w-3 h-3 animate-spin ${isFeatured ? 'w-5 h-5' : ''}`} /> : 'Add to Cart'}
+                        </button>
+                      ) : (
+                        <Link
+                          to={`/product/${product.handle}`}
+                          className={`text-center font-brand rounded-full bg-midnight text-white hover:bg-bark transition-colors border-2 border-midnight ${
+                            isFeatured ? 'flex-1 px-6 py-4 text-lg' : 'flex-1 px-3 py-2 text-xs'
+                          }`}
+                        >
+                          Notify Me
+                        </Link>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
