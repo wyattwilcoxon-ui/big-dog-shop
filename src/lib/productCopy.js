@@ -34,31 +34,31 @@ Stop settling for undersized dog waste bags that weren't made for your dog. Bosi
   },
   
   // 2. Big Dog Life® Bag Dispenser - Clip & Go Pouch
-  'clip-and-go': {
-    seoTitle: 'Big Dog Life® Dog Poop Bag Dispenser - Leash Clip Holder for Large and Giant Breed Dog Waste Bags | Zippered Fabric Pouch | Includes 1 Starter Roll of Bosie Bag™',
-    metaDescription: 'Big Dog Life® leash clip dog poop bag dispenser - includes 1 starter roll of Bosie Bag™. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
-    shortDescription: 'No more digging through your pockets at the worst possible moment. The Big Dog Life® Clip & Go Pouch clips to your leash, comes loaded with a starter roll of Bosie Bag™, and keeps you ready before your dog even squats.',
-    longDescription: `The best dog poop bag dispenser is the one you don't have to think about. The Big Dog Life® Clip & Go Pouch stays clipped to your leash, your belt loop, or your park bag - so when your large or giant breed dog does what they do, you're already ready.
+   'clip-and-go': {
+     seoTitle: 'Big Dog Life® Dog Poop Bag Dispenser - Leash Clip Holder for Large and Giant Breed Dog Waste Bags | Zippered Fabric Pouch | Includes 1 Starter Roll of Bosie Bag™',
+     metaDescription: 'Big Dog Life® leash clip dog poop bag dispenser - includes 1 starter roll of Bosie Bag™. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
+     shortDescription: 'No more digging through your pockets at the worst possible moment. The Big Dog Life® Clip & Go Pouch clips to your leash, comes loaded with a starter roll of Bosie Bag™, and keeps you ready before your dog even squats.',
+     longDescription: `The best dog poop bag dispenser is the one you don't have to think about. The Big Dog Life® Clip & Go Pouch stays clipped to your leash, your belt loop, or your park bag - so when your large or giant breed dog does what they do, you're already ready.
 
-Comes with one starter roll of Bosie Bag™ oversized waste bags already inside. Clip it on, pull a bag, and go. No setup required.
+  Comes with one starter roll of Bosie Bag™ oversized waste bags already inside. Clip it on, pull a bag, and go. No setup required.
 
-FEATURES
+  INCLUDES
 
-▸ Heavy-duty carabiner leash clip attaches to leash, harness, belt loop, or bag
-▸ Secure zip closure for one-hand access
-▸ Includes 1 starter roll of Bosie Bag™ 12" x 13.5" oversized waste bags, ready to go
-▸ Durable textured fabric built for trails, parks, and everyday walks
-▸ Compact design stays out of the way until you need it
+  ▸ Heavy-duty carabiner leash clip attaches to leash, harness, belt loop, or bag
+  ▸ Secure zip closure for one-hand access
+  ▸ 1 starter roll of Bosie Bag™ 12" x 13.5" oversized waste bags, ready to go
+  ▸ Durable textured fabric built for trails, parks, and everyday walks
+  ▸ Compact design stays out of the way until you need it
 
-PERFECT FOR
+  PERFECT FOR
 
-▸ Large and giant breed dog owners
-▸ Daily walkers who need quick access
-▸ Anyone tired of digging through pockets mid-walk
+  ▸ Large and giant breed dog owners
+  ▸ Daily walkers who need quick access
+  ▸ Anyone tired of digging through pockets mid-walk
 
-The dog poop bag holder that stays out of the way until you need it - then delivers every time.`,
-    backendKeywords: 'dog poop bag holder leash, dog waste bag dispenser clip, fabric dog bag holder, poop bag pouch carabiner, dog walking accessories large breed, leash attachment poop bag, zippered poop bag holder, dog bag dispenser pouch, large breed dog bag dispenser',
-  },
+  The dog poop bag holder that stays out of the way until you need it - then delivers every time.`,
+     backendKeywords: 'dog poop bag holder leash, dog waste bag dispenser clip, fabric dog bag holder, poop bag pouch carabiner, dog walking accessories large breed, leash attachment poop bag, zippered poop bag holder, dog bag dispenser pouch, large breed dog bag dispenser',
+   },
   
   // 3. Bosie Bag™ Rolls - 8-Roll Refill Pack (960 Bags)
   'bosie-bag-8pack': {
@@ -129,24 +129,28 @@ Unbox it, clip it on, and you're already loaded. That's the big dog life.`,
     shortDescription: 'Your big dog doesn\'t fetch small. The Big Ones are standard size, built for large and giant breeds, and tough enough to keep up with them. Three to a pack, because one throw is never enough.',
     longDescription: `Big dogs play hard. Their tennis balls should too.
 
-Big Dog Life® The Big Ones are standard 2.5" fetch balls built specifically with large and giant breed dogs in mind. Whether your German Shepherd, Labrador, Golden Retriever, or Rottweiler is a casual fetcher or a full-sprint obsessive, these are the balls that keep up with them.
+  Big Dog Life® The Big Ones are standard 2.5" fetch balls built specifically with large and giant breed dogs in mind. Whether your German Shepherd, Labrador, Golden Retriever, or Rottweiler is a casual fetcher or a full-sprint obsessive, these are the balls that keep up with them.
 
-Three to a pack. Because one is never enough and two always goes missing.
+  Because after the cleanup, there's always a throw.
 
-WHY BIG DOG OWNERS CHOOSE THE BIG ONES
+  INCLUDES
 
-▸ Standard 2.5" official size — the right fit for large and giant breed dogs
-▸ Durable construction built for big breed fetch sessions
-▸ High-visibility yellow — easy to spot in grass, brush, and water
-▸ Branded Big Dog Life® — because your dog's gear should look as good as they play
-▸ 3-pack — always have a backup when one disappears under the couch
+  ▸ 3 Big Dog Life® The Big Ones Tennis Balls - standard 2.5" official size
+  ▸ High-visibility yellow construction — easy to spot in grass, brush, and water
+  ▸ Durable construction built for big breed fetch sessions
+  ▸ Branded Big Dog Life® — because your dog's gear should look as good as they play
+  ▸ Always have a backup when one disappears under the couch
 
-PERFECT FOR
+  PERFECT FOR
 
-▸ The park
-▸ The backyard
-▸ The trail
-▸ The living room at 6am when your 90-lb dog decides it's fetch time`,
+  ▸ German Shepherd owners
+  ▸ Labrador owners
+  ▸ Golden Retriever owners
+  ▸ Rottweiler owners
+  ▸ Great Dane owners
+  ▸ Mastiff owners
+
+  Any large or giant breed household that's done with balls that weren't built for their dog.`,
     backendKeywords: 'tennis balls for large dogs, dog fetch balls large breed, standard size dog tennis balls, durable tennis balls dogs, tennis balls German Shepherd, fetch balls Labrador, dog toy balls 3 pack, dog tennis balls 2.5 inch, big dog fetch toys, giant breed dog tennis balls',
   },
 };
