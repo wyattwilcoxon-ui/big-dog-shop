@@ -62,7 +62,7 @@ export default function Pack() {
             <p className="font-body text-pebble mt-3 text-lg">Our dogs who inspire us every day.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 name: 'Bosa',
