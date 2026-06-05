@@ -43,7 +43,7 @@ const PANELS = [
     title: 'THE BOSIE BAG™ IS BORN',
     subtitle: 'Finally. A bag worthy of my greatness.',
     body: 'They made bags BIG. Like me. Named them after me (The Bosie Bag™, obviously). 12"×13.5" of pure leak-proof glory. I approve this message. And the bags.',
-    cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/c778ea1e5_generated_image.png',
+    cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/7b3d873db_generated_image.png',
     accent: 'bg-sandy',
     dark: true,
     delay: 0.2,
