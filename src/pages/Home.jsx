@@ -4,10 +4,7 @@ import AnimatedMarquee from '../components/home/AnimatedMarquee';
 import ValueProps from '../components/home/ValueProps';
 import StatsBar from '../components/home/StatsBar';
 import ProductShowcase from '../components/home/ProductShowcase';
-import BosaOriginStory from '../components/home/BosaOriginStory';
 import SizeComparison from '../components/home/SizeComparison';
-import FoundingStoryComic from '../components/home/FoundingStoryComic';
-
 
 import BosieBlastWall from '../components/home/BosieBlastWall';
 import LifestyleSection from '../components/home/LifestyleSection';
@@ -50,9 +47,7 @@ export default function Home() {
       <AnimatedMarquee items={MARQUEE_ITEMS_2} bg="bg-secondary" textColor="text-white" speed={28} reverse />
 
       <ProductShowcase />
-      <BosaOriginStory />
       <SizeComparison />
-      <FoundingStoryComic />
 
       <BosieBlastWall />
       <LifestyleSection
