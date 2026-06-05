@@ -19,14 +19,14 @@ const BASE_PRODUCT_COPY = {
   'bosie-bag': {
     seoTitle: 'Bosie Bag™ Extra Large Dog Poop Bags - 12" × 14" Heavy Duty Waste Bags for Large and Giant Breed Dogs | Leak-Proof, Thick, Oversized',
     metaDescription: 'Bosie Bag™ are 12" × 14" extra-large, leak-proof* dog poop bags built for large and giant breed dogs. Heavy duty and thick. Finally, a bag that handles the big stuff.',
-    shortDescription: 'Standard poop bags weren\'t built for your dog. Bosie Bag™ are 12" × 14" extra-large, leak-proof* dog waste bags designed specifically for large and giant breeds - thick enough to handle the big stuff without tearing. We give a $h!t.',
-    longDescription: `If you own a German Shepherd, Labrador, Rottweiler, Great Dane, or any large or giant breed dog, you already know the problem. You reach for a standard poop bag, it tears mid-pickup, and the walk is ruined. Regular dog waste bags simply aren't built for big dogs - and that's exactly why Bosie Bag™ exists.
+    shortDescription: 'Standard 9" × 13" poop bags weren\'t built for your dog. Bosie Bag™ are 12" × 14" extra-large, leak-proof* dog waste bags designed specifically for large and giant breeds - thick enough to handle the big stuff without tearing. We give a $h!t.',
+    longDescription: `If you own a German Shepherd, Labrador, Rottweiler, Great Dane, or any large or giant breed dog, you already know the problem. You reach for a standard poop bag (9" × 13"), it tears mid-pickup, and the walk is ruined. Regular dog waste bags simply aren't built for big dogs - and that's exactly why Bosie Bag™ exists.
 
 Bosie Bag™ extra large dog poop bags measure 12" × 14" and are extra-thick and leak-proof*, engineered from the ground up for large and giant breed dogs. Named after Bosa, a 115-lb German Shepherd who inspired the Big Dog Life™ brand, Bosie Bag™ gives you the coverage, strength, and peace of mind that standard bags can't deliver.
 
 WHY BOSIE BAG™ BEATS STANDARD POOP BAGS
 
-▸ 12" × 14" oversized dimensions built for real big-dog cleanup
+▸ 12" × 14" oversized dimensions — 33% wider and 8% longer than standard 9" × 13" bags
 ▸ Extra-thick, heavy-duty material — leak-proof*, no tearing, no surprises*
 ▸ Easy single-hand tear-off perforated for quick access mid-walk
 ▸ Built specifically for large and giant breed dogs
