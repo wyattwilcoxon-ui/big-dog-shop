@@ -12,6 +12,7 @@ const NAV_LINKS = [
 ];
 
 const LOGO_URL = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/7cd0d1928_BDLHorz.png';
+const LOGO_BLACK_URL = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/68c12a958_BigDogLifeBannerBlack.png';
 
 export default function Navbar({ cartCount = 0, onCartClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,7 +45,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
           <div className="flex items-center justify-between h-16">
 
             <Link to="/" className="flex items-center group">
-              <img src={LOGO_URL} alt="Big Dog Life" className="h-10 w-auto object-contain" />
+              <img src={scrolled ? LOGO_URL : LOGO_BLACK_URL} alt="Big Dog Life" className="h-10 w-auto object-contain" />
             </Link>
 
             <div className="hidden lg:flex items-center gap-1">
@@ -96,7 +97,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             className="fixed inset-0 z-[60] bg-midnight flex flex-col"
           >
             <div className="flex items-center justify-between px-5 h-28 border-b border-white/10">
-              <img src={LOGO_URL} alt="Big Dog Life" className="h-8 w-auto object-contain" />
+              <img src={LOGO_BLACK_URL} alt="Big Dog Life" className="h-8 w-auto object-contain" />
               <button className="text-white p-2" onClick={() => setMenuOpen(false)}>
                 <X className="w-7 h-7" strokeWidth={2.5} />
               </button>
