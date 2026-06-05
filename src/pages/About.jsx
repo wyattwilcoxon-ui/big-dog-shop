@@ -251,9 +251,9 @@ export default function About() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-display text-3xl text-midnight mb-2">MEGAN'S INSPIRATION</h3>
+                <h3 className="font-display text-3xl text-midnight mb-2">MEGAN & BOSA</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">
-                  After adopting Bosa, a 125-pound German Shepherd, Megan realized standard bags didn't cut it. Going through up to <strong>8 bags per day</strong>, she knew there had to be a better way.
+                  Megan's inspiration came after adopting Bosa, a 125-pound German Shepherd with equally "large-scale" needs. For years, she'd used two standard bags for Carmen, but Bosa's size made that unworkable. Even the largest commercial bags couldn't keep up — resulting in waste, inefficiency, and frequent messes. After going through up to <strong>8 small bags a day</strong>, she thought: there has to be a better way.
                 </p>
               </div>
             </motion.div>
@@ -276,9 +276,9 @@ export default function About() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-display text-3xl text-midnight mb-2">JONI'S CHALLENGE</h3>
+                <h3 className="font-display text-3xl text-midnight mb-2">JONI, MAX & ELLIE</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">
-                  Owner of Great Danes Max and Ellie, Joni faced the same frustration — harnesses, collars, and accessories that didn't fit, with expensive special orders as the only option.
+                  Around the same time, Joni — who owns two Great Danes, Max and Ellie — was facing her own large-breed challenges. Finding harnesses, collars, and accessories that actually fit meant expensive special orders. Large-breed owners were left with limited, inconsistent, and costly choices.
                 </p>
               </div>
             </motion.div>
