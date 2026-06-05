@@ -38,7 +38,7 @@ export default function HeroSection({ heroImage }) {
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-85 scale-110" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(15,29,60,0.7) 0%, rgba(15,29,60,0.5) 50%, rgba(15,29,60,0.3) 68%, #0F1D3C 92%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(15,29,60,0.5) 68%, #0F1D3C 92%)' }} />
       </div>
 
       {/* Bokeh orbs */}
