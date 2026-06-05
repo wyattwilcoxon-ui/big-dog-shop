@@ -144,19 +144,6 @@ export default function Shop() {
                     )}
 
 
-                    <div className="mt-4 sm:mt-6 flex items-center gap-3 sm:gap-4">
-                      {product.price ? (
-                        <div className="flex items-baseline gap-2">
-                          <span className="font-display text-3xl sm:text-4xl text-primary">${Number(product.price).toFixed(2)}</span>
-                          {product.compareAtPrice && product.compareAtPrice > product.price && (
-                            <span className="font-body text-stone line-through">${Number(product.compareAtPrice).toFixed(2)}</span>
-                          )}
-                        </div>
-                      ) : (
-                        <span className="font-brand text-stone">Price TBA</span>
-                      )}
-                    </div>
-
                     <button
                       onClick={() => product.available ? handleAddToCart(product) : handleNotifyMe(product)}
                       disabled={addingId === product.id}
