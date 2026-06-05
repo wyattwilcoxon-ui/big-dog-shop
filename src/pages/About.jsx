@@ -73,6 +73,9 @@ const ROADMAP = [
   { emoji: '✅', label: 'Clip & Go™ Dispenser Pouch', status: 'Available Now', color: 'bg-secondary', blur: false },
   { emoji: '✅', label: 'Big Dog Life™ Starter Bundle', status: 'Available Now', color: 'bg-secondary', blur: false },
   { emoji: '✅', label: 'The Big Ones™ Tennis Balls', status: 'Available Now', color: 'bg-secondary', blur: false },
+  { emoji: '🚧', label: 'Poop Bag Dispenser', status: 'Coming Soon', color: 'bg-marigold', blur: true },
+  { emoji: '🚧', label: 'Leash Accessories', status: 'In Development', color: 'bg-marigold', blur: true },
+  { emoji: '🚧', label: 'Training Treats', status: 'In Development', color: 'bg-marigold', blur: true },
 
 ];
 
