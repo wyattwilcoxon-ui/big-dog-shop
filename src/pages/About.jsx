@@ -253,7 +253,7 @@ export default function About() {
               <div className="p-6">
                 <h3 className="font-display text-3xl text-midnight mb-2">MEGAN & BOSA</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">
-                  Megan's inspiration came after adopting Bosa, a 125-pound German Shepherd with equally "large-scale" needs. For years, she'd used two standard bags for Carmen, but Bosa's size made that unworkable. Even the largest commercial bags couldn't keep up — resulting in waste, inefficiency, and frequent messes. After going through up to <strong>8 small bags a day</strong>, she thought: there has to be a better way.
+                  Megan's inspiration came after adopting Bosa, a 115-pound German Shepherd with equally "large-scale" needs. For years, she'd used two standard bags for Carmen, but Bosa's size made that unworkable. Even the largest commercial bags couldn't keep up — resulting in waste, inefficiency, and frequent messes. After going through up to <strong>8 small bags a day</strong>, she thought: there has to be a better way.
                 </p>
               </div>
             </motion.div>
