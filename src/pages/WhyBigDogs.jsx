@@ -25,6 +25,11 @@ const STATS = [
   { value: '12"×13.5"', label: 'The Bosie Bag™ dimensions' },
 ];
 
+const MARKET_STATS = [
+  { value: '$150 BILLION', label: 'Americans spend on pets annually', cite: 'https://www.americanpetproducts.org/press_industrytrends.asp' },
+  { value: '40% OF DOG OWNERS', label: 'have large-breed dogs', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
+];
+
 export default function WhyBigDogs() {
   return (
     <main className="bg-background min-h-screen">
@@ -219,34 +224,28 @@ export default function WhyBigDogs() {
             <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE MARKET IGNORES YOU</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-midnight rounded-2xl border-bold shadow-cartoon p-8"
-            >
-              <p className="font-display text-4xl text-primary mb-3">$150 BILLION</p>
-              <p className="font-body text-stone leading-relaxed">
-                Americans spend over $150 billion on pets annually — yet the majority of pet supply brands continue designing products for medium-sized dogs, leaving large-breed owners with limited, ill-fitting, or costly options.
-              </p>
-              <a href="https://www.americanpetproducts.org/press_industrytrends.asp" target="_blank" rel="noopener noreferrer" className="font-body text-white/40 text-xs mt-2 inline-block underline hover:text-white/70 transition-colors">
-                Source: APPA ↗
-              </a>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl border-bold shadow-cartoon p-8"
-            >
-              <p className="font-display text-4xl text-midnight mb-3">40% OF DOG OWNERS</p>
-              <p className="font-body text-pebble leading-relaxed">
-                An estimated 40% of dog-owning households have large-breed dogs. That's tens of millions of owners who are systematically underserved by an industry that treats them as an afterthought.
-              </p>
-              <a href="https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics" target="_blank" rel="noopener noreferrer" className="font-body text-primary/60 text-xs mt-2 inline-block underline hover:text-primary transition-colors">
-                Source: AVMA ↗
-              </a>
-            </motion.div>
+            {MARKET_STATS.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: i === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className={`${i === 0 ? 'bg-midnight' : 'bg-white'} rounded-2xl border-bold shadow-cartoon p-8`}
+              >
+                <p className={`font-display text-4xl ${i === 0 ? 'text-primary' : 'text-midnight'} mb-3`}>{stat.value}</p>
+                <p className={`font-body ${i === 0 ? 'text-stone' : 'text-pebble'} leading-relaxed`}>
+                  {i === 0 
+                    ? 'Americans spend over $150 billion on pets annually — yet the majority of pet supply brands continue designing products for medium-sized dogs, leaving large-breed owners with limited, ill-fitting, or costly options.'
+                    : 'An estimated 40% of dog-owning households have large-breed dogs. That\'s tens of millions of owners who are systematically underserved by an industry that treats them as an afterthought.'
+                  }
+                </p>
+                {stat.cite && (
+                  <a href={stat.cite} target="_blank" rel="noopener noreferrer" className={`font-body text-xs mt-2 inline-block underline hover:text-primary transition-colors ${i === 0 ? 'text-white/40 hover:text-white/70' : 'text-primary/60'}`}>
+                    Source ↗
+                  </a>
+                )}
+              </motion.div>
+            ))}
           </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
