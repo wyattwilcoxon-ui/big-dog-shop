@@ -64,7 +64,8 @@ export default function HeroSection({ heroImage }) {
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
+          transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+          className="text-center sm:text-left">
           
           {/* Tag line */}
           
@@ -115,7 +116,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-3 mt-4 sm:mt-8">
+            className="flex flex-wrap gap-3 mt-4 sm:mt-8 justify-center sm:justify-start">
             
             <Link to="/shop">
               <motion.div
