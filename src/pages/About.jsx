@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Leaf, Target, Users } from 'lucide-react';
 import GlobalBokeh from '../components/layout/GlobalBokeh';
-import BosaOriginStory from '../components/home/BosaOriginStory';
 
 
 
@@ -253,9 +252,6 @@ export default function About() {
           </motion.div>
         </div>
       </section>
-
-      {/* The Real Story - Comic Panels */}
-      <BosaOriginStory />
 
       {/* Founders & Partners */}
       <section className="py-12 sm:py-20 px-4 bg-cream">
