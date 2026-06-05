@@ -21,6 +21,10 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
 
+  // Pages/sections with dark backgrounds at top
+  const darkBgPaths = ['/pack', '/about', '/why-big-dogs-need-bigger-poop-bags'];
+  const hasDarkBg = darkBgPaths.some(path => location.pathname.startsWith(path));
+
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
@@ -45,7 +49,11 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
           <div className="flex items-center justify-between h-16">
 
             <Link to="/" className="flex items-center group">
-              <img src={scrolled ? LOGO_WHITE_URL : LOGO_TRANS_URL} alt="Big Dog Life" className="h-10 w-auto object-contain" />
+              <img 
+                src={(scrolled || hasDarkBg) ? LOGO_WHITE_URL : LOGO_TRANS_URL} 
+                alt="Big Dog Life" 
+                className="h-10 w-auto object-contain" 
+              />
             </Link>
 
             <div className="hidden lg:flex items-center gap-1">
