@@ -95,7 +95,7 @@ export default function ProductShowcase() {
           className="text-center mb-4"
         >
           <p className="font-brand text-primary text-sm uppercase tracking-widest mb-2">Best Value</p>
-          <h2 className="font-display text-6xl sm:text-8xl text-white">STARTER BUNDLE<span className="text-primary">™</span></h2>
+          <h2 className="font-display text-6xl sm:text-8xl text-white">STARTER BUNDLE</h2>
           <p className="font-body text-stone text-lg mt-2">Everything you need for the big dog life — in one pack.</p>
         </motion.div>
 
