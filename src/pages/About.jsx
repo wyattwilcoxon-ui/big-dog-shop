@@ -253,7 +253,7 @@ export default function About() {
               <div className="p-6">
                 <h3 className="font-display text-3xl text-midnight mb-2">MEGAN & BOSA</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">
-                  Megan's inspiration came after adopting Bosa, a 115-pound German Shepherd with equally "large-scale" needs. For years, she'd used two standard bags for Carmen, but Bosa's size made that unworkable. Even the largest commercial bags couldn't keep up — resulting in waste, inefficiency, and frequent messes. After going through up to <strong>8 small bags a day</strong>, she thought: there has to be a better way.
+                  Megan's inspiration came after adopting Bosa, a 115-pound German Shepherd with equally "large-scale" needs. For years, she'd used two standard bags for Carmen, but Bosa's size made that unworkable. Even the largest commercial bags couldn't keep up - resulting in waste, inefficiency, and frequent messes. After going through up to <strong>8 small bags a day</strong>, she thought: there has to be a better way.
                 </p>
               </div>
             </motion.div>
@@ -278,7 +278,7 @@ export default function About() {
               <div className="p-6">
                 <h3 className="font-display text-3xl text-midnight mb-2">JONI, MAX & ELLIE</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">
-                  Around the same time, Joni — who owns two Great Danes, Max and Ellie — was facing her own large-breed challenges. Finding harnesses, collars, and accessories that actually fit meant expensive special orders. Large-breed owners were left with limited, inconsistent, and costly choices.
+                  Around the same time, Joni - who owns two Great Danes, Max and Ellie - was facing her own large-breed challenges. Finding harnesses, collars, and accessories that actually fit meant expensive special orders. Large-breed owners were left with limited, inconsistent, and costly choices.
                 </p>
               </div>
             </motion.div>
@@ -292,7 +292,7 @@ export default function About() {
             className="bg-primary rounded-2xl border-bold shadow-cartoon p-8 sm:p-10 text-center"
           >
             <p className="font-body text-white text-base sm:text-lg leading-relaxed">
-              The two friends started comparing notes and quickly realized they weren't alone. There was an entire community of large-breed owners struggling with undersized products, wasted money, and limited options. Out of those shared experiences, <strong className="text-white">Big Dog Life was born</strong> — a company built for big dogs, by big-dog owners.
+              The two friends started comparing notes and quickly realized they weren't alone. There was an entire community of large-breed owners struggling with undersized products, wasted money, and limited options. Out of those shared experiences, <strong className="text-white">Big Dog Life was born</strong> - a company built for big dogs, by big-dog owners.
             </p>
           </motion.div>
         </div>
