@@ -44,7 +44,7 @@ export default function SizeComparison() {
           >
             <div className="w-52 h-60 bg-primary/20 rounded-xl border-4 border-primary flex flex-col items-center justify-center shadow-cartoon">
               <span className="font-display text-3xl text-primary">12"×14"</span>
-              <span className="font-brand text-white text-sm mt-2 bg-primary px-3 py-1 rounded-full">31% BIGGER</span>
+              <span className="font-brand text-white text-sm mt-2 bg-primary px-3 py-1 rounded-full">43.6% BIGGER</span>
             </div>
             <p className="font-brand text-white mt-3">The Bosie Bag™</p>
             <p className="font-body text-stone text-sm">(room to spare)</p>
