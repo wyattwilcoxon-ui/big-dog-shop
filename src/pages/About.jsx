@@ -259,7 +259,7 @@ export default function About() {
             <p className="font-body text-pebble mt-3 text-lg">Two founders and two partners building products that actually work.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
             {TEAM.map((member, i) => (
               <motion.div
                 key={member.name}
@@ -268,7 +268,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 1.03 }}
-                className={`bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default ${member.wide ? 'md:col-span-2' : ''}`}
+                className={`bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default w-full ${member.wide ? 'md:w-full lg:w-full' : 'md:w-96'}`}
               >
                 {member.wide ? (
                   <div className="flex flex-col md:flex-row">
