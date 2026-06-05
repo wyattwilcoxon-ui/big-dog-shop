@@ -7,7 +7,7 @@ const PANELS = [
     bg: 'bg-cream',
     border: 'border-primary',
     title: 'HI. I\'M BOSA.',
-    subtitle: '125 lbs. of chaos. Zero regrets.',
+    subtitle: '115 lbs. of chaos. Zero regrets.',
     body: 'I\'m a German Shepherd. I go BIG or I go home. This applies to my naps, my zoomies, my bark, and yes — my poops. Like, a LOT of poop.',
     image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/45673ba63_BDLHead2.png',
     accent: 'bg-primary',
@@ -19,7 +19,7 @@ const PANELS = [
     border: 'border-secondary',
     title: 'THE TINY BAG TRAGEDY',
     subtitle: 'They did NOT survive.',
-    body: 'Mom (Megan) tried regular bags. Cute. They exploded immediately. She went through 8 bags per walk. EIGHT. I watched her cry. It was hilarious.',
+    body: 'Mom (Megan) tried regular bags. Cute. They exploded immediately. She went through 8 bags per day. EIGHT. I watched her cry. It was hilarious.',
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/4d71b1eb1_generated_image.png',
     accent: 'bg-secondary',
     delay: 0.1,
@@ -28,9 +28,9 @@ const PANELS = [
     panelEmoji: '🐾',
     bg: 'bg-midnight',
     border: 'border-primary',
-    title: 'THE PARK INCIDENT',
-    subtitle: 'A moment of silence for the fallen bags.',
-    body: 'One fateful day at the park, Mom held a leaked bag at arm\'s length and screamed at Joni: "WHY DOESN\'T THIS EXIST?!" I barked. I knew this was destiny.',
+    title: 'THE PARTNERSHIP',
+    subtitle: 'Business was born.',
+    body: 'Mom kept getting poop on her hands. Bags were never big enough or strong enough. Joni wanted to start a business for large breed dogs. Together, they made it happen.',
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/4a850bd2b_generated_image.png',
     accent: 'bg-primary',
     dark: true,
@@ -42,7 +42,7 @@ const PANELS = [
     border: 'border-sandy',
     title: 'THE BOSIE BAG™ IS BORN',
     subtitle: 'Finally. A bag worthy of my greatness.',
-    body: 'They made bags BIG. Like me. Named them after me (The Bosie Bag™, obviously). 12"×13.5" of pure leak-proof glory. I approve this message. And the bags.',
+    body: 'They made bags BIG. Like me. Named them after me (The Bosie Bag™, obviously). 12"×14" of pure leak-proof glory. I approve this message. And the bags.',
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/db765b230_generated_image.png',
     accent: 'bg-sandy',
     dark: true,
@@ -77,7 +77,7 @@ export default function BosaOriginStory() {
             <span className="text-primary">THIS WHOLE THING</span>
           </h2>
           <p className="font-brand text-pebble text-lg mt-4 max-w-xl mx-auto">
-            By Bosa. Chief Pooping Officer. 125 lbs. Zero shame. All opinions are my own (and I stand by them).
+            By Bosa. Chief Pooping Officer. 115 lbs. Zero shame. All opinions are my own (and I stand by them).
           </p>
         </motion.div>
 

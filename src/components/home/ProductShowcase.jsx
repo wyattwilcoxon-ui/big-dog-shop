@@ -10,8 +10,8 @@ import { PRODUCT_COPY } from '@/lib/productCopy';
 const PRODUCT_DEFINITIONS = {
   'bosie-bag': {
     name: 'The Bosie Bag™',
-    subtitle: '12" x 13.5" Extra Large Waste Bags',
-    badge: 'Best Seller',
+    subtitle: '12" x 14" Extra Large Waste Bags',
+    badge: null,
   },
   'clip-and-go': {
     name: 'The Clip & Go™',
@@ -20,13 +20,13 @@ const PRODUCT_DEFINITIONS = {
   },
   'bosie-bag-8pack': {
     name: 'Bosie Bag™ 8-Pack',
-    subtitle: '960 Bags Total (8 Rolls x 120)',
-    badge: 'Bulk Value',
+    subtitle: '120 Bags Total (8 Rolls x 15)',
+    badge: null,
   },
   'starter-bundle': {
-    name: 'Big Dog Life® Starter Bundle',
-    subtitle: '1,080 Bags + Dispenser + Tennis Balls',
-    badge: 'Best Value',
+    name: 'Big Dog Life™ Starter Bundle',
+    subtitle: '138 Bags + Dispenser + Tennis Balls',
+    badge: null,
   },
   'tennis-balls': {
     name: 'The Big Ones™',
@@ -36,10 +36,10 @@ const PRODUCT_DEFINITIONS = {
 };
 
 const FEATURES = [
-  '13.5" × 12" — perfect for big poops and big hands',
-  'Triple-thick leak-proof* material',
+  '14" × 12" — perfect for big poops and big hands',
+  'Extra-thick leak-proof* material',
   'Built for Large and Giant Breed Dogs',
-  'USDA Certified Biobased Product',
+  '38% plant based',
 ];
 
 export default function ProductShowcase() {
@@ -94,8 +94,7 @@ export default function ProductShowcase() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-4"
         >
-          <p className="font-brand text-primary text-sm uppercase tracking-widest mb-2">Best Value</p>
-          <h2 className="font-display text-6xl sm:text-8xl text-white">STARTER BUNDLE</h2>
+          <h2 className="font-display text-6xl sm:text-8xl text-white">PRODUCTS</h2>
           <p className="font-body text-stone text-lg mt-2">Everything you need for the big dog life — in one pack.</p>
         </motion.div>
 
@@ -135,11 +134,7 @@ export default function ProductShowcase() {
           >
             <div className="grid grid-cols-1 md:grid-cols-2">
               <Link to={`/product/${product.handle}`} className="block relative aspect-square bg-white overflow-hidden">
-                {product.badge && (
-                  <span className="absolute top-3 left-3 z-10 font-brand text-xs px-3 py-1 rounded-full shadow-cartoon-sm bg-secondary text-white">
-                    {product.badge}
-                  </span>
-                )}
+
                 {product.image ? (
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 ) : (
@@ -149,7 +144,6 @@ export default function ProductShowcase() {
               <div className="p-8 flex flex-col justify-center">
                 <h3 className="font-brand text-midnight text-2xl sm:text-3xl leading-tight mb-1">{product.name}</h3>
                 <p className="font-body text-pebble text-base sm:text-lg mb-2">{product.subtitle}</p>
-                <span className="font-brand text-primary text-lg mb-4 block">{product.badge}</span>
                 <div className="mb-4">
                   {product.price ? (
                     <div className="flex items-baseline gap-1.5">
@@ -197,13 +191,6 @@ export default function ProductShowcase() {
               className="bg-white border-4 border-midnight rounded-2xl overflow-hidden flex flex-col group shadow-cartoon-sm"
             >
               <Link to={`/product/${product.handle}`} className="block relative aspect-square bg-white overflow-hidden">
-                {product.badge && (
-                  <span className={`absolute top-3 left-3 z-10 font-brand text-xs px-3 py-1 rounded-full shadow-cartoon-sm ${
-                    product.badge === 'Best Value' ? 'bg-secondary text-white' : 'bg-midnight text-white'
-                  }`}>
-                    {product.badge}
-                  </span>
-                )}
                 {product.image ? (
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 ) : (
@@ -213,7 +200,6 @@ export default function ProductShowcase() {
               <div className="p-5 flex flex-col flex-1">
                 <h3 className="font-brand text-midnight text-base leading-tight mb-1">{product.name}</h3>
                 <p className="font-body text-pebble text-xs mb-2">{product.subtitle}</p>
-                {product.badge && <span className="font-brand text-xs text-primary mb-2 block">{product.badge}</span>}
                 <div className="mb-4">
                   {product.price ? (
                     <div className="flex items-baseline gap-1.5">

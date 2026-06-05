@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Leaf, Target, Users } from 'lucide-react';
 import GlobalBokeh from '../components/layout/GlobalBokeh';
 
-const HERO_IMAGE = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/aaa6bb62f_IMG_9458.jpg';
+
 
 const STATS = [
   {
@@ -20,7 +20,7 @@ const STATS = [
     cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics',
   },
   { value: '2024', label: 'Founded in Ohio', sub: 'Bellefontaine, OH' },
-  { value: '4', label: 'Partners. All big-dog owners.', sub: 'Built from lived experience' },
+  { value: '2', label: 'Founders. Big-dog owners.', sub: 'Built from lived experience' },
 ];
 
 const PROMISES = [
@@ -49,14 +49,14 @@ const TEAM = [
     name: 'Megan Gerlach',
     role: 'Co-Founder & Financial Director',
     photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/748b242b3_Megan.png',
-    bio: 'After adopting Bosa, a 125-pound German Shepherd with absolutely zero shame, Megan realized she was going through 8 poop bags a day. Her finance background and frustration with the market turned a personal problem into a company.',
+    bio: 'After adopting Bosa, a 115-pound German Shepherd with absolutely zero shame, Megan realized she was going through 8 poop bags a day. Her finance background and frustration with the market turned a personal problem into a company.',
     wide: false,
   },
   {
     name: 'Joni Dailey',
     role: 'Co-Founder & Brand Director',
     photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/0ef71dcef_Joni.png',
-    bio: 'Owner of two Great Danes, Max and Caesar. Joni brings creative direction, marketing, and retail partnership strategy, ensuring every product and message reflects the brand\'s personality and values.',
+    bio: 'Owner of Great Dane Max. Joni brings creative direction, marketing, and retail partnership strategy, ensuring every product and message reflects the brand\'s personality and values.',
     wide: false,
   },
   {
@@ -71,10 +71,9 @@ const TEAM = [
 const ROADMAP = [
   { emoji: '✅', label: 'Bosie Bag™ XL Waste Bags', status: 'Available Now', color: 'bg-secondary', blur: false },
   { emoji: '✅', label: 'Clip & Go™ Dispenser Pouch', status: 'Available Now', color: 'bg-secondary', blur: false },
-  { emoji: '✅', label: 'Big Dog Life® Starter Bundle', status: 'Available Now', color: 'bg-secondary', blur: false },
+  { emoji: '✅', label: 'Big Dog Life™ Starter Bundle', status: 'Available Now', color: 'bg-secondary', blur: false },
   { emoji: '✅', label: 'The Big Ones™ Tennis Balls', status: 'Available Now', color: 'bg-secondary', blur: false },
-  { emoji: '🔜', label: 'Handcrafted Leashes & Collars', status: 'Coming Soon', color: 'bg-primary', blur: true },
-  { emoji: '🔜', label: 'Orthopedic Large-Breed Beds', status: 'Coming Soon', color: 'bg-primary', blur: true },
+
 ];
 
 
@@ -82,15 +81,9 @@ export default function About() {
   return (
     <main className="bg-background min-h-screen">
 
-      {/* Hero — photo on top, text below */}
+      {/* Hero — text only */}
       <section className="bg-midnight overflow-hidden">
-        {/* Photo — full width, fades into dark at bottom */}
-        <div className="relative w-full" style={{ height: 'clamp(400px, 70vh, 800px)' }}>
-          <img src={HERO_IMAGE} alt="Big Dog Life team" className="w-full h-full object-cover opacity-85" style={{ objectPosition: '50% 35%' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 60%, #0F1D3C 100%)' }} />
-        </div>
-        {/* Text — overlaps up into the faded photo */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-2 -mt-24 relative z-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}>
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">Our Story</p>
             <h1 className="font-display leading-none text-white" style={{ fontSize: 'clamp(2.5rem, 10vw, 8rem)' }}>
@@ -208,7 +201,7 @@ export default function About() {
               <div className="p-6">
                 <h3 className="font-display text-3xl text-midnight mb-2">MEET BOSA</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">
-                  125-pound German Shepherd. Bosa left, Carmen (passed April 2026, deeply missed) right. Going through up to <strong>8 bags per walk</strong> — standard bags split and failed every time.
+                  115-pound German Shepherd. Bosa left, Carmen (passed April 2026, deeply missed) right. Going through up to <strong>8 bags per day</strong> — standard bags split and failed every time.
                 </p>
               </div>
             </motion.div>
@@ -233,7 +226,7 @@ export default function About() {
               <div className="p-6">
                 <h3 className="font-display text-3xl text-midnight mb-2">JONI HAD THE SAME PROBLEM</h3>
                 <p className="font-body text-pebble text-sm leading-relaxed">
-                  Joni owned two Great Danes, Max and Caesar, and was dealing with the same frustrations. That's Max in the photo. Bags that didn't fit, accessories built for dogs a third the size.
+                  Joni owned Great Dane Max and was dealing with the same frustrations. That's Max in the photo. Bags that didn't fit, accessories built for dogs a third the size.
                 </p>
               </div>
             </motion.div>
@@ -262,8 +255,8 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">The Humans Behind the Brand</p>
-            <h2 className="font-display text-5xl sm:text-7xl text-midnight">FOUNDERS & PARTNERS</h2>
-            <p className="font-body text-pebble mt-3 text-lg">Four big-dog lovers building products that actually work.</p>
+            <h2 className="font-display text-5xl sm:text-7xl text-midnight">FOUNDERS</h2>
+            <p className="font-body text-pebble mt-3 text-lg">Two founders building products that actually work.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -331,9 +324,8 @@ export default function About() {
       <section className="py-20 px-4 bg-midnight">
         <div className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">What's Coming</p>
-            <h2 className="font-display text-5xl sm:text-7xl text-white">PRODUCT ROADMAP</h2>
-            <p className="font-body text-stone text-lg mt-3">Starting with the basics. Building the whole big-dog lifestyle.</p>
+            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">What We Offer</p>
+            <h2 className="font-display text-5xl sm:text-7xl text-white">CURRENT PRODUCTS</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -344,28 +336,19 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                whileHover={!item.blur ? { scale: 1.03 } : {}}
+                whileHover={{ scale: 1.03 }}
                 className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4"
               >
                 <span className="text-2xl flex-shrink-0">{item.emoji}</span>
-                <div className={`flex-1 min-w-0 ${item.blur ? 'blur-sm select-none' : ''}`}>
+                <div className="flex-1 min-w-0">
                   <p className="font-brand text-white text-sm">{item.label}</p>
                 </div>
-                <span className={`${item.blur ? 'blur-sm select-none' : ''} ${item.color} text-white font-brand text-xs px-3 py-1 rounded-full flex-shrink-0`}>
+                <span className={`${item.color} text-white font-brand text-xs px-3 py-1 rounded-full flex-shrink-0`}>
                   {item.status}
                 </span>
               </motion.div>
             ))}
           </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center font-brand text-stone text-sm mt-8"
-          >
-            👀 Keep an eye out for more products coming soon.
-          </motion.p>
         </div>
       </section>
 
@@ -373,7 +356,7 @@ export default function About() {
       <section className="py-20 px-4 bg-primary">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="font-display text-6xl sm:text-8xl text-white mb-4">JOIN THE PACK</h2>
+            <h2 className="font-display text-6xl sm:text-8xl text-white mb-4">READY TO JOIN US?</h2>
             <p className="font-body text-white/80 text-xl mb-10 max-w-xl mx-auto">
               Big dogs deserve better gear. We're here to deliver it, one bag at a time.
             </p>
