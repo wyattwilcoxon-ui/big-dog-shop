@@ -47,7 +47,16 @@ export default function Shop() {
 
   useEffect(() => {
     getProducts()
-      .then(data => setProducts(data.length > 0 ? data : FALLBACK_PRODUCTS))
+      .then(data => {
+        const productsList = data.length > 0 ? data : FALLBACK_PRODUCTS;
+        // Sort: starter-bundle first, then others
+        const sorted = productsList.sort((a, b) => {
+          if (a.handle === 'starter-bundle' || a.id === 'starter-bundle') return -1;
+          if (b.handle === 'starter-bundle' || b.id === 'starter-bundle') return 1;
+          return 0;
+        });
+        setProducts(sorted);
+      })
       .catch(err => { console.error('Shopify fetch failed:', err); setProducts(FALLBACK_PRODUCTS); })
       .finally(() => setFetching(false));
   }, []);
