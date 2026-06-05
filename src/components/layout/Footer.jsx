@@ -49,13 +49,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-brand text-base sm:text-lg text-white mb-3 sm:mb-4">Join the Pack</h4>
-            <Link
-              to="/join"
-              className="inline-flex items-center gap-1 sm:gap-2 bg-primary text-white font-brand text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-3 rounded-xl border-bold shadow-cartoon-sm mb-3 sm:mb-4 hover:bg-orange-hot transition-colors"
-            >
-              Get Early Access 🎉
-            </Link>
+            <h4 className="font-brand text-base sm:text-lg text-white mb-3 sm:mb-4">Connect</h4>
             <div className="flex flex-col gap-1.5 sm:gap-2">
               <Link to="/contact" className="flex items-center gap-2 text-stone hover:text-primary transition-colors font-body text-xs sm:text-sm">
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4" />Contact Us
