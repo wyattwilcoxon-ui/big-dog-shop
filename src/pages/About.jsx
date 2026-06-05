@@ -349,7 +349,7 @@ export default function About() {
                 {member.wide ? (
                   <div className="flex flex-col md:flex-row">
                     <div className="md:w-1/2 aspect-[4/3] md:aspect-auto overflow-hidden border-r-4 border-primary">
-                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" style={{ objectPosition: '50% 30%' }} />
                     </div>
                     <div className="p-6 md:w-1/2 flex flex-col justify-center">
                       <h3 className="font-display text-2xl sm:text-3xl text-midnight">{member.name}</h3>
@@ -359,8 +359,8 @@ export default function About() {
                   </div>
                 ) : (
                   <>
-                    <div className="aspect-[4/3] overflow-hidden border-b-4 border-primary">
-                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                    <div className="aspect-[3/4] overflow-hidden border-b-4 border-primary">
+                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" style={{ objectPosition: '50% 25%' }} />
                     </div>
                     <div className="p-6">
                       <h3 className="font-display text-2xl sm:text-3xl text-midnight">{member.name}</h3>
