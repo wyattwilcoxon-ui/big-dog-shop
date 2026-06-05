@@ -4,10 +4,9 @@ import { ShoppingBag, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
-  { label: 'Shop', path: '/shop' },
+  { label: 'About', path: '/about' },
   { label: 'The Pack', path: '/pack' },
   { label: 'FAQ', path: '/faq' },
-  { label: 'About', path: '/about' },
 ];
 
 const LOGO_TRANS_URL = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/058123048_BigDogLifeBannerTrans.png';
@@ -72,12 +71,17 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
             </div>
 
             <div className="flex items-center gap-3">
+              <Link
+                to="/shop"
+                className="hidden sm:inline-flex items-center gap-1 bg-primary text-white font-brand text-sm px-4 py-2 rounded-full hover:bg-orange-hot transition-all"
+              >
+                Products
+              </Link>
               <button
                 onClick={onCartClick}
                 className="relative flex items-center gap-1 sm:gap-2 bg-primary text-white font-brand text-xs sm:text-sm px-3 sm:px-5 py-2 rounded-full hover:bg-orange-hot transition-all"
               >
                 <ShoppingBag className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="hidden sm:inline">Shop Now</span>
                 {cartCount > 0 && (
                   <span className="absolute -top-1.5 -right-1.5 w-4 h-4 sm:w-5 sm:h-5 bg-secondary text-white text-[10px] sm:text-xs font-bold rounded-full flex items-center justify-center border border-midnight">
                     {cartCount}
@@ -129,14 +133,23 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
               ))}
             </div>
 
-            <div className="px-6 pb-10">
+            <div className="px-6 pb-10 space-y-3">
               <Link
                 to="/shop"
                 onClick={() => setMenuOpen(false)}
                 className="block w-full text-center font-brand text-lg bg-primary text-white py-4 rounded-2xl"
               >
-                Shop Now 🐾
+                Products 🐾
               </Link>
+              <button
+                onClick={() => {
+                  setMenuOpen(false);
+                  onCartClick();
+                }}
+                className="block w-full text-center font-brand text-lg bg-secondary text-white py-4 rounded-2xl"
+              >
+                View Cart {cartCount > 0 && `(${cartCount})`}
+              </button>
             </div>
           </motion.div>
         )}
