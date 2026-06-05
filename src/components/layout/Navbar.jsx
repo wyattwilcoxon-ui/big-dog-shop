@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
   { label: 'Shop', path: '/shop' },
-  { label: 'Join the Pack', path: '/join-the-pack' },
+  { label: 'Join the Pack', path: '/join' },
   { label: 'The Pack', path: '/pack' },
   { label: 'FAQ', path: '/faq' },
   { label: 'About', path: '/about' },
@@ -54,8 +54,8 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
                   to={link.path}
                   className={`font-display text-sm sm:text-base px-3 sm:px-4 py-2 rounded-full transition-all duration-200 ${
                     location.pathname === link.path
-                      ? 'bg-white/15 text-white'
-                      : 'text-stone hover:text-white hover:bg-white/10'
+                      ? 'bg-primary text-white'
+                      : 'text-white hover:text-primary hover:bg-white/10'
                   }`}
                 >
                   {link.label}
