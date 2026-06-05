@@ -55,7 +55,7 @@ export default function GlobalBokeh({ hideHero = false }) {
   }
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1 }}>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
       {ORBS.map((b, i) => (
         <motion.div
           key={i}
