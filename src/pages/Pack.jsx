@@ -6,7 +6,7 @@ const DOGS = [
     name: 'Bosa',
     breed: 'German Shepherd',
     title: 'Chief Pooping Officer',
-    description: '125 lbs of pure chaos and love. His poops are legendary (and the reason this company exists). The bags are literally named after him.',
+    description: '115 lbs of pure chaos and love. His poops are legendary (and the reason this company exists). The bags are literally named after him.',
     image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/5252c3924_Bosa.png',
     color: 'border-primary',
   },
@@ -14,7 +14,7 @@ const DOGS = [
     name: 'Carmen',
     breed: 'German Shepherd',
     title: 'Senior Quality Inspector',
-    description: 'The wise grandma of the pack. She tested every prototype and gave her seal of approval by not looking disgusted.',
+    description: '115 lbs. The wise grandma of the pack. She tested every prototype and gave her seal of approval by not looking disgusted.',
     image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/4c1877673_Carmen.png',
     color: 'border-secondary',
   },
@@ -22,7 +22,7 @@ const DOGS = [
     name: 'Caesar',
     breed: 'Great Dane',
     title: 'Head of Stress Testing',
-    description: "Joni's gentle giant who proved that most pet products are basically made for hamsters. If a bag can handle Caesar, it can handle anything.",
+    description: "Joni's Great Dane who proved that most pet products are basically made for hamsters. If a bag can handle Max, it can handle anything.",
     image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/0827fc0ee_Caesar.png',
     color: 'border-sky',
   },
@@ -152,10 +152,10 @@ export default function Pack() {
               <div>
                 <h3 className="font-brand text-xl text-midnight mb-4">Here's What Happened (By Bosa)</h3>
                 <p className="font-body text-pebble leading-relaxed mb-4">
-                  So Megan adopted me — 125 lbs of German Shepherd greatness. She thought regular bags would work. Cute. They exploded. Like, immediately. She went through EIGHT bags per walk. EIGHT. I watched her cry. Honestly? Kinda funny.
+                  So Megan adopted me — 115 lbs of German Shepherd greatness. She thought regular bags would work. Cute. They exploded. Like, immediately. She went through EIGHT bags per day. EIGHT. Poop on her hands, every single walk. I watched her cry. Honestly? Kinda funny.
                 </p>
                 <p className="font-body text-pebble leading-relaxed mb-4">
-                  Then she met Joni. Joni had TWO Great Danes. Same problem. Tiny bags. Big dogs. Do the math.
+                  Then she met Joni. Joni had a Great Dane named Max. Same problem. Tiny bags. Big dogs. Do the math.
                 </p>
                 <p className="font-body text-pebble leading-relaxed">
                   One day at the park, Megan held a leaked bag at arm's length and screamed: "WHY DOESN'T THIS EXIST?!" I barked. She looked at me. I knew this was destiny. They built Big Dog Life. Named the bags after me (The Bosie Bag™, obviously). I give my seal of approval. Which is to say, I poop on them. You're welcome.

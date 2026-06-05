@@ -30,7 +30,7 @@ const PANELS = [
     border: 'border-primary',
     title: 'THE PARTNERSHIP',
     subtitle: 'Business was born.',
-    body: 'Mom kept getting poop on her hands. Bags were never big enough or strong enough. Joni wanted to start a business for large breed dogs. Together, they made it happen.',
+    body: 'Mom (Megan) kept getting poop on her hands. Bags were never big enough or strong enough. Joni wanted to start a business for large breed dogs. Together, they made it happen.',
     cartoonImg: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/4a850bd2b_generated_image.png',
     accent: 'bg-primary',
     dark: true,

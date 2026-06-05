@@ -11,15 +11,15 @@ import {
 const FAQS = [
   {
     q: 'How big are the Bosie Bags?',
-    a: '12" × 13.5" — perfect for big poops and big hands. Designed for large and giant breed dogs who believe in going big or going home.',
+    a: '12" × 14" — perfect for big poops and big hands. Designed for large and giant breed dogs who believe in going big or going home.',
   },
   {
     q: 'Are they actually leak-proof?* Is anything?!',
-    a: 'Look, we\'re going to be real with you — nothing is 100% leak-proof in this world. But the Bosie Bag™ is triple-thick, extra-wide, and built specifically for big dogs. We\'ve done everything humanly possible to keep your hands clean. The rest is between you and the universe.',
+    a: 'Look, we\'re going to be real with you — nothing is 100% leak-proof in this world. But the Bosie Bag™ is extra-thick, extra-wide, and built specifically for big dogs. We\'ve done everything humanly possible to keep your hands clean. The rest is between you and the universe.',
   },
   {
     q: 'How many bags come in a roll?',
-    a: 'Each roll has 15 bags. The 8-Pack gives you 120 bags total — that\'s weeks of worry-free walks, even with the biggest of boys.',
+    a: 'Each roll has 15 bags. The 8-Pack gives you 120 bags total (8 rolls × 15 bags) — that\'s weeks of worry-free walks, even with the biggest of boys.',
   },
   {
     q: 'Do you ship outside of the US?',

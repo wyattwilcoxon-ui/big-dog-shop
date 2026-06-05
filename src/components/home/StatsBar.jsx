@@ -4,7 +4,7 @@ import CountUp from '../ui/CountUp';
 
 const STATS = [
   { emoji: '🐾', value: 28, suffix: '%', label: 'Bigger Than Standard Bags' },
-  { emoji: '🧻', value: 120, suffix: '', label: 'Bags Per 8-Pack' },
+  { emoji: '🧻', value: 120, suffix: '', label: 'Bags Per 8-Pack (8 Rolls × 15)' },
   { emoji: '🐕', value: 100, suffix: '+', label: 'Large & Giant Breeds Welcome.' },
   { emoji: '💩', value: 0, suffix: '', label: 'Leaks. Zero. None.' },
 ];
