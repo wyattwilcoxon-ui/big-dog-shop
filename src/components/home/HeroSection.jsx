@@ -137,20 +137,7 @@ export default function HeroSection({ heroImage }) {
             </Link>
           </motion.div>
 
-          {/* Social proof pills */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.1 }}
-            className="mt-6 flex flex-wrap gap-3">
-            
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-4 py-2 rounded-full">
-              🚚 FREE SHIPPING
-            </div>
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-brand text-sm px-4 py-2 rounded-full">
-              🦴 44% Bigger Than Standard Bags
-            </div>
-          </motion.div>
+
         </motion.div>
       </div>
 
