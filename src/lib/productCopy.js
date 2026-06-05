@@ -162,10 +162,12 @@ const ALIAS_MAP = {
   'bosie-bag-refill': 'bosie-bag-8pack',
   // Clip & Go aliases
   'the-clip-and-go': 'clip-and-go',
+  'clip-go-pouch': 'clip-and-go',
   // Starter Bundle aliases
   'big-dog-life-starter-bundle': 'starter-bundle',
   // Tennis Balls aliases
   'the-big-ones': 'tennis-balls',
+  'the-big-ones-3-pack': 'tennis-balls',
 };
 
 // Merge base products with aliases
@@ -173,10 +175,12 @@ export const PRODUCT_COPY = {
   ...BASE_PRODUCT_COPY,
   // Add aliases (pointing to same data)
   'the-bosie-bag': BASE_PRODUCT_COPY['bosie-bag'],
-  'the-clip-and-go': BASE_PRODUCT_COPY['clip-and-go'],
   'bosie-bag-refill': BASE_PRODUCT_COPY['bosie-bag-8pack'],
+  'the-clip-and-go': BASE_PRODUCT_COPY['clip-and-go'],
+  'clip-go-pouch': BASE_PRODUCT_COPY['clip-and-go'],
   'big-dog-life-starter-bundle': BASE_PRODUCT_COPY['starter-bundle'],
   'the-big-ones': BASE_PRODUCT_COPY['tennis-balls'],
+  'the-big-ones-3-pack': BASE_PRODUCT_COPY['tennis-balls'],
 };
 
 // Helper function to get SEO title
