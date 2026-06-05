@@ -39,12 +39,13 @@ export default function ProductDetail() {
     }
     metaTag.content = metaDesc;
 
-    console.log('🔍 ProductDetail - URL handle:', handle);
-    console.log('📋 Available copy keys:', Object.keys(getProductCopy || {}).length > 0 ? 'checking...' : 'bosie-bag, clip-and-go, starter-bundle, tennis-balls, etc.');
+    console.log('🔍 URL handle:', handle);
+    const testCopy = getProductCopy(handle);
+    console.log('📋 Copy lookup result:', testCopy ? '✅ FOUND' : '❌ NOT FOUND', testCopy ? 'longDescription length:' + testCopy.longDescription?.length : '');
 
     getProductByHandle(handle)
       .then(p => {
-        console.log('📦 Shopify product data:', { handle: p?.handle, title: p?.title });
+        console.log('📦 Shopify:', { handle: p?.handle, title: p?.title });
         setProduct(p);
         if (p) setSelectedVariantId(p.variants[0]?.id || null);
       })
