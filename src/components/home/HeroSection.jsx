@@ -37,7 +37,7 @@ export default function HeroSection({ heroImage }) {
     <section className="relative min-h-[90vh] sm:min-h-screen overflow-hidden bg-midnight">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-70 scale-110" />
+        <img src={heroImage} alt="Big dog" className="w-full h-full object-cover opacity-70 scale-110 object-[70%_center] sm:object-center" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(15,29,60,0.5) 68%, #0F1D3C 92%)' }} />
       </div>
 
@@ -65,7 +65,7 @@ export default function HeroSection({ heroImage }) {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-          className="text-center sm:text-left">
+          className="">
           
           {/* Tag line */}
           
@@ -116,7 +116,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-3 mt-4 sm:mt-8 justify-center sm:justify-start">
+            className="flex flex-wrap gap-3 mt-4 sm:mt-8">
             
             <Link to="/shop">
               <motion.div
