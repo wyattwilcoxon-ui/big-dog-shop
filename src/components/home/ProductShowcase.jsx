@@ -8,6 +8,18 @@ import { PRODUCT_COPY } from '@/lib/productCopy';
 // Static product data from master copy - only images/checkout from Shopify
 const PRODUCTS = [
   {
+    id: 'starter-bundle',
+    handle: 'starter-bundle',
+    name: 'Big Dog Life® Starter Bundle',
+    subtitle: '1,080 Bags + Dispenser + Tennis Balls',
+    price: 54.99,
+    compareAtPrice: 67.96,
+    badge: 'Best Value',
+    available: true,
+    variantId: 'placeholder',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-bundle_2890c1e5.png',
+  },
+  {
     id: 'bosie-bag',
     handle: 'bosie-bag',
     name: 'The Bosie Bag™',
@@ -42,18 +54,6 @@ const PRODUCTS = [
     available: true,
     variantId: 'placeholder',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-multi_1698b1d7.png',
-  },
-  {
-    id: 'starter-bundle',
-    handle: 'starter-bundle',
-    name: 'Big Dog Life® Starter Bundle',
-    subtitle: '1,080 Bags + Dispenser + Tennis Balls',
-    price: 54.99,
-    compareAtPrice: 67.96,
-    badge: 'Best Value',
-    available: true,
-    variantId: 'placeholder',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663032127906/XGcioY5NW2YEhK7htUgUbY/poop-bags-bundle_2890c1e5.png',
   },
   {
     id: 'tennis-balls',
