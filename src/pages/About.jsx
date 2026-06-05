@@ -337,11 +337,11 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 whileHover={{ scale: 1.03 }}
-                className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4"
+                className={`bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4 ${item.blur ? 'opacity-60' : ''}`}
               >
                 <span className="text-2xl flex-shrink-0">{item.emoji}</span>
                 <div className="flex-1 min-w-0">
-                  <p className="font-brand text-white text-sm">{item.label}</p>
+                  <p className={`font-brand text-white text-sm ${item.blur ? 'blur-[2px]' : ''}`}>{item.label}</p>
                 </div>
                 <span className={`${item.color} text-white font-brand text-xs px-3 py-1 rounded-full flex-shrink-0`}>
                   {item.status}
