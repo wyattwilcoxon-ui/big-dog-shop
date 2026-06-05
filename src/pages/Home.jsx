@@ -10,6 +10,7 @@ import BosieBlastWall from '../components/home/BosieBlastWall';
 import LifestyleSection from '../components/home/LifestyleSection';
 import BulkCTA from '../components/home/BulkCTA';
 import FloatingPoop from '../components/ui/FloatingPoop';
+import GlobalBokeh from '../components/layout/GlobalBokeh';
 
 const HERO_IMG = 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/c70f9fd22_DSC_0141.jpg';
 
@@ -34,6 +35,7 @@ const IMAGES = {
 export default function Home() {
   return (
     <div>
+      <GlobalBokeh />
       <FloatingPoop />
       <HeroSection heroImage={IMAGES.hero} />
 
