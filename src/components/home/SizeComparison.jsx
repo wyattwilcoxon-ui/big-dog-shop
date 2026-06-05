@@ -29,7 +29,7 @@ export default function SizeComparison() {
             className="text-center"
           >
             <div className="w-36 h-48 bg-stone/30 rounded-xl border-2 border-dashed border-stone flex items-center justify-center">
-              <span className="font-display text-2xl text-stone">9"×12"</span>
+              <span className="font-display text-2xl text-stone">9"×13"</span>
             </div>
             <p className="font-brand text-stone mt-3">"Regular" Bags</p>
             <p className="font-body text-stone/60 text-sm">(good luck)</p>
@@ -64,7 +64,7 @@ export default function SizeComparison() {
             <span className="font-brand text-sm text-center text-primary">Bosie Bag™</span>
           </div>
           {[
-            ['Bag Size', '9" × 12"', '12" × 14"'],
+            ['Bag Size', '9" × 13"', '12" × 14"'],
             ['Built for Large & Giant Breeds', false, true],
             ['Thickness', 'Thin & flimsy', 'Extra-thick'],
             ['38% Plant Based', false, true],
