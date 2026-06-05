@@ -148,29 +148,32 @@ export default function ProductDetail() {
             {(() => {
               const copy = getProductCopy(handle);
               if (copy?.longDescription) {
+                const sections = copy.longDescription.split('\n\n');
                 return (
                   <div className="font-body text-pebble mt-4 leading-relaxed text-base space-y-4">
-                    {copy.longDescription.split('\n\n').map((paragraph, i) => {
-                      const trimmed = paragraph.trim();
+                    {sections.map((section, i) => {
+                      const trimmed = section.trim();
                       if (!trimmed) return null;
                       
-                      // Check if it's a list section
-                      if (trimmed.includes('\n') && trimmed.split('\n').some(line => line.trim().startsWith('-') || line.trim().startsWith('•'))) {
+                      // Section headers (all caps, short)
+                      if (trimmed === trimmed.toUpperCase() && trimmed.length > 3 && trimmed.length < 60) {
+                        return <p key={i} className="font-brand text-midnight text-sm uppercase tracking-wider mt-6 mb-2">{trimmed}</p>;
+                      }
+                      
+                      // Bullet points with ▸
+                      if (trimmed.startsWith('▸')) {
+                        const lines = trimmed.split('\n').filter(l => l.trim());
                         return (
-                          <div key={i} className="space-y-2">
-                            {trimmed.split('\n').map((line, j) => {
+                          <div key={i} className="space-y-2 ml-2">
+                            {lines.map((line, j) => {
                               const lineTrimmed = line.trim();
-                              if (lineTrimmed.startsWith('-') || lineTrimmed.startsWith('•')) {
+                              if (lineTrimmed.startsWith('▸')) {
                                 return (
                                   <div key={j} className="flex items-start gap-2">
                                     <span className="text-primary mt-1 flex-shrink-0">▸</span>
-                                    <span>{lineTrimmed.replace(/^[-•]\s*/, '')}</span>
+                                    <span>{lineTrimmed.substring(1).trim()}</span>
                                   </div>
                                 );
-                              }
-                              // Section header (all caps, short)
-                              if (lineTrimmed === lineTrimmed.toUpperCase() && lineTrimmed.length > 3 && lineTrimmed.length < 60) {
-                                return <p key={j} className="font-brand text-midnight text-sm uppercase tracking-wider mt-4 mb-1">{lineTrimmed}</p>;
                               }
                               return <p key={j}>{lineTrimmed}</p>;
                             })}
@@ -178,11 +181,7 @@ export default function ProductDetail() {
                         );
                       }
                       
-                      // Section header (all caps, short)
-                      if (trimmed === trimmed.toUpperCase() && trimmed.length > 3 && trimmed.length < 60) {
-                        return <p key={i} className="font-brand text-midnight text-sm uppercase tracking-wider mt-4 mb-1">{trimmed}</p>;
-                      }
-                      
+                      // Regular paragraph
                       return <p key={i}>{trimmed}</p>;
                     })}
                   </div>
@@ -194,15 +193,15 @@ export default function ProductDetail() {
                 <div className="font-body text-pebble mt-4 leading-relaxed text-base space-y-3">
                   {product.description?.split('\n').filter(line => line.trim()).map((line, i) => {
                     const trimmed = line.trim();
-                    if (trimmed.startsWith('-') || trimmed.startsWith('•')) {
+                    if (trimmed.startsWith('-') || trimmed.startsWith('•') || trimmed.startsWith('▸')) {
                       return (
                         <div key={i} className="flex items-start gap-2">
                           <span className="text-primary mt-1 flex-shrink-0">▸</span>
-                          <span>{trimmed.replace(/^[-•]\s*/, '')}</span>
+                          <span>{trimmed.replace(/^[-•▸]\s*/, '')}</span>
                         </div>
                       );
                     }
-                    if (trimmed === trimmed.toUpperCase() && trimmed.length > 3) {
+                    if (trimmed === trimmed.toUpperCase() && trimmed.length > 3 && trimmed.length < 60) {
                       return <p key={i} className="font-brand text-midnight text-sm uppercase tracking-wider mt-4 mb-1">{trimmed}</p>;
                     }
                     return <p key={i}>{trimmed}</p>;

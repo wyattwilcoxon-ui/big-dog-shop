@@ -87,7 +87,14 @@ BUNDLE INCLUDES
 
 PERFECT FOR
 
-German Shepherd owners, Labrador owners, Golden Retriever owners, Rottweiler owners, Great Dane owners, Mastiff owners - any large or giant breed household that's done with bags that weren't built for their dog.
+▸ German Shepherd owners
+▸ Labrador owners
+▸ Golden Retriever owners
+▸ Rottweiler owners
+▸ Great Dane owners
+▸ Mastiff owners
+
+Any large or giant breed household that's done with bags that weren't built for their dog.
 
 Unbox it, clip it on, and you're already loaded. That's the big dog life.`,
     backendKeywords: 'large breed dog starter kit, dog walk bundle large dog, dog poop bag bundle dispenser, gift for large dog owner, German Shepherd accessories, dog supplies bundle, big dog accessories kit, large dog gift set, dog owner gift bundle, 1080 dog poop bags, giant breed dog starter kit',
