@@ -22,7 +22,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
   const lastScrollY = useRef(0);
 
   // Pages/sections with dark backgrounds at top
-  const darkBgPaths = ['/pack', '/about', '/why-big-dogs-need-bigger-poop-bags'];
+  const darkBgPaths = ['/', '/pack', '/about', '/why-big-dogs-need-bigger-poop-bags'];
   const hasDarkBg = darkBgPaths.some(path => location.pathname.startsWith(path));
 
   useEffect(() => {
