@@ -107,34 +107,43 @@ export default function Pack() {
                 whileHover={{ scale: 1.03 }}
                 className="bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default"
               >
-                <div className={`aspect-[4/3] overflow-hidden border-b-4 ${dog.color} relative`}>
+                <div className={`aspect-[4/3] overflow-hidden border-b-4 ${dog.color}`}>
                   <img src={dog.image} alt={dog.name} className="w-full h-full object-cover" />
-                  {dog.memorial && (
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                      <div className="text-center">
-                        <span className="text-4xl mb-2 block">🌈</span>
-                        <p className="font-brand text-white text-sm">In Loving Memory</p>
-                      </div>
-                    </div>
-                  )}
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-display text-2xl sm:text-3xl text-midnight">{dog.name}</h3>
-                    {dog.memorial && <span className="text-lg">🕊️</span>}
-                  </div>
+                  <h3 className="font-display text-2xl sm:text-3xl text-midnight">{dog.name}</h3>
                   <p className="font-brand text-primary text-xs sm:text-sm">{dog.breed}</p>
                   <p className="font-brand text-stone text-xs mt-1">{dog.title}</p>
                   <p className="font-body text-pebble text-sm mt-2 sm:mt-3 leading-relaxed">{dog.description}</p>
-                  {dog.memorial && (
-                    <p className="font-brand text-xs text-stone mt-3 italic">
-                      April 2026 — She would be so proud to see Big Dog Life launched and helping big dogs everywhere. 🐾
-                    </p>
-                  )}
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Memorial Section */}
+      <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-background to-cream">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl border-2 border-secondary shadow-cartoon p-8 sm:p-10 text-center"
+          >
+            <div className="flex justify-center mb-4">
+              <span className="text-5xl">🕊️</span>
+            </div>
+            <h3 className="font-display text-3xl sm:text-4xl text-midnight mb-2">In Loving Memory of Carmen</h3>
+            <p className="font-brand text-secondary text-sm mb-4">April 2026</p>
+            <p className="font-body text-pebble text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+              The wise grandma of the pack. She tested every prototype and gave her seal of approval by not looking disgusted. 
+              She would be so proud to see Big Dog Life launched and helping big dogs everywhere. 🐾
+            </p>
+            <p className="font-brand text-stone text-xs mt-6 italic">
+              "Forever in our hearts, always in the Pack."
+            </p>
+          </motion.div>
         </div>
       </section>
 
