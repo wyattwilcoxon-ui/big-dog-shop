@@ -326,6 +326,61 @@ export default function About() {
         </div>
       </section>
 
+      {/* Founders & Partners */}
+      <section className="py-12 sm:py-20 px-4 bg-cream">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+            <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">The Humans Behind the Brand</p>
+            <h2 className="font-display text-5xl sm:text-7xl text-midnight">FOUNDERS & PARTNERS</h2>
+            <p className="font-body text-pebble mt-3 text-lg">Four big-dog lovers building products that actually work.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TEAM.map((member, i) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                className={`bg-white rounded-2xl border-bold shadow-cartoon overflow-hidden cursor-default ${member.wide ? 'md:col-span-2' : ''}`}
+              >
+                <div className="aspect-[4/3] overflow-hidden border-b-4 border-primary">
+                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-2xl sm:text-3xl text-midnight">{member.name}</h3>
+                  <p className="font-brand text-primary text-xs sm:text-sm">{member.role}</p>
+                  <p className="font-body text-pebble text-sm mt-3 leading-relaxed">{member.bio}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA to Pack page */}
+      <section className="py-12 px-4 bg-secondary">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="font-display text-5xl sm:text-7xl text-white mb-4">WANT TO MEET THE REAL BOSSES?</h2>
+            <p className="font-body text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+              The dogs who inspired it all. Get to know the pack that runs the show.
+            </p>
+            <Link to="/pack">
+              <motion.div
+                className="inline-flex items-center gap-3 bg-white text-secondary font-brand text-lg px-8 py-4 rounded-full cursor-pointer hover:bg-cream transition-colors border-2 border-white shadow-[4px_4px_0_#0F1D3C]"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                🐾 LEARN MORE ABOUT THE PACK
+              </motion.div>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Product Roadmap */}
       <section className="py-20 px-4 bg-midnight">
         <div className="max-w-5xl mx-auto">
