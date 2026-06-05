@@ -72,15 +72,7 @@ export default function Pack() {
                 image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/5252c3924_Bosa.png',
                 color: 'border-primary',
               },
-              {
-                name: 'Carmen',
-                breed: 'German Shepherd',
-                title: 'Senior Quality Inspector',
-                description: 'The wise grandma of the pack. She tested every prototype and gave her seal of approval by not looking disgusted.',
-                image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/4c1877673_Carmen.png',
-                color: 'border-secondary',
-                memorial: true,
-              },
+
               {
                 name: 'Caesar',
                 breed: 'Great Dane',
@@ -129,20 +121,29 @@ export default function Pack() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl border-2 border-secondary shadow-cartoon p-8 sm:p-10 text-center"
+            className="bg-white rounded-2xl border-2 border-secondary shadow-cartoon overflow-hidden"
           >
-            <div className="flex justify-center mb-4">
-              <span className="text-5xl">🕊️</span>
+            <div className="aspect-[4/3] overflow-hidden border-b-4 border-secondary">
+              <img
+                src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/4c1877673_Carmen.png"
+                alt="Carmen"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <h3 className="font-display text-3xl sm:text-4xl text-midnight mb-2">In Loving Memory of Carmen</h3>
-            <p className="font-brand text-secondary text-sm mb-4">April 2026</p>
-            <p className="font-body text-pebble text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
-              The wise grandma of the pack. She tested every prototype and gave her seal of approval by not looking disgusted. 
-              She would be so proud to see Big Dog Life launched and helping big dogs everywhere. 🐾
-            </p>
-            <p className="font-brand text-stone text-xs mt-6 italic">
-              "Forever in our hearts, always in the Pack."
-            </p>
+            <div className="p-8 sm:p-10 text-center">
+              <div className="flex justify-center mb-3">
+                <span className="text-5xl">🕊️</span>
+              </div>
+              <h3 className="font-display text-3xl sm:text-4xl text-midnight mb-2">In Loving Memory of Carmen</h3>
+              <p className="font-brand text-secondary text-sm mb-4">April 2026</p>
+              <p className="font-body text-pebble text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+                The wisest of the pack. She tested every prototype and gave her seal of approval by not looking disgusted. 
+                She would be so proud to see Big Dog Life launched and helping big dogs everywhere. 🐾
+              </p>
+              <p className="font-brand text-stone text-xs mt-6 italic">
+                "Forever in our hearts, always in the Pack."
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
