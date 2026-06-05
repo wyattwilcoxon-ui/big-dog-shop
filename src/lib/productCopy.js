@@ -15,9 +15,19 @@ Bosie Bag™ extra large dog poop bags measure 12" x 13.5" and are extra-thick a
 WHY BOSIE BAG™ BEATS STANDARD POOP BAGS
 
 ▸ 12" x 13.5" oversized dimensions built for real big-dog cleanup
-▸ Extra-thick, heavy-duty material - no tearing, no leaking, no surprises
+▸ Extra-thick, heavy-duty material — no tearing, no leaking, no surprises
 ▸ Easy single-hand tear-off perforated for quick access mid-walk
 ▸ Built specifically for large and giant breed dogs
+
+PERFECT FOR
+
+▸ German Shepherd owners
+▸ Labrador owners
+▸ Rottweiler owners
+▸ Great Dane owners
+▸ Mastiff owners
+
+Any large or giant breed household that's done with bags that weren't built for their dog.
 
 Stop settling for undersized dog waste bags that weren't made for your dog. Bosie Bag™ is heavy-duty, oversized, and built for the big dog life.`,
     backendKeywords: 'large dog waste bags, big dog poop bags, giant breed poop bags, extra thick dog bags, poop bags German Shepherd, poop bags Great Dane, heavy duty pet waste bags, leak proof dog bags, XL dog poop bags, 12x13 dog poop bags, oversized pet waste bags, large breed dog waste bags',
@@ -40,6 +50,12 @@ FEATURES
 ▸ Durable textured fabric built for trails, parks, and everyday walks
 ▸ Compact design stays out of the way until you need it
 
+PERFECT FOR
+
+▸ Large and giant breed dog owners
+▸ Daily walkers who need quick access
+▸ Anyone tired of digging through pockets mid-walk
+
 The dog poop bag holder that stays out of the way until you need it - then delivers every time.`,
     backendKeywords: 'dog poop bag holder leash, dog waste bag dispenser clip, fabric dog bag holder, poop bag pouch carabiner, dog walking accessories large breed, leash attachment poop bag, zippered poop bag holder, dog bag dispenser pouch, large breed dog bag dispenser',
   },
@@ -57,11 +73,17 @@ At 120 bags per roll and 8 rolls per pack, you're getting 960 extra-large waste 
 
 WHAT'S IN THE 8-ROLL REFILL PACK
 
-▸ 960 bags total - 8 rolls x 120 bags per roll
+▸ 960 bags total — 8 rolls x 120 bags per roll
 ▸ 12" x 13.5" oversized dimensions built for large and giant breeds
-▸ Heavy-duty, extra-thick material - no tearing under pressure
+▸ Heavy-duty, extra-thick material — no tearing under pressure
 ▸ 100% leak-proof construction
 ▸ Easy-tear perforations for single-hand access mid-walk
+
+PERFECT FOR
+
+▸ Multi-dog households
+▸ Bulk buyers who hate running out
+▸ Anyone who wants to stock up and forget it
 
 Keep a roll in the dispenser, a roll in your car, and a roll at the door. That's how big-dog households stay ready.`,
     backendKeywords: 'dog poop bag refill rolls, large breed waste bag refills, XL dog poop bag rolls, refill poop bags large dogs, dog waste bag multipack, 12x13 poop bag refills, heavy duty waste bag rolls, 960 dog poop bags, giant breed poop bag refills',
@@ -113,13 +135,18 @@ Three to a pack. Because one is never enough and two always goes missing.
 
 WHY BIG DOG OWNERS CHOOSE THE BIG ONES
 
-▸ Standard 2.5" official size - the right fit for large and giant breed dogs
+▸ Standard 2.5" official size — the right fit for large and giant breed dogs
 ▸ Durable construction built for big breed fetch sessions
-▸ High-visibility yellow - easy to spot in grass, brush, and water
-▸ Branded Big Dog Life® - because your dog's gear should look as good as they play
-▸ 3-pack - always have a backup when one disappears under the couch
+▸ High-visibility yellow — easy to spot in grass, brush, and water
+▸ Branded Big Dog Life® — because your dog's gear should look as good as they play
+▸ 3-pack — always have a backup when one disappears under the couch
 
-Perfect for the park, the backyard, the trail, or the living room at 6am when your 90-lb dog decides it's fetch time.`,
+PERFECT FOR
+
+▸ The park
+▸ The backyard
+▸ The trail
+▸ The living room at 6am when your 90-lb dog decides it's fetch time`,
     backendKeywords: 'tennis balls for large dogs, dog fetch balls large breed, standard size dog tennis balls, durable tennis balls dogs, tennis balls German Shepherd, fetch balls Labrador, dog toy balls 3 pack, dog tennis balls 2.5 inch, big dog fetch toys, giant breed dog tennis balls',
   },
 };
