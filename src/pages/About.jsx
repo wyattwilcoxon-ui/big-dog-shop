@@ -255,8 +255,8 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <p className="font-brand text-primary text-sm uppercase tracking-widest mb-3">The Humans Behind the Brand</p>
-            <h2 className="font-display text-5xl sm:text-7xl text-midnight">FOUNDERS</h2>
-            <p className="font-body text-pebble mt-3 text-lg">Two founders building products that actually work.</p>
+            <h2 className="font-display text-5xl sm:text-7xl text-midnight">FOUNDERS & PARTNERS</h2>
+            <p className="font-body text-pebble mt-3 text-lg">Two founders and two partners building products that actually work.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
