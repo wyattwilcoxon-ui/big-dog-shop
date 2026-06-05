@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import AnimatedMarquee from '../home/AnimatedMarquee';
 
 const TICKER = [
-  'BIG DOG LIFE', 'GIVE A $H!T', 'BELLEFONTAINE OH', 'BOSA APPROVED',
-  'BOSIE BAG™', 'LEAK PROOF', '#BOSIEBLAST', '#SUPER$H!TTER', 'SINCE 2024',
+  'BIG DOGS. BIGGER ENERGY.', 'ZERO APOLOGIES', 'BELLEFONTAINE OH', 'BOSA APPROVED',
+  'BOSIE BAG™', 'LIVE BOLD. LOVE DOGS.', '#BOSIEBLAST', 'GIVE A $H!T', 'SINCE 2024',
 ];
 
 export default function Footer() {
@@ -25,10 +25,9 @@ export default function Footer() {
               BIG DOG LIFE
             </motion.h3>
             <p className="font-body text-stone text-xs sm:text-sm leading-relaxed">
-              Big dogs. Bigger energy. Zero apologies.
+              Live Bold. Love Dogs. Give a $h!t.
             </p>
             <p className="font-brand text-primary text-[10px] sm:text-xs mt-2 sm:mt-3 leading-relaxed">"Because Big Dogs Have Big Needs."</p>
-            <p className="font-brand text-stone text-[10px] sm:text-xs mt-1">We give a $h!t. 💩</p>
           </div>
 
           <div>
@@ -79,7 +78,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-pebble/30 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-stone text-sm font-body">© {new Date().getFullYear()} Big Dog Life™. All rights reserved.</p>
-          <p className="font-brand text-primary text-sm">Live Bold. Love Dogs. Give a $h!t. 🐾</p>
+          <p className="font-brand text-primary text-sm">Big Dogs. Bigger Energy. Zero Apologies. 🐾</p>
         </div>
       </div>
     </footer>
