@@ -195,8 +195,8 @@ export function getMetaDescription(handle) {
 export function getProductCopy(handle) {
   if (!handle) return null;
   
-  // Normalize handle: lowercase, replace underscores with hyphens
-  const normalized = handle.toLowerCase().replace(/_/g, '-');
+  // Normalize handle: lowercase, replace underscores with hyphens, remove special chars (™, ®, etc.)
+  const normalized = handle.toLowerCase().replace(/_/g, '-').replace(/[^a-z0-9-]/g, '');
   
   // Direct match
   if (PRODUCT_COPY[normalized]) {
