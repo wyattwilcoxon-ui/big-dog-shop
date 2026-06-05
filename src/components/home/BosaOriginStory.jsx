@@ -9,7 +9,7 @@ const PANELS = [
     title: 'HI. I\'M BOSA.',
     subtitle: '125 lbs. of chaos. Zero regrets.',
     body: 'I\'m a German Shepherd. I go BIG or I go home. This applies to my naps, my zoomies, my bark, and yes — my poops. Like, a LOT of poop.',
-    image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/5252c3924_Bosa.png',
+    image: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/45673ba63_BDLHead2.png',
     accent: 'bg-primary',
     delay: 0,
   },
