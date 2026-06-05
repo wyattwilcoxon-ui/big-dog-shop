@@ -21,7 +21,7 @@ const COMPARISON = [
 const STATS = [
   { value: '45%', label: 'of U.S. households own a dog', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
   { value: '40%', label: 'of dog owners have large or giant breeds', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
-  { value: '28%', label: 'bigger than standard bags' },
+  { value: '43.6%', label: 'bigger than standard bags' },
   { value: '12"×14"', label: 'The Bosie Bag™ dimensions' },
 ];
 
