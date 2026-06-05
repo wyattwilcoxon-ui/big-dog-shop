@@ -137,7 +137,7 @@ export default function ProductDetail() {
             transition={{ delay: 0.1 }}
             className="flex flex-col"
           >
-            <h1 className="font-display text-5xl sm:text-6xl text-midnight leading-none">{product.name?.replace(/®/g, '™')}</h1>
+            <h1 className="font-display text-5xl sm:text-6xl text-midnight leading-none">{product.name?.replace(/[®©]/g, '™')}</h1>
 
             {/* Price */}
             {selectedVariant && (

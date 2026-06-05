@@ -198,13 +198,13 @@ export const PRODUCT_COPY = {
 // Helper function to get SEO title
 export function getSeoTitle(handle) {
   const copy = PRODUCT_COPY[handle];
-  return copy?.seoTitle || 'Big Dog Life™ - Premium Products for Large and Giant Breed Dogs';
+  return copy?.seoTitle ? copy.seoTitle.replace(/[®©]/g, '™') : 'Big Dog Life™ - Premium Products for Large and Giant Breed Dogs';
 }
 
 // Helper function to get meta description
 export function getMetaDescription(handle) {
   const copy = PRODUCT_COPY[handle];
-  return copy?.metaDescription || 'Big Dog Life™ - Extra-large, leak-proof* products built for large and giant breed dogs. Because Big Dogs Have Big Needs.';
+  return copy?.metaDescription ? copy.metaDescription.replace(/[®©]/g, '™') : 'Big Dog Life™ - Extra-large, leak-proof* products built for large and giant breed dogs. Because Big Dogs Have Big Needs.';
 }
 
 // Helper function to get full product copy
