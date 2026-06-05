@@ -13,7 +13,7 @@ export default function BulkCTA() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <h2 className="font-display text-5xl sm:text-7xl text-white mb-4">
-            GOT A LOT OF SH*T TO HANDLE?
+            GOT A LOT OF $H!T TO HANDLE?
           </h2>
           <p className="font-body text-white/80 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
             Dog walkers, groomers, kennels, shelters, or just a household that goes through bags like it's a competitive sport? Hit us up for bulk pricing. We don't judge.
