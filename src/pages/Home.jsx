@@ -5,6 +5,7 @@ import ValueProps from '../components/home/ValueProps';
 import StatsBar from '../components/home/StatsBar';
 import ProductShowcase from '../components/home/ProductShowcase';
 import SizeComparison from '../components/home/SizeComparison';
+import FoundingStoryComic from '../components/home/FoundingStoryComic';
 
 import BosieBlastWall from '../components/home/BosieBlastWall';
 import LifestyleSection from '../components/home/LifestyleSection';
@@ -48,6 +49,7 @@ export default function Home() {
 
       <ProductShowcase />
       <SizeComparison />
+      <FoundingStoryComic />
 
       <BosieBlastWall />
       <LifestyleSection
