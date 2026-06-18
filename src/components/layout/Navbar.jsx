@@ -50,7 +50,7 @@ export default function Navbar({ cartCount = 0, onCartClick }) {
               <img 
                 src={(scrolled || hasDarkBg) ? LOGO_WHITE_URL : LOGO_TRANS_URL} 
                 alt="Big Dog Life" 
-                className="h-10 w-auto object-contain" 
+                className="h-[3.125rem] w-auto object-contain" 
               />
             </Link>
 
