@@ -10,16 +10,16 @@ const TICKER = [
   'BOSIE BAG™', 'LIVE BOLD. LOVE DOGS.', '#BOSIEBLAST', 'GIVE A $H!T', 'SINCE 2024',
 ];
 
-const PAYMENT_ICONS = [
-  { label: 'Visa', bg: '#1A1F71', color: '#fff', text: 'VISA' },
-  { label: 'Mastercard', bg: '#EB001B', color: '#fff', text: 'MC' },
-  { label: 'Amex', bg: '#007BC1', color: '#fff', text: 'AMEX' },
-  { label: 'PayPal', bg: '#003087', color: '#fff', text: 'PayPal' },
-  { label: 'Apple Pay', bg: '#000', color: '#fff', text: '' },
-  { label: 'Google Pay', bg: '#fff', color: '#000', text: '' },
-  { label: 'Shop Pay', bg: '#5A31F4', color: '#fff', text: 'shop' },
-  { label: 'Venmo', bg: '#3D95CE', color: '#fff', text: 'venmo' },
-  { label: 'Discover', bg: '#FF6600', color: '#fff', text: 'DISC' },
+const PAYMENT_LOGOS = [
+  { label: 'Visa',       src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/visa.svg',        bg: '#1A1F71', invert: true  },
+  { label: 'Mastercard', src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mastercard.svg', bg: '#fff',    invert: false },
+  { label: 'Amex',       src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/americanexpress.svg', bg: '#016FD0', invert: true },
+  { label: 'PayPal',     src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/paypal.svg',     bg: '#003087', invert: true  },
+  { label: 'Apple Pay',  src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepay.svg',   bg: '#000',    invert: true  },
+  { label: 'Google Pay', src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlepay.svg', bg: '#fff',    invert: false },
+  { label: 'Shop Pay',   src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shopify.svg',   bg: '#5A31F4', invert: true  },
+  { label: 'Venmo',      src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/venmo.svg',     bg: '#3D95CE', invert: true  },
+  { label: 'Discover',   src: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discover.svg',  bg: '#FF6600', invert: true  },
 ];
 
 export default function Footer() {
@@ -139,12 +139,17 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Payment icons */}
+          {/* Payment logos */}
           <div className="border-t border-pebble/30 pt-6 mb-6">
             <div className="flex flex-wrap justify-center gap-2">
-              {PAYMENT_ICONS.map(p => (
-                <div key={p.label} className="h-8 px-2 rounded flex items-center justify-center text-xs font-bold min-w-[44px]" style={{ background: p.bg, color: p.color }}>
-                  {p.label === 'Apple Pay' ? '🍎 Pay' : p.label === 'Google Pay' ? 'G Pay' : p.text}
+              {PAYMENT_LOGOS.map(p => (
+                <div key={p.label} title={p.label} className="h-9 w-14 rounded-md flex items-center justify-center p-1.5" style={{ background: p.bg }}>
+                  <img
+                    src={p.src}
+                    alt={p.label}
+                    className="h-full w-full object-contain"
+                    style={{ filter: p.invert ? 'brightness(0) invert(1)' : 'none' }}
+                  />
                 </div>
               ))}
             </div>
@@ -154,10 +159,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-4 border-t border-pebble/30 flex flex-col sm:flex-row justify-between items-center gap-3">
           <div className="flex flex-wrap justify-center gap-4 text-xs font-body text-stone">
-            <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping Policy</Link>
-            <Link to="/refund-policy" className="hover:text-primary transition-colors">Refund Policy</Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">Legal</Link>
+            <span className="text-pebble/40">·</span>
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy</Link>
+            <span className="text-pebble/40">·</span>
+            <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping & Returns</Link>
+            <span className="text-pebble/40">·</span>
             <Link to="/accessibility" className="hover:text-primary transition-colors">Accessibility</Link>
           </div>
           <p className="text-stone text-xs font-body text-center">© {new Date().getFullYear()} Big Dog Life™. All rights reserved.</p>
