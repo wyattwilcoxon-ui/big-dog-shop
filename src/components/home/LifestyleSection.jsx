@@ -24,7 +24,7 @@ export default function LifestyleSection() {
           <h2 className="font-display text-5xl sm:text-7xl text-white">LIVE BOLD. LOVE BIGGER.</h2>
         </motion.div>
 
-        <div className="flex flex-col gap-4 sm:gap-6 items-center">
+        <div className="flex flex-col gap-3 items-center max-w-2xl mx-auto">
           {/* Row 1: full width */}
           <motion.div
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }}
@@ -34,7 +34,7 @@ export default function LifestyleSection() {
           </motion.div>
 
           {/* Row 2: two centered */}
-          <div className="flex gap-4 sm:gap-6 w-full justify-center">
+          <div className="flex gap-3 w-full justify-center">
             {[1, 2].map((i) => (
               <motion.div
                 key={i}
@@ -47,7 +47,7 @@ export default function LifestyleSection() {
           </div>
 
           {/* Row 3: two centered */}
-          <div className="flex gap-4 sm:gap-6 w-full justify-center">
+          <div className="flex gap-3 w-full justify-center">
             {[3, 4].map((i) => (
               <motion.div
                 key={i}
