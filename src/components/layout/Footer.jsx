@@ -1,15 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Mail, MapPin, Instagram, Facebook, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import AnimatedMarquee from '../home/AnimatedMarquee';
+import { base44 } from '@/api/base44Client';
 
 const TICKER = [
   'BIG DOGS. BIGGER ENERGY.', 'ZERO APOLOGIES', 'BELLEFONTAINE OH', 'BOSA APPROVED',
   'BOSIE BAG™', 'LIVE BOLD. LOVE DOGS.', '#BOSIEBLAST', 'GIVE A $H!T', 'SINCE 2024',
 ];
 
+const PAYMENT_ICONS = [
+  { label: 'Visa', bg: '#1A1F71', color: '#fff', text: 'VISA' },
+  { label: 'Mastercard', bg: '#EB001B', color: '#fff', text: 'MC' },
+  { label: 'Amex', bg: '#007BC1', color: '#fff', text: 'AMEX' },
+  { label: 'PayPal', bg: '#003087', color: '#fff', text: 'PayPal' },
+  { label: 'Apple Pay', bg: '#000', color: '#fff', text: '' },
+  { label: 'Google Pay', bg: '#fff', color: '#000', text: '' },
+  { label: 'Shop Pay', bg: '#5A31F4', color: '#fff', text: 'shop' },
+  { label: 'Venmo', bg: '#3D95CE', color: '#fff', text: 'venmo' },
+  { label: 'Discover', bg: '#FF6600', color: '#fff', text: 'DISC' },
+];
+
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState(null); // null | 'loading' | 'success' | 'error'
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus('loading');
+    try {
+      await base44.functions.invoke('createShopifyContact', { email });
+      setStatus('success');
+      setEmail('');
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <footer className="bg-midnight text-cream">
       <AnimatedMarquee items={TICKER} bg="bg-primary" textColor="text-white" speed={20} />
@@ -69,17 +98,69 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-pebble/30 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="flex flex-wrap gap-4 text-xs font-body text-stone">
-            <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
-            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy</Link>
-            <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping</Link>
+        {/* Email signup */}
+        <div className="mt-12 pt-10 border-t border-pebble/30 text-center">
+          <p className="font-brand text-white text-lg mb-4 uppercase tracking-wide">Sign up for the latest updates</p>
+          <form onSubmit={handleSubmit} className="flex max-w-md mx-auto mb-2">
+            <input
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Email"
+              required
+              className="flex-1 px-4 py-3 bg-white text-midnight font-body text-sm rounded-l-lg border-0 outline-none"
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="px-4 py-3 bg-white text-midnight hover:text-primary transition-colors rounded-r-lg border-l border-fog"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </form>
+          {status === 'success' && <p className="font-body text-green-bright text-sm">You're in! 🐾</p>}
+          {status === 'error' && <p className="font-body text-destructive text-sm">Something went wrong. Try again.</p>}
+
+          {/* Social icons */}
+          <div className="flex justify-center gap-6 mt-6 mb-8">
+            <a href="https://facebook.com/bigdoglife.og" target="_blank" rel="noopener noreferrer" className="text-stone hover:text-primary transition-colors">
+              <Facebook className="w-6 h-6" />
+            </a>
+            <a href="https://instagram.com/bigdoglife.og" target="_blank" rel="noopener noreferrer" className="text-stone hover:text-primary transition-colors">
+              <Instagram className="w-6 h-6" />
+            </a>
+            {/* TikTok */}
+            <a href="https://tiktok.com/@bigdoglife" target="_blank" rel="noopener noreferrer" className="text-stone hover:text-primary transition-colors">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            </a>
+            {/* X/Twitter */}
+            <a href="https://x.com/bigdoglife" target="_blank" rel="noopener noreferrer" className="text-stone hover:text-primary transition-colors">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+
+          {/* Payment icons */}
+          <div className="border-t border-pebble/30 pt-6 mb-6">
+            <div className="flex flex-wrap justify-center gap-2">
+              {PAYMENT_ICONS.map(p => (
+                <div key={p.label} className="h-8 px-2 rounded flex items-center justify-center text-xs font-bold min-w-[44px]" style={{ background: p.bg, color: p.color }}>
+                  {p.label === 'Apple Pay' ? '🍎 Pay' : p.label === 'Google Pay' ? 'G Pay' : p.text}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-4 border-t border-pebble/30 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <div className="flex flex-wrap justify-center gap-4 text-xs font-body text-stone">
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping Policy</Link>
+            <Link to="/refund-policy" className="hover:text-primary transition-colors">Refund Policy</Link>
             <Link to="/accessibility" className="hover:text-primary transition-colors">Accessibility</Link>
           </div>
-          <div className="flex flex-col sm:flex-row items-center gap-2">
-            <p className="text-stone text-sm font-body">© {new Date().getFullYear()} Big Dog Life™. All rights reserved.</p>
-            <p className="font-brand text-primary text-sm">Live Bold. Love Dogs. Give a $h!t. 🐾</p>
-          </div>
+          <p className="text-stone text-xs font-body text-center">© {new Date().getFullYear()} Big Dog Life™. All rights reserved.</p>
         </div>
       </div>
     </footer>
