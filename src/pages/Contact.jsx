@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Instagram } from 'lucide-react';
+import { Mail, MapPin, Instagram, Loader2 } from 'lucide-react';
+import { base44 } from '@/api/base44Client';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(null);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    window.location.href = `mailto:bark@thebigdoglife.com?subject=Message from ${form.name}&body=${encodeURIComponent(form.message)}%0A%0AFrom: ${form.email}`;
-    setSubmitted(true);
+    setSending(true);
+    setError(null);
+    try {
+      await base44.functions.invoke('sendContactEmail', form);
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please try again or email us directly.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -72,11 +83,13 @@ export default function Contact() {
                       placeholder="Tell us about your dog, your order, or anything else..."
                     />
                   </div>
+                  {error && <p className="font-body text-destructive text-sm">{error}</p>}
                   <button
                     type="submit"
-                    className="w-full bg-primary text-white font-brand text-lg py-4 rounded-full hover:bg-orange-hot transition-colors"
+                    disabled={sending}
+                    className="w-full flex items-center justify-center gap-2 bg-primary text-white font-brand text-lg py-4 rounded-full hover:bg-orange-hot transition-colors disabled:opacity-70"
                   >
-                    Send Message 🐾
+                    {sending ? <><Loader2 className="w-5 h-5 animate-spin" /> Sending...</> : 'Send Message 🐾'}
                   </button>
                 </form>
               )}
