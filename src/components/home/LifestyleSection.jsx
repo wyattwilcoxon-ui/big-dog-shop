@@ -2,11 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const LIFESTYLE_IMAGES = [
-  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/279f0a194_uuidFCCDCB46-27E4-47D2-9009-F1454D830EAEcode001library3type1mode2loctruecaptrue.jpg', alt: 'Two big dogs hanging out of a car window', span: 'col-span-2' },
-  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/c03c4dd54_IMG_7231.jpg', alt: 'Fluffy dog in a harness on the grass', span: '' },
-  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/9db113043_uuid370F16D7-23BD-436E-81A0-C4317798542Dcode001library3type1mode1loctruecaptrue.jpg', alt: 'German Shepherd close up', span: '' },
-  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/fcc6fddff_uuid3CB31648-9ED0-46D8-97C0-8D2F2E9027B4code001library3type1mode2loctruecaptrue.jpg', alt: 'Great Dane rolling in the grass', span: '' },
-  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/dfbe04e1c_uuid390A301F-CE43-4315-8972-E9B48D780EA6code001library3type1mode2loctruecaptrue.jpg', alt: 'Great Dane sleeping on a recliner', span: '' },
+  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/279f0a194_uuidFCCDCB46-27E4-47D2-9009-F1454D830EAEcode001library3type1mode2loctruecaptrue.jpg', alt: 'Two big dogs hanging out of a car window' },
+  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/c03c4dd54_IMG_7231.jpg', alt: 'Fluffy dog in a harness on the grass' },
+  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/9db113043_uuid370F16D7-23BD-436E-81A0-C4317798542Dcode001library3type1mode1loctruecaptrue.jpg', alt: 'German Shepherd close up' },
+  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/fcc6fddff_uuid3CB31648-9ED0-46D8-97C0-8D2F2E9027B4code001library3type1mode2loctruecaptrue.jpg', alt: 'Great Dane rolling in the grass' },
+  { src: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/dfbe04e1c_uuid390A301F-CE43-4315-8972-E9B48D780EA6code001library3type1mode2loctruecaptrue.jpg', alt: 'Great Dane sleeping on a recliner' },
 ];
 
 export default function LifestyleSection() {
@@ -24,7 +24,7 @@ export default function LifestyleSection() {
           <h2 className="font-display text-5xl sm:text-7xl text-white">LIVE BOLD. LOVE BIGGER.</h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {LIFESTYLE_IMAGES.map((img, i) => (
             <motion.div
               key={i}
@@ -32,9 +32,9 @@ export default function LifestyleSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className={`${img.span} rounded-2xl overflow-hidden border-4 border-white/20`}
+              className="rounded-2xl overflow-hidden border-4 border-white/20 aspect-square"
             >
-              <img src={img.src} alt={img.alt} className="w-full h-full object-cover min-h-[200px]" />
+              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
             </motion.div>
           ))}
         </div>
