@@ -19,7 +19,13 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
         cart = await addToCart(cart.id, item.variantId, item.quantity);
       }
       if (!cart.checkoutUrl) throw new Error('No checkout URL returned');
-      window.location.href = cart.checkoutUrl;
+      // Shopify may return the store's primary custom domain (shop.thebigdoglife.com)
+      // which isn't resolving. Force the working myshopify.com checkout host.
+      const checkoutUrl = cart.checkoutUrl.replace(
+        /https:\/\/[^/]+/,
+        'https://big-dog-life-2.myshopify.com'
+      );
+      window.location.href = checkoutUrl;
     } catch (err) {
       console.error('Checkout error:', err);
       setCheckingOut(false);
