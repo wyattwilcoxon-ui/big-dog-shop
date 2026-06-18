@@ -8,7 +8,7 @@ import { ShopifyCartProvider, useShopifyCart } from '@/lib/ShopifyCartContext';
 
 function LayoutInner() {
   const location = useLocation();
-  const { cartCount, cartOpen, setCartOpen, cartItems, updateQuantity, cartTotal, checkoutUrl, loading } = useShopifyCart();
+  const { cartCount, cartOpen, setCartOpen, cartItems, updateQuantity, cartTotal, loading } = useShopifyCart();
   
   // Hide bokeh on product detail pages for clean product images
   const hideBokeh = location.pathname.startsWith('/product/');
@@ -27,7 +27,6 @@ function LayoutInner() {
         items={cartItems}
         onUpdateQuantity={updateQuantity}
         total={cartTotal}
-        checkoutUrl={checkoutUrl}
         loading={loading}
       />
     </div>

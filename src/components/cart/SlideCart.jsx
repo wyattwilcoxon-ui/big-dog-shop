@@ -1,13 +1,29 @@
-import React from 'react';
-import { X, Plus, Minus, ShoppingBag, Trash2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Plus, Minus, ShoppingBag, Trash2, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Progress } from '@/components/ui/progress';
+import { createCart, addToCart } from '@/lib/shopify';
 
 const FREE_SHIPPING_THRESHOLD = 25;
 
-export default function SlideCart({ open, onClose, items, onUpdateQuantity, total, checkoutUrl }) {
+export default function SlideCart({ open, onClose, items, onUpdateQuantity, total }) {
+  const [checkingOut, setCheckingOut] = useState(false);
   const shippingProgress = Math.min((total / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const amountToFreeShipping = Math.max(FREE_SHIPPING_THRESHOLD - total, 0);
+
+  const handleCheckout = async () => {
+    setCheckingOut(true);
+    try {
+      const cart = await createCart();
+      for (const item of items) {
+        await addToCart(cart.id, item.variantId, item.quantity);
+      }
+      window.location.href = cart.checkoutUrl;
+    } catch (err) {
+      console.error('Checkout error:', err);
+      setCheckingOut(false);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -107,10 +123,11 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
                 </div>
 
                 <button
-                  onClick={() => window.open(checkoutUrl, '_blank')}
-                  className="flex items-center justify-center gap-3 w-full h-14 text-lg font-brand bg-primary hover:bg-orange-hot text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                  onClick={handleCheckout}
+                  disabled={checkingOut}
+                  className="flex items-center justify-center gap-3 w-full h-14 text-lg font-brand bg-primary hover:bg-orange-hot text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Checkout 🐾
+                  {checkingOut ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Checkout 🐾'}
                 </button>
               </div>
             )}
