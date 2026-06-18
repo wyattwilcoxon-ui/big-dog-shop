@@ -179,9 +179,9 @@ export default function ProductShowcase() {
           </motion.div>
         ))}
 
-        {/* Other Products - Grid Below */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {products.filter(p => p.handle !== 'starter-bundle').map((product, i) => (
+        {/* Other Products - 3 in a row */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {products.filter(p => p.handle !== 'starter-bundle').slice(0, 3).map((product, i) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 24 }}
