@@ -101,20 +101,20 @@ Keep a roll in the dispenser, a roll in your car, and a roll at the door. That's
     backendKeywords: 'dog poop bag refill rolls, large breed waste bag refills, XL dog poop bag rolls, refill poop bags large dogs, dog waste bag multipack, 12x13 poop bag refills, heavy duty waste bag rolls, 960 dog poop bags, giant breed poop bag refills',
   },
   
-  // 4. Big Dog Life™ Starter Bundle (138 Bags)
+  // 4. Big Dog Life™ Starter Bundle (135 Bags)
   'starter-bundle': {
-    seoTitle: 'Big Dog Life™ Starter Bundle - 138 Bags | 12" × 14" Extra Large Dog Poop Bags + Leash Clip Dispenser with Starter Roll + Tennis Balls | Complete Kit for Large and Giant Breed Dogs',
-    metaDescription: 'Big Dog Life™ Starter Bundle: 138 Bosie Bag™ oversized leak-proof* poop bags, leash clip dispenser with starter roll, and 3 tennis balls. The complete large-breed walk kit.',
-    shortDescription: 'The complete large-dog walk kit - in one pack. 138 Bosie Bag™ 12" × 14" oversized waste bags, a clip-on dispenser with a starter roll already inside, and three Big Dog Life™ tennis balls. Because a great walk covers both ends. We give a $h!t.',
+    seoTitle: 'Big Dog Life™ Starter Bundle - 135 Bags | 12" × 14" Extra Large Dog Poop Bags + Leash Clip Dispenser with Starter Roll + Tennis Balls | Complete Kit for Large and Giant Breed Dogs',
+    metaDescription: 'Big Dog Life™ Starter Bundle: 135 Bosie Bag™ oversized leak-proof* poop bags, leash clip dispenser with starter roll, and 3 tennis balls. The complete large-breed walk kit.',
+    shortDescription: 'The complete large-dog walk kit - in one pack. 135 Bosie Bag™ 12" × 14" oversized waste bags, a clip-on dispenser with a starter roll already inside, and three Big Dog Life™ tennis balls. Because a great walk covers both ends. We give a $h!t.',
     longDescription: `Everything you need for the big dog life - in one bundle.
 
 If you own a large or giant breed dog, you know the walk requires real gear. Standard poop bags tear. Dispensers fall off leashes. And your dog doesn't play with small balls. The Big Dog Life™ Starter Bundle solves all of it in one shot.
 
-This complete large-breed dog walk kit includes 9 rolls of Bosie Bag™ 12" × 14" extra large dog waste bags (138 bags total), a Clip & Go Dispenser Pouch with one starter roll already inside and ready to go right out of the box, and three Big Dog Life™ The Big Ones tennis balls - because after the cleanup, there's always a throw.
+This complete large-breed dog walk kit includes 9 rolls of Bosie Bag™ 12" × 14" extra large dog waste bags (135 bags total), a Clip & Go Dispenser Pouch with one starter roll already inside and ready to go right out of the box, and three Big Dog Life™ The Big Ones tennis balls - because after the cleanup, there's always a throw.
 
 BUNDLE INCLUDES
 
-▸ 138 Bosie Bag™ waste bags - 9 rolls × 15 bags (8 refill rolls + 1 starter roll inside dispenser)
+▸ 135 Bosie Bag™ waste bags - 9 rolls × 15 bags (8 refill rolls + 1 starter roll inside dispenser)
 ▸ Big Dog Life™ Clip & Go Dispenser Pouch - zippered fabric dog bag holder with heavy-duty carabiner leash clip, starter roll included
 ▸ 3 Big Dog Life™ The Big Ones Tennis Balls - standard 2.5" size, because your dog doesn't play small
 ▸ Retail header card - retail-ready packaging right out of the box
