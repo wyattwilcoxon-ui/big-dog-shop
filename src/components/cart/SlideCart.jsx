@@ -1,25 +1,13 @@
-import React, { useState } from 'react';
-import { X, Plus, Minus, ShoppingBag, Trash2, Mail, Phone, MapPin } from 'lucide-react';
+import React from 'react';
+import { X, Plus, Minus, ShoppingBag, Trash2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Progress } from '@/components/ui/progress';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 
 const FREE_SHIPPING_THRESHOLD = 25;
 
 export default function SlideCart({ open, onClose, items, onUpdateQuantity, total, checkoutUrl }) {
-  const [customerInfo, setCustomerInfo] = useState({ email: '', name: '', phone: '', address: '' });
-  const [showForm, setShowForm] = useState(false);
   const shippingProgress = Math.min((total / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const amountToFreeShipping = Math.max(FREE_SHIPPING_THRESHOLD - total, 0);
-
-  const handleCheckoutClick = () => {
-    if (!customerInfo.email || !customerInfo.name) {
-      setShowForm(true);
-    } else {
-      window.open(checkoutUrl, '_blank');
-    }
-  };
 
   return (
     <AnimatePresence>
@@ -118,86 +106,12 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
                   <span className="font-display text-3xl text-primary">${total.toFixed(2)}</span>
                 </div>
 
-                {showForm && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="mb-4 p-4 bg-cream rounded-xl border-2 border-midnight"
-                  >
-                    <div className="flex justify-between items-center mb-3">
-                      <h3 className="font-brand text-midnight">🐾 Quick Checkout Info</h3>
-                      <button onClick={() => setShowForm(false)} className="text-stone hover:text-midnight">
-                        <X className="w-4 h-4" />
-                      </button>
-                    </div>
-                    <p className="text-xs text-pebble font-body mb-3">We'll pre-fill your Shopify checkout with this info</p>
-                    <div className="space-y-3">
-                      <div>
-                        <Label className="text-xs font-brand text-midnight">Full Name *</Label>
-                        <Input
-                          value={customerInfo.name}
-                          onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
-                          placeholder="John Doe"
-                          className="bg-white border-midnight"
-                        />
-                      </div>
-                      <div>
-                        <Label className="text-xs font-brand text-midnight">Email *</Label>
-                        <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone" />
-                          <Input
-                            type="email"
-                            value={customerInfo.email}
-                            onChange={(e) => setCustomerInfo({ ...customerInfo, email: e.target.value })}
-                            placeholder="john@example.com"
-                            className="bg-white border-midnight pl-10"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <Label className="text-xs font-brand text-midnight">Phone (optional)</Label>
-                        <div className="relative">
-                          <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone" />
-                          <Input
-                            type="tel"
-                            value={customerInfo.phone}
-                            onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
-                            placeholder="(555) 123-4567"
-                            className="bg-white border-midnight pl-10"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <Label className="text-xs font-brand text-midnight">Address (optional)</Label>
-                        <div className="relative">
-                          <MapPin className="absolute left-3 top-3 w-4 h-4 text-stone" />
-                          <Input
-                            value={customerInfo.address}
-                            onChange={(e) => setCustomerInfo({ ...customerInfo, address: e.target.value })}
-                            placeholder="123 Main St, City, ST"
-                            className="bg-white border-midnight pl-10"
-                          />
-                        </div>
-                      </div>
-                      <button
-                        onClick={handleCheckoutClick}
-                        disabled={!customerInfo.email || !customerInfo.name}
-                        className="w-full h-12 text-lg font-brand bg-primary hover:bg-orange-hot disabled:bg-fog disabled:text-pebble disabled:cursor-not-allowed text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none disabled:shadow-none disabled:translate-x-0 disabled:translate-y-0"
-                      >
-                        Continue to Checkout 🐾
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
-
-                {!showForm && (
-                  <button
-                    onClick={handleCheckoutClick}
-                    className="flex items-center justify-center gap-3 w-full h-14 text-lg font-brand bg-primary hover:bg-orange-hot text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
-                  >
-                    Checkout 🐾
-                  </button>
-                )}
+                <button
+                  onClick={() => window.open(checkoutUrl, '_blank')}
+                  className="flex items-center justify-center gap-3 w-full h-14 text-lg font-brand bg-primary hover:bg-orange-hot text-white rounded-xl shadow-cartoon border-bold transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                >
+                  Checkout 🐾
+                </button>
               </div>
             )}
           </motion.div>
