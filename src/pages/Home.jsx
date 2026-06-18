@@ -52,14 +52,7 @@ export default function Home() {
       <SizeComparison />
 
       <BosieBlastWall />
-      <LifestyleSection
-        images={{
-          hero: IMAGES.majestic,
-          paw: IMAGES.paw,
-          portrait: IMAGES.portrait,
-          action: IMAGES.action,
-        }}
-      />
+      <LifestyleSection />
       <BulkCTA />
     </div>
   );
