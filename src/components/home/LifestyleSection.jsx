@@ -24,19 +24,40 @@ export default function LifestyleSection() {
           <h2 className="font-display text-5xl sm:text-7xl text-white">LIVE BOLD. LOVE BIGGER.</h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-          {LIFESTYLE_IMAGES.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="rounded-2xl overflow-hidden border-4 border-white/20 aspect-square"
-            >
-              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-            </motion.div>
-          ))}
+        <div className="flex flex-col gap-4 sm:gap-6 items-center">
+          {/* Row 1: full width */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }}
+            className="w-full rounded-2xl overflow-hidden border-4 border-white/20 aspect-video"
+          >
+            <img src={LIFESTYLE_IMAGES[0].src} alt={LIFESTYLE_IMAGES[0].alt} className="w-full h-full object-cover" />
+          </motion.div>
+
+          {/* Row 2: two centered */}
+          <div className="flex gap-4 sm:gap-6 w-full justify-center">
+            {[1, 2].map((i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="w-1/2 rounded-2xl overflow-hidden border-4 border-white/20 aspect-square"
+              >
+                <img src={LIFESTYLE_IMAGES[i].src} alt={LIFESTYLE_IMAGES[i].alt} className="w-full h-full object-cover" />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Row 3: two centered */}
+          <div className="flex gap-4 sm:gap-6 w-full justify-center">
+            {[3, 4].map((i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="w-1/2 rounded-2xl overflow-hidden border-4 border-white/20 aspect-square"
+              >
+                <img src={LIFESTYLE_IMAGES[i].src} alt={LIFESTYLE_IMAGES[i].alt} className="w-full h-full object-cover" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
