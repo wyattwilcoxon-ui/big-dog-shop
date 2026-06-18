@@ -112,29 +112,18 @@ export default function Contact() {
                     Bellefontaine, Ohio, USA
                   </div>
                   <a
-                    href="https://www.instagram.com/thebigdoglife"
+                    href="https://www.instagram.com/bigdoglife.og"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-stone hover:text-primary transition-colors font-body text-sm"
                   >
                     <Instagram className="w-5 h-5 text-primary flex-shrink-0" />
-                    @thebigdoglife
+                    @bigdoglife.og
                   </a>
                 </div>
               </div>
 
-              <div className="bg-orange-pale border-2 border-primary rounded-2xl p-6">
-                <h3 className="font-brand text-midnight text-lg mb-2">Bulk & Wholesale Orders</h3>
-                <p className="font-body text-pebble text-sm leading-relaxed mb-3">
-                  Dog shelters, groomers, dog parks, and pet stores — we offer bulk pricing. Email us with your volume needs.
-                </p>
-                <a
-                  href="mailto:bark@thebigdoglife.com?subject=Bulk Order Inquiry"
-                  className="inline-flex items-center gap-2 bg-primary text-white font-brand text-sm px-5 py-2.5 rounded-full hover:bg-orange-hot transition-colors"
-                >
-                  <Mail className="w-4 h-4" /> Email for Bulk Pricing
-                </a>
-              </div>
+
             </div>
           </div>
         </motion.div>
