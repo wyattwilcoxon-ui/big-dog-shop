@@ -14,10 +14,11 @@ export default function SlideCart({ open, onClose, items, onUpdateQuantity, tota
   const handleCheckout = async () => {
     setCheckingOut(true);
     try {
-      const cart = await createCart();
+      let cart = await createCart();
       for (const item of items) {
-        await addToCart(cart.id, item.variantId, item.quantity);
+        cart = await addToCart(cart.id, item.variantId, item.quantity);
       }
+      if (!cart.checkoutUrl) throw new Error('No checkout URL returned');
       window.location.href = cart.checkoutUrl;
     } catch (err) {
       console.error('Checkout error:', err);
