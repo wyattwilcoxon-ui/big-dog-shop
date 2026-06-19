@@ -33,6 +33,11 @@ const PRODUCT_DEFINITIONS = {
     subtitle: 'Standard Tennis Balls - 3-Pack',
     badge: null,
   },
+  'chompers-3-pack': {
+    name: 'The Big Ones™',
+    subtitle: 'Standard Tennis Balls - 3-Pack',
+    badge: null,
+  },
 };
 
 const FEATURES = [

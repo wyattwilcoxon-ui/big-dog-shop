@@ -177,6 +177,7 @@ const ALIAS_MAP = {
   // Tennis Balls aliases
   'the-big-ones': 'tennis-balls',
   'the-big-ones-3-pack': 'tennis-balls',
+  'chompers-3-pack': 'tennis-balls',
 };
 
 // Merge base products with aliases
@@ -190,6 +191,7 @@ export const PRODUCT_COPY = {
   'big-dog-life-starter-bundle': BASE_PRODUCT_COPY['starter-bundle'],
   'the-big-ones': BASE_PRODUCT_COPY['tennis-balls'],
   'the-big-ones-3-pack': BASE_PRODUCT_COPY['tennis-balls'],
+  'chompers-3-pack': BASE_PRODUCT_COPY['tennis-balls'],
 };
 
 // Helper function to get SEO title
