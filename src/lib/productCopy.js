@@ -116,7 +116,7 @@ BUNDLE INCLUDES
 
 ▸ 135 Bosie Bag™ waste bags - 9 rolls × 15 bags (8 refill rolls + 1 starter roll inside dispenser)
 ▸ Big Dog Life™ Clip & Go Dispenser Pouch - zippered fabric dog bag holder with heavy-duty carabiner leash clip, starter roll included
-▸ 3 Big Dog Life™ The Big Ones Tennis Balls - standard 2.5" size, because your dog doesn't play small
+▸ 3 Big Dog Life™ The Big Ones Tennis Balls - standard 2.5" size, official brand fetch balls
 ▸ Retail header card - retail-ready packaging right out of the box
 
 PERFECT FOR
@@ -136,34 +136,31 @@ Unbox it, clip it on, and you're already loaded. That's the big dog life.`,
   
   // 5. Big Dog Life™ The Big Ones Tennis Balls - 3-Pack
   'tennis-balls': {
-    seoTitle: 'Big Dog Life™ The Big Ones Tennis Balls for Dogs - 3-Pack Standard Size | Durable Fetch Balls for Large and Giant Breed Dogs | Official 2.5" Size',
-    metaDescription: 'The Big Ones by Big Dog Life™ - standard 2.5" tennis balls for large and giant breed dogs, 3-pack. Durable, fetch-ready, and built for big breeds.',
-    shortDescription: 'Your big dog doesn\'t fetch small. The Big Ones are standard size, built for large and giant breeds, and tough enough to keep up with them. Three to a pack, because one throw is never enough.',
-    longDescription: `Big dogs play hard. Their tennis balls should too.
+    seoTitle: 'Big Dog Life™ The Big Ones Tennis Balls - 3-Pack | Official Brand Fetch Balls for Dogs',
+    metaDescription: 'The Big Ones by Big Dog Life™ - official brand tennis balls, 3-pack. Standard 2.5" fetch balls, high-visibility yellow, and proudly part of the Big Dog Life family.',
+    shortDescription: 'Part of the pack. The Big Ones are Big Dog Life\'s own tennis balls - standard size, high-visibility yellow, and built to rep the brand on every fetch. Three to a pack, because one throw is never enough.',
+    longDescription: `Every great walk ends with a throw. Make it a Big Dog Life throw.
 
-  Big Dog Life™ The Big Ones are standard 2.5" fetch balls built specifically with large and giant breed dogs in mind. Whether your German Shepherd, Labrador, Golden Retriever, or Rottweiler is a casual fetcher or a full-sprint obsessive, these are the balls that keep up with them.
+  The Big Ones are Big Dog Life\'s official tennis balls - standard 2.5" fetch balls that carry the brand your dog already trusts. These aren\'t just balls. They\'re part of the Big Dog Life collection, designed to round out the walk kit and give your dog something to look forward to after cleanup.
 
-  Because after the cleanup, there's always a throw.
+  Because after the cleanup, there\'s always a throw.
 
   INCLUDES
 
   ▸ 3 Big Dog Life™ The Big Ones Tennis Balls - standard 2.5" official size
-  ▸ High-visibility yellow construction — easy to spot in grass, brush, and water
-  ▸ Durable construction built for big breed fetch sessions
-  ▸ Branded Big Dog Life™ — because your dog's gear should look as good as they play
+  ▸ High-visibility yellow - easy to spot in grass, brush, and water
+  ▸ Durable felt and rubber construction
+  ▸ Branded Big Dog Life™ - official brand gear for the whole walk
   ▸ Always have a backup when one disappears under the couch
 
-  PERFECT FOR
+  PAIRS PERFECTLY WITH
 
-  ▸ German Shepherd owners
-  ▸ Labrador owners
-  ▸ Golden Retriever owners
-  ▸ Rottweiler owners
-  ▸ Great Dane owners
-  ▸ Mastiff owners
+  ▸ The Big Dog Life™ Starter Bundle (includes 3 balls)
+  ▸ The Bosie Bag™ - so you\'re covered for both ends of the walk
+  ▸ The Clip & Go™ Dispenser - clip on, clean up, then play
 
-  Any large or giant breed household that's done with balls that weren't built for their dog.`,
-    backendKeywords: 'tennis balls for large dogs, dog fetch balls large breed, standard size dog tennis balls, durable tennis balls dogs, tennis balls German Shepherd, fetch balls Labrador, dog toy balls 3 pack, dog tennis balls 2.5 inch, big dog fetch toys, giant breed dog tennis balls',
+  Part of the brand. Part of the walk. That\'s the Big Dog Life.`,
+    backendKeywords: 'Big Dog Life tennis balls, branded dog fetch balls, dog tennis balls 3 pack, dog toy balls, fetch balls for dogs, standard tennis balls dogs, dog walking accessories, Big Dog Life brand, dog fetch toys, official dog brand balls',
   },
 };
 
