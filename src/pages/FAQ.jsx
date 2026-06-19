@@ -35,7 +35,7 @@ const FAQS = [
   },
   {
     q: 'Do you offer bulk pricing?',
-    a: 'Yes! Dog walkers, groomers, kennels, and shelters can email us at info@bigdoglife.com for bulk orders. We don\'t judge the quantity.',
+    a: <>Yes! Dog walkers, groomers, kennels, and shelters can email us at <a href="mailto:bark@thebigdoglife.com" className="text-primary underline hover:text-orange-hot">bark@thebigdoglife.com</a> for bulk orders. We don't judge the quantity.</>,
   },
   {
     q: 'Is your dog\'s poop bigger than their personality?',
