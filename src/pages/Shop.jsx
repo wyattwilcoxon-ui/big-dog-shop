@@ -104,7 +104,7 @@ export default function Shop() {
             <p className="font-brand text-primary text-sm sm:text-lg mb-2">All Products</p>
             <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white leading-tight">THE GOOD STUFF</h1>
             <p className="font-body text-stone text-base sm:text-lg mt-4 max-w-xl">
-              Extra large, leak-proof bags for dogs who don't believe in moderation.
+              Everything your big dog needs — built because big dogs have big needs.
             </p>
           </motion.div>
         </div>
