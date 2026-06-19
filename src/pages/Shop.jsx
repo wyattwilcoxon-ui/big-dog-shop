@@ -110,7 +110,29 @@ export default function Shop() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        {/* Floating bokeh decorations */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" style={{zIndex: 0}}>
+          {[
+            { emoji: '🦴', left: '-2%',  top: '8%',  size: '5rem', opacity: 0.18 },
+            { emoji: '🐾', left: '98%',  top: '15%', size: '4.5rem', opacity: 0.18 },
+            { emoji: '🐾', left: '-3%',  top: '45%', size: '6rem', opacity: 0.15 },
+            { emoji: '🦴', left: '97%',  top: '55%', size: '5rem', opacity: 0.18 },
+            { emoji: '🐾', left: '1%',   top: '80%', size: '4rem', opacity: 0.15 },
+            { emoji: '🦴', left: '96%',  top: '85%', size: '5.5rem', opacity: 0.18 },
+          ].map((b, i) => (
+            <motion.div
+              key={i}
+              className="absolute select-none"
+              style={{ left: b.left, top: b.top, fontSize: b.size, lineHeight: 1, opacity: b.opacity, filter: 'blur(2px)' }}
+              animate={{ y: [0, -18, 0], rotate: [0, 8, -8, 0] }}
+              transition={{ duration: 6 + i * 1.5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.8 }}
+            >
+              {b.emoji}
+            </motion.div>
+          ))}
+        </div>
+        <div className="relative" style={{zIndex: 1}}>
       {fetching ? (
         <div className="flex items-center justify-center py-24">
           <Loader2 className="w-10 h-10 text-primary animate-spin" />
@@ -249,6 +271,7 @@ export default function Shop() {
             </div>
           </>
         )}
+        </div>
       </div>
 
       {/* Notify Me Modal */}
