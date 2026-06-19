@@ -141,7 +141,7 @@ Unbox it, clip it on, and you're already loaded. That's the big dog life.`,
     shortDescription: 'Part of the pack. The Big Ones are Big Dog Life\'s own tennis balls - standard size, high-visibility yellow, and built to rep the brand on every fetch. Three to a pack, because one throw is never enough.',
     longDescription: `Every great walk ends with a throw. Make it a Big Dog Life throw.
 
-  The Big Ones are Big Dog Life\'s official tennis balls - standard 2.5" fetch balls that carry the brand your dog already trusts. These aren\'t just balls. They\'re part of the Big Dog Life collection, designed to round out the walk kit and give your dog something to look forward to after cleanup.
+  The Big Ones are Big Dog Life\'s official tennis balls - standard 2.5" fetch balls that carry the brand your dog already trusts. These aren\'t just balls. They\'re part of the Big Dog Life collection - and they give your dog something to look forward to after cleanup.
 
   Because after the cleanup, there\'s always a throw.
 
