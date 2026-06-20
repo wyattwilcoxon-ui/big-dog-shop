@@ -48,6 +48,30 @@ export default function ProductDetail() {
         console.log('📦 Shopify:', { handle: p?.handle, title: p?.title });
         setProduct(p);
         if (p) setSelectedVariantId(p.variants[0]?.id || null);
+
+        // Update Open Graph / Twitter meta tags with product image
+        if (p?.images?.[0]) {
+          const setMeta = (property, content, isName = false) => {
+            const attr = isName ? `name="${property}"` : `property="${property}"`;
+            let tag = document.querySelector(`meta[${attr}]`);
+            if (!tag) {
+              tag = document.createElement('meta');
+              tag.setAttribute(isName ? 'name' : 'property', property);
+              document.head.appendChild(tag);
+            }
+            tag.content = content;
+          };
+          const productUrl = `https://www.thebigdoglife.com/product/${handle}`;
+          setMeta('og:image', p.images[0]);
+          setMeta('og:image:width', '1200');
+          setMeta('og:image:height', '1200');
+          setMeta('og:url', productUrl);
+          setMeta('og:title', seoTitle);
+          setMeta('og:description', metaDesc);
+          setMeta('twitter:image', p.images[0], true);
+          setMeta('twitter:title', seoTitle, true);
+          setMeta('twitter:description', metaDesc, true);
+        }
       })
       .finally(() => setLoading(false));
   }, [handle]);
