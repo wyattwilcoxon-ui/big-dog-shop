@@ -18,8 +18,8 @@ const PRODUCT_COPY = {
     metaDescription: 'Bosie Bag™ 8-roll refill pack - 120 bags total. 12" × 14" extra-large, heavy duty, leak-proof dog waste bags for large and giant breed dogs.',
   },
   'starter-bundle': {
-    seoTitle: 'Big Dog Life™ Starter Bundle - 135 Bags + Dispenser + Tennis Balls',
-    metaDescription: 'The complete large-dog walk kit. 135 Bosie Bag™ oversized poop bags, leash clip dispenser with starter roll, and 3 tennis balls. Everything your big dog needs.',
+    seoTitle: 'Big Dog Life™ Starter Bundle',
+    metaDescription: 'The complete large-dog walk kit. Everything your big dog needs, in one bundle.',
   },
   'tennis-balls': {
     seoTitle: 'Big Dog Life™ The Big Ones Tennis Balls - 3-Pack | Official Brand Fetch Balls',
