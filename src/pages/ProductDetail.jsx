@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Loader2, ArrowLeft, ShieldCheck, Truck, Leaf } from 'lucide-react';
+import { Loader2, ArrowLeft, ShieldCheck, Truck, Leaf, Share2, Check } from 'lucide-react';
 import { getProductByHandle } from '@/lib/shopify';
 import { useShopifyCart } from '@/lib/ShopifyCartContext';
 import VariantSelector from '@/components/shop/VariantSelector';
@@ -23,6 +23,7 @@ export default function ProductDetail() {
   const [activeImage, setActiveImage] = useState(0);
   const [adding, setAdding] = useState(false);
   const [added, setAdded] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     // Update SEO meta tags
@@ -77,6 +78,25 @@ export default function ProductDetail() {
   }, [handle]);
 
   const selectedVariant = product?.variants.find(v => v.id === selectedVariantId);
+
+  const handleShare = async () => {
+    // The proxy URL gives crawlers (iMessage, FB, Twitter) proper OG tags with product image/title
+    const appId = window.location.hostname.split('.')[0];
+    const proxyUrl = `https://${window.location.hostname}/functions/productOgProxy?handle=${handle}`;
+    const shareUrl = `https://www.thebigdoglife.com/product/${handle}`;
+    const shareData = {
+      title: product.name,
+      text: `Check out ${product.name} on Big Dog Life™`,
+      url: proxyUrl,
+    };
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {});
+    } else {
+      await navigator.clipboard.writeText(proxyUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   const handleAddToCart = async () => {
     if (!selectedVariant?.available || adding) return;
@@ -274,6 +294,14 @@ export default function ProductDetail() {
               ) : (
                 'Sold Out'
               )}
+            </button>
+
+            {/* Share button */}
+            <button
+              onClick={handleShare}
+              className="mt-3 w-full h-12 rounded-xl font-brand text-sm border-2 border-midnight text-midnight flex items-center justify-center gap-2 hover:bg-fog transition-colors"
+            >
+              {copied ? <><Check className="w-4 h-4 text-secondary" /> Link Copied!</> : <><Share2 className="w-4 h-4" /> Share This Product</>}
             </button>
 
             {/* Trust badges */}
