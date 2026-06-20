@@ -1,28 +1,37 @@
-const DOMAIN = Deno.env.get('VITE_SHOPIFY_STORE_DOMAIN') || 'big-dog-life-2.myshopify.com';
-const TOKEN = Deno.env.get('VITE_SHOPIFY_STOREFRONT_TOKEN') || 'dfe64f47f36d168a62d9be77dd5124e0';
+const DOMAIN = Deno.env.get('VITE_SHOPIFY_STORE_DOMAIN') || Deno.env.get('SHOPIFY_STORE_DOMAIN') || 'big-dog-life-2.myshopify.com';
+const TOKEN = Deno.env.get('VITE_SHOPIFY_STOREFRONT_TOKEN') || Deno.env.get('SHOPIFY_STOREFRONT_TOKEN') || 'dfe64f47f36d168a62d9be77dd5124e0';
 const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
 const SITE_URL = 'https://www.thebigdoglife.com';
 
 async function getProduct(handle) {
-  const res = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Shopify-Storefront-Access-Token': TOKEN,
-    },
-    body: JSON.stringify({
-      query: `query getProduct($handle: String!) {
-        product(handle: $handle) {
-          title description handle
-          images(first: 1) { edges { node { url } } }
-          priceRange { minVariantPrice { amount } }
-        }
-      }`,
-      variables: { handle },
-    }),
-  });
-  const json = await res.json();
-  return json.data?.product || null;
+  try {
+    console.log('Fetching from:', API_URL, 'handle:', handle, 'domain:', DOMAIN);
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': TOKEN,
+      },
+      body: JSON.stringify({
+        query: `query getProduct($handle: String!) {
+          product(handle: $handle) {
+            title description handle
+            images(first: 1) { edges { node { url } } }
+            priceRange { minVariantPrice { amount } }
+          }
+        }`,
+        variables: { handle },
+      }),
+    });
+    const text = await res.text();
+    console.log('Shopify response status:', res.status, 'body preview:', text.slice(0, 200));
+    const json = JSON.parse(text);
+    if (json.errors) console.error('Shopify errors:', JSON.stringify(json.errors));
+    return json.data?.product || null;
+  } catch (e) {
+    console.error('getProduct error:', e.message);
+    return null;
+  }
 }
 
 Deno.serve(async (req) => {

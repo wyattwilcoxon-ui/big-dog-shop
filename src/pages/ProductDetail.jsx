@@ -81,19 +81,16 @@ export default function ProductDetail() {
   const selectedVariant = product?.variants.find(v => v.id === selectedVariantId);
 
   const handleShare = async () => {
-    // The proxy URL gives crawlers (iMessage, FB, Twitter) proper OG tags with product image/title
-    const appId = window.location.hostname.split('.')[0];
-    const proxyUrl = `https://${window.location.hostname}/functions/productOgProxy?handle=${handle}`;
     const shareUrl = `https://www.thebigdoglife.com/product/${handle}`;
     const shareData = {
       title: product.name,
       text: `Check out ${product.name} on Big Dog Life™`,
-      url: proxyUrl,
+      url: shareUrl,
     };
     if (navigator.share) {
       navigator.share(shareData).catch(() => {});
     } else {
-      await navigator.clipboard.writeText(proxyUrl);
+      await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
