@@ -1,11 +1,51 @@
-const DOMAIN = Deno.env.get('VITE_SHOPIFY_STORE_DOMAIN') || Deno.env.get('SHOPIFY_STORE_DOMAIN') || 'big-dog-life-2.myshopify.com';
-const TOKEN = Deno.env.get('VITE_SHOPIFY_STOREFRONT_TOKEN') || Deno.env.get('SHOPIFY_STOREFRONT_TOKEN') || 'dfe64f47f36d168a62d9be77dd5124e0';
+const DOMAIN = 'big-dog-life-2.myshopify.com';
+const TOKEN = 'dfe64f47f36d168a62d9be77dd5124e0';
 const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
 const SITE_URL = 'https://www.thebigdoglife.com';
 
+// Inlined product copy (mirrors lib/productCopy.js — keep in sync)
+const PRODUCT_COPY = {
+  'bosie-bag': {
+    seoTitle: 'Bosie Bag™ Extra Large Dog Poop Bags | Big Dog Life™',
+    metaDescription: 'Bosie Bag™ are 12" × 14" extra-large, leak-proof dog poop bags built for large and giant breed dogs. Heavy duty and thick. Finally, a bag that handles the big stuff.',
+  },
+  'clip-and-go': {
+    seoTitle: 'Big Dog Life™ Clip & Go Dog Poop Bag Dispenser | Leash Clip Holder',
+    metaDescription: 'Big Dog Life™ leash clip dog poop bag dispenser - includes 1 starter roll of Bosie Bag™. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
+  },
+  'bosie-bag-8pack': {
+    seoTitle: 'Bosie Bag™ 8-Pack Refill Rolls - 120 Extra Large Dog Waste Bags | Big Dog Life™',
+    metaDescription: 'Bosie Bag™ 8-roll refill pack - 120 bags total. 12" × 14" extra-large, heavy duty, leak-proof dog waste bags for large and giant breed dogs.',
+  },
+  'starter-bundle': {
+    seoTitle: 'Big Dog Life™ Starter Bundle - 135 Bags + Dispenser + Tennis Balls',
+    metaDescription: 'The complete large-dog walk kit. 135 Bosie Bag™ oversized poop bags, leash clip dispenser with starter roll, and 3 tennis balls. Everything your big dog needs.',
+  },
+  'tennis-balls': {
+    seoTitle: 'Big Dog Life™ The Big Ones Tennis Balls - 3-Pack | Official Brand Fetch Balls',
+    metaDescription: 'The Big Ones by Big Dog Life™ - official brand tennis balls, 3-pack. Standard 2.5" fetch balls, high-visibility yellow. Part of the Big Dog Life collection.',
+  },
+};
+
+const ALIAS_MAP = {
+  'the-bosie-bag': 'bosie-bag',
+  'bosie-bag-refill': 'bosie-bag-8pack',
+  'the-clip-and-go': 'clip-and-go',
+  'clip-go-pouch': 'clip-and-go',
+  'big-dog-life-starter-bundle': 'starter-bundle',
+  'the-big-ones': 'tennis-balls',
+  'the-big-ones-3-pack': 'tennis-balls',
+  'chompers-3-pack': 'tennis-balls',
+};
+
+function getCopy(handle) {
+  const normalized = handle.toLowerCase().replace(/_/g, '-').replace(/[^a-z0-9-]/g, '');
+  const key = ALIAS_MAP[normalized] || normalized;
+  return PRODUCT_COPY[key] || null;
+}
+
 async function getProduct(handle) {
   try {
-    console.log('Fetching from:', API_URL, 'handle:', handle, 'domain:', DOMAIN);
     const res = await fetch(API_URL, {
       method: 'POST',
       headers: {
@@ -23,10 +63,7 @@ async function getProduct(handle) {
         variables: { handle },
       }),
     });
-    const text = await res.text();
-    console.log('Shopify response status:', res.status, 'body preview:', text.slice(0, 200));
-    const json = JSON.parse(text);
-    if (json.errors) console.error('Shopify errors:', JSON.stringify(json.errors));
+    const json = await res.json();
     return json.data?.product || null;
   } catch (e) {
     console.error('getProduct error:', e.message);
@@ -36,7 +73,6 @@ async function getProduct(handle) {
 
 Deno.serve(async (req) => {
   try {
-    // Support both query param and JSON body
     const url = new URL(req.url);
     let handle = url.searchParams.get('handle');
 
@@ -50,15 +86,14 @@ Deno.serve(async (req) => {
     }
 
     const product = await getProduct(handle);
+    const copy = getCopy(handle);
 
-    if (!product) {
-      return new Response('Product not found', { status: 404 });
-    }
-
-    const title = `${product.title} | Big Dog Life™`;
-    const description = product.description?.slice(0, 160).replace(/"/g, "'") || 'Extra-large, leak-proof products built for large and giant breed dogs.';
-    const image = product.images.edges[0]?.node.url || '';
-    const price = parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2);
+    // Use our curated copy first, fall back to Shopify data
+    const productTitle = product?.title || handle.replace(/-/g, ' ');
+    const title = copy?.seoTitle || `${productTitle} | Big Dog Life™`;
+    const description = copy?.metaDescription || product?.description?.slice(0, 160).replace(/"/g, "'") || 'Extra-large, leak-proof products built for large and giant breed dogs.';
+    const image = product?.images?.edges[0]?.node.url || '';
+    const price = product ? parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2) : null;
     const productUrl = `${SITE_URL}/product/${handle}`;
 
     const html = `<!DOCTYPE html>
@@ -75,7 +110,7 @@ Deno.serve(async (req) => {
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="1200" />
   <meta property="og:url" content="${productUrl}" />
-  <meta property="product:price:amount" content="${price}" />
+  ${price ? `<meta property="product:price:amount" content="${price}" />` : ''}
   <meta property="product:price:currency" content="USD" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@bigdoglife_og" />
