@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Progress } from '@/components/ui/progress';
 import { createCart, addToCart } from '@/lib/shopify';
 
-const FREE_SHIPPING_THRESHOLD = 25;
+const FREE_SHIPPING_THRESHOLD = 45;
 
 export default function SlideCart({ open, onClose, items, onUpdateQuantity, total }) {
   const [checkingOut, setCheckingOut] = useState(false);

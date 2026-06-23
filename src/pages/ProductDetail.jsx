@@ -9,7 +9,7 @@ import { getSeoTitle, getMetaDescription, getProductCopy } from '@/lib/productCo
 
 const BADGES = [
   { icon: ShieldCheck, label: 'Leak-Proof*' },
-  { icon: Truck, label: 'Free Shipping $25+' },
+  { icon: Truck, label: 'Free Shipping $45+' },
   { icon: Leaf, label: 'USDA Certified Biobased' },
 ];
 
