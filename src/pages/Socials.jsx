@@ -29,8 +29,8 @@ export default function Socials() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-8"
       >
-        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-primary border-4 border-cream flex items-center justify-center mx-auto mb-4 shadow-cartoon text-5xl">
-          🐕
+        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-primary border-4 border-cream flex items-center justify-center mx-auto mb-4 shadow-cartoon overflow-hidden">
+          <img src="https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/45673ba63_BDLHead2.png" alt="Big Dog Life" className="w-full h-full object-cover" />
         </div>
         <h1 className="font-display text-4xl sm:text-5xl text-cream leading-none">BIG DOG LIFE</h1>
         <p className="font-brand text-stone text-sm mt-2">Big dogs. Bigger energy. Zero apologies.</p>
