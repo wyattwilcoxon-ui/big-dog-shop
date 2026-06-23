@@ -81,7 +81,9 @@ export default function ProductDetail() {
   const selectedVariant = product?.variants.find(v => v.id === selectedVariantId);
 
   const handleShare = async () => {
-    const shareUrl = `https://www.thebigdoglife.com/product/${handle}`;
+    // Use the OG proxy URL so social crawlers see product-specific title, image, and description.
+    // The proxy returns proper OG meta tags and redirects humans to the product page.
+    const shareUrl = `https://base44.app/api/apps/6a06119e182f5cb0938b3e5b/functions/productOgProxy?handle=${handle}`;
     const shareData = {
       title: product.name,
       text: `Check out ${product.name} on Big Dog Life™`,
