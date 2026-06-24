@@ -19,7 +19,7 @@ export default function GlobalBokeh({ hideHero = false }) {
     return (
       <>
         {/* Hidden bokeh above 60vh (hero area), visible below */}
-        <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0, clipPath: 'inset(0 0 40% 0)' }}>
+        <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1, clipPath: 'inset(0 0 40% 0)' }}>
           {ORBS.map((b, i) => (
             <motion.div
               key={i}
@@ -55,7 +55,7 @@ export default function GlobalBokeh({ hideHero = false }) {
   }
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1 }}>
       {ORBS.map((b, i) => (
         <motion.div
           key={i}

@@ -14,7 +14,7 @@ function LayoutInner() {
   const hideBokeh = location.pathname.startsWith('/product/');
 
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative z-0 min-h-screen bg-background">
       <GlobalBokeh hideHero={hideBokeh} />
       <Navbar cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
       <main className="relative z-10">
