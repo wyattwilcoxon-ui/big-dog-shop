@@ -85,6 +85,8 @@ export default function ProductDetail() {
   const handleShare = async () => {
     // Use the OG proxy URL so social crawlers see product-specific title, image, and description.
     // The proxy returns proper OG meta tags and redirects humans to the product page.
+    // The address bar URL (thebigdoglife.com/product/...) won't show product previews because
+    // social crawlers don't run JavaScript and only see the generic homepage OG tags.
     const shareUrl = `https://base44.app/api/apps/6a06119e182f5cb0938b3e5b/functions/productOgProxy?handle=${handle}`;
     const shareData = {
       title: product.name,
@@ -96,7 +98,7 @@ export default function ProductDetail() {
     } else {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => setCopied(false), 3000);
     }
   };
 
@@ -310,8 +312,13 @@ export default function ProductDetail() {
               onClick={handleShare}
               className="mt-3 w-full h-12 rounded-xl font-brand text-sm border-2 border-midnight text-midnight flex items-center justify-center gap-2 hover:bg-fog transition-colors"
             >
-              {copied ? <><Check className="w-4 h-4 text-secondary" /> Link Copied!</> : <><Share2 className="w-4 h-4" /> Share This Product</>}
+              {copied ? <><Check className="w-4 h-4 text-secondary" /> Social Link Copied!</> : <><Share2 className="w-4 h-4" /> Share This Product</>}
             </button>
+            {copied && (
+              <p className="mt-1.5 text-center font-body text-xs text-pebble">
+                Paste this link on Facebook, Instagram, X, or anywhere to show the product preview.
+              </p>
+            )}
 
             {/* Trust badges */}
             <div className="grid grid-cols-3 gap-3 mt-8 pt-8 border-t-2 border-fog">

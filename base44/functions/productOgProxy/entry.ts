@@ -133,10 +133,11 @@ Deno.serve(async (req) => {
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${description}" />
   <meta name="twitter:image" content="${image}" />
-  <meta http-equiv="refresh" content="0; url=${productUrl}" />
+  <link rel="canonical" href="${productUrl}" />
 </head>
 <body>
   <p>Redirecting to <a href="${productUrl}">${title}</a>...</p>
+  <script>window.location.replace("${productUrl}");</script>
 </body>
 </html>`;
 
