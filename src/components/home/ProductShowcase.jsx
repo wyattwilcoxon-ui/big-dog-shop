@@ -25,7 +25,7 @@ const PRODUCT_DEFINITIONS = {
   },
   'starter-bundle': {
     name: 'Big Dog Life™ Starter Bundle',
-    subtitle: '135 Bags + Dispenser + Tennis Balls',
+    subtitle: '135 Bags + Dispenser + 3 Chompers',
     badge: null,
   },
   'tennis-balls': {
@@ -54,13 +54,14 @@ export default function ProductShowcase() {
 
   useEffect(() => {
     getProducts().then(shopifyProducts => {
-      // Merge Shopify data with static copy, put starter-bundle FIRST
+      // Merge Shopify data with static subtitles, put starter-bundle FIRST
+      // Use Shopify product names so the homepage matches the Shop page
       const merged = shopifyProducts.map(p => {
         const def = PRODUCT_DEFINITIONS[p.handle] || {};
         return {
           id: p.handle,
           handle: p.handle,
-          name: def.name || p.name,
+          name: p.name,
           subtitle: def.subtitle || '',
           badge: def.badge,
           price: p.price,
