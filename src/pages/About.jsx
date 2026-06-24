@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Leaf, Target, Users } from 'lucide-react';
+import { ArrowRight, Leaf, ShieldCheck, Eye, Heart, Lightbulb, PawPrint } from 'lucide-react';
 import GlobalBokeh from '../components/layout/GlobalBokeh';
 
 
@@ -25,22 +25,40 @@ const STATS = [
 
 const PROMISES = [
   {
-    icon: Target,
-    label: 'Right Size',
+    icon: ShieldCheck,
+    label: 'Quality That Lasts',
     color: 'bg-primary',
-    description: 'Products designed specifically for large and giant breed dogs, not just "XL" relabeled smalls.',
+    description: 'We prioritize durability, function, and comfort in everything we design — because big dogs deserve gear that can keep up.',
+  },
+  {
+    icon: Eye,
+    label: 'Honesty & Transparency',
+    color: 'bg-sky',
+    description: 'We communicate openly with our customers, partners, and community about what we make, why we make it, and how it performs.',
+  },
+  {
+    icon: Heart,
+    label: 'Big-Hearted Community',
+    color: 'bg-secondary',
+    description: 'We believe in building relationships, not just sales — connecting large-breed owners through shared experiences and authentic support.',
+  },
+  {
+    icon: Lightbulb,
+    label: 'Innovation With Purpose',
+    color: 'bg-marigold',
+    description: 'We innovate thoughtfully — using real insights from dog owners to create solutions that make life easier, safer, and better for large-breed dogs.',
   },
   {
     icon: Leaf,
-    label: 'Right Impact',
-    color: 'bg-secondary',
-    description: 'Affordable, high-quality, and eco-conscious — plant-based, biodegradable materials.',
+    label: 'Responsibility & Sustainability',
+    color: 'bg-green-dark',
+    description: 'We choose suppliers and materials that align with our values of animal welfare, environmental stewardship, and long-term impact.',
   },
   {
-    icon: Users,
-    label: 'Right Community',
-    color: 'bg-sky',
-    description: 'A brand that connects owners, breeders, and rescues who share the big dog life.',
+    icon: PawPrint,
+    label: 'Love of the Big Life',
+    color: 'bg-bark',
+    description: 'Everything we do is guided by our love and respect for the size, spirit, and loyalty of big dogs — and the people who share life with them.',
   },
 ];
 
@@ -151,9 +169,9 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-14">
             <p className="font-brand text-primary text-xs sm:text-sm uppercase tracking-widest mb-3">What We Stand For</p>
-            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-midnight">THREE PROMISES</h2>
+            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-midnight">OUR VALUES</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {PROMISES.map((p, i) => (
               <motion.div
                 key={p.label}
