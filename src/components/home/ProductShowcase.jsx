@@ -88,7 +88,7 @@ export default function ProductShowcase() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-midnight/85" id="shop">
+    <section className="py-16 sm:py-24 bg-midnight/90" id="shop">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
