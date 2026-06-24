@@ -1,8 +1,19 @@
-import { base44 } from '@/api/base44Client';
+const DOMAIN = 'big-dog-life-2.myshopify.com';
+const TOKEN = 'dfe64f47f36d168a62d9be77dd5124e0';
+const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
 
 async function shopifyFetch(query, variables = {}) {
-  const response = await base44.functions.invoke('shopifyStorefront', { query, variables });
-  return response.data;
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Storefront-Access-Token': TOKEN,
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+  const json = await res.json();
+  if (json.errors) throw new Error(json.errors[0]?.message || 'Shopify API error');
+  return json.data;
 }
 
 // --- Products ---
