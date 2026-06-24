@@ -11,7 +11,17 @@ async function shopifyFetch(query, variables = {}) {
     },
     body: JSON.stringify({ query, variables }),
   });
-  const json = await res.json();
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`Shopify API error (${res.status}): ${text.slice(0, 200) || res.statusText}`);
+  }
+  let json;
+  try {
+    json = await res.json();
+  } catch {
+    const text = await res.text().catch(() => '');
+    throw new Error(`Shopify returned a non-JSON response: ${text.slice(0, 200)}`);
+  }
   if (json.errors) throw new Error(json.errors[0]?.message || 'Shopify API error');
   return json.data;
 }
