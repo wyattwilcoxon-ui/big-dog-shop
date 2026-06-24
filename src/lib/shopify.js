@@ -1,23 +1,8 @@
-const DOMAIN = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN || 'big-dog-life-2.myshopify.com';
-const TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN;
-const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
+import { base44 } from '@/api/base44Client';
 
 async function shopifyFetch(query, variables = {}) {
-  if (!TOKEN) throw new Error('Shopify storefront token not configured');
-  const res = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Shopify-Storefront-Access-Token': TOKEN,
-    },
-    body: JSON.stringify({ query, variables }),
-  });
-  const json = await res.json();
-  if (json.errors) {
-    console.error('Shopify GraphQL error:', JSON.stringify(json.errors));
-    throw new Error(json.errors[0].message);
-  }
-  return json.data;
+  const response = await base44.functions.invoke('shopifyStorefront', { query, variables });
+  return response.data;
 }
 
 // --- Products ---
