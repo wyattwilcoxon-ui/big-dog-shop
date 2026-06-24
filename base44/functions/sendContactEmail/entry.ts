@@ -16,7 +16,12 @@ Deno.serve(async (req) => {
     }
 
     const base44 = createClientFromRequest(req);
-    const { name, email, message } = await req.json();
+    const { name, email, message, website } = await req.json();
+
+    // Honeypot — bots fill hidden fields, humans don't
+    if (website) {
+      return Response.json({ success: true });
+    }
 
     // Validate and limit input to prevent spam/abuse
     if (!name || !email || !message) {

@@ -1,21 +1,41 @@
-import { createClientFromRequest } from 'npm:@base44/sdk@0.8.25';
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.31';
+
+const ALLOWED_ORIGINS = [
+  'https://www.thebigdoglife.com',
+  'https://thebigdoglife.com',
+  'https://base44.app',
+];
 
 Deno.serve(async (req) => {
   try {
+    // Origin check — only allow requests from the legitimate site
+    const origin = req.headers.get('Origin') || req.headers.get('Referer') || '';
+    const isAllowed = ALLOWED_ORIGINS.some(o => origin.startsWith(o));
+    if (!isAllowed) {
+      return Response.json({ error: 'Unauthorized origin' }, { status: 403 });
+    }
+
     const base44 = createClientFromRequest(req);
-    
-    // INTENTIONALLY PUBLIC ENDPOINT - No auth check required
-    // This is a public email signup form for pre-launch notifications
-    // RLS protects data: create={}, read/update/delete=admin only
-    // Authentication would block legitimate public signups
-    
+
     const body = await req.json();
-    const { email, phone, dog_breed, timestamp } = body;
+    const { email, phone, dog_breed, website } = body;
 
-    // Skip timestamp validation for now - not needed for public signup
+    // Honeypot — bots fill hidden fields, humans don't
+    if (website) {
+      return Response.json({ success: true });
+    }
 
-    if (!email || !email.includes('@')) {
+    if (!email || email.length > 200) {
       return Response.json({ error: 'Valid email required' }, { status: 400 });
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return Response.json({ error: 'Invalid email' }, { status: 400 });
+    }
+    if (phone && phone.length > 30) {
+      return Response.json({ error: 'Invalid phone' }, { status: 400 });
+    }
+    if (dog_breed && dog_breed.length > 100) {
+      return Response.json({ error: 'Invalid breed' }, { status: 400 });
     }
 
     // Save to Base44 database
@@ -30,8 +50,6 @@ Deno.serve(async (req) => {
     const shopifyDomain = Deno.env.get('VITE_SHOPIFY_STORE_DOMAIN');
     const adminToken = Deno.env.get('SHOPIFY_ADMIN_API_TOKEN');
 
-    console.log('Shopify sync check:', { shopifyDomain: !!shopifyDomain, adminToken: !!adminToken });
-
     if (shopifyDomain && adminToken) {
       const tags = ['Joined the Pack', 'Pre-launch'];
       if (dog_breed) tags.push(`Breed: ${dog_breed}`);
@@ -45,8 +63,6 @@ Deno.serve(async (req) => {
         },
       };
 
-      console.log('Attempting Shopify customer creation:', customerData);
-
       // Fire-and-forget - don't await to avoid blocking the response
       fetch(`https://${shopifyDomain}/admin/api/2024-01/customers.json`, {
         method: 'POST',
@@ -55,22 +71,9 @@ Deno.serve(async (req) => {
           'X-Shopify-Access-Token': adminToken,
         },
         body: JSON.stringify(customerData),
-      })
-        .then(async (res) => {
-          console.log('Shopify response status:', res.status);
-          if (!res.ok) {
-            const errorText = await res.text();
-            console.error('Shopify sync failed:', errorText);
-          } else {
-            const data = await res.json();
-            console.log('Shopify customer created:', data.customer?.id);
-          }
-        })
-        .catch((err) => {
-          console.error('Shopify sync error:', err.message);
-        });
-    } else {
-      console.log('Shopify credentials not configured, skipping sync');
+      }).catch((err) => {
+        console.error('Shopify sync error:', err.message);
+      });
     }
 
     return Response.json({ success: true });

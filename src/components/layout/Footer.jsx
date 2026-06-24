@@ -24,6 +24,7 @@ const PAYMENT_LOGOS = [
 
 export default function Footer() {
   const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState('');
   const [status, setStatus] = useState(null); // null | 'loading' | 'success' | 'error'
 
   const handleSubmit = async (e) => {
@@ -31,7 +32,7 @@ export default function Footer() {
     if (!email) return;
     setStatus('loading');
     try {
-      await base44.functions.invoke('createShopifyContact', { email });
+      await base44.functions.invoke('createShopifyContact', { email, website });
       setStatus('success');
       setEmail('');
     } catch {
@@ -71,7 +72,18 @@ export default function Footer() {
           <div className="sm:text-right">
             <p className="font-brand text-white text-xs mb-2 uppercase tracking-wide">Get the latest updates</p>
             <form onSubmit={handleSubmit} className="flex mb-1">
+              {/* Honeypot — hidden from humans, bots fill it */}
               <input
+                type="text"
+                name="website"
+                value={website}
+                onChange={e => setWebsite(e.target.value)}
+                style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+               <input
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}

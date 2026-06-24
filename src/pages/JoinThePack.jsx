@@ -10,6 +10,7 @@ export default function JoinThePack() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [website, setWebsite] = useState('');
   const [sdkReady, setSdkReady] = useState(false);
 
   // Initialize SDK after mount
@@ -30,6 +31,7 @@ export default function JoinThePack() {
         email, 
         phone: phone || null, 
         dog_breed: dogBreed || null, 
+        website,
         timestamp: Date.now() 
       });
       
@@ -122,6 +124,17 @@ export default function JoinThePack() {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot — hidden from humans, bots fill it */}
+                <input
+                  type="text"
+                  name="website"
+                  value={website}
+                  onChange={e => setWebsite(e.target.value)}
+                  style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
                 <div>
                   <input
                     type="email"
