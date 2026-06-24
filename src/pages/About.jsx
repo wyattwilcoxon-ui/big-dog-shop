@@ -157,9 +157,11 @@ export default function About() {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="bg-midnight rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center border-4 border-midnight shadow-cartoon">
-            <p className="font-body text-white text-base sm:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto">
-              To make life easier, healthier, and more fulfilling for large-breed dogs and the people who love them, through durable, high-quality essentials that fit the unique needs of big dogs, built on honest education, responsible sourcing, and genuine community.
-            </p>
+            <div className="font-body text-white text-base sm:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto space-y-5">
+              <p>At Big Dog Life, our mission is to make life easier, healthier, and more fulfilling for large-breed dogs and the people who love them.</p>
+              <p>We design and curate durable, high-quality essentials built for the unique needs of big dogs, from daily care to adventure gear, with a focus on comfort, longevity, and thoughtful innovation.</p>
+              <p>Beyond products, we're building a community that celebrates the strength, personality, and loyalty of large breeds. Through honest education, responsible sourcing, and genuine connection, Big Dog Life is redefining what it means to live large, together.</p>
+            </div>
           </motion.div>
         </div>
       </section>
