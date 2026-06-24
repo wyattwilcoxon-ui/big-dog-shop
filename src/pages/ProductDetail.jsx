@@ -8,10 +8,12 @@ import VariantSelector from '@/components/shop/VariantSelector';
 import { getSeoTitle, getMetaDescription, getProductCopy } from '@/lib/productCopy.js';
 
 const BADGES = [
-  { icon: ShieldCheck, label: 'Leak-Proof*' },
+  { icon: ShieldCheck, label: 'Leak-Proof*', bosieOnly: true },
   { icon: Truck, label: 'Free Shipping $45+' },
-  { icon: Leaf, label: 'USDA Certified Biobased' },
+  { icon: Leaf, label: 'USDA Certified Biobased', bosieOnly: true },
 ];
+
+const TENNIS_BALL_HANDLES = new Set(['tennis-balls', 'the-big-ones', 'the-big-ones-3-pack', 'chompers-3-pack']);
 
 export default function ProductDetail() {
   const { handle } = useParams();
@@ -313,7 +315,9 @@ export default function ProductDetail() {
 
             {/* Trust badges */}
             <div className="grid grid-cols-3 gap-3 mt-8 pt-8 border-t-2 border-fog">
-              {BADGES.map(({ icon: Icon, label }) => (
+              {BADGES
+                .filter(b => !b.bosieOnly || !TENNIS_BALL_HANDLES.has(handle?.toLowerCase().replace(/[^a-z0-9-]/g, '')))
+                .map(({ icon: Icon, label }) => (
                 <div key={label} className="flex flex-col items-center gap-1 text-center">
                   <Icon className="w-5 h-5 text-primary" />
                   <span className="font-brand text-xs text-pebble">{label}</span>
