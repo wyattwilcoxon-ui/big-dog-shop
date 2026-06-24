@@ -47,7 +47,8 @@ export async function getProducts() {
   }`);
   return data.products.edges.map(({ node }) => ({
     id: node.id,
-    handle: node.handle,
+    handle: FRIENDLY_HANDLE_MAP[node.handle] || node.handle,
+    shopifyHandle: node.handle,
     name: node.title,
     description: node.description,
     price: parseFloat(node.priceRange.minVariantPrice.amount),
@@ -125,6 +126,14 @@ export async function updateCartLine(cartId, lineId, quantity) {
   `, { cartId, lines: [{ id: lineId, quantity }] });
   return data.cartLinesUpdate.cart;
 }
+
+// Maps Shopify handles to clean, SEO-friendly URL handles (one per product)
+export const FRIENDLY_HANDLE_MAP = {
+  'the-bosie-bag™': 'bosie-bag',
+  'clip-go-pouch': 'clip-and-go',
+  'chompers-3-pack': 'tennis-balls',
+  'starter-bundle': 'starter-bundle',
+};
 
 // Maps friendly/alias handles to actual Shopify product handles
 const SHOPIFY_HANDLE_MAP = {

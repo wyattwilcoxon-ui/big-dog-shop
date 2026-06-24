@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Instagram, Facebook, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import AnimatedMarquee from '../home/AnimatedMarquee';
+import FooterSitemap from './FooterSitemap';
 import { base44 } from '@/api/base44Client';
 
 const TICKER = [
@@ -98,6 +99,11 @@ export default function Footer() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Sitemap */}
+        <div className="border-t border-pebble/30 pt-6 mt-2">
+          <FooterSitemap />
         </div>
 
         {/* Bottom bar */}
