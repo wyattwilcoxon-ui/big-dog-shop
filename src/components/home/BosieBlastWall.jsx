@@ -4,7 +4,7 @@ import { Camera } from 'lucide-react';
 
 export default function BosieBlastWall() {
   return (
-    <section className="py-16 sm:py-24 bg-midnight overflow-hidden">
+    <section className="py-16 sm:py-24 bg-midnight/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
