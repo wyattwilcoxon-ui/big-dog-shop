@@ -21,6 +21,7 @@ import WhyBigDogs from './pages/WhyBigDogs';
 import ProductDetail from './pages/ProductDetail';
 import JoinThePack from './pages/JoinThePack';
 import Socials from './pages/Socials';
+import Sitemap from './pages/Sitemap';
 import AdminProducts from './pages/admin/AdminProducts';
 import Terms from './pages/legal/Terms';
 import RefundPolicy from './pages/legal/RefundPolicy';
@@ -39,6 +40,7 @@ function App() {
             {/* Standalone email signup landing page */}
             <Route path="/join" element={<JoinThePack />} />
             <Route path="/links" element={<Socials />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             
             {/* All other routes */}
             <Route element={<Layout />}>

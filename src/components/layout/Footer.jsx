@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Instagram, Facebook, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import AnimatedMarquee from '../home/AnimatedMarquee';
-import FooterSitemap from './FooterSitemap';
 import { base44 } from '@/api/base44Client';
 
 const TICKER = [
@@ -101,11 +100,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Sitemap */}
-        <div className="border-t border-pebble/30 pt-6 mt-2">
-          <FooterSitemap />
-        </div>
-
         {/* Bottom bar */}
         <div className="border-t border-pebble/30 pt-4 flex flex-col sm:flex-row justify-between items-center gap-3">
           <div className="flex flex-wrap gap-4 text-xs font-body text-stone">
@@ -116,6 +110,8 @@ export default function Footer() {
             <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping & Returns</Link>
             <span className="text-pebble/40">·</span>
             <Link to="/accessibility" className="hover:text-primary transition-colors">Accessibility</Link>
+            <span className="text-pebble/40">·</span>
+            <Link to="/sitemap" className="hover:text-primary transition-colors">Sitemap</Link>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex flex-wrap gap-1.5">
