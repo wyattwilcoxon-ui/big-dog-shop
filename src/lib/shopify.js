@@ -126,8 +126,23 @@ export async function updateCartLine(cartId, lineId, quantity) {
   return data.cartLinesUpdate.cart;
 }
 
+// Maps friendly/alias handles to actual Shopify product handles
+const SHOPIFY_HANDLE_MAP = {
+  'bosie-bag': 'the-bosie-bag™',
+  'bosie-bag-8pack': 'the-bosie-bag™',
+  'the-bosie-bag': 'the-bosie-bag™',
+  'clip-and-go': 'clip-go-pouch',
+  'clip-go-pouch': 'clip-go-pouch',
+  'tennis-balls': 'chompers-3-pack',
+  'the-big-ones': 'chompers-3-pack',
+  'the-big-ones-3-pack': 'chompers-3-pack',
+  'chompers-3-pack': 'chompers-3-pack',
+  'starter-bundle': 'starter-bundle',
+};
+
 // --- Single Product ---
 export async function getProductByHandle(handle) {
+  const shopifyHandle = SHOPIFY_HANDLE_MAP[handle] || handle;
   const data = await shopifyFetch(`
     query getProduct($handle: String!) {
       product(handle: $handle) {
@@ -145,7 +160,7 @@ export async function getProductByHandle(handle) {
         }
       }
     }
-  `, { handle });
+  `, { handle: shopifyHandle });
   const p = data.product;
   if (!p) return null;
   return {

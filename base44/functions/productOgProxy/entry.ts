@@ -44,8 +44,23 @@ function getCopy(handle) {
   return PRODUCT_COPY[key] || null;
 }
 
+// Maps friendly/alias handles to actual Shopify product handles
+const SHOPIFY_HANDLE_MAP = {
+  'bosie-bag': 'the-bosie-bag™',
+  'bosie-bag-8pack': 'the-bosie-bag™',
+  'the-bosie-bag': 'the-bosie-bag™',
+  'clip-and-go': 'clip-go-pouch',
+  'clip-go-pouch': 'clip-go-pouch',
+  'tennis-balls': 'chompers-3-pack',
+  'the-big-ones': 'chompers-3-pack',
+  'the-big-ones-3-pack': 'chompers-3-pack',
+  'chompers-3-pack': 'chompers-3-pack',
+  'starter-bundle': 'starter-bundle',
+};
+
 async function getProduct(handle) {
   try {
+    const shopifyHandle = SHOPIFY_HANDLE_MAP[handle] || handle;
     const res = await fetch(API_URL, {
       method: 'POST',
       headers: {
@@ -60,7 +75,7 @@ async function getProduct(handle) {
             priceRange { minVariantPrice { amount } }
           }
         }`,
-        variables: { handle },
+        variables: { handle: shopifyHandle },
       }),
     });
     const json = await res.json();
