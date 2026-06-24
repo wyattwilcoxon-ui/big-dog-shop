@@ -6,6 +6,31 @@ const ALLOWED_ORIGINS = [
   'https://base44.app',
 ];
 
+// Simple in-memory rate limiter — max 3 requests per 10 minutes per IP
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX = 3;
+const requestLog = new Map();
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const entries = requestLog.get(ip) || [];
+  const recent = entries.filter(t => now - t < RATE_LIMIT_WINDOW_MS);
+  if (recent.length >= RATE_LIMIT_MAX) {
+    return true;
+  }
+  recent.push(now);
+  requestLog.set(ip, recent);
+  // Prune old entries to prevent memory growth
+  if (requestLog.size > 1000) {
+    for (const [key, times] of requestLog) {
+      if (times.every(t => now - t >= RATE_LIMIT_WINDOW_MS)) {
+        requestLog.delete(key);
+      }
+    }
+  }
+  return false;
+}
+
 Deno.serve(async (req) => {
   try {
     // Origin check — only allow requests from the legitimate site
@@ -13,6 +38,12 @@ Deno.serve(async (req) => {
     const isAllowed = ALLOWED_ORIGINS.some(o => origin.startsWith(o));
     if (!isAllowed) {
       return Response.json({ error: 'Unauthorized origin' }, { status: 403 });
+    }
+
+    // Rate limit — prevent spam abuse
+    const ip = req.headers.get('X-Forwarded-For')?.split(',')[0]?.trim() || 'unknown';
+    if (isRateLimited(ip)) {
+      return Response.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
     }
 
     const base44 = createClientFromRequest(req);

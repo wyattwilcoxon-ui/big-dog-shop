@@ -18,6 +18,11 @@
       "type": "string",
       "default": "website",
       "description": "Where the signup came from"
+    },
+    "synced_to_shopify": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this signup has been synced to Shopify"
     }
   },
   "required": [

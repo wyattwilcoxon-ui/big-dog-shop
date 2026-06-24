@@ -1,8 +1,9 @@
 const DOMAIN = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN || 'big-dog-life-2.myshopify.com';
-const TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN || 'dfe64f47f36d168a62d9be77dd5124e0';
+const TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN;
 const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
 
 async function shopifyFetch(query, variables = {}) {
+  if (!TOKEN) throw new Error('Shopify storefront token not configured');
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: {

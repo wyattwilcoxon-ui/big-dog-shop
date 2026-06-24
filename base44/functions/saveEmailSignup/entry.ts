@@ -38,43 +38,13 @@ Deno.serve(async (req) => {
       return Response.json({ error: 'Invalid breed' }, { status: 400 });
     }
 
-    // Save to Base44 database
+    // Save locally — Shopify sync handled by admin-only scheduled function
     await base44.entities.EmailSignup.create({
       email,
       phone: phone || null,
       dog_breed: dog_breed || null,
       source: 'website',
     });
-
-    // Async Shopify sync (non-blocking, fire-and-forget)
-    const shopifyDomain = Deno.env.get('VITE_SHOPIFY_STORE_DOMAIN');
-    const adminToken = Deno.env.get('SHOPIFY_ADMIN_API_TOKEN');
-
-    if (shopifyDomain && adminToken) {
-      const tags = ['Joined the Pack', 'Pre-launch'];
-      if (dog_breed) tags.push(`Breed: ${dog_breed}`);
-
-      const customerData = {
-        customer: {
-          email,
-          phone: phone || null,
-          tags: tags.join(', '),
-          note: dog_breed ? `Big dog breed: ${dog_breed}` : 'Pre-launch signup',
-        },
-      };
-
-      // Fire-and-forget - don't await to avoid blocking the response
-      fetch(`https://${shopifyDomain}/admin/api/2024-01/customers.json`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Shopify-Access-Token': adminToken,
-        },
-        body: JSON.stringify(customerData),
-      }).catch((err) => {
-        console.error('Shopify sync error:', err.message);
-      });
-    }
 
     return Response.json({ success: true });
   } catch (error) {

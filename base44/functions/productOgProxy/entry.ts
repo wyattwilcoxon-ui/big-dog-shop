@@ -1,5 +1,5 @@
 const DOMAIN = Deno.env.get("VITE_SHOPIFY_STORE_DOMAIN") || 'big-dog-life-2.myshopify.com';
-const TOKEN = Deno.env.get("VITE_SHOPIFY_STOREFRONT_TOKEN") || 'dfe64f47f36d168a62d9be77dd5124e0';
+const TOKEN = Deno.env.get("VITE_SHOPIFY_STOREFRONT_TOKEN");
 const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
 const SITE_URL = 'https://www.thebigdoglife.com';
 
@@ -59,6 +59,7 @@ const SHOPIFY_HANDLE_MAP = {
 };
 
 async function getProduct(handle) {
+  if (!TOKEN) return null;
   try {
     const shopifyHandle = SHOPIFY_HANDLE_MAP[handle] || handle;
     const res = await fetch(API_URL, {
