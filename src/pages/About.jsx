@@ -28,7 +28,7 @@ const PROMISES = [
     icon: ShieldCheck,
     label: 'Quality That Lasts',
     color: 'bg-primary',
-    description: 'We prioritize durability, function, and comfort in everything we design — because big dogs deserve gear that can keep up.',
+    description: 'We prioritize durability, function, and comfort in everything we design, because big dogs deserve gear that can keep up.',
   },
   {
     icon: Eye,
@@ -40,13 +40,13 @@ const PROMISES = [
     icon: Heart,
     label: 'Big-Hearted Community',
     color: 'bg-secondary',
-    description: 'We believe in building relationships, not just sales — connecting large-breed owners through shared experiences and authentic support.',
+    description: 'We believe in building relationships, not just sales, connecting large-breed owners through shared experiences and authentic support.',
   },
   {
     icon: Lightbulb,
     label: 'Innovation With Purpose',
     color: 'bg-marigold',
-    description: 'We innovate thoughtfully — using real insights from dog owners to create solutions that make life easier, safer, and better for large-breed dogs.',
+    description: 'We innovate thoughtfully, using real insights from dog owners to create solutions that make life easier, safer, and better for large-breed dogs.',
   },
   {
     icon: Leaf,
@@ -58,7 +58,7 @@ const PROMISES = [
     icon: PawPrint,
     label: 'Love of the Big Life',
     color: 'bg-bark',
-    description: 'Everything we do is guided by our love and respect for the size, spirit, and loyalty of big dogs — and the people who share life with them.',
+    description: 'Everything we do is guided by our love and respect for the size, spirit, and loyalty of big dogs, and the people who share life with them.',
   },
 ];
 
