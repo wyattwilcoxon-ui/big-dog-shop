@@ -67,7 +67,7 @@ const TEAM = [
     name: 'Megan Gerlach',
     role: 'Co-Founder & Financial Director',
     photo: 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/e55f76e70_Megan2.png',
-    bio: 'After adopting Bosa, a 115-pound German Shepherd with absolutely zero shame, Megan realized she was going through 8 poop bags a day. Her finance background and frustration with the market turned a personal problem into a company.',
+    bio: 'After adopting Bosa, a 115-pound German Shepherd with absolutely zero shame, Megan realized she was going through 8 poop bags a day. Her finance background and frustration with the market turned a personal problem into a company. (Pictured with her German Shepherd, Carmen.)',
     wide: false,
   },
   {
