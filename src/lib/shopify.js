@@ -1,29 +1,14 @@
-const DOMAIN = 'big-dog-life-2.myshopify.com';
-const TOKEN = 'e98bf2f5912775e05c519a217905844d';
-const API_URL = `https://${DOMAIN}/api/2024-01/graphql.json`;
+import { base44 } from '@/api/base44Client';
 
+// All Shopify Storefront API calls are proxied through the server-side
+// `shopifyStorefront` backend function, which reads the access token from
+// environment variables. The token is NEVER embedded in client-side code
+// or committed to source control.
 async function shopifyFetch(query, variables = {}) {
-  const res = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Shopify-Storefront-Access-Token': TOKEN,
-    },
-    body: JSON.stringify({ query, variables }),
-  });
-  if (!res.ok) {
-    const text = await res.text().catch(() => '');
-    throw new Error(`Shopify API error (${res.status}): ${text.slice(0, 200) || res.statusText}`);
-  }
-  let json;
-  try {
-    json = await res.json();
-  } catch {
-    const text = await res.text().catch(() => '');
-    throw new Error(`Shopify returned a non-JSON response: ${text.slice(0, 200)}`);
-  }
-  if (json.errors) throw new Error(json.errors[0]?.message || 'Shopify API error');
-  return json.data;
+  const response = await base44.functions.invoke('shopifyStorefront', { query, variables });
+  const data = response.data;
+  if (!data || data.error) throw new Error(data?.error || 'Shopify API error');
+  return data;
 }
 
 // --- Products ---
