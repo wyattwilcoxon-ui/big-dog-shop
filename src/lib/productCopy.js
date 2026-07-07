@@ -24,7 +24,7 @@ const BASE_PRODUCT_COPY = {
 
 Bosie Bag® extra large dog poop bags measure 12" × 14" and are extra-thick and leak-proof*, engineered from the ground up for large and giant breed dogs. Named after Bosa, a 115-lb German Shepherd who inspired the Big Dog Life™ brand, Bosie Bag® gives you the coverage, strength, and peace of mind that standard bags can't deliver.
 
-WHY BOSIE BAG™ BEATS STANDARD POOP BAGS
+WHY BOSIE BAG® BEATS STANDARD POOP BAGS
 
 ▸ 12" × 14" oversized dimensions — 33% wider and 8% longer than standard 9" × 13" bags
 ▸ Extra-thick, heavy-duty material — leak-proof*, no tearing, no surprises*
