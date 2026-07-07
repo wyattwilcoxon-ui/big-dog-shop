@@ -27,6 +27,15 @@ const PRODUCT_COPY = {
   },
 };
 
+// Curated social preview images (takes priority over Shopify images)
+const SOCIAL_IMAGES = {
+  'bosie-bag': 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/7d43be4dd_2.png',
+  'bosie-bag-8pack': 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/7d43be4dd_2.png',
+  'clip-and-go': 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/453cb6adc_5.png',
+  'starter-bundle': 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/e8be37d43_1.png',
+  'tennis-balls': 'https://media.base44.com/images/public/6a06119e182f5cb0938b3e5b/8a560ca09_8.png',
+};
+
 const ALIAS_MAP = {
   'the-bosie-bag': 'bosie-bag',
   'bosie-bag-refill': 'bosie-bag-8pack',
@@ -101,14 +110,16 @@ Deno.serve(async (req) => {
       return new Response('Missing handle', { status: 400 });
     }
 
-    const product = await getProduct(handle);
+    const normalized = handle.toLowerCase().replace(/_/g, '-').replace(/[^a-z0-9-]/g, '');
+    const aliasKey = ALIAS_MAP[normalized] || normalized;
     const copy = getCopy(handle);
+    const product = await getProduct(handle);
 
     // Use our curated copy first, fall back to Shopify data
     const productTitle = product?.title || handle.replace(/-/g, ' ');
     const title = copy?.seoTitle || `${productTitle} | Big Dog Life™`;
     const description = copy?.metaDescription || product?.description?.slice(0, 160).replace(/"/g, "'") || 'Extra-large, leak-proof products built for large and giant breed dogs.';
-    const image = product?.images?.edges[0]?.node.url || '';
+    const image = SOCIAL_IMAGES[aliasKey] || product?.images?.edges[0]?.node.url || '';
     const price = product ? parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2) : null;
     const productUrl = `${SITE_URL}/product/${handle}`;
 

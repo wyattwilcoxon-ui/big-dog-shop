@@ -184,20 +184,27 @@ export default function Shop() {
                       <span className="font-brand text-stone text-sm mt-3 block">TBA</span>
                     )}
 
-                    <button
-                      onClick={() => product.available ? handleAddToCart(product) : handleNotifyMe(product)}
-                      disabled={addingId === product.id}
-                      className={`mt-6 w-full sm:w-auto px-8 py-4 rounded-xl font-brand transition-all duration-300 border-bold flex items-center justify-center gap-2 ${
-                        product.available
-                          ? 'bg-primary text-white hover:bg-orange-hot shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
-                          : 'bg-secondary text-white hover:bg-green-bright shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
-                      }`}
-                    >
-                      {addingId === product.id
-                        ? <><Loader2 className="w-4 h-4 animate-spin" /> Adding...</>
-                        : product.available ? 'Add to Cart 🐾' : 'Notify Me 🔔'
-                      }
-                    </button>
+                    <div className="flex flex-wrap gap-3 mt-6">
+                      <button
+                        onClick={() => product.available ? handleAddToCart(product) : handleNotifyMe(product)}
+                        disabled={addingId === product.id}
+                        className={`px-8 py-4 rounded-xl font-brand transition-all duration-300 border-bold flex items-center justify-center gap-2 ${
+                          product.available
+                            ? 'bg-primary text-white hover:bg-orange-hot shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
+                            : 'bg-secondary text-white hover:bg-green-bright shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
+                        }`}
+                      >
+                        {addingId === product.id
+                          ? <><Loader2 className="w-4 h-4 animate-spin" /> Adding...</>
+                          : product.available ? 'Add to Cart 🐾' : 'Notify Me 🔔'
+                        }
+                      </button>
+                      {product.handle && (
+                        <Link to={`/product/${product.handle}`} className="px-8 py-4 rounded-xl font-brand transition-all duration-300 border-bold flex items-center justify-center bg-midnight text-white hover:bg-bark shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none">
+                          More Info
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -250,20 +257,27 @@ export default function Shop() {
                         <span className="font-brand text-stone text-sm mt-3 block">TBA</span>
                       )}
 
-                      <button
-                        onClick={() => product.available ? handleAddToCart(product) : handleNotifyMe(product)}
-                        disabled={addingId === product.id}
-                        className={`mt-6 w-full sm:w-auto px-8 py-4 rounded-xl font-brand transition-all duration-300 border-bold flex items-center justify-center gap-2 ${
-                          product.available
-                            ? 'bg-primary text-white hover:bg-orange-hot shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
-                            : 'bg-secondary text-white hover:bg-green-bright shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
-                        }`}
-                      >
-                        {addingId === product.id
-                          ? <><Loader2 className="w-4 h-4 animate-spin" /> Adding...</>
-                          : product.available ? 'Add to Cart 🐾' : 'Notify Me 🔔'
-                        }
-                      </button>
+                      <div className="flex flex-wrap gap-3 mt-6">
+                        <button
+                          onClick={() => product.available ? handleAddToCart(product) : handleNotifyMe(product)}
+                          disabled={addingId === product.id}
+                          className={`px-8 py-4 rounded-xl font-brand transition-all duration-300 border-bold flex items-center justify-center gap-2 ${
+                            product.available
+                              ? 'bg-primary text-white hover:bg-orange-hot shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
+                              : 'bg-secondary text-white hover:bg-green-bright shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none'
+                          }`}
+                        >
+                          {addingId === product.id
+                            ? <><Loader2 className="w-4 h-4 animate-spin" /> Adding...</>
+                            : product.available ? 'Add to Cart 🐾' : 'Notify Me 🔔'
+                          }
+                        </button>
+                        {product.handle && (
+                          <Link to={`/product/${product.handle}`} className="px-8 py-4 rounded-xl font-brand transition-all duration-300 border-bold flex items-center justify-center bg-midnight text-white hover:bg-bark shadow-cartoon-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none">
+                            More Info
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
