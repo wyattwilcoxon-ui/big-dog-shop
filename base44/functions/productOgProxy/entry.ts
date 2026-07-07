@@ -6,16 +6,16 @@ const SITE_URL = 'https://www.thebigdoglife.com';
 // Inlined product copy (mirrors lib/productCopy.js — keep in sync)
 const PRODUCT_COPY = {
   'bosie-bag': {
-    seoTitle: 'Bosie Bag™ Extra Large Dog Poop Bags | Big Dog Life™',
-    metaDescription: 'Bosie Bag™ are 12" × 14" extra-large, leak-proof dog poop bags built for large and giant breed dogs. Heavy duty and thick. Finally, a bag that handles the big stuff.',
+    seoTitle: 'Bosie Bag® Extra Large Dog Poop Bags | Big Dog Life™',
+    metaDescription: 'Bosie Bag® are 12" × 14" extra-large, leak-proof dog poop bags built for large and giant breed dogs. Heavy duty and thick. Finally, a bag that handles the big stuff.',
   },
   'clip-and-go': {
     seoTitle: 'Big Dog Life™ Clip & Go Dog Poop Bag Dispenser | Leash Clip Holder',
-    metaDescription: 'Big Dog Life™ leash clip dog poop bag dispenser - includes 1 starter roll of Bosie Bag™. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
+    metaDescription: 'Big Dog Life™ leash clip dog poop bag dispenser - includes 1 starter roll of Bosie Bag®. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
   },
   'bosie-bag-8pack': {
-    seoTitle: 'Bosie Bag™ 8-Pack Refill Rolls - 120 Extra Large Dog Waste Bags | Big Dog Life™',
-    metaDescription: 'Bosie Bag™ 8-roll refill pack - 120 bags total. 12" × 14" extra-large, heavy duty, leak-proof dog waste bags for large and giant breed dogs.',
+    seoTitle: 'Bosie Bag® 8-Pack Refill Rolls - 120 Extra Large Dog Waste Bags | Big Dog Life™',
+    metaDescription: 'Bosie Bag® 8-roll refill pack - 120 bags total. 12" × 14" extra-large, heavy duty, leak-proof dog waste bags for large and giant breed dogs.',
   },
   'starter-bundle': {
     seoTitle: 'Big Dog Life™ Starter Bundle',

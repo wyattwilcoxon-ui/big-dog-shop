@@ -9,7 +9,7 @@ import { PRODUCT_COPY } from '@/lib/productCopy';
 // Static product definitions - names, subtitles, badges from master copy
 const PRODUCT_DEFINITIONS = {
   'bosie-bag': {
-    name: 'The Bosie Bag™',
+    name: 'The Bosie Bag®',
     subtitle: '12" x 14" Extra Large Waste Bags',
     badge: null,
   },
@@ -19,7 +19,7 @@ const PRODUCT_DEFINITIONS = {
     badge: null,
   },
   'bosie-bag-8pack': {
-    name: 'Bosie Bag™ 8-Pack',
+    name: 'Bosie Bag® 8-Pack',
     subtitle: '120 Bags Total (8 Rolls x 15)',
     badge: null,
   },
