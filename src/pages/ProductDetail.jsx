@@ -65,7 +65,7 @@ export default function ProductDetail() {
             }
             tag.content = content;
           };
-          const productUrl = `https://www.thebigdoglife.com/product/${handle}`;
+          const productUrl = `https://www.thebigdoglife.com/${handle}`;
           setMeta('og:image', p.images[0]);
           setMeta('og:image:width', '1200');
           setMeta('og:image:height', '1200');
@@ -87,7 +87,7 @@ export default function ProductDetail() {
     // The proxy returns proper OG meta tags and redirects humans to the product page.
     // The address bar URL (thebigdoglife.com/product/...) won't show product previews because
     // social crawlers don't run JavaScript and only see the generic homepage OG tags.
-    const shareUrl = `https://www.thebigdoglife.com/functions/productOgProxy?handle=${handle}`;
+    const shareUrl = `https://www.thebigdoglife.com/${handle}`;
     const shareData = {
       title: product.name,
       text: `Check out ${product.name} on Big Dog Life™`,
