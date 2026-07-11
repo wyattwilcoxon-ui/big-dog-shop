@@ -207,7 +207,7 @@ export default function WhyBigDogs() {
             viewport={{ once: true }}
             className="font-body text-stone text-sm mt-8"
           >
-            …and honestly, any large or giant breed dog. If you've ever been let down by a flimsy bag, the Bosie Bag® is for you.
+            …and honestly, any large or giant breed dog. If you've ever been let down by a flimsy bag, The Bosie Bag® is for you.
           </motion.p>
         </div>
       </section>

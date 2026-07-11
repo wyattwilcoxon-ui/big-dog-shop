@@ -61,7 +61,7 @@ export default function SizeComparison() {
           <div className="grid grid-cols-3 bg-midnight text-white p-4">
             <span className="font-brand text-sm">Feature</span>
             <span className="font-brand text-sm text-center">Other Guys</span>
-            <span className="font-brand text-sm text-center text-primary">Bosie Bag®</span>
+            <span className="font-brand text-sm text-center text-primary">The Bosie Bag®</span>
           </div>
           {[
             ['Bag Size', '9" × 13"', '12" × 14"'],

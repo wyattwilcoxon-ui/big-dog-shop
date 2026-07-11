@@ -15,14 +15,14 @@
 
 // Base product copy data
 const BASE_PRODUCT_COPY = {
-  // 1. Bosie Bag® - Oversized Dog Waste Bags
+  // 1. The Bosie Bag® - Oversized Dog Waste Bags
   'bosie-bag': {
-    seoTitle: 'Bosie Bag® Extra Large Dog Poop Bags - 12" × 14" Heavy Duty Waste Bags for Large and Giant Breed Dogs | Leak-Proof, Thick, Oversized',
-    metaDescription: 'Bosie Bag® are 12" × 14" extra-large, leak-proof* dog poop bags built for large and giant breed dogs. Heavy duty and thick. Finally, a bag that handles the big stuff.',
-    shortDescription: 'Standard 9" × 13" poop bags weren\'t built for your dog. Bosie Bag® are 12" × 14" extra-large, leak-proof* dog waste bags designed specifically for large and giant breeds - thick enough to handle the big stuff without tearing. We give a $h!t.',
-    longDescription: `If you own a German Shepherd, Labrador, Rottweiler, Great Dane, or any large or giant breed dog, you already know the problem. You reach for a standard poop bag (9" × 13"), it tears mid-pickup, and the walk is ruined. Regular dog waste bags simply aren't built for big dogs - and that's exactly why Bosie Bag® exists.
+    seoTitle: 'The Bosie Bag® Extra Large Dog Poop Bags - 12" × 14" Heavy Duty Waste Bags for Large and Giant Breed Dogs | Leak-Proof, Thick, Oversized',
+    metaDescription: 'The Bosie Bag® is 12" × 14" extra-large, leak-proof* dog poop bags built for large and giant breed dogs. Heavy duty and thick. Finally, a bag that handles the big stuff.',
+    shortDescription: 'Standard 9" × 13" poop bags weren\'t built for your dog. The Bosie Bag® is 12" × 14" extra-large, leak-proof* dog waste bags designed specifically for large and giant breeds - thick enough to handle the big stuff without tearing. We give a $h!t.',
+    longDescription: `If you own a German Shepherd, Labrador, Rottweiler, Great Dane, or any large or giant breed dog, you already know the problem. You reach for a standard poop bag (9" × 13"), it tears mid-pickup, and the walk is ruined. Regular dog waste bags simply aren't built for big dogs - and that's exactly why The Bosie Bag® exists.
 
-Bosie Bag® extra large dog poop bags measure 12" × 14" and are extra-thick and leak-proof*, engineered from the ground up for large and giant breed dogs. Named after Bosa, a 115-lb German Shepherd who inspired the Big Dog Life™ brand, Bosie Bag® gives you the coverage, strength, and peace of mind that standard bags can't deliver.
+The Bosie Bag® extra large dog poop bags measure 12" × 14" and are extra-thick and leak-proof*, engineered from the ground up for large and giant breed dogs. Named after Bosa, a 115-lb German Shepherd who inspired the Big Dog Life™ brand, The Bosie Bag® gives you the coverage, strength, and peace of mind that standard bags can't deliver.
 
 WHY BOSIE BAG® BEATS STANDARD POOP BAGS
 
@@ -41,24 +41,24 @@ PERFECT FOR
 
 Any large or giant breed household that's done with bags that weren't built for their dog.
 
-Stop settling for undersized dog waste bags that weren't made for your dog. Bosie Bag® is heavy-duty, oversized, and built for the big dog life.`,
+Stop settling for undersized dog waste bags that weren't made for your dog. The Bosie Bag® is heavy-duty, oversized, and built for the big dog life.`,
     backendKeywords: 'large dog waste bags, big dog poop bags, giant breed poop bags, extra thick dog bags, poop bags German Shepherd, poop bags Great Dane, heavy duty pet waste bags, leak proof dog bags, XL dog poop bags, 12x14 dog poop bags, oversized pet waste bags, large breed dog waste bags',
   },
   
   // 2. Big Dog Life™ Bag Dispenser - Clip & Go Pouch
   'clip-and-go': {
-    seoTitle: 'Big Dog Life™ Dog Poop Bag Dispenser - Leash Clip Holder for Large and Giant Breed Dog Waste Bags | Zippered Fabric Pouch | Includes 1 Starter Roll of Bosie Bag®',
-    metaDescription: 'Big Dog Life™ leash clip dog poop bag dispenser - includes 1 starter roll of Bosie Bag®. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
-    shortDescription: 'No more digging through your pockets at the worst possible moment. The Big Dog Life™ Clip & Go Pouch clips to your leash, comes loaded with a starter roll of Bosie Bag®, and keeps you ready before your dog even squats.',
+    seoTitle: 'Big Dog Life™ Dog Poop Bag Dispenser - Leash Clip Holder for Large and Giant Breed Dog Waste Bags | Zippered Fabric Pouch | Includes 1 Starter Roll of The Bosie Bag®',
+    metaDescription: 'Big Dog Life™ leash clip dog poop bag dispenser - includes 1 starter roll of The Bosie Bag®. Durable fabric pouch, carabiner clip, easy zip access. Built for big-dog walks.',
+    shortDescription: 'No more digging through your pockets at the worst possible moment. The Big Dog Life™ Clip & Go Pouch clips to your leash, comes loaded with a starter roll of The Bosie Bag®, and keeps you ready before your dog even squats.',
     longDescription: `The best dog poop bag dispenser is the one you don't have to think about. The Big Dog Life™ Clip & Go Pouch stays clipped to your leash, your belt loop, or your park bag - so when your large or giant breed dog does what they do, you're already ready.
 
-  Comes with one starter roll of Bosie Bag® oversized waste bags already inside. Clip it on, pull a bag, and go. No setup required.
+  Comes with one starter roll of The Bosie Bag® oversized waste bags already inside. Clip it on, pull a bag, and go. No setup required.
 
   INCLUDES
 
   ▸ Heavy-duty carabiner leash clip attaches to leash, harness, belt loop, or bag
   ▸ Secure zip closure for one-hand access
-  ▸ 1 starter roll of Bosie Bag® 12" × 14" oversized waste bags, ready to go
+  ▸ 1 starter roll of The Bosie Bag® 12" × 14" oversized waste bags, ready to go
   ▸ Durable textured fabric built for trails, parks, and everyday walks
   ▸ Compact design stays out of the way until you need it
 
@@ -72,14 +72,14 @@ Stop settling for undersized dog waste bags that weren't made for your dog. Bosi
     backendKeywords: 'dog poop bag holder leash, dog waste bag dispenser clip, fabric dog bag holder, poop bag pouch carabiner, dog walking accessories large breed, leash attachment poop bag, zippered poop bag holder, dog bag dispenser pouch, large breed dog bag dispenser',
   },
   
-  // 3. Bosie Bag® Rolls - 8-Roll Refill Pack (120 Bags)
+  // 3. The Bosie Bag® Rolls - 8-Roll Refill Pack (120 Bags)
   'bosie-bag-8pack': {
-    seoTitle: 'Bosie Bag® Extra Large Dog Waste Bag Refill Rolls - 8-Pack, 120 Bags | 12" × 14" Heavy Duty Leak-Proof* Poop Bags for Large and Giant Breed Dogs',
-    metaDescription: 'Bosie Bag® 8-roll refill pack - 120 bags total. 12" × 14" extra-large, heavy duty, leak-proof* dog waste bags for large and giant breed dogs.',
-    shortDescription: 'When your dog goes big, go stocked. Bosie Bag® refill rolls - 8 rolls, 120 bags, 12" × 14" extra-large and heavy-duty. Because running out mid-walk is not an option.',
+    seoTitle: 'The Bosie Bag® Extra Large Dog Waste Bag Refill Rolls - 8-Pack, 120 Bags | 12" × 14" Heavy Duty Leak-Proof* Poop Bags for Large and Giant Breed Dogs',
+    metaDescription: 'The Bosie Bag® 8-roll refill pack - 120 bags total. 12" × 14" extra-large, heavy duty, leak-proof* dog waste bags for large and giant breed dogs.',
+    shortDescription: 'When your dog goes big, go stocked. The Bosie Bag® refill rolls - 8 rolls, 120 bags, 12" × 14" extra-large and heavy-duty. Because running out mid-walk is not an option.',
     longDescription: `Large and giant breed dogs go through bags fast. Don't get caught empty-handed.
 
-Bosie Bag® Refill Rolls are the large-breed answer to flimsy, undersized dog poop bag refills that weren't built for real waste volume. At 12" × 14", each bag is extra-thick, leak-proof*, and sized to handle whatever your dog brings on the walk.
+The Bosie Bag® Refill Rolls are the large-breed answer to flimsy, undersized dog poop bag refills that weren't built for real waste volume. At 12" × 14", each bag is extra-thick, leak-proof*, and sized to handle whatever your dog brings on the walk.
 
 At 15 bags per roll and 8 rolls per pack, you're getting 120 extra-large waste bags in one order. For a household with one large or giant breed dog, that's months of walks covered.
 
@@ -104,17 +104,17 @@ Keep a roll in the dispenser, a roll in your car, and a roll at the door. That's
   // 4. Big Dog Life™ Starter Bundle (135 Bags)
   'starter-bundle': {
     seoTitle: 'Big Dog Life™ Starter Bundle - 135 Bags | 12" × 14" Extra Large Dog Poop Bags + Leash Clip Dispenser with Starter Roll + 3 Chompers Fetch Balls | Complete Kit for Large and Giant Breed Dogs',
-    metaDescription: 'Big Dog Life™ Starter Bundle: 135 Bosie Bag® oversized leak-proof* poop bags, leash clip dispenser with starter roll, and 3 Chompers fetch balls. The complete large-breed walk kit.',
-    shortDescription: 'The complete large-dog walk kit - in one pack. 8 refill rolls plus 1 starter roll already loaded in the Clip & Go dispenser - 135 Bosie Bag® 12" × 14" oversized waste bags total - and 3 Chompers fetch balls. Because a great walk covers both ends. We give a $h!t.',
+    metaDescription: 'Big Dog Life™ Starter Bundle: 135 The Bosie Bag® oversized leak-proof* poop bags, leash clip dispenser with starter roll, and 3 Chompers fetch balls. The complete large-breed walk kit.',
+    shortDescription: 'The complete large-dog walk kit - in one pack. 8 refill rolls plus 1 starter roll already loaded in the Clip & Go dispenser - 135 The Bosie Bag® 12" × 14" oversized waste bags total - and 3 Chompers fetch balls. Because a great walk covers both ends. We give a $h!t.',
     longDescription: `Everything you need for the big dog life - in one bundle.
 
 If you own a large or giant breed dog, you know the walk requires real gear. Standard poop bags tear. Dispensers fall off leashes. And your dog doesn't play with small balls. The Big Dog Life™ Starter Bundle solves all of it in one shot.
 
-This complete large-breed dog walk kit includes 8 refill rolls of Bosie Bag® 12" × 14" extra large dog waste bags plus 1 starter roll already loaded inside the Clip & Go Dispenser Pouch - 9 rolls, 135 bags total - ready to go right out of the box, and 3 Chompers fetch balls - because after the cleanup, there's always a throw.
+This complete large-breed dog walk kit includes 8 refill rolls of The Bosie Bag® 12" × 14" extra large dog waste bags plus 1 starter roll already loaded inside the Clip & Go Dispenser Pouch - 9 rolls, 135 bags total - ready to go right out of the box, and 3 Chompers fetch balls - because after the cleanup, there's always a throw.
 
 BUNDLE INCLUDES
 
-▸ 135 Bosie Bag® waste bags - 8 refill rolls + 1 starter roll in the Clip & Go (9 rolls × 15 bags)
+▸ 135 The Bosie Bag® waste bags - 8 refill rolls + 1 starter roll in the Clip & Go (9 rolls × 15 bags)
 ▸ Big Dog Life™ Clip & Go Dispenser Pouch - zippered fabric dog bag holder with heavy-duty carabiner leash clip, starter roll included
 ▸ 3 Chompers - standard 2.5" fetch balls
 ▸ Retail header card - retail-ready packaging right out of the box

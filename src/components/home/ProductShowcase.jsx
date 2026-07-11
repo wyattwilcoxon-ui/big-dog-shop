@@ -19,7 +19,7 @@ const PRODUCT_DEFINITIONS = {
     badge: null,
   },
   'bosie-bag-8pack': {
-    name: 'Bosie Bag® 8-Pack',
+    name: 'The Bosie Bag® 8-Pack',
     subtitle: '120 Bags Total (8 Rolls x 15)',
     badge: null,
   },
