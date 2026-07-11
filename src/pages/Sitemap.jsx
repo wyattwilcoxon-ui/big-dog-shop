@@ -8,7 +8,7 @@ const SITEMAP = [
     heading: 'Shop',
     links: [
       { label: 'All Products', to: '/shop' },
-      { label: 'Bosie Bag™', to: '/product/bosie-bag' },
+      { label: 'Bosie Bag®', to: '/product/bosie-bag' },
       { label: 'Clip & Go™', to: '/product/clip-and-go' },
       { label: 'The Big Ones™', to: '/product/tennis-balls' },
       { label: 'Starter Bundle', to: '/product/starter-bundle' },
@@ -48,7 +48,7 @@ export default function Sitemap() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white leading-tight">SITEMAP</h1>
             <p className="font-body text-stone text-base sm:text-lg mt-4 max-w-xl">
-              Every page on Big Dog Life, all in one place.
+              Every page on Big Dog Life™, all in one place.
             </p>
           </motion.div>
         </div>

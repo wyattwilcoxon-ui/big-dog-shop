@@ -22,7 +22,7 @@ const STATS = [
   { value: '45%', label: 'of U.S. households own a dog', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
   { value: '40%', label: 'of dog owners have large or giant breeds', cite: 'https://www.avma.org/resources-tools/reports-statistics/us-pet-ownership-statistics' },
   { value: '43.6%', label: 'bigger than standard bags' },
-  { value: '12"×14"', label: 'The Bosie Bag™ dimensions' },
+  { value: '12"×14"', label: 'The Bosie Bag® dimensions' },
 ];
 
 const MARKET_STATS = [
@@ -126,7 +126,7 @@ export default function WhyBigDogs() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE BOSIE BAG™<br />DIFFERENCE</h2>
+            <h2 className="font-display text-5xl sm:text-7xl text-midnight">THE BOSIE BAG®<br />DIFFERENCE</h2>
           </motion.div>
 
           <motion.div
@@ -140,7 +140,7 @@ export default function WhyBigDogs() {
               <div className="p-5 font-brand text-stone text-sm">Feature</div>
               <div className="p-5 font-brand text-stone text-sm text-center">Standard Bag</div>
               <div className="p-5 bg-primary font-brand text-white text-sm text-center">
-                The Bosie Bag™
+                The Bosie Bag®
               </div>
             </div>
 
@@ -185,7 +185,7 @@ export default function WhyBigDogs() {
             className="mb-12"
           >
             <h2 className="font-display text-5xl sm:text-7xl text-white mb-4">BUILT FOR YOUR BREED</h2>
-            <p className="font-body text-stone text-lg">The Bosie Bag™ was designed for large and giant breed dogs, including:</p>
+            <p className="font-body text-stone text-lg">The Bosie Bag® was designed for large and giant breed dogs, including:</p>
           </motion.div>
           <div className="flex flex-wrap justify-center gap-3">
             {BREEDS.map((breed, i) => (
@@ -207,7 +207,7 @@ export default function WhyBigDogs() {
             viewport={{ once: true }}
             className="font-body text-stone text-sm mt-8"
           >
-            …and honestly, any large or giant breed dog. If you've ever been let down by a flimsy bag, the Bosie Bag™ is for you.
+            …and honestly, any large or giant breed dog. If you've ever been let down by a flimsy bag, the Bosie Bag® is for you.
           </motion.p>
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function WhyBigDogs() {
             className="mt-6 bg-primary rounded-2xl border-bold shadow-cartoon p-8 text-center"
           >
             <p className="font-display text-3xl sm:text-4xl text-white">
-              BIG DOG LIFE EXISTS TO CHANGE THAT. 🐾
+              BIG DOG LIFE™ EXISTS TO CHANGE THAT. 🐾
             </p>
           </motion.div>
         </div>
@@ -274,7 +274,7 @@ export default function WhyBigDogs() {
                 to="/shop"
                 className="inline-flex items-center gap-2 bg-primary text-white font-brand text-lg px-8 py-4 rounded-full hover:bg-orange-hot transition-colors border-bold shadow-cartoon-sm"
               >
-                ⚡ Shop The Bosie Bag™
+                ⚡ Shop The Bosie Bag®
               </Link>
               <Link
                 to="/about"

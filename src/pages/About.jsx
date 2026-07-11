@@ -87,7 +87,7 @@ const TEAM = [
 ];
 
 const ROADMAP = [
-  { emoji: '✅', label: 'Bosie Bag™ XL Waste Bags', status: 'Available Now', color: 'bg-secondary', blur: false },
+  { emoji: '✅', label: 'Bosie Bag® XL Waste Bags', status: 'Available Now', color: 'bg-secondary', blur: false },
   { emoji: '✅', label: 'Clip & Go™ Dispenser Pouch', status: 'Available Now', color: 'bg-secondary', blur: false },
   { emoji: '✅', label: 'Big Dog Life™ Starter Bundle', status: 'Available Now', color: 'bg-secondary', blur: false },
   { emoji: '✅', label: 'The Big Ones™ Tennis Balls', status: 'Available Now', color: 'bg-secondary', blur: false },
@@ -111,7 +111,7 @@ export default function About() {
               BUILT BY<br /><span className="text-primary">BIG DOG PEOPLE.</span>
             </h1>
             <p className="font-body text-white/80 text-base sm:text-lg max-w-xl mt-4 leading-relaxed">
-              Big Dog Life is an Ohio-based lifestyle brand dedicated to improving life for large and giant breed dogs and the people who love them.
+              Big Dog Life™ is an Ohio-based lifestyle brand dedicated to improving life for large and giant breed dogs and the people who love them.
             </p>
             <p className="font-display text-primary mt-4" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
               "Because Big Dogs Have Big Needs."
@@ -158,9 +158,9 @@ export default function About() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="bg-midnight rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center border-4 border-midnight shadow-cartoon">
             <div className="font-body text-white text-base sm:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto space-y-5">
-              <p>At Big Dog Life, our mission is to make life easier, healthier, and more fulfilling for large-breed dogs and the people who love them.</p>
+              <p>At Big Dog Life™, our mission is to make life easier, healthier, and more fulfilling for large-breed dogs and the people who love them.</p>
               <p>We design and curate durable, high-quality essentials built for the unique needs of big dogs, from daily care to adventure gear, with a focus on comfort, longevity, and thoughtful innovation.</p>
-              <p>Beyond products, we're building a community that celebrates the strength, personality, and loyalty of large breeds. Through honest education, responsible sourcing, and genuine connection, Big Dog Life is redefining what it means to live large, together.</p>
+              <p>Beyond products, we're building a community that celebrates the strength, personality, and loyalty of large breeds. Through honest education, responsible sourcing, and genuine connection, Big Dog Life™ is redefining what it means to live large, together.</p>
             </div>
           </motion.div>
         </div>
@@ -312,8 +312,8 @@ export default function About() {
             className="bg-primary rounded-2xl border-bold shadow-cartoon p-8 sm:p-10 text-center"
           >
             <p className="font-body text-white text-base sm:text-lg leading-relaxed">
-              The idea for Big Dog Life was born from everyday frustration and a lot of love for big dogs.<br /><br />
-              The two friends started comparing notes and quickly realized they weren't alone. There was an entire community of large-breed owners struggling with undersized products, wasted money, and limited options. Out of those shared experiences, Big Dog Life was born a company built for big dogs, by big-dog owners.
+              The idea for Big Dog Life™ was born from everyday frustration and a lot of love for big dogs.<br /><br />
+              The two friends started comparing notes and quickly realized they weren't alone. There was an entire community of large-breed owners struggling with undersized products, wasted money, and limited options. Out of those shared experiences, Big Dog Life™ was born a company built for big dogs, by big-dog owners.
             </p>
           </motion.div>
         </div>

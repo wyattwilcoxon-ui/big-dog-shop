@@ -19,7 +19,7 @@ const FALLBACK_PRODUCTS = [
   },
   {
     id: 'bosie-8pack',
-    name: 'The Bosie Bag™ 8-Pack',
+    name: 'The Bosie Bag® 8-Pack',
     description: '8 Rolls • 120 Bags Total',
     detail: 'Our best seller. 120 bags of leak-proof, oversized glory. Weeks of worry-free walks.',
     price: 11.99, compareAtPrice: 15.99, badge: null, available: false,

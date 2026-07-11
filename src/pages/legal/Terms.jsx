@@ -10,13 +10,13 @@ const SECTIONS = [
     title: '1.2 Products & Descriptions',
     content: (
       <>
-        Big Dog Life specializes in oversized waste management products designed for large-breed dogs (70+ lbs), including the Bosie Bag™ and related accessories. We make every effort to accurately describe our products, including size, material, and intended use. However, we do not warrant that product descriptions or other content on the Site are error-free, complete, or current.
+        Big Dog Life™ specializes in oversized waste management products designed for large-breed dogs (70+ lbs), including the Bosie Bag® and related accessories. We make every effort to accurately describe our products, including size, material, and intended use. However, we do not warrant that product descriptions or other content on the Site are error-free, complete, or current.
         <br /><br />
         Product colors may appear slightly different due to monitor settings.
         <br /><br />
         Bundle contents are subject to change and will be clearly disclosed at checkout.
         <br /><br />
-        The Bosie Bag™ name is registered intellectual property of Big Dog Life LLC.
+        The Bosie Bag® name is registered intellectual property of Big Dog Life LLC.
       </>
     )
   },
@@ -30,13 +30,13 @@ const SECTIONS = [
   },
   {
     title: '1.5 Intellectual Property',
-    content: '"Big Dog Life" is a registered trademark. The Bosie Bag™ product name is also registered IP. All content on the Site — including logos, graphics, text, photography, and copy — is the exclusive property of Big Dog Life LLC and may not be reproduced, distributed, or used without prior written permission.'
+    content: '"Big Dog Life™" is a trademark. The Bosie Bag® product name is registered IP. All content on the Site — including logos, graphics, text, photography, and copy — is the exclusive property of Big Dog Life LLC and may not be reproduced, distributed, or used without prior written permission.'
   },
   {
     title: '1.6 Prohibited Use',
     content: (
       <ul className="list-disc list-inside mt-2 space-y-1">
-        <li>Reproduce, resell, or redistribute Big Dog Life products without written authorization.</li>
+        <li>Reproduce, resell, or redistribute Big Dog Life™ products without written authorization.</li>
         <li>Use the Site for any unlawful purpose or to violate any applicable laws.</li>
         <li>Attempt to gain unauthorized access to any part of the Site or its systems.</li>
         <li>Use automated tools, scrapers, or bots to collect data from the Site.</li>

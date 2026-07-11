@@ -39,15 +39,15 @@ export default function BundleSection() {
               <span className="inline-block bg-secondary text-white font-brand text-xs px-3 py-1 rounded-full w-fit shadow-cartoon-sm mb-4">
                 🎁 Best Value
               </span>
-              <h3 className="font-display text-4xl sm:text-5xl text-midnight mb-2">BIG DOG LIFE® STARTER BUNDLE</h3>
+              <h3 className="font-display text-4xl sm:text-5xl text-midnight mb-2">BIG DOG LIFE™ STARTER BUNDLE</h3>
               <p className="font-brand text-pebble text-lg mb-6">The Complete Walk Kit</p>
               <p className="font-body text-pebble leading-relaxed mb-6">
-                Everything you need for the big dog life - in one pack. 1,080 Bosie Bag™ 12" x 13.5" oversized waste bags, a Clip & Go Dispenser Pouch with one starter roll already inside, and three Big Dog Life® The Big Ones tennis balls.
+                Everything you need for the big dog life - in one pack. 1,080 Bosie Bag® 12" x 13.5" oversized waste bags, a Clip & Go Dispenser Pouch with one starter roll already inside, and three Big Dog Life™ The Big Ones tennis balls.
               </p>
 
               <ul className="space-y-3 mb-8">
                 {[
-                  '1,080 Bosie Bag™ waste bags (9 rolls x 120 bags)',
+                  '1,080 Bosie Bag® waste bags (9 rolls x 120 bags)',
                   'Clip & Go Dispenser with starter roll included',
                   '3 Big Ones™ Tennis Balls - standard 2.5" size',
                   'Retail-ready packaging',

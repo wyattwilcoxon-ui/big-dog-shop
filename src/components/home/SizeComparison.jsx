@@ -16,7 +16,7 @@ export default function SizeComparison() {
           <p className="font-brand text-primary text-lg mb-2">Let's Talk Size</p>
           <h2 className="font-display text-5xl sm:text-7xl text-white">SIZE MATTERS</h2>
           <p className="font-body text-stone mt-4 text-lg max-w-lg mx-auto">
-            We said what we said. If your dog's output requires a strategy session, you need The Bosie Bag™.
+            We said what we said. If your dog's output requires a strategy session, you need The Bosie Bag®.
           </p>
         </motion.div>
 
@@ -46,7 +46,7 @@ export default function SizeComparison() {
               <span className="font-display text-3xl text-primary">12"×14"</span>
               <span className="font-brand text-white text-sm mt-2 bg-primary px-3 py-1 rounded-full">43.6% BIGGER</span>
             </div>
-            <p className="font-brand text-white mt-3">The Bosie Bag™</p>
+            <p className="font-brand text-white mt-3">The Bosie Bag®</p>
             <p className="font-body text-stone text-sm">(room to spare)</p>
           </motion.div>
         </div>
@@ -61,7 +61,7 @@ export default function SizeComparison() {
           <div className="grid grid-cols-3 bg-midnight text-white p-4">
             <span className="font-brand text-sm">Feature</span>
             <span className="font-brand text-sm text-center">Other Guys</span>
-            <span className="font-brand text-sm text-center text-primary">Bosie Bag™</span>
+            <span className="font-brand text-sm text-center text-primary">Bosie Bag®</span>
           </div>
           {[
             ['Bag Size', '9" × 13"', '12" × 14"'],

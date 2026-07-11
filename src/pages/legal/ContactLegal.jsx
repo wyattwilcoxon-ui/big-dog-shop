@@ -29,7 +29,7 @@ const SECTIONS = [
   },
   {
     title: '6.3 Trademark & IP Notice',
-    content: '"Big Dog Life" is a registered trademark of Big Dog Life LLC. The Bosie Bag™ product name is also registered IP. Unauthorized use of these marks is strictly prohibited and may result in legal action. All rights reserved.'
+    content: '"Big Dog Life™" is a trademark of Big Dog Life LLC. The Bosie Bag® product name is registered IP. Unauthorized use of these marks is strictly prohibited and may result in legal action. All rights reserved.'
   },
   {
     title: '6.4 Copyright Notice',

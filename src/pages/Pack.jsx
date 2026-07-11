@@ -99,7 +99,7 @@ export default function Pack() {
                 <p className="font-brand text-secondary text-sm mb-4 text-center sm:text-left">April 2026</p>
                 <p className="font-body text-pebble text-sm sm:text-base leading-relaxed">
                   The wisest of the pack. She tested every prototype and gave her seal of approval by not looking disgusted. 
-                  She would be so proud to see Big Dog Life launched and helping big dogs everywhere. 🐾
+                  She would be so proud to see Big Dog Life™ launched and helping big dogs everywhere. 🐾
                 </p>
                 <p className="font-brand text-stone text-xs mt-6 italic text-center sm:text-left">
                   "Forever in our hearts, always in the Pack."

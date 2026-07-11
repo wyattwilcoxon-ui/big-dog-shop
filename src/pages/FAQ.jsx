@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: 'Are they actually leak-proof?* Is anything?!',
-    a: 'Look, we\'re going to be real with you — nothing is 100% leak-proof in this world. But the Bosie Bag™ is extra-thick, extra-wide, and built specifically for big dogs. We\'ve done everything humanly possible to keep your hands clean. The rest is between you and the universe.',
+    a: 'Look, we\'re going to be real with you — nothing is 100% leak-proof in this world. But the Bosie Bag® is extra-thick, extra-wide, and built specifically for big dogs. We\'ve done everything humanly possible to keep your hands clean. The rest is between you and the universe.',
   },
   {
     q: 'How many bags come in a roll?',
@@ -39,7 +39,7 @@ const FAQS = [
   },
   {
     q: 'Is your dog\'s poop bigger than their personality?',
-    a: 'Impossible. But it\'s probably close. That\'s exactly why we built the Bosie Bag™ — because big personalities come with big responsibilities. And big messes.',
+    a: 'Impossible. But it\'s probably close. That\'s exactly why we built the Bosie Bag® — because big personalities come with big responsibilities. And big messes.',
   },
   {
     q: 'When are new products launching?',
