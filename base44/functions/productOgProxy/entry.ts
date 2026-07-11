@@ -23,7 +23,7 @@ const PRODUCT_COPY = {
   },
   'tennis-balls': {
     seoTitle: 'Big Dog Life™ The Big Ones Tennis Balls - 3-Pack | Official Brand Fetch Balls',
-    metaDescription: 'The Big Ones by Big Dog Life™ - official brand tennis balls, 3-pack. Standard 2.5" fetch balls, high-visibility yellow. Part of the Big Dog Life collection.',
+    metaDescription: 'The Big Ones by Big Dog Life™ - official brand tennis balls, 3-pack. Standard 2.5" fetch balls, high-visibility yellow. Part of the Big Dog Life™ collection.',
   },
 };
 

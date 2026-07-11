@@ -48,7 +48,7 @@ export default function ValueProps() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-10"
         >
-          <h2 className="font-display text-4xl sm:text-6xl text-midnight">WHY BIG DOG LIFE?</h2>
+          <h2 className="font-display text-4xl sm:text-6xl text-midnight">WHY BIG DOG LIFE™?</h2>
           <p className="font-brand text-pebble mt-2 text-lg">Built by big dog owners, for big dog owners.</p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

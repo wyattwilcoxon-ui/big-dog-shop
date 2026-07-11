@@ -137,11 +137,11 @@ Unbox it, clip it on, and you're already loaded. That's the big dog life.`,
   // 5. Big Dog Life™ The Big Ones Tennis Balls - 3-Pack
   'tennis-balls': {
     seoTitle: 'Big Dog Life™ The Big Ones Tennis Balls - 3-Pack | Official Brand Fetch Balls for Dogs',
-    metaDescription: 'The Big Ones by Big Dog Life™ - official brand tennis balls, 3-pack. Standard 2.5" fetch balls, high-visibility yellow, and proudly part of the Big Dog Life family.',
-    shortDescription: 'Part of the pack. The Big Ones are Big Dog Life\'s own tennis balls - standard size, high-visibility yellow, and built to rep the brand on every fetch. Three to a pack, because one throw is never enough.',
-    longDescription: `Every great walk ends with a throw. Make it a Big Dog Life throw.
+    metaDescription: 'The Big Ones by Big Dog Life™ - official brand tennis balls, 3-pack. Standard 2.5" fetch balls, high-visibility yellow, and proudly part of the Big Dog Life™ family.',
+    shortDescription: 'Part of the pack. The Big Ones are Big Dog Life™\'s own tennis balls - standard size, high-visibility yellow, and built to rep the brand on every fetch. Three to a pack, because one throw is never enough.',
+    longDescription: `Every great walk ends with a throw. Make it a Big Dog Life™ throw.
 
-  The Big Ones are Big Dog Life\'s official tennis balls - standard 2.5" fetch balls that carry the brand your dog already trusts. These aren\'t just balls. They\'re part of the Big Dog Life collection - and they give your dog something to look forward to after cleanup.
+  The Big Ones are Big Dog Life™\'s official tennis balls - standard 2.5" fetch balls that carry the brand your dog already trusts. These aren\'t just balls. They\'re part of the Big Dog Life™ collection - and they give your dog something to look forward to after cleanup.
 
   Because after the cleanup, there\'s always a throw.
 
@@ -159,7 +159,7 @@ Unbox it, clip it on, and you're already loaded. That's the big dog life.`,
   ▸ The Bosie Bag® - so you\'re covered for both ends of the walk
   ▸ The Clip & Go™ Dispenser - clip on, clean up, then play
 
-  Part of the brand. Part of the walk. That\'s the Big Dog Life.`,
+  Part of the brand. Part of the walk. That\'s the Big Dog Life™.`,
     backendKeywords: 'Big Dog Life tennis balls, branded dog fetch balls, dog tennis balls 3 pack, dog toy balls, fetch balls for dogs, standard tennis balls dogs, dog walking accessories, Big Dog Life brand, dog fetch toys, official dog brand balls',
   },
 };
