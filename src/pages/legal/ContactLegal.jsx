@@ -44,7 +44,11 @@ const SECTIONS = [
 export default function ContactLegal() {
   return (
     <>
-      <LegalPage title="Contact & Legal Notice" sections={SECTIONS} />
+      <LegalPage
+        title="Contact & Legal Notice"
+        sections={SECTIONS}
+        metaDescription="Contact Big Dog Life LLC for questions, returns, accessibility requests, or legal notices. Email bark@thebigdoglife.com. Based in Bellefontaine, Ohio."
+      />
       <div className="bg-white border-4 border-midnight rounded-2xl p-6 sm:p-8 shadow-cartoon-sm max-w-4xl mx-auto mb-12">
         <p className="font-brand text-midnight text-center">
           Big Dog Life LLC • We Give a $h!t • thebigdoglife.com

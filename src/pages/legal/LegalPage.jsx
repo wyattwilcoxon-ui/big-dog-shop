@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export default function LegalPage({ title, lastUpdated, sections }) {
+export default function LegalPage({ title, lastUpdated, sections, metaDescription }) {
+  useEffect(() => {
+    document.title = `${title} | Big Dog Life™`;
+    if (metaDescription) {
+      let tag = document.querySelector('meta[name="description"]');
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.name = 'description';
+        document.head.appendChild(tag);
+      }
+      tag.content = metaDescription;
+    }
+  }, [title, metaDescription]);
+
   return (
     <div className="min-h-screen bg-cream py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
