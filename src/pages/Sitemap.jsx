@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { useSeo } from '@/hooks/useSeo';
 
 const SITEMAP = [
   {
@@ -41,6 +42,7 @@ const SITEMAP = [
 ];
 
 export default function Sitemap() {
+  useSeo('Sitemap | Big Dog Life™', 'Find every page on Big Dog Life™ — shop, products, company info, and legal policies.');
   return (
     <div className="min-h-screen bg-background">
       <div className="bg-midnight pt-20 pb-12 sm:pt-32 sm:pb-24 px-4">

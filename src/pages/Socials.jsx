@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, Instagram, Facebook, Music2, Globe, ShoppingBag, ArrowUpRight } from 'lucide-react';
 import { getProducts } from '@/lib/shopify';
+import { useSeo } from '@/hooks/useSeo';
 
 const SOCIALS = [
   { label: 'Instagram', handle: '@bigdoglife.og', url: 'https://instagram.com/bigdoglife.og', icon: Instagram, color: '#E1306C' },
@@ -11,6 +12,7 @@ const SOCIALS = [
 ];
 
 export default function Socials() {
+  useSeo('Big Dog Life™ Links', 'Shop Big Dog Life™ products and follow us on Instagram, TikTok, and Facebook @bigdoglife.og.');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 

@@ -52,5 +52,5 @@ const SECTIONS = [
 ];
 
 export default function Accessibility() {
-  return <LegalPage title="Accessibility Statement" sections={SECTIONS} />;
+  return <LegalPage title="Accessibility Statement" sections={SECTIONS} metaDescription="Big Dog Life™ Accessibility Statement. Our commitment to WCAG 2.1 Level AA standards and ongoing accessibility improvements across our website." />;
 }

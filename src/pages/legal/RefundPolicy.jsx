@@ -59,5 +59,5 @@ const SECTIONS = [
 ];
 
 export default function RefundPolicy() {
-  return <LegalPage title="Return & Refund Policy" lastUpdated="January 1, 2025" sections={SECTIONS} />;
+  return <LegalPage title="Return & Refund Policy" lastUpdated="January 1, 2025" sections={SECTIONS} metaDescription="Big Dog Life™ Return & Refund Policy. 30-day returns on unused items, defective item replacements, refund processing, and cancellation details." />;
 }

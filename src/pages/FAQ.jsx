@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { useSeo } from '@/hooks/useSeo';
 
 const FAQS = [
   {
@@ -48,6 +49,7 @@ const FAQS = [
 ];
 
 export default function FAQ() {
+  useSeo('FAQ | Big Dog Life™', 'Answers to common questions about The Bosie Bag®, shipping, returns, bulk orders, and products for large and giant breed dogs.');
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}

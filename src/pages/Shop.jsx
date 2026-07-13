@@ -6,6 +6,7 @@ import { getProducts } from '@/lib/shopify';
 import { useShopifyCart } from '@/lib/ShopifyCartContext';
 import { base44 } from '@/api/base44Client';
 import { toast } from 'sonner';
+import { useSeo } from '@/hooks/useSeo';
 
 // Fallback static products if Shopify returns nothing
 const FALLBACK_PRODUCTS = [
@@ -36,6 +37,7 @@ const FALLBACK_PRODUCTS = [
 ];
 
 export default function Shop() {
+  useSeo('Shop All Products | Big Dog Life™', 'Shop extra-large dog poop bags, dispensers, and bundles built for large and giant breed dogs. The Bosie Bag®, Clip & Go dispenser, Starter Bundle, and more.');
   const { addItem, loading } = useShopifyCart();
   const [products, setProducts] = useState([]);
   const [fetching, setFetching] = useState(true);

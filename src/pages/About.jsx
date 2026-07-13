@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Leaf, ShieldCheck, Eye, Heart, Lightbulb, PawPrint } from 'lucide-react';
 import GlobalBokeh from '../components/layout/GlobalBokeh';
+import { useSeo } from '@/hooks/useSeo';
 
 
 
@@ -99,6 +100,7 @@ const ROADMAP = [
 
 
 export default function About() {
+  useSeo('About Big Dog Life™ | Built by Big Dog People', 'Big Dog Life™ is an Ohio-based brand making oversized, leak-proof dog waste products for large and giant breeds. Founded by big-dog owners who lived the problem.');
   return (
     <main className="bg-background min-h-screen">
 

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { useSeo } from '@/hooks/useSeo';
 
 export default function JoinThePack() {
+  useSeo('Join The Pack | Big Dog Life™', 'Get early access and 15% off your first order when Big Dog Life™ launches. Extra-large, leak-proof poop bags built for big dogs.');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [dogBreed, setDogBreed] = useState('');

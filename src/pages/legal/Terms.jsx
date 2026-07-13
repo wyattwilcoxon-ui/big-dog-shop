@@ -63,5 +63,5 @@ const SECTIONS = [
 ];
 
 export default function Terms() {
-  return <LegalPage title="Terms & Conditions" lastUpdated="January 1, 2025" sections={SECTIONS} />;
+  return <LegalPage title="Terms & Conditions" lastUpdated="January 1, 2025" sections={SECTIONS} metaDescription="Big Dog Life™ Terms & Conditions covering product descriptions, pricing, orders, intellectual property, prohibited use, warranties, and governing law." />;
 }

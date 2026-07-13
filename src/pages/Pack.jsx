@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import BosaOriginStory from '../components/home/BosaOriginStory';
+import { useSeo } from '@/hooks/useSeo';
 
 const DOGS = [
   {
@@ -31,6 +32,7 @@ const DOGS = [
 
 
 export default function Pack() {
+  useSeo('Meet The Pack | Big Dog Life™', 'Meet the dogs who inspired Big Dog Life™ — Bosa, Max, Jazzy, and the pack that started it all. Big dogs with big personalities.');
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}

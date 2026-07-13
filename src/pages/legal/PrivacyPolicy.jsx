@@ -66,5 +66,5 @@ const SECTIONS = [
 ];
 
 export default function PrivacyPolicy() {
-  return <LegalPage title="Privacy Policy" lastUpdated="January 1, 2025" sections={SECTIONS} />;
+  return <LegalPage title="Privacy Policy" lastUpdated="January 1, 2025" sections={SECTIONS} metaDescription="Big Dog Life™ Privacy Policy. Learn how we collect, use, and protect your personal information when you shop with us." />;
 }

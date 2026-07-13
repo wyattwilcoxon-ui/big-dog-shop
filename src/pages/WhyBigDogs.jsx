@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { X, Check } from 'lucide-react';
+import { useSeo } from '@/hooks/useSeo';
 
 const BREEDS = [
   'German Shepherd', 'Great Dane', 'Mastiff', 'Rottweiler',
@@ -31,6 +32,7 @@ const MARKET_STATS = [
 ];
 
 export default function WhyBigDogs() {
+  useSeo('Why Big Dogs Need Bigger Poop Bags | Big Dog Life™', 'Standard poop bags are not built for large and giant breed dogs. See why The Bosie Bag® is 43.6% bigger, extra-thick, and leak-proof.');
   return (
     <main className="bg-background min-h-screen">
 

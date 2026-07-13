@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Instagram, Loader2 } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { useSeo } from '@/hooks/useSeo';
 
 export default function Contact() {
+  useSeo('Contact Us | Big Dog Life™', 'Get in touch with Big Dog Life™. Questions, bulk orders, or just want to show us your giant dog? Email bark@thebigdoglife.com.');
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(null);

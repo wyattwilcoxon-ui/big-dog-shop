@@ -38,5 +38,5 @@ const SECTIONS = [
 ];
 
 export default function ShippingPolicy() {
-  return <LegalPage title="Shipping Policy" lastUpdated="January 1, 2025" sections={SECTIONS} />;
+  return <LegalPage title="Shipping Policy" lastUpdated="January 1, 2025" sections={SECTIONS} metaDescription="Big Dog Life™ Shipping Policy. Processing times, shipping methods, costs, and delivery estimates for orders shipped within the United States." />;
 }
