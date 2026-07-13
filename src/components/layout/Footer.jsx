@@ -119,7 +119,9 @@ export default function Footer() {
             <span className="text-pebble/40">·</span>
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy</Link>
             <span className="text-pebble/40">·</span>
-            <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping & Returns</Link>
+            <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping</Link>
+            <span className="text-pebble/40">·</span>
+            <Link to="/refund-policy" className="hover:text-primary transition-colors">Returns</Link>
             <span className="text-pebble/40">·</span>
             <Link to="/accessibility" className="hover:text-primary transition-colors">Accessibility</Link>
             <span className="text-pebble/40">·</span>
