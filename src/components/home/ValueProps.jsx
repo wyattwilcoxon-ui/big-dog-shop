@@ -21,7 +21,7 @@ const PROPS = [
   {
     emoji: '🌱',
     title: 'USDA Certified Biobased',
-    description: 'Made from 38% plant-based materials. Biodegradable film. Good for your dog. Good for the planet.',
+    description: 'Made from 38% plant-based materials. Biobased film. Good for your dog. Good for the planet.',
     bg: 'bg-sky/20',
     border: 'border-sky',
     rotate: -1,

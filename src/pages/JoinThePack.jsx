@@ -87,7 +87,7 @@ export default function JoinThePack() {
           {/* Value Props */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
             <div className="inline-flex items-center gap-2 bg-white text-[#0F1D3C] text-sm px-5 py-3 rounded-full shadow-lg" style={{ fontFamily: 'Fredoka, sans-serif' }}>
-              Plant-Based {'&'} Biodegradable
+              Plant-Based {'&'} Biobased
             </div>
             <div className="inline-flex items-center gap-2 bg-white text-[#0F1D3C] text-sm px-5 py-3 rounded-full shadow-lg" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               44% Larger Than Standard Bags
